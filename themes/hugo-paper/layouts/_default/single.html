@@ -4,7 +4,7 @@
     <h1 class="post-title" itemprop="headline">{{ .Title }}</h1>
     <p class="post-meta">
       {{- if or .Params.author .Site.Params.author -}}
-      <i class="fa fa-user-secret" aria-hidden="true"></i> <span itemprop="author">
+      <i class="fas fa-user-secret"></i> <span itemprop="author">
         {{ .Params.author | default .Site.Params.author }}
       </span> · {{ end }}
       <i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;<time datetime="{{- .Date.Format "2006-01-02" -}}"
@@ -49,7 +49,7 @@
     {{ end }}
 
     <a href="{{ $.Site.Params.edit_files_base_uri }}content/{{ .File.Path }}" class="edit-post">
-      <i class="fa fa-pencil" aria-hidden="true"></i> {{ i18n "edit-post" }}
+      <i class="fas fa-pencil-alt"></i> {{ i18n "edit-post" }}
     </a>
   </footer>
   <!-- Comments system area start -->

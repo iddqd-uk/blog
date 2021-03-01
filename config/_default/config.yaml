@@ -111,20 +111,20 @@ refLinksNotFoundURL: 'broken reference'
 summaryLength: 70
 
 # Theme to use (located by default in `/themes/THEMENAME/`)
-theme: 'paper'
+theme: 'paper' # hugo-paper
 
 # Timeout for generating page contents, in milliseconds (defaults to 10 seconds)
 timeout: 10000
 
-# Site title
-title: 'blog [dot] hook'
+## Site title
+#title: 'blog [dot] hook'
 
 # When enabled, creates URL of the form `/filename.html` instead of `/filename/`
 uglyURLs: false
 
+copyright: Make love, not war
 
-
-sectionPagesMenu: "main" # @todo: make index page posts feed possible
+#sectionPagesMenu: "main" # @todo: make index page posts feed possible
 
 outputFormats: # @todo: fix rss link `index.xml` to `rss.xml`
   RSS:

@@ -4,11 +4,27 @@
   <header class="post-header">
     <h1 class="post-title">{{ .Title }}</h1>
     <div class="post-meta">
-      {{- if or .Params.author .Site.Params.author }}
-      {{- .Params.author | default .Site.Params.author }} · {{ end }}
-      {{- .Date.Format "January 2, 2006" -}}
+      {{- if or .Params.author .Site.Params.author -}}
+      <i class="fas fa-user-secret"></i> <span itemprop="author">
+        {{ .Params.author | default .Site.Params.author }}
+      </span> · {{ end }}
+      <i class="fas fa-calendar-check"></i> <time datetime="{{- .Date.Format "2006-01-02" -}}"
+      itemprop="datePublished">{{- .Date.Format "2006.01.02" -}}</time>
+      &middot; <i class="fas fa-clock"></i> {{ .ReadingTime }} min
     </div>
   </header>
+
+  {{ if isset .Params "featured_image" }}
+  <div class="post-featured-image">
+    <img src="{{ $.Site.BaseURL }}{{ .Param "featured_image" }}" itemprop="image" alt="{{ .Title }}" />
+  </div>
+  {{ end }}
+
+  <div class="outdated-post" data-posted-at="{{- .Date.Format "2006-01-02" -}}">
+  <strong>Внимание!</strong> Данный пост был опубликован более года назад и, возможно, уже утратил свою былую
+  актуальность. Но это не точно.
+  </div>
+
   <div class="post-content">{{ .Content }}</div>
   {{- if .Params.tags }}
   <footer class="post-footer">
@@ -18,16 +34,38 @@
       <li><a href="{{ $href }}">{{ . }}</a></li>
       {{- end }}
     </ul>
+    <a href="{{ $.Site.Params.edit_files_base_uri }}content/{{ .File.Path }}" class="edit-post">
+      <i class="fas fa-pencil-alt"></i> {{ i18n "edit-post" }}
+    </a>
   </footer>
   {{- end }}
   <!-- Comments area start -->
   {{- if not (eq .Params.comments false) }}
+  <div class="comments-area">
+  {{ if isset .Site.Params "utteranc_repo_name" }}
+  <div id="utteranc-comments"></div>
+  <script>
+    (function () {
+      window.setTimeout(function () {
+        let d = document, s = d.createElement('script');
+        s.src = 'https://utteranc.es/client.js';
+        s.setAttribute('repo', '{{ $.Site.Params.utteranc_repo_name }}');
+        s.setAttribute('issue-term', '{{ $.Site.Params.utteranc_issue_term | default "pathname" }}');
+        s.setAttribute('crossorigin', 'anonymous');
+        s.setAttribute('theme', 'photon-dark');
+        s.async = true;
+        s.defer = true;
+        d.getElementById('utteranc-comments').appendChild(s);
+      }, 100);
+    })();
+  </script>
+  {{ end }}
+
   {{- if .Site.DisqusShortname }}
   <div id="disqus_thread"></div>
   <script>
-    var disqus_shortname = '{{ .Site.DisqusShortname }}';
     (function() {
-      var d = document, s = d.createElement('script');
+      let d = document, s = d.createElement('script'), disqus_shortname = '{{ .Site.DisqusShortname }}';
       s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
@@ -39,6 +77,7 @@
   </noscript>
   <!-- Comments area end -->
   {{- end }}
+  </div>
   {{- end }}
 </article>
 

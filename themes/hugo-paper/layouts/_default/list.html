@@ -26,8 +26,8 @@
       {{ safeHTML (.Scratch.Get `firstEmoji`) }}
       <h2 class="post-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h2>
       <div class="post-meta">
-        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;<time datetime="{{- .Date.Format "2006-01-02" -}}" itemprop="datePublished"> {{- .Date.Format "2006.1.2" -}}</time>
-        &middot; <i class="fa fa-clock-o" aria-hidden="true"></i> {{ .ReadingTime }} min
+        <i class="fas fa-calendar-check"></i>&nbsp;<time datetime="{{- .Date.Format "2006-01-02" -}}" itemprop="datePublished"> {{- .Date.Format "2006.1.2" -}}</time>
+        &middot; <i class="fas fa-clock"></i> {{ .ReadingTime }} min
         &middot; <i class="fa fa-tags" aria-hidden="true"></i>
         <ul class="meta-post-tags">
           {{ range .Params.tags }}

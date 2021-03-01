@@ -7,7 +7,7 @@ on:
   #pull_request:
 
 env:
-  HUGO_VERSION: '0.71.0'
+  HUGO_VERSION: '0.81.0'
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
   spellcheck:
@@ -39,7 +39,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
           fetch-depth: 1
 
       - name: Build
-        run: docker run --rm -v "$(pwd):/src:rw" "tarampampam/hugo:$HUGO_VERSION" --baseURL "$BASE_URL" --noChmod --noTimes
+        run: docker run --rm -v "$(pwd):/src:rw" "klakegg/hugo:$HUGO_VERSION-alpine" --baseURL "$BASE_URL" --noChmod --noTimes
 
   lint-markdown:
     name: Lint markdown files
