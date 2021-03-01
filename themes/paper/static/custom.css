@@ -30,6 +30,26 @@
   box-shadow: 0 6px 12px 0 rgba(55, 59, 62, 0.1), 0 8px 24px 0 rgba(55, 59, 62, 0.08);
 }
 
+/* Post meta */
+.post-meta {
+  opacity: 0.65;
+}
+
+.post-meta ul.meta-post-tags {
+  display: inline-block;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.post-meta ul.meta-post-tags li {
+  display: inline-block;
+  padding-right: 0.4em;
+}
+
+.post-meta ul.meta-post-tags li a:hover {
+  text-decoration: underline;
+}
+
 /* Font Awesome icons */
 i.fas {
   display: inline-block;

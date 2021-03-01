@@ -15,17 +15,29 @@
 {{- else if .Data.Term }}
 {{- $class = "post-entry tag-entry" }}
 {{- end }}
-<article class="{{ $class }}">
+<article class="{{ $class }}" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="entry-header">
-    <h2>{{ .Title }}</h2>
+    <h2 itemprop="name">{{ .Title }}</h2>
+    <div class="post-meta">
+      <i class="fas fa-calendar-check"></i> <time datetime="{{- .Date.Format "2006-01-02" -}}" itemprop="datePublished"> {{- .Date.Format "2006.01.02" -}}</time>
+      &middot; <i class="fas fa-clock"></i> {{ .ReadingTime }} {{ i18n "minute-short" }}
+<!--      &middot; <i class="fas fa-tags" aria-hidden="true"></i>-->
+<!--      <ul class="meta-post-tags">-->
+<!--        {{ range .Params.tags }}-->
+<!--        <li><a href="{{$.Site.BaseURL}}tags/{{ . | urlize }}/">{{ . }}</a></li>-->
+<!--        {{ end }}-->
+<!--      </ul>-->
+    </div>
   </header>
   <section class="entry-content">
-   <p>{{ .Summary | plainify | htmlUnescape }}...</p>
+   <p itemprop="description">{{ .Summary | plainify | htmlUnescape }}</p>
   </section>
   <footer class="entry-footer">
-    <time>{{ .Date.Format "January 2, 2006" }}</time>
+    {{ if .Truncated }}
+    {{ i18n "read-more" }}
+    {{ end }}
   </footer>
-  <a class="entry-link" href="{{ .Permalink }}"></a>
+  <a class="entry-link" href="{{ .Permalink }}" itemprop="url"></a>
 </article>
 {{- end }}
 

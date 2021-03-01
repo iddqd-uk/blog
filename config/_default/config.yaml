@@ -108,7 +108,7 @@ refLinksNotFoundURL: 'broken reference'
 #rssLimit: ?
 
 # The length of text in words to show in a `.Summary`
-summaryLength: 70
+summaryLength: 70 # FIXME does not work
 
 # Theme to use (located by default in `/themes/THEMENAME/`)
 theme: 'paper' # hugo-paper
