@@ -4,34 +4,5 @@
   <!--span>&middot;</span-->
 </footer>
 
-<script data-no-instant>
-  (function () {
-
-    let
-      // $toggle = document.querySelector('.menu-toggle'),
-      // $body = document.querySelector('body'),
-      $outdated = document.querySelectorAll('.outdated-post');
-
-    // $toggle.addEventListener('click', function () {
-    //   $body.classList.toggle('noscroll');
-    // }, false);
-
-    let now = new Date();
-
-    for (let i = 0, len = $outdated.length; i < len; i++) {
-      let
-        $el = $outdated[i],
-        posted_at = new Date($el.getAttribute('data-posted-at')),
-        diff = Math.abs(now.getTime() - posted_at.getTime()),
-        days = Math.ceil(diff / (1000 * 3600 * 24));
-
-      if (days >= 547 /* 1,5 years */) {
-        $el.style.display = 'block';
-        $el.style.visibility = 'visible'
-      }
-    }
-
-  })();
-</script>
 </body>
 </html>

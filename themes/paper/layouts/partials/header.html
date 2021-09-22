@@ -5,15 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title -->
-    <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+    <title>
+      {{- if not .IsHome }}
+      {{- if eq .Kind "page" }}{{ .Title }}
+      {{- else if eq .Data.Singular "tag" }}{{ .Data.Term }}
+      {{- else }}{{ i18n "posts" }}
+      {{- end }} - {{ end }}
+      {{- .Site.Title -}}
+    </title>
     <!-- Meta -->
-    {{- if eq .Kind "page" }}
-    <meta name="description" content="{{ .Summary }}">
+    {{ if eq .Kind "page" }}
+    <meta name="description" content="{{ .Summary | default .Site.Title | plainify | chomp }}">
     <meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
-    {{- else }}
-    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ else }}
+    <meta name="description" content="{{ .Site.Params.description | default .Site.Title | plainify | chomp }}">
     <meta name="author" content="{{ .Site.Params.author }}">
-    {{- end }}
+    {{ end }}
     <!-- Pace -->
     <style>
       .pace {pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}
@@ -30,33 +37,51 @@
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
           crossorigin="anonymous" />
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-    <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{.Site.BaseURL}}apple-touch-icon.png?v={{ now.Unix }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{.Site.BaseURL}}favicon-32x32.png?v={{ now.Unix }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{.Site.BaseURL}}favicon-16x16.png?v={{ now.Unix }}">
+    <link rel="manifest" href="{{.Site.BaseURL}}webmanifest.json">
+    <meta name="msapplication-TileColor" content="#282b2f">
+    <meta name="theme-color" content="#282b2f">
     <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }}">
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    <!-- Alternative languages -->
+    {{ if .IsTranslated }}
+    {{ range .Translations }}
+    <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}" />
+    {{ end}}
+    {{ end }}
     <!-- Misc -->
-    {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-    {{- template "_internal/google_analytics_async.html" . }}
-    {{- template "_internal/opengraph.html" . }}
-    {{- end }}
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ end }}
   </head>
   <body class="dark {{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
     <header class="header">
       <nav class="nav">
-        {{- if .IsHome }}
+        {{ if .IsHome }}
         <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
-        {{- else }}
+        {{ else }}
         <p class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></p>
-        {{- end }}
-        {{- if .Site.Menus.main }}
+        {{ end }}
         <ul class="menu">
-          {{- range .Site.Menus.main }}
-          <li>
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-          {{- end }}
+        {{ if .Site.Menus.main }}
+          {{ range .Site.Menus.main }}
+            <li>
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+          {{ end }}
+        {{ else }}
+          {{ range .Site.Sections }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
         </ul>
-        {{- end }}
       </nav>
     </header>
     <main class="main">

@@ -39,7 +39,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
           fetch-depth: 1
 
       - name: Build
-        run: docker run --rm -v "$(pwd):/src:rw" "klakegg/hugo:$HUGO_VERSION-alpine" --baseURL "$BASE_URL" --noChmod --noTimes
+        run: docker run --rm -v "$(pwd):/src:rw" "klakegg/hugo:$HUGO_VERSION-alpine" --environment production --baseURL "$BASE_URL" --noChmod --noTimes
 
   lint-markdown:
     name: Lint markdown files

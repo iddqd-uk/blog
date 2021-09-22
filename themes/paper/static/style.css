@@ -24,8 +24,9 @@
   --primary: rgba(255, 255, 255, 0.9);
   --secondary: rgba(255, 255, 255, 0.7);
   --tertiary: rgba(255, 255, 255, 0.16);
-  --content: rgba(255, 255, 255, 0.64);
+  --content: #dbdbdb;
 
+  --blockquote: rgba(255,255,255,.55);
   --hljs-bg: #383838;
   --code-bg: #414141;
   --border: #5f5f5f;
@@ -201,6 +202,11 @@ img {
   padding-left: 18px;
   padding-right: 16px;
 }
+
+.list-header {
+  margin: 0 1em 1em 1em;
+}
+
 /* Post entry
 -------------------------------------------------- */
 .first-entry {
@@ -212,10 +218,10 @@ img {
   margin-bottom: var(--header-height);
 }
 .first-entry .entry-header {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  /*overflow: hidden;*/
+  /*display: -webkit-box;*/
+  /*-webkit-box-orient: vertical;*/
+  /*-webkit-line-clamp: 3;*/
 }
 .first-entry .entry-header h2 {
   font-size: 40px;
@@ -224,7 +230,7 @@ img {
   margin-top: 14px;
   margin-bottom: 14px;
   font-size: 16px;
-  -webkit-line-clamp: 3;
+  /*-webkit-line-clamp: 3;*/
 }
 .first-entry .entry-footer {
   font-size: 14px;
@@ -446,7 +452,8 @@ img {
 .post-content blockquote {
   margin: 0 0 0 calc(var(--gap) * -1);
   padding: 0 0 0 21px;
-  border-left: 3px solid var(--primary);
+  border-left: 3px solid var(--blockquote);
+  color: var(--blockquote);
 }
 .post-content hr {
   height: 1px;

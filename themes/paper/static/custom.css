@@ -43,17 +43,45 @@
 
 .post-meta ul.meta-post-tags li {
   display: inline-block;
-  padding-right: 0.4em;
 }
 
 .post-meta ul.meta-post-tags li a:hover {
   text-decoration: underline;
 }
 
+/* Read more */
+a.more-link {
+  font-size: 0.9em;
+  padding: 5px 20px;
+  color: #eeeeef;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition-duration: 0.2s;
+  user-select: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.8em 0 0 0;
+  background-color: #484b4e;
+}
+
+a.more-link:hover {
+  background-color: #4e5154;
+  text-decoration: none;
+}
+
+a.more-link:active {
+  background-color: #55595c;
+  border: 1px solid #95979c;
+}
+
+a.more-link:focus {
+  outline: 0;
+}
+
 /* Font Awesome icons */
 i.fas {
   display: inline-block;
-  padding-right: 0.3em;
+  padding-right: 0.1em;
 }
 
 /* Outdated post message */

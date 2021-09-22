@@ -1,15 +1,22 @@
-{{- partial "header.html" . }}
+{{ partial "header.html" . }}
 
 <article class="post-single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title" itemprop="headline">{{ .Title }}</h1>
+    <h1 class="post-title">
+      <span itemprop="headline">{{ .Title }}</span>
+      {{ if .IsTranslated }}
+      {{ range .Translations }}
+      <sup><a href="{{ .Permalink }}"><i class="fas fa-globe"></i>{{ .Lang }}</a></sup>
+      {{ end}}
+      {{ end }}
+    </h1>
     <div class="post-meta">
-      {{- if or .Params.author .Site.Params.author -}}
+      {{ if or .Params.author .Site.Params.author }}
       <i class="fas fa-user-secret"></i> <span itemprop="author">
         {{ .Params.author | default .Site.Params.author }}
       </span> · {{ end }}
-      <i class="fas fa-calendar-check"></i> <time datetime="{{- .Date.Format "2006-01-02" -}}"
-      itemprop="datePublished">{{- .Date.Format "2006.01.02" -}}</time>
+      <i class="fas fa-calendar-check"></i> <time datetime="{{ .Date.Format "2006-01-02" }}"
+      itemprop="datePublished">{{ .Date.Format "2006.01.02" }}</time>
       &middot; <i class="fas fa-clock"></i> {{ .ReadingTime }} {{ i18n "minute-short" }}
     </div>
   </header>
@@ -20,26 +27,45 @@
   </div>
   {{ end }}
 
-  <div class="outdated-post" data-posted-at="{{- .Date.Format "2006-01-02" -}}">
+  <div class="outdated-post" data-posted-at="{{ .Date.Format "2006-01-02" }}">
     <strong>Внимание!</strong> Данный пост был опубликован более года назад и, возможно, уже утратил свою былую актуальность. Но это не точно.
   </div>
 
+  <script data-no-instant>
+    (function () {
+      let $outdated = document.querySelectorAll('.outdated-post'), now = new Date();
+
+      for (let i = 0, len = $outdated.length; i < len; i++) {
+        let
+          $el = $outdated[i],
+          posted_at = new Date($el.getAttribute('data-posted-at')),
+          diff = Math.abs(now.getTime() - posted_at.getTime()),
+          days = Math.ceil(diff / (1000 * 3600 * 24));
+
+        if (days >= 547 /* 1,5 years */) {
+          $el.style.display = 'block';
+          $el.style.visibility = 'visible'
+        }
+      }
+    })();
+  </script>
+
   <div class="post-content" itemprop="articleBody">{{ .Content }}</div>
-  {{- if .Params.tags }}
+  {{ if .Params.tags }}
   <footer class="post-footer">
     <ul class="post-tags">
-      {{- range .Params.tags }}
-      {{- $href := print (absURL "tags/") (urlize .) }}
+      {{ range .Params.tags }}
+      {{ $href := print (absURL "tags/") (urlize .) }}
       <li><a href="{{ $href }}">{{ . }}</a></li>
-      {{- end }}
+      {{ end }}
     </ul>
     <a href="{{ $.Site.Params.edit_files_base_uri }}content/{{ .File.Path }}" class="edit-post">
       <i class="fas fa-pencil-alt"></i> {{ i18n "edit-post" }}
     </a>
   </footer>
-  {{- end }}
+  {{ end }}
   <!-- Comments area start -->
-  {{- if not (eq .Params.comments false) }}
+  {{ if not (eq .Params.comments false) }}
   <div class="comments-area">
   {{ if isset .Site.Params "utteranc_repo_name" }}
   <div id="utteranc-comments"></div>
@@ -60,7 +86,7 @@
   </script>
   {{ end }}
 
-  {{- if .Site.DisqusShortname }}
+  {{ if .Site.DisqusShortname }}
   <div id="disqus_thread"></div>
   <script>
     (function() {
@@ -75,9 +101,9 @@
     <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   <!-- Comments area end -->
-  {{- end }}
+  {{ end }}
   </div>
-  {{- end }}
+  {{ end }}
 </article>
 
-{{- partial "footer.html" . }}
+{{ partial "footer.html" . }}

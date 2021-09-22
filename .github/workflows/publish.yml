@@ -6,7 +6,7 @@ on:
     tags-ignore: ['**']
 
 env:
-  BASE_URL: 'https://blog.hook.sh/'
+  BASE_URL: 'https://blog.hook.sh/' # TODO move to config
   HUGO_VERSION: '0.81.0'
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
@@ -20,13 +20,14 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
           fetch-depth: 1
 
       - name: Build
-        run: docker run --rm -v "$(pwd):/src:rw" "klakegg/hugo:$HUGO_VERSION-alpine" --baseURL "$BASE_URL" --noChmod --noTimes
+        run: docker run --rm -v "$(pwd):/src:rw" "klakegg/hugo:$HUGO_VERSION-alpine" --environment production --baseURL "$BASE_URL" --noChmod --noTimes
 
       - name: Upload content
         uses: actions/upload-artifact@v2
         with:
           name: content
           path: public/
+          retention-days: 1
 
   publish:
     name: Publish content

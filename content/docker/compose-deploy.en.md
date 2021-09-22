@@ -19,6 +19,8 @@ tags:
 
 Specify configuration related to the deployment and running of services. This only takes effect when deploying to a [swarm][swarm] with [docker stack deploy][stack_deploy], and is ignored by `docker-compose up` and `docker-compose run`.
 
+<!--more-->
+
 ```yaml
 version: '3'
 services:

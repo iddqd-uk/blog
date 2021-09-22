@@ -108,7 +108,7 @@ refLinksNotFoundURL: 'broken reference'
 #rssLimit: ?
 
 # The length of text in words to show in a `.Summary`
-summaryLength: 70 # FIXME does not work
+summaryLength: 70
 
 # Theme to use (located by default in `/themes/THEMENAME/`)
 theme: 'paper' # hugo-paper
@@ -116,16 +116,20 @@ theme: 'paper' # hugo-paper
 # Timeout for generating page contents, in milliseconds (defaults to 10 seconds)
 timeout: 10000
 
+# Enable `.GitInfo` object for each page (if the Hugo site is versioned by Git).
+# This will update the `Lastmod` parameter for each page using the last git commit date for that content file
+enableGitInfo: false
+
 ## Site title
-#title: 'blog [dot] hook'
+title: 'blog [dot] hook'
 
 # When enabled, creates URL of the form `/filename.html` instead of `/filename/`
 uglyURLs: false
 
 copyright: Make love, not war
 
-#sectionPagesMenu: "main" # @todo: make index page posts feed possible
+sectionPagesMenu: "main"
 
-outputFormats: # @todo: fix rss link `index.xml` to `rss.xml`
+outputFormats:
   RSS:
     baseName: 'rss'
