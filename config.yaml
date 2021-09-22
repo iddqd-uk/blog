@@ -17,9 +17,9 @@ sectionPagesMenu: "main"
 params:
   author: Paramtamtam
   Subtitle: Авторский блог об IT и прочей х**не
-  utteranc_repo_name: 'tarampampam/blog'
+  utteranc_repo_name: 'hook-sh/blog'
   utteranc_issue_term: 'pathname'
-  edit_files_base_uri: 'https://github.com/tarampampam/blog/edit/master/'
+  edit_files_base_uri: 'https://github.com/hook-sh/blog/edit/master/'
 
 languages:
   ru:
