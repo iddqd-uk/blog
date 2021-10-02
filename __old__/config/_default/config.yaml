@@ -1,0 +1,135 @@
+# Configuration docs: <https://gohugo.io/getting-started/configuration/>
+
+# The directory where Hugo finds archetype files (content templates)
+archetypeDir: 'archetypes'
+
+# The directory where Hugo finds asset files used in Hugo Pipes
+assetDir: 'assets'
+
+# The directory from where Hugo reads content files
+contentDir: 'content'
+
+# The directory from where Hugo reads data files
+dataDir: 'data'
+
+# The directory from where Hugo reads layouts (templates)
+layoutDir: 'layouts'
+
+# The directory to where Hugo will write the final static site (the HTML files etc.)
+publishDir: 'public'
+
+# A directory or a list of directories from where Hugo reads static files
+staticDir: 'static'
+
+# The directory where Hugo reads the themes from
+themesDir: 'themes'
+
+# Hostname (and path) to the root, e.g. https://bep.is/
+#baseURL: '' # will be overridden during build
+
+# Include drafts when building
+buildDrafts: false
+
+# Include content already expired
+buildExpired: false
+
+# Enable to turn relative URLs into absolute
+canonifyURLs: false
+
+# Content without language indicator will default to this language
+defaultContentLanguage: 'ru'
+
+# Render the default content language in subdir, e.g. `content/en/`. The site root `/` will then redirect to `/en/`
+defaultContentLanguageInSubdir: false
+
+# Will disable generation of alias redirects
+disableAliases: false
+
+# Hugo will, by default, inject a generator meta tag in the HTML head on the home page only
+disableHugoGeneratorInject: false
+
+# Enable disabling of all pages of the specified Kinds.
+# Allowed values in this list: `page`, `home`, `section`, `taxonomy`, `taxonomyTerm`, `RSS`, `sitemap`, `robotsTXT`, `404`
+disableKinds: []
+
+# Do not convert the url/path to lowercase
+disablePathToLower: false
+
+# Enable Emoji emoticons support for page content; see the <https://www.webpagefx.com/tools/emoji-cheat-sheet/>
+enableEmoji: true
+
+# Enable inline shortcode support <https://gohugo.io/templates/shortcode-templates/#inline-shortcodes>
+enableInlineShortcodes: true
+
+# Show a placeholder instead of the default value or an empty string if a translation is missing
+enableMissingTranslationPlaceholders: false
+
+# Enable generation of `robots.txt` file
+enableRobotsTXT: true
+
+# Google Analytics tracking ID
+googleAnalytics: ''
+
+# If true, auto-detect Chinese/Japanese/Korean Languages in the content
+hasCJKLanguage: false
+
+# The site’s language code. It is used in the default RSS template and can be useful for multi-lingual sites
+languageCode: 'ru'
+
+# The site’s language name
+languageName: 'russian'
+
+# Don’t sync permission mode of files
+noChmod: true
+
+# Don’t sync modification time of files
+noTimes: false
+
+# Default number of elements per page in pagination <https://gohugo.io/templates/pagination/>
+paginate: 10
+
+# The path element used during pagination
+paginatePath: 'page'
+
+# Pluralize titles in lists
+pluralizeListTitles: false
+
+# Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs
+relativeURLs: false
+
+# When using `ref` or `relref` to resolve page links and a link cannot resolved, it will be logged with this
+# log level. Valid values are `ERROR` (default) or `WARNING`. Any `ERROR` will fail the build (`exit -1`)
+refLinksErrorLevel: 'ERROR'
+
+# URL to be used as a placeholder when a page reference cannot be found in `ref` or `relref`. Is used as-is
+refLinksNotFoundURL: 'broken reference'
+
+# Maximum number of items in the RSS feed
+#rssLimit: ?
+
+# The length of text in words to show in a `.Summary`
+summaryLength: 70
+
+# Theme to use (located by default in `/themes/THEMENAME/`)
+theme: 'paper' # hugo-paper
+
+# Timeout for generating page contents, in milliseconds (defaults to 10 seconds)
+timeout: 10000
+
+# Enable `.GitInfo` object for each page (if the Hugo site is versioned by Git).
+# This will update the `Lastmod` parameter for each page using the last git commit date for that content file
+enableGitInfo: false
+
+## Site title
+title: 'blog [dot] hook'
+
+# When enabled, creates URL of the form `/filename.html` instead of `/filename/`
+uglyURLs: false
+
+copyright: Make love, not war
+
+sectionPagesMenu: "main"
+
+outputFormats:
+  RSS:
+    baseName: 'rss'

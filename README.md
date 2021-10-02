@@ -14,14 +14,6 @@ Static blog, generated using [hugo][hugo].
 
 ## Usage
 
-### Create a new post
-
-For a making new blog post, execute in your terminal:
-
-```shell script
-$ make new-post
-```
-
 ### Start local server
 
 For a starting web-server with auto-reload feature, run:
@@ -37,8 +29,6 @@ And open in your favorite browser [127.0.0.1:1313](http://127.0.0.1:1313/).
 ## Deploy
 
 Any changes, pushed into `master` branch will be automatically deployed _(be careful with this shit, think **twice** before pushing)_.
-
-PRs is strongly recommended for any changes.
 
 [badge_test]:https://img.shields.io/github/workflow/status/tarampampam/blog/test/master?label=test&maxAge=60
 [badge_publish]:https://img.shields.io/github/workflow/status/tarampampam/blog/publish/master?label=publish&maxAge=60
