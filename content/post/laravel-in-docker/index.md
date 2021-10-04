@@ -1,16 +1,15 @@
 ---
-title: "Docker + Laravel = ❤"
+title: Docker + Laravel = ❤
 slug: laravel-in-docker
 date: 2018-10-01T08:29:51Z
-featured_image: /images/posts/laravel-in-docker-wide.png
-aliases:
-  - /docker/laravel-in-docker.html
+aliases: [/php/laravel-in-docker, /docker/laravel-in-docker]
+image: featured-image.png
+categories: [php]
 tags:
-- php
-- devops
-- linux
-- docker
-draft: false
+  - php
+  - devops
+  - linux
+  - docker
 ---
 
 > Данная статья является копией [публикации на хабре](https://habr.com/post/425101/)

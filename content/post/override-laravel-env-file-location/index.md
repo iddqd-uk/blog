@@ -2,11 +2,13 @@
 title: "Переопределяем расположение .env файла для Laravel"
 slug: override-laravel-env-file-location
 date: 2018-08-23T16:43:45Z
-featured_image: /images/posts/laravel-wide.png
+aliases: [/php/override-laravel-env-file-location]
+image: featured-image.png
+categories: [php]
 tags:
-- php
-- laravel
-- phpunit
+  - php
+  - laravel
+  - phpunit
 ---
 
 Столкнулся с ситуацией, когда необходимо переопределить расположение `.env` файла, который используется, к примеру - для запуска `phpunit` тестов. Да, если в корне приложения имеется файл `.env.testing` - то он автоматически будет прочитан фреймворком при `APP_ENV` равным `testing`, но вот что делать, если этот файл необходимо разметить в какой-либо другой директории? Давай расположим его в `./env.d/` дабы, например, не "мусорить" в корне приложения.
