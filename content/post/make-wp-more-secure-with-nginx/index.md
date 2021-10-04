@@ -1,9 +1,10 @@
 ---
 title: Повышение безопасности WordPress с помощью nginx
+slug: make-wp-more-secure-with-nginx
 date: 2015-05-05T05:45:15+00:00
-aliases:
-  - /wp/make-wp-more-secure-with-nginx.html
-featured_image: /images/posts/wp-secure-wide.jpg
+aliases: [/wp/make-wp-more-secure-with-nginx]
+image: featured-image.jpg
+categories: [wp]
 tags:
   - nginx
   - security

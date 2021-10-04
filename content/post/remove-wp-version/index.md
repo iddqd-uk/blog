@@ -1,9 +1,10 @@
 ---
 title: Скрываем версию WordPress
+slug: remove-wp-version
 date: 2015-05-26T07:10:53+00:00
-aliases:
-  - /wp/remove-wp-version.html
-featured_image: /images/posts/hide-wp-version-wide.jpg
+aliases: [/wp/remove-wp-version]
+image: featured-image.jpg
+categories: [wp]
 tags:
   - php
   - plugin

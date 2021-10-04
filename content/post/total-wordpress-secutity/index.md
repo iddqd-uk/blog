@@ -1,11 +1,10 @@
 ---
 title: Тотальная защита WordPress
+slug: total-wordpress-secutity
 date: 2015-07-05T11:30:59+00:00
-aliases:
-  - /wp/total-wordpress-secutity.html
-aliases:
-  - /adm/total-wordpress-secutity
-featured_image: /images/posts/wp-secure-total-wide.jpg
+aliases: [/wp/total-wordpress-secutity, /adm/total-wordpress-secutity]
+image: featured-image.jpg
+categories: [wp]
 tags:
   - centos
   - fail2ban

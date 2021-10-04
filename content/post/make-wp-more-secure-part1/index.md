@@ -1,9 +1,10 @@
 ---
 title: Рекомендации по повышению безопасности WordPress (ч. 1)
+slug: make-wp-more-secure-part1
 date: 2015-01-26T12:15:00+00:00
-aliases:
-  - /wp/make-wp-more-secure-part1.html
-featured_image: /images/posts/wp-secure-wide.jpg
+aliases: [/wp/make-wp-more-secure-part1]
+image: featured-image.jpg
+categories: [wp]
 tags:
   - apache
   - htaccess

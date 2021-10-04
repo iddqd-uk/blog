@@ -1,9 +1,10 @@
 ---
 title: Сниппеты для WordPress (ч. 1)
+slug: wp-snippets-part-1
 date: 2016-01-23T05:35:18+00:00
-aliases:
-  - /wp/wp-snippets-part-1.html
-featured_image: /images/posts/wp-snippets-wide.jpg
+aliases: [/wp/wp-snippets-part-1]
+image: featured-image.jpg
+categories: [wp]
 tags:
   - code
   - php
