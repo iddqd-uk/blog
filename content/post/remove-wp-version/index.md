@@ -3,7 +3,7 @@ title: Скрываем версию WordPress
 slug: remove-wp-version
 date: 2015-05-26T07:10:53+00:00
 aliases: [/wp/remove-wp-version]
-image: featured-image.jpg
+image: cover.jpg
 categories: [wp]
 tags:
   - php

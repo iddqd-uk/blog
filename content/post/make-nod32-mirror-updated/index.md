@@ -3,7 +3,7 @@ title: Make Nod32 Mirror Updated
 slug: make-nod32-mirror-updated
 date: 2016-07-11T17:49:52+00:00
 aliases: [/dev/make-nod32-mirror-updated]
-image: featured-image.jpg
+image: cover.jpg
 categories: [dev]
 tags:
   - bash

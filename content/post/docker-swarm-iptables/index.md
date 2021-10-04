@@ -3,8 +3,8 @@ title: Настройка iptables для swarm кластера
 slug: iptables-for-docker-swarm
 date: 2020-07-06T15:11:47Z
 aliases: [/adm/iptables-for-docker-swarm]
-image: featured-image.jpg
-categories: [adm]
+image: cover.jpg
+categories: [adm, docker]
 tags:
   - linux
   - iptables

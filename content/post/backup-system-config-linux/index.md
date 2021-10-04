@@ -3,7 +3,7 @@ title: Backup системных настроек linux
 slug: backup-system-config-linux
 date: 2015-02-07T13:40:00+00:00
 aliases: [/adm/backup-system-config-linux]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - backup

@@ -3,7 +3,7 @@ title: Флаги запуска «PuTTY»
 slug: putty-flags
 date: 2014-08-01T15:48:00+00:00
 aliases: [/tnt/putty-flags]
-image: featured-image.jpg
+image: cover.jpg
 categories: [tnt]
 tags:
   - linux

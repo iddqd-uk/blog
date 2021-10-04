@@ -3,7 +3,7 @@ title: Собираем nginx из исходников
 slug: nginx-compile-from-sources
 date: 2015-02-22T07:41:00+00:00
 aliases: [/adm/nginx-compile-from-sources]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - bash

@@ -3,7 +3,7 @@ title: GNU Make - Полная документация
 slug: makefile-full-doc
 date: 2018-09-28T15:39:27Z
 aliases: [/nix/makefile-full-doc]
-image: featured-image.jpg
+image: cover.jpg
 categories: [nix]
 tags:
   - linux

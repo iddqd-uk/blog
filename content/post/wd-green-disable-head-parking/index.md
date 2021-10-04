@@ -3,7 +3,7 @@ title: WD Green + Linux = отключение парковки головок �
 slug: wd-green-disable-head-parking
 date: 2014-07-19T18:58:00+00:00
 aliases: [/my-book-live/wd-green-disable-head-parking]
-image: featured-image.jpg
+image: cover.jpg
 categories: [my-book-live]
 tags:
   - debian

@@ -3,7 +3,7 @@ title: "Автоматизируем свои torrent закачки"
 slug: automate-torrents-downloads
 aliases: [/my-book-live/automate-torrents-downloads]
 date: 2014-07-13T07:25:27Z
-image: featured-image.jpg
+image: cover.jpg
 categories: [my-book-live]
 tags:
   - cron

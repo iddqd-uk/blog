@@ -3,7 +3,7 @@ title: 'RSS → Bash → Transmission'
 slug: automate-movies-download
 date: 2016-01-22T06:40:48+00:00
 aliases: [/adm/automate-movies-download]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - automate

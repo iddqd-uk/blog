@@ -3,7 +3,7 @@ title: Web-gui для wget (light)
 slug: wget-webgui-wide
 date: 2014-08-25T16:23:00+00:00
 aliases: [/dev/wget-gui-light, /dev/wget-webgui-wide]
-image: featured-image.jpg
+image: cover.jpg
 categories: [dev]
 tags:
   - ajax

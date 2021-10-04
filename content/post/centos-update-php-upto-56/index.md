@@ -3,7 +3,7 @@ title: CentOS — обновляем php до 5.6
 slug: centos-update-php-upto-56
 date: 2016-03-25T06:37:53+00:00
 aliases: [/adm/centos-update-php-upto-56]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - bash

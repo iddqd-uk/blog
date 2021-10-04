@@ -3,7 +3,7 @@ title: Рекомендации по повышению безопасности
 slug: make-wp-more-secure-part1
 date: 2015-01-26T12:15:00+00:00
 aliases: [/wp/make-wp-more-secure-part1]
-image: featured-image.jpg
+image: cover.jpg
 categories: [wp]
 tags:
   - apache

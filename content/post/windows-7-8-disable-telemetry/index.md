@@ -3,7 +3,7 @@ title: Windows 7/8/8.1 — препятствуем сбору данных о �
 slug: windows-7-8-disable-telemetry
 date: 2015-08-24T11:08:11+00:00
 aliases: [/adm/windows-7-8-disable-telemetry]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - cmd

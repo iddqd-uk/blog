@@ -3,7 +3,7 @@ title: Пули свищут, народ мрет — красота!
 slug: adrian-karton-di-viart
 date: 2019-01-20T07:52:56Z
 aliases: [/text/adrian-karton-di-viart]
-image: featured-image.jpg
+image: cover.jpg
 categories: [text]
 tags:
   - etc

@@ -3,7 +3,7 @@ title: iptables — заблокировать ip
 slug: iptables-add-remove-rules
 date: 2015-02-19T07:32:00+00:00
 aliases: [/adm/iptables-add-remove-rules]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - ban

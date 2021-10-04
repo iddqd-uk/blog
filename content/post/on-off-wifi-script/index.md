@@ -3,7 +3,7 @@ title: MikroTik — автоматически выключаем и включ�
 slug: on-off-wifi-script
 date: 2015-07-22T07:34:54+00:00
 aliases: [/mikrotik/on-off-wifi-script]
-image: featured-image.jpg
+image: cover.jpg
 categories: [mikrotik]
 tags:
   - automate

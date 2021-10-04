@@ -3,7 +3,7 @@ title: Установка mod_geoip на nic.ru, или как ограничи�
 slug: geoip-for-nic-ru
 date: 2014-08-09T10:51:00+00:00
 aliases: [/adm/geoip-for-nic-ru]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - access

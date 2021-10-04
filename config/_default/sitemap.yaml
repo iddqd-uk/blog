@@ -1,0 +1,5 @@
+# Configure Sitemap <https://gohugo.io/templates/sitemap-template/#configure-sitemapxml>
+
+changefreq: monthly
+filename: sitemap.xml
+priority: 0.5

@@ -3,7 +3,7 @@ title: "Переопределяем расположение .env файла д
 slug: override-laravel-env-file-location
 date: 2018-08-23T16:43:45Z
 aliases: [/php/override-laravel-env-file-location]
-image: featured-image.png
+image: cover.png
 categories: [php]
 tags:
   - php

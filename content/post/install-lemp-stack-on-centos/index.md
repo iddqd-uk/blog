@@ -3,7 +3,7 @@ title: LEMP + CentOS = ❤
 slug: install-lemp-stack-on-centos
 date: 2016-06-29T12:03:09+00:00
 aliases: [/adm/install-lemp-stack-on-centos]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - bash

@@ -3,7 +3,7 @@ title: Обновляем SSH на Linux mint
 slug: update-ssh-linux-mint
 date: 2019-01-31T16:25:45Z
 aliases: [/nix/update-ssh-linux-mint]
-image: featured-image.png
+image: cover.png
 categories: [nix]
 tags:
   - etc

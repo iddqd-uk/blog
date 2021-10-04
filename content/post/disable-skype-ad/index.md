@@ -3,7 +3,7 @@ title: Отключаем рекламу в Skype
 slug: disable-skype-ad
 date: 2015-02-10T17:20:00+00:00
 aliases: [/tnt/disable-skype-ad]
-image: featured-image.jpg
+image: cover.jpg
 categories: [tnt]
 tags:
   - bash

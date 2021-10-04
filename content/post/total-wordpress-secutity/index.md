@@ -3,7 +3,7 @@ title: Тотальная защита WordPress
 slug: total-wordpress-secutity
 date: 2015-07-05T11:30:59+00:00
 aliases: [/wp/total-wordpress-secutity, /adm/total-wordpress-secutity]
-image: featured-image.jpg
+image: cover.jpg
 categories: [wp]
 tags:
   - centos

@@ -3,7 +3,7 @@ title: Повышение безопасности WordPress с помощью n
 slug: make-wp-more-secure-with-nginx
 date: 2015-05-05T05:45:15+00:00
 aliases: [/wp/make-wp-more-secure-with-nginx]
-image: featured-image.jpg
+image: cover.jpg
 categories: [wp]
 tags:
   - nginx

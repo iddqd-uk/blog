@@ -3,8 +3,8 @@ title: Docker + Laravel = ❤
 slug: laravel-in-docker
 date: 2018-10-01T08:29:51Z
 aliases: [/php/laravel-in-docker, /docker/laravel-in-docker]
-image: featured-image.png
-categories: [php]
+image: cover.png
+categories: [php, docker]
 tags:
   - php
   - devops

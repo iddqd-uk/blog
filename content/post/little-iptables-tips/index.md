@@ -3,7 +3,7 @@ title: Маленькая хитрость iptables
 slug: little-iptables-tips
 date: 2015-07-14T08:59:58+00:00
 aliases: [/adm/little-iptables-tips]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - bash

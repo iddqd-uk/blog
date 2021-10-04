@@ -3,7 +3,7 @@ title: Установка LAMP на CentOS 7
 slug: change-hosting-to-hetzner-de
 date: 2015-01-26T08:43:00+00:00
 aliases: [/adm/change-hosting-to-hetzner-de]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - apache

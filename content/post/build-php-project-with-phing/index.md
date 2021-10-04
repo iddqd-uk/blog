@@ -3,8 +3,8 @@ title: Автоматическая сборка PHP-проектов с пом�
 slug: build-php-project-with-phing
 date: 2016-02-16T15:36:49+00:00
 aliases: [/etc/build-php-project-with-phing]
-image: featured-image.jpg
-categories: [etc]
+image: cover.jpg
+categories: [php]
 tags:
   - build
   - phing

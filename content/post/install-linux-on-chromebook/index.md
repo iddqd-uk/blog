@@ -3,7 +3,7 @@ title: Установка Linux на Chromebook
 slug: install-linux-on-chromebook
 date: 2015-03-30T13:27:24+00:00
 aliases: [/hard/install-linux-on-chromebook]
-image: featured-image.jpg
+image: cover.jpg
 categories: [hard]
 tags:
   - chromebook

@@ -3,7 +3,7 @@ title: Поднимаем свой Jabber сервер
 slug: install-xmpp-server-jabberd
 date: 2015-04-01T17:40:21+00:00
 aliases: [/adm/install-xmpp-server-jabberd]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - bash

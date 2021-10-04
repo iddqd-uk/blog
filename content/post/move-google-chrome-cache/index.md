@@ -3,7 +3,7 @@ title: Переносим кэш Google Chrome
 slug: move-google-chrome-cache
 date: 2014-08-06T07:05:00+00:00
 aliases: [/tnt/move-google-chrome-cache]
-image: featured-image.jpg
+image: cover.jpg
 categories: [tnt]
 tags:
   - cache

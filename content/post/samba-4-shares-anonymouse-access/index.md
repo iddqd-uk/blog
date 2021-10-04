@@ -3,7 +3,7 @@ title: Samba 4 — доступ к публичным шарам без логи
 slug: samba-4-shares-anonymouse-access
 date: 2015-08-10T06:57:07+00:00
 aliases: [/adm/samba-4-shares-anonymouse-access]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - linux

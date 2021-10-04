@@ -3,7 +3,7 @@ title: Брутим пароли с Гидрой (hydra)
 slug: hydra-bruteforce-passwd
 date: 2015-08-12T10:05:15+00:00
 aliases: [/hack/hydra-bruteforce-passwd]
-image: featured-image.jpg
+image: cover.jpg
 categories: [hack]
 tags:
   - access

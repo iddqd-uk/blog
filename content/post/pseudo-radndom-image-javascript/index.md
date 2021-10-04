@@ -3,7 +3,7 @@ title: Псевдо-случайное изображение (на пример
 slug: pseudo-radndom-image-javascript
 date: 2014-07-11T14:17:03Z
 aliases: [/dev/pseudo-radndom-image-javascript]
-image: featured-image.jpg
+image: cover.jpg
 categories: [dev]
 tags:
   - ajax

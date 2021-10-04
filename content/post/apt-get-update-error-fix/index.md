@@ -3,7 +3,7 @@ title: Ошибка NO_PUBKEY
 slug: apt-get-update-error-fix
 date: 2014-08-19T08:32:29+00:00
 aliases: [/my-book-live/apt-get-update-error-fix]
-image: featured-image.jpg
+image: cover.jpg
 categories: [my-book-live]
 tags:
   - apt-get

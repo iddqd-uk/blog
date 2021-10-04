@@ -3,7 +3,7 @@ title: Включаем поддержку HTTPS на сайте
 slug: how-enable-https-on-website
 date: 2015-03-10T11:31:19+00:00
 aliases: [/adm/how-enable-https-on-website]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - http

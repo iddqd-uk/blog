@@ -3,7 +3,7 @@ title: Скрипт создания зеркала обновлений для 
 slug: make-nod32-mirror
 date: 2014-04-12T18:02:00Z
 aliases: [/dev/make-nod32-mirror]
-image: featured-image.jpg
+image: cover.jpg
 categories: [dev]
 tags:
   - antivirus

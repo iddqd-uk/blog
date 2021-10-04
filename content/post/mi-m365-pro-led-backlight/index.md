@@ -3,7 +3,7 @@ title: "Led-подсветка для Xiaomi Mi M365 Pro своими рукам
 slug: mi-m365-pro-led-backlight
 date: 2021-02-26T10:01:21Z
 aliases: [/hard/mi-m365-pro-led-backlight]
-image: featured-image.jpg
+image: cover.jpg
 categories: [hard]
 tags:
   - scooter

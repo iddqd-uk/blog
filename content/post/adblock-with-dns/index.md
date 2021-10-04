@@ -3,7 +3,7 @@ title: MikroTik — режем рекламу (ADBlock) с помощью DNS
 slug: adblock-with-dns
 date: 2015-07-22T08:19:59+00:00
 aliases: [/mikrotik/adblock-with-dns]
-image: featured-image.jpg
+image: cover.jpg
 categories: [mikrotik]
 tags:
   - ad

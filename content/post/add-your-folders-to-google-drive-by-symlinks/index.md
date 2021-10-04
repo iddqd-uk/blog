@@ -3,7 +3,7 @@ title: Симлинки на «Рабочий стол» и «Мои докум�
 slug: add-your-folders-to-google-drive-by-symlinks
 date: 2014-07-31T08:21:00+00:00
 aliases: [/tnt/add-your-folders-to-google-drive-by-symlinks]
-image: featured-image.jpg
+image: cover.jpg
 categories: [tnt]
 tags:
   - automate

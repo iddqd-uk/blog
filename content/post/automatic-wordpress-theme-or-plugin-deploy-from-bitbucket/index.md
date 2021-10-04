@@ -3,7 +3,7 @@ title: Автоматический деплой WordPress темы/плагин
 slug: automatic-wordpress-theme-or-plugin-deploy-from-bitbucket
 date: 2016-07-02T07:56:57+00:00
 aliases: [/adm/automatic-wordpress-theme-or-plugin-deploy-from-bitbucket]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - bitbucket

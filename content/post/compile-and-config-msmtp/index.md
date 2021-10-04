@@ -3,7 +3,7 @@ title: Собираем и настраиваем msmtp
 slug: compile-and-config-msmtp
 date: 2016-06-28T22:24:10+00:00
 aliases: [/adm/compile-and-config-msmtp]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - centos

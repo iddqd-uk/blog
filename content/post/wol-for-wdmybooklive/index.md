@@ -3,7 +3,7 @@ title: WakeOnLan на MBL
 slug: wol-for-wdmybooklive
 date: 2014-04-12T13:13:00Z
 aliases: [/my-book-live/wol-for-wdmybooklive]
-image: featured-image.jpg
+image: cover.jpg
 categories: [my-book-live]
 tags:
   - linux

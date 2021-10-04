@@ -3,7 +3,7 @@ title: Отключаем кэширование загружаемых RequireJ
 slug: disable-cacheing-requirejs-files-while-develop
 date: 2017-02-19T19:16:00+00:00
 aliases: [/dev/disable-cacheing-requirejs-files-while-develop]
-image: featured-image.jpg
+image: cover.jpg
 categories: [dev]
 tags:
   - javascript

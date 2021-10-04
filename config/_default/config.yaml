@@ -1,14 +1,9 @@
-baseurl: https://example.com
 languageCode: en-us
 theme: hugo-theme-stack
-paginate: 7
+paginate: 10
 title: blog [dot] hook
 
-# Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
-
-# GA Tracking ID
-googleAnalytics:
+enableRobotsTXT: true
 
 # <https://gohugo.io/content-management/multilingual/#configure-languages>
 defaultContentLanguage: ru
@@ -47,4 +42,4 @@ markup:
 
 outputFormats:
   RSS:
-    baseName: 'rss'
+    baseName: rss

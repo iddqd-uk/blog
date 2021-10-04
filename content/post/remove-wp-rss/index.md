@@ -3,7 +3,7 @@ title: Отключаем RSS в WordPress
 slug: remove-wp-rss
 date: 2015-05-25T16:28:30+00:00
 aliases: [/wp/remove-wp-rss]
-image: featured-image.jpg
+image: cover.jpg
 categories: [wp]
 tags:
   - php

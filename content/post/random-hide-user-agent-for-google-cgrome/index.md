@@ -3,7 +3,7 @@ title: Много анонимности не бывает — скрываем 
 slug: random-hide-user-agent-for-google-chrome
 date: 2014-08-05T03:03:00+00:00
 aliases: [/dev/random-hide-user-agent-for-google-chrome]
-image: featured-image.jpg
+image: cover.jpg
 categories: [dev]
 tags:
   - anonymous

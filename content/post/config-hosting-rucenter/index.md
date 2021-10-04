@@ -3,7 +3,7 @@ title: Настройка хостинга на RU-Center (nic.ru)
 slug: config-hosting-rucenter
 date: 2016-01-22T10:14:01+00:00
 aliases: [/adm/config-hosting-rucenter]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - apache

@@ -1,10 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-description: 
+description:
 date: {{ .Date }}
-image: 
-math: 
-license: 
+image:
+math:
+license:
 hidden: false
 comments: true
 draft: true

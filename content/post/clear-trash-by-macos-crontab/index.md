@@ -3,7 +3,7 @@ title: Как удалить "мусор" от MacOS из файлошары
 slug: clear-trash-by-macos-crontab
 date: 2014-07-17T15:31:29Z
 aliases: [/tnt/clear-trash-by-macos-crontab]
-image: featured-image.jpg
+image: cover.jpg
 categories: [tnt]
 tags:
   - bash

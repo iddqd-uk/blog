@@ -3,7 +3,7 @@ title: Настройка страниц ошибок для nginx
 slug: customize-nginx-error-pages
 date: 2015-03-03T06:41:38+00:00
 aliases: [/adm/customize-nginx-error-pages]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - html

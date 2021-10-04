@@ -3,7 +3,7 @@ title: Дружим Kali Linux с VMware
 slug: kali-linux-and-vmware
 date: 2015-08-13T07:17:03+00:00
 aliases: [/etc/kali-linux-and-vmware]
-image: featured-image.jpg
+image: cover.jpg
 categories: [etc]
 tags:
   - kali linux

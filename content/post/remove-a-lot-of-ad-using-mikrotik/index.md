@@ -3,7 +3,7 @@ title: Чистим интернет от назойливой рекламы (A
 slug: remove-a-lot-of-ad-using-mikrotik
 date: 2015-08-04T05:19:04+00:00
 aliases: [/mikrotik/remove-a-lot-of-ad-using-mikrotik]
-image: featured-image.jpg
+image: cover.jpg
 categories: [mikrotik]
 tags:
   - ad

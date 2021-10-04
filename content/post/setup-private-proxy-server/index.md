@@ -3,7 +3,7 @@ title: Поднимаем свой, приватный прокси-сервер
 slug: setup-private-proxy-server
 date: 2016-08-13T10:57:36+00:00
 aliases: [/adm/setup-private-proxy-server]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - anonymous

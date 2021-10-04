@@ -3,7 +3,7 @@ title: MikroTik — Автоматически меняем MAC адрес на 
 slug: generate-and-apply-random-mac-address
 date: 2015-07-25T13:23:00+00:00
 aliases: [/mikrotik/generate-and-apply-random-mac-address]
-image: featured-image.jpg
+image: cover.jpg
 categories: [mikrotik]
 tags:
   - anonymous

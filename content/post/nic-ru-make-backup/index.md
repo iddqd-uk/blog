@@ -3,7 +3,7 @@ title: "Создание бэкапа на nic.ru"
 slug: nic-ru-make-backup
 date: 2014-04-24T12:10:00Z
 aliases: [/adm/nic-ru-make-backup]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
 - backup

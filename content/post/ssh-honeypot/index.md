@@ -3,7 +3,7 @@ title: SSH Honeypot — просто и со вкусом
 slug: ssh-honeypot
 date: 2015-07-13T11:13:57+00:00
 aliases: [/adm/ssh-honeypot]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - ban

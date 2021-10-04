@@ -3,7 +3,7 @@ title: Поднимаем vpn (pptp) сервер
 slug: install-vpn-pptp-server
 date: 2015-05-03T13:43:56+00:00
 aliases: [/adm/install-vpn-pptp-server]
-image: featured-image.jpg
+image: cover.jpg
 categories: [adm]
 tags:
   - centos
