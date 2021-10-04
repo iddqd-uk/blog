@@ -1,8 +1,10 @@
 ---
 title: Синглтон для RequireJS
+slug: requirejs-singletone
 date: 2017-02-18T05:19:58+00:00
-aliases:
-  - /dev/requirejs-singletone.html
+aliases: [/dev/requirejs-singletone]
+image: featured-image.jpg
+categories: [dev]
 tags:
   - javascript
   - oop

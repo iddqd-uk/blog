@@ -1,9 +1,10 @@
 ---
 title: Web-gui для wget (light)
+slug: wget-webgui-wide
 date: 2014-08-25T16:23:00+00:00
-aliases:
-  - /dev/wget-gui-light.html
-featured_image: /images/posts/wget-webgui-wide.jpg
+aliases: [/dev/wget-gui-light, /dev/wget-webgui-wide]
+image: featured-image.jpg
+categories: [dev]
 tags:
   - ajax
   - bash

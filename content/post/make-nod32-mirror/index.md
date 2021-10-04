@@ -1,18 +1,19 @@
 ---
-title: "Скрипт создания зеркала обновлений для Eset Nod32 на Linux"
-aliases:
-  - /dev/make-nod32-mirror.html
+title: Скрипт создания зеркала обновлений для Eset Nod32 на Linux
+slug: make-nod32-mirror
 date: 2014-04-12T18:02:00Z
-featured_image: /images/posts/nod32upd-wide.jpg
+aliases: [/dev/make-nod32-mirror]
+image: featured-image.jpg
+categories: [dev]
 tags:
-- antivirus
-- bash
-- cron
-- eset
-- habr
-- linux
-- nod32
-- updates mirror
+  - antivirus
+  - bash
+  - cron
+  - eset
+  - habr
+  - linux
+  - nod32
+  - updates mirror
 ---
 
 > Данная статья является копией [публикации на хабре](https://habr.com/post/232163/).

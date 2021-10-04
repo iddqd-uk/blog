@@ -1,17 +1,18 @@
 ---
-title: "Псевдо-случайное изображение (на примере страницы 404-й ошибки)"
-aliases:
-  - /dev/pseudo-radndom-image-javascript.html
+title: Псевдо-случайное изображение (на примере страницы 404-й ошибки)
+slug: pseudo-radndom-image-javascript
 date: 2014-07-11T14:17:03Z
-featured_image: /images/posts/rnd-404-image.jpg
+aliases: [/dev/pseudo-radndom-image-javascript]
+image: featured-image.jpg
+categories: [dev]
 tags:
-- ajax
-- habr
-- javascript
-- jquery
-- json
-- tumblr
-- ui
+  - ajax
+  - habr
+  - javascript
+  - jquery
+  - json
+  - tumblr
+  - ui
 ---
 
 > Данная статья является копией [публикации на хабре](https://habr.com/post/229449/).

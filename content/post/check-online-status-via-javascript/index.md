@@ -1,9 +1,10 @@
 ---
 title: JavaScript — получаем статус Skype, VK и Jabber аккаунтов
+slug: check-online-status-via-javascript
 date: 2015-04-28T15:15:04+00:00
-aliases:
-  - /dev/check-online-status-via-javascript.html
-featured_image: /images/posts/js-wide.jpg
+aliases: [/dev/check-online-status-via-javascript]
+image: featured-image.jpg
+categories: [dev]
 tags:
   - ajax
   - jabber

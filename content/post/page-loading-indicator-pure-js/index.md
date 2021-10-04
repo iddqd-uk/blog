@@ -1,9 +1,10 @@
 ---
 title: Индикатор загрузки страницы (css + pure js)
+slug: page-loading-indicator-pure-js
 date: 2015-09-17T07:02:54+00:00
-aliases:
-  - /dev/page-loading-indicator-pure-js.html
-featured_image: /images/posts/page-loading-wide.png
+aliases: [/dev/page-loading-indicator-pure-js]
+image: featured-image.png
+categories: [dev]
 tags:
   - css
   - css3

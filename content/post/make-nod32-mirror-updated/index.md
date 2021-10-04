@@ -1,9 +1,10 @@
 ---
-title: "Make Nod32 Mirror Updated"
-aliases:
-  - /dev/make-nod32-mirror-updated.html
+title: Make Nod32 Mirror Updated
+slug: make-nod32-mirror-updated
 date: 2016-07-11T17:49:52+00:00
-featured_image: /images/posts/nod32mirror-wide.jpg
+aliases: [/dev/make-nod32-mirror-updated]
+image: featured-image.jpg
+categories: [dev]
 tags:
   - bash
   - linux
