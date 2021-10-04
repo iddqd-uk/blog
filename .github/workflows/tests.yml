@@ -26,6 +26,16 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 #          ignore: routeros
 #          exclude: '.git/*'
 
+  check-for-broken-links:
+    name: Check markdown files for broken links
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          folder-path: .
+
   build:
     name: Try to build
     runs-on: ubuntu-20.04
