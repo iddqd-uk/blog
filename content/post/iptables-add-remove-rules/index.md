@@ -21,7 +21,7 @@ tags:
 
 ```bash
 % Note: this output has been filtered.
-%       To receive output for a database update, use the "-B" flag.
+%       To receive output for a database update, use the "-B" flag.
 % Information related to '111.111.111.0 - 111.111.111.255'
 % Abuse contact for '111.111.111.0 - 111.111.111.255' is 'abuse@blabla.ltd'
 ```

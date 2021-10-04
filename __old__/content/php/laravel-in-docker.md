@@ -78,15 +78,15 @@ draft: false
 ```bash
 .
 ├── docker  # Директория для хранения докер-файлов необходимых сервисов
-│   ├── app
-│   │   ├── Dockerfile
-│   │   └── ...
-│   ├── nginx
-│   │   ├── Dockerfile
-│   │   └── ...
-│   └── sources
-│       ├── Dockerfile
-│       └── ...
+│   ├── app
+│   │   ├── Dockerfile
+│   │   └── ...
+│   ├── nginx
+│   │   ├── Dockerfile
+│   │   └── ...
+│   └── sources
+│       ├── Dockerfile
+│       └── ...
 ├── src  # Исходники приложения
 │   ├── app
 │   ├── bootstrap

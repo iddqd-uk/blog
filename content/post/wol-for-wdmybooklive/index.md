@@ -1,13 +1,14 @@
 ---
-title: "WakeOnLan на MBL"
-aliases:
-  - /my-book-live/wol-for-wdmybooklive.html
+title: WakeOnLan на MBL
+slug: wol-for-wdmybooklive
 date: 2014-04-12T13:13:00Z
-featured_image: /images/posts/mbl-wide.jpg
+aliases: [/my-book-live/wol-for-wdmybooklive]
+image: featured-image.jpg
+categories: [my-book-live]
 tags:
-- linux
-- mybooklive
-- wakeonlan
+  - linux
+  - mybooklive
+  - wakeonlan
 ---
 
 Иногда может потребоваться удаленно включить домашний компьютер. Например, вы находитесь на работе, и надо забрать кое\-какие документы с домашнего компьютера \- а домашних, кто мог бы тыкнуть на кнопку включения, как на зло, нет дома.

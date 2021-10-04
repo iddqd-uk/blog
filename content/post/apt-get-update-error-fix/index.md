@@ -1,16 +1,17 @@
 ---
 title: Ошибка NO_PUBKEY
+slug: apt-get-update-error-fix
 date: 2014-08-19T08:32:29+00:00
-aliases:
-  - /my-book-live/apt-get-update-error-fix.html
-featured_image: /images/posts/mbl-wide.jpg
+aliases: [/my-book-live/apt-get-update-error-fix]
+image: featured-image.jpg
+categories: [my-book-live]
 tags:
   - apt-get
   - linux
   - mbl
 ---
 
-По умолчанию дистрибутив Debian на WD My Book Live - очень старый, и более не поддерживается. Исходя из этого - возникают ошибки apt-get. Как их исправить? Описано по [этой ссылке](http://en.kioskea.net/faq/809-debian-apt-get-no-pubkey-gpg-error), а так же дополнительно опишу решение здесь.
+По умолчанию дистрибутив Debian на WD My Book Live - очень старый, и более не поддерживается. Исходя из этого - возникают ошибки apt-get. Как их исправить? Описано по [этой ссылке](http://en.kioskea.net/faq/809-debian-apt-get-no-pubkey-gpg-error), а так же дополнительно опишу решение здесь.
 
 <!--more-->
 

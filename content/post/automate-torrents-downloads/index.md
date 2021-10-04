@@ -25,11 +25,11 @@ tags:
 $ easy_install transmissionrpc
 ```
 
-> Это при условии, что Python 2.6.x и easy_install уже стоят
+> Это при условии, что Python 2.6.x и easy_install уже стоят
 
 ### Создаем скрипт и настраиваем его
 
-Создаем в /root/ скрипт [`gettorrensbyrss.py`](https://github.com/tarampampam/scripts/blob/master/nix/get-torrents-by-rss.py) следующего содержания:
+Создаем в /root/ скрипт [`gettorrensbyrss.py`](https://github.com/tarampampam/scripts/blob/master/nix/get-torrents-by-rss.py) следующего содержания:
 
 ```python
 #!/usr/bin/env python
@@ -225,7 +225,7 @@ evntlog.close()
 print "[i] Complete"
 ```
 
-И в самом начале вносим все необходимые коррективы. Для генерации самой ленты полно сервисов, но пока остановился на [torrentrss.net](http://torrentrss.net/mydownloads.html). Ссылку на ленту берем из панели:
+И в самом начале вносим все необходимые коррективы. Для генерации самой ленты полно сервисов, но пока остановился на [torrentrss.net](http://torrentrss.net/mydownloads.html). Ссылку на ленту берем из панели:
 
 ![image](https://hsto.org/files/84d/b72/ce7/84db72ce7f474c5fa38dc3faea58b69d.png)
 
