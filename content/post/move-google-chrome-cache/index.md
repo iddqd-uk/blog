@@ -1,9 +1,10 @@
 ---
 title: Переносим кэш Google Chrome
-aliases:
-  - /tnt/move-google-chrome-cache.html
+slug: move-google-chrome-cache
 date: 2014-08-06T07:05:00+00:00
-featured_image: /images/posts/chrome-wide.jpg
+aliases: [/tnt/move-google-chrome-cache]
+image: featured-image.jpg
+categories: [tnt]
 tags:
   - cache
   - cmd

@@ -1,9 +1,10 @@
 ---
 title: Симлинки на «Рабочий стол» и «Мои документы» в облака
-aliases:
-  - /tnt/add-your-folders-to-google-drive-by-symlinks.html
+slug: add-your-folders-to-google-drive-by-symlinks
 date: 2014-07-31T08:21:00+00:00
-featured_image: /images/posts/sync-wide.jpg
+aliases: [/tnt/add-your-folders-to-google-drive-by-symlinks]
+image: featured-image.jpg
+categories: [tnt]
 tags:
   - automate
   - cmd
