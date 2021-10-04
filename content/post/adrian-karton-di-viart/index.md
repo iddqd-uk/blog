@@ -1,13 +1,14 @@
 ---
-title: "Пули свищут, народ мрет — красота!"
+title: Пули свищут, народ мрет — красота!
 slug: adrian-karton-di-viart
 date: 2019-01-20T07:52:56Z
-featured_image: /images/posts/adrian-karton-di-viart-wide.jpg
+aliases: [/text/adrian-karton-di-viart]
+image: featured-image.jpg
+categories: [text]
 tags:
-- etc
-- text
-- humor
-draft: false
+  - etc
+  - text
+  - humor
 ---
 
 Хочу рассказать про мужика-медоеда. Этот отморозок вызывает во мне искреннее восхищение.
