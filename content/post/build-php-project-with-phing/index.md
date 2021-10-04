@@ -1,9 +1,10 @@
 ---
 title: Автоматическая сборка PHP-проектов с помощью PhiNG
+slug: build-php-project-with-phing
 date: 2016-02-16T15:36:49+00:00
-aliases:
-  - /etc/build-php-project-with-phing.html
-featured_image: /images/posts/phing-wide.jpg
+aliases: [/etc/build-php-project-with-phing]
+image: featured-image.jpg
+categories: [etc]
 tags:
   - build
   - phing

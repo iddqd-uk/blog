@@ -2,13 +2,15 @@
 title: "Деплой на Docker Swarm"
 slug: compose-deploy
 date: 2018-10-15T13:35:50Z
-featured_image: /images/posts/docker-in-clouds-wide.png
+aliases: [/docker/compose-deploy]
+image: featured-image.png
+categories: [docker]
 tags:
-- linux
-- deploy
-- docker-compose
-- docker
-- devops
+  - linux
+  - deploy
+  - docker-compose
+  - docker
+  - devops
 ---
 
 > Данный пост является переводом [части документации][source_doc], посвященной секции `deploy` в `docker-compose`
