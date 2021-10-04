@@ -52,7 +52,7 @@ search:
   title:
     other: Поиск
   placeholder:
-    other: find . -type f | xargs grep -Hn "your text"
+    other: find . -type f | xargs grep -Hn "something"
   resultTitle:
     other: "Найдено #PAGES_COUNT страниц (за #TIME_SECONDS с.)"
 

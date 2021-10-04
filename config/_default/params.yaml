@@ -1,18 +1,18 @@
 mainSections:
   - post
+
 featuredImageField: image
 rssFullContent: false
 favicon:
 
 footer:
   since: 2014
-  customText:
+  customText: Make love, not war
 
 editPost:
   enabled: true
   repository: hook-sh/blog
   branch: master
-#  linkBaseUri: https://github.com/hook-sh/blog/edit/master/
 
 dateFormat:
   published: 2006.01.02

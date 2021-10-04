@@ -8,10 +8,8 @@ list:
   page:
     one: "{{ .Count }} page"
     other: "{{ .Count }} pages"
-
   section:
     other: Section
-
   subsection:
     one: Subsection
     other: Subsections
@@ -19,16 +17,12 @@ list:
 article:
   back:
     other: Back
-
   tableOfContents:
     other: Table of contents
-
   relatedContents:
     other: Related contents
-
   lastUpdatedOn:
     other: Last updated on
-
   readingTime:
     one: "{{ .Count }} min read"
     ### Seems that there's no need to add 's' even if it's plural in English
@@ -44,10 +38,8 @@ widget:
   archives:
     title:
       other: Archives
-
     more:
       other: More
-
   tagCloud:
     title:
       other: Tags
@@ -55,17 +47,14 @@ widget:
 search:
   title:
     other: Search
-
   placeholder:
-    other: Type something...
-
+    other: find . -type f | xargs grep -Hn "something"
   resultTitle:
     other: "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
 
 footer:
   builtWith:
     other: Built with {{ .Generator }}
-
   designedBy:
     other: Theme {{ .Theme }} designed by {{ .DesignedBy }}
 
