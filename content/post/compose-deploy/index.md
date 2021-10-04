@@ -1,5 +1,5 @@
 ---
-title: "Деплой на Docker Swarm"
+title: Деплой на Docker Swarm
 slug: compose-deploy
 date: 2018-10-15T13:35:50Z
 aliases: [/docker/compose-deploy]

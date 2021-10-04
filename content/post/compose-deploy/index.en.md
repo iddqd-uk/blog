@@ -1,16 +1,16 @@
 ---
-title: "Deploy to Docker Swarm"
+title: Deploy to Docker Swarm
 slug: compose-deploy
 date: 2018-10-15T13:35:50Z
 aliases: [/docker/compose-deploy]
 image: featured-image.png
 categories: [docker]
 tags:
-- linux
-- deploy
-- docker-compose
-- docker
-- devops
+  - linux
+  - deploy
+  - docker-compose
+  - docker
+  - devops
 ---
 
 > This post is translation of [part of documentation][source_doc]

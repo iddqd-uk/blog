@@ -1,13 +1,15 @@
 ---
-title: "GNU Make - Полная документация"
+title: GNU Make - Полная документация
 slug: makefile-full-doc
 date: 2018-09-28T15:39:27Z
-featured_image: /images/posts/makefiles-wide.jpeg
+aliases: [/nix/makefile-full-doc]
+image: featured-image.jpg
+categories: [nix]
 tags:
-- linux
-- make
-- docker
-- devops
+  - linux
+  - make
+  - docker
+  - devops
 ---
 
 На днях появилась необходимость несколько автоматизировать сборку Docker-образов, и решать эту задачу "привычними" bash-скриптами очень не хотелось. Вспомнил про существование такого зверя как `make` и, черт подери - это великая тулза, которая уже считай что почти забыта. В процессе работы был найден перевод документации, и дабы он "не потерялся" - разместил его здесь.

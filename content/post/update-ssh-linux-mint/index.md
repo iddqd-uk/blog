@@ -1,12 +1,14 @@
 ---
-title: "Обновляем SSH на Linux mint"
+title: Обновляем SSH на Linux mint
 slug: update-ssh-linux-mint
 date: 2019-01-31T16:25:45Z
-featured_image: /images/posts/ssh-wide.png
+aliases: [/nix/update-ssh-linux-mint]
+image: featured-image.png
+categories: [nix]
 tags:
-- etc
-- ssh
-- linux
+  - etc
+  - ssh
+  - linux
 ---
 
 Так уж получается, что репозитории с пакетами частенько отстают в версиях ПО, которое предоставляют. Частный случай - нужно подключиться к удаленной системе используя не "традиционный" туннель, а [ssh jump](https://wiki.gentoo.org/wiki/SSH_jump_host). На борту Linux Mint 18.3 стоит `openssh`, который ещё не поддерживает эту фичу:
