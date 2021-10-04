@@ -31,6 +31,9 @@ article:
     other: Содержание
   readingTime:
     other: "Время чтения: {{ .Count }} мин."
+    one: "Чтение не займёт больше минуты"
+    few: "Время чтения: {{ .Count }} мин."
+    many: "Время чтения: {{ .Count }} мин."
 
 notFound:
   title:

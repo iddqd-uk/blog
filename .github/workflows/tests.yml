@@ -6,9 +6,6 @@ on:
     tags-ignore: ['**']
   #pull_request:
 
-env:
-  HUGO_VERSION: '0.81.0'
-
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
 #  spellcheck:
 #    name: Spell Check
@@ -35,8 +32,14 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.83.1
+          extended: true
+
       - name: Build
-        run: docker run --rm -v "$(pwd):/src:rw" "klakegg/hugo:$HUGO_VERSION-ext-alpine" --environment production --noChmod --noTimes
+        run: hugo --environment production --noChmod --noTimes --minify
 
 #  lint-markdown:
 #    name: Lint markdown files
