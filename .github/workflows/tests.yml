@@ -39,7 +39,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
           extended: true
 
       - name: Build
-        run: hugo --environment production --noChmod --noTimes --minify
+        run: hugo --environment production --i18n-warnings --noChmod --noTimes --print-mem
 
 #  lint-markdown:
 #    name: Lint markdown files
