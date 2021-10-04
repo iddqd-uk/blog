@@ -1,9 +1,10 @@
 ---
 title: MikroTik — автоматически выключаем и включаем WiFi в заданное время
+slug: on-off-wifi-script
 date: 2015-07-22T07:34:54+00:00
-aliases:
-  - /mikrotik/on-off-wifi-script.html
-featured_image: /images/posts/mikrotik-wide.jpg
+aliases: [/mikrotik/on-off-wifi-script]
+image: featured-image.jpg
+categories: [mikrotik]
 tags:
   - automate
   - mikrotik

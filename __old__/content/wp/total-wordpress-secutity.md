@@ -355,7 +355,7 @@ $ wpscan -r --url somedomain.com
 
 Будьте бдительны, своевременно обновляйтесь и будьте оригинальны в методах своей защиты - сделайте жизнь скрипткидди интереснее ;)
 
-[nginx-compile-from-sources]: {{< ref "nginx-compile-from-sources.md" >}}
-[make-wp-more-secure-with-nginx]: {{< ref "make-wp-more-secure-with-nginx.md" >}}
-[remove-wp-version]: {{< ref "remove-wp-version.md" >}}
-[make-wp-more-secure-part1]: {{< ref "make-wp-more-secure-part1.md" >}}
+[nginx-compile-from-sources]: {{< ref "nginx-compile-from-sources" >}}
+[make-wp-more-secure-with-nginx]: {{< ref "make-wp-more-secure-with-nginx" >}}
+[remove-wp-version]: {{< ref "remove-wp-version" >}}
+[make-wp-more-secure-part1]: {{< ref "make-wp-more-secure-part1" >}}

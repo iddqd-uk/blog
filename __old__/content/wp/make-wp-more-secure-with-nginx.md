@@ -114,5 +114,5 @@ if ($http_user_agent ~* (nmap|nikto|wikto|sf|sqlmap|bsqlbf|w3af|acunetix|havij|a
 
 > У данного поста имеется обновленная версия [этой ссылке][2]
 
-[1]: {{< ref "make-wp-more-secure-part1.md" >}}
-[2]: {{< ref "total-wordpress-secutity.md" >}}
+[1]: {{< ref "make-wp-more-secure-part1" >}}
+[2]: {{< ref "total-wordpress-secutity" >}}

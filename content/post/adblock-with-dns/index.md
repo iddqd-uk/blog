@@ -1,9 +1,10 @@
 ---
 title: MikroTik — режем рекламу (ADBlock) с помощью DNS
+slug: adblock-with-dns
 date: 2015-07-22T08:19:59+00:00
-aliases:
-  - /mikrotik/adblock-with-dns.html
-featured_image: /images/posts/mikrotik-adblock-wide.jpg
+aliases: [/mikrotik/adblock-with-dns]
+image: featured-image.jpg
+categories: [mikrotik]
 tags:
   - ad
   - bash
@@ -67,7 +68,7 @@ add address=127.0.0.1 name=247media.com
 [admin@router] > /file remove adblock_dns.rsc
 ```
 
-Итого у нас 2802 статических маршрута на `loopback` в таблице (_эмпирически доказано что при импортировании ~5500 записей - железка встает почти колом_).
+Итого у нас 2802 статических маршрута на `loopback` в таблице (_эмпирически доказано, что при импортировании ~5500 записей - железка встает почти колом_).
 
 Остается лишь в настройках `DHCP` (`IP` &rarr; `DHCP Server` &rarr; `Networks` &rarr; `%default configuretion%` &rarr; `DNS Servers`) указать первым наш маршрутизатор, и опционально выполнить перезагрузку.
 
@@ -75,4 +76,4 @@ add address=127.0.0.1 name=247media.com
 
 > Как автоматически выполнять аналогичную по смыслу операцию без использования дополнительной машины (только средствами самого микротика) по расписанию - ещё не придумал.
 
-[1]:{{< ref "remove-a-lot-of-ad-using-mikrotik.md" >}}
+[1]:{{< ref "remove-a-lot-of-ad-using-mikrotik" >}}

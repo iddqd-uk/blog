@@ -1,9 +1,10 @@
 ---
 title: MikroTik — Автоматически меняем MAC адрес на рандомный
+slug: generate-and-apply-random-mac-address
 date: 2015-07-25T13:23:00+00:00
-aliases:
-  - /mikrotik/generate-and-apply-random-mac-address.html
-featured_image: /images/posts/fingerprint-mikrotik-mac-wide.jpg
+aliases: [/mikrotik/generate-and-apply-random-mac-address]
+image: featured-image.jpg
+categories: [mikrotik]
 tags:
   - anonymous
   - mac

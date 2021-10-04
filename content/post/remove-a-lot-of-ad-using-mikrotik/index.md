@@ -1,9 +1,10 @@
 ---
 title: Чистим интернет от назойливой рекламы (AD Blocker для MikroTik)
+slug: remove-a-lot-of-ad-using-mikrotik
 date: 2015-08-04T05:19:04+00:00
-aliases:
-  - /mikrotik/remove-a-lot-of-ad-using-mikrotik.html
-featured_image: /images/posts/mikrotik-adaway-wide.jpg
+aliases: [/mikrotik/remove-a-lot-of-ad-using-mikrotik]
+image: featured-image.jpg
+categories: [mikrotik]
 tags:
   - ad
   - habr
