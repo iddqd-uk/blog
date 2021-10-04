@@ -1,9 +1,10 @@
 ---
 title: Прошивка роутера Asus RT-G32 ver. C1
+slug: firmware-rt-g32
 date: 2015-07-18T10:10:13+00:00
-aliases:
-  - /hard/firmware-rt-g32.html
-featured_image: /images/posts/rt-g32-wide.jpg
+aliases: [/hard/firmware-rt-g32]
+image: featured-image.jpg
+categories: [hard]
 tags:
   - asus
   - firmware
