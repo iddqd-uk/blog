@@ -1,0 +1,5 @@
+# Permalinks
+# <https://gohugo.io/content-management/urls/#permalinks>
+
+post: /:slug/
+page: /page/:slug/

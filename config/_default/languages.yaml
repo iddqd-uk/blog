@@ -1,0 +1,21 @@
+ru:
+  languageName: Russian
+  weight: 1
+  menu:
+    main:
+      - identifier: home
+        name: Главная
+        url: /
+        weight: -100
+        pre: home
+
+en:
+  languageName: English
+  weight: 2
+  menu:
+    main:
+      - identifier: home
+        name: Home
+        url: /
+        weight: -100
+        pre: home

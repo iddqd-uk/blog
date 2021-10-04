@@ -1,0 +1,72 @@
+toggleMenu:
+  other: Показать/скрыть меню
+
+darkMode:
+  other: Тёмная тема
+
+list:
+  page:
+    one: "{{ .Count }} страница"
+    few: "{{ .Count }} страницы"
+    many: "{{ .Count }} страниц"
+    other: "{{ .Count }} страниц"
+
+  section:
+    other: Раздел
+
+  subsection:
+    one: Подраздел
+    few: Подразделы
+    many: Подразделы
+    other: Подразделы
+
+article:
+  back:
+    other: Назад
+  relatedContents:
+    other: Также рекомендуем
+  lastUpdatedOn:
+    other: Обновлено
+  tableOfContents:
+    other: Содержание
+  readingTime:
+    other: "Время чтения: {{ .Count }} мин."
+
+notFound:
+  title:
+    other: Не найдено
+  subtitle:
+    other: Запрашиваемая страница не существует
+
+widget:
+  archives:
+    title:
+      other: Архив
+    more:
+      other: Ещё
+  tagCloud:
+    title:
+      other: Теги
+
+search:
+  title:
+    other: Поиск
+  placeholder:
+    other: find . -type f | xargs grep -Hn "your text"
+  resultTitle:
+    other: "Найдено #PAGES_COUNT страниц (за #TIME_SECONDS с.)"
+
+footer:
+  builtWith:
+    other: Создано при помощи {{ .Generator }}
+  designedBy:
+    other: Тема {{ .Theme }}, дизайн {{ .DesignedBy }}
+
+edit-page:
+  other: Редиктировать
+
+outdated-post:
+  warning:
+    other: Внимание
+  note:
+    other: Данный пост был опубликован более года назад и, возможно, уже утратил свою былую актуальность. Но это не точно.

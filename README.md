@@ -5,7 +5,7 @@
 ![Last commit][badge_last_commit]
 [![Discussions][badge_discussions]][link_issues]
 
-Static blog, generated using [hugo][hugo].
+Static blog, generated using [hugo][hugo] ([theme docs](https://docs.stack.jimmycai.com/writing/)).
 
 ## System requirements
 

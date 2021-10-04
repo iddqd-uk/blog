@@ -1,16 +1,15 @@
 ---
 title: "Автоматизируем свои torrent закачки"
-aliases:
-  - /my-book-live/automate-torrents-downloads.html
+slug: automate-torrents-downloads
+aliases: [/my-book-live/automate-torrents-downloads]
 date: 2014-07-13T07:25:27Z
-image: torrent-wide.jpg
-categories:
-  - my-book-live
+image: featured-image.jpg
+categories: [my-book-live]
 tags:
   - cron
   - python
   - rss
-  - torren
+  - torrent
   - transmission
 ---
 

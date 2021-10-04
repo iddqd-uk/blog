@@ -1,12 +1,10 @@
 ---
-title: "Search"
-slug: "search"
-layout: "search"
-outputs:
-    - html
-    - json
+title: Поиск
+slug: search
+layout: search
+outputs: [html, json]
 menu:
-    main:
-        weight: -60
-        pre: search
+  main:
+    weight: -60
+    pre: search
 ---

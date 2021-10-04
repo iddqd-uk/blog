@@ -1,0 +1,18 @@
+<script data-no-instant>
+  (function () {
+    const $outdated = document.querySelectorAll('.outdated-post'), now = new Date();
+
+    for (let i = 0, len = $outdated.length; i < len; i++) {
+      const
+        $el = $outdated[i],
+        postedAt = new Date($el.getAttribute('data-posted-at')),
+        diff = Math.abs(now.getTime() - postedAt.getTime()),
+        days = Math.ceil(diff / (1000 * 3600 * 24));
+
+      if (days >= 547 /* 1,5 years */) {
+        $el.style.display = 'block';
+        $el.style.visibility = 'visible'
+      }
+    }
+  })();
+</script>

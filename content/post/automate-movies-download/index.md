@@ -1,11 +1,10 @@
 ---
 title: 'RSS → Bash → Transmission'
+slug: automate-movies-download
 date: 2016-01-22T06:40:48+00:00
-aliases:
-- /adm/automate-movies-download.html
-image: get-torrents-bash-wide.jpg
-categories:
-  - adm
+aliases: [/adm/automate-movies-download]
+image: featured-image.jpg
+categories: [adm]
 tags:
   - automate
   - bash
