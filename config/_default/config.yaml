@@ -5,6 +5,9 @@ title: blog [dot] hook
 
 enableRobotsTXT: true
 
+# Enable Emoji emoticons support for page content; see the <https://www.webpagefx.com/tools/emoji-cheat-sheet/>
+enableEmoji: true
+
 # <https://gohugo.io/content-management/multilingual/#configure-languages>
 defaultContentLanguage: ru
 

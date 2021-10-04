@@ -1,7 +1,0 @@
-# Dates are important in Hugo, and you can configure how Hugo assigns dates to your content pages
-# <https://gohugo.io/getting-started/configuration/#configure-front-matter>
-
-date: ['date', 'publishDate', 'lastmod']
-lastmod: [':git', 'lastmod', 'date', 'publishDate']
-publishDate: ['publishDate', 'date']
-expiryDate: ['expiryDate']

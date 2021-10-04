@@ -1,5 +1,0 @@
-# Permalinks
-# <https://gohugo.io/content-management/urls/#permalinks>
-
-# Only the content under `posts/` will have the new URL structure
-#posts: /:year/:month/:title/

@@ -1,9 +1,0 @@
-# <https://gohugo.io/content-management/multilingual/#configure-languages>
-
-ru:
-  languageName: Russian
-  weight: 1
-
-en:
-  languageName: English
-  weight: 2
