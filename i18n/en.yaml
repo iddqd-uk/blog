@@ -1,20 +1,68 @@
-read-more:
-  other: 'Read more'
+toggleMenu:
+  other: Toggle Menu
 
-prev-page:
-  other: 'Prev Page'
+darkMode:
+  other: Dark Mode
 
-next-page:
-  other: 'Next Page'
+list:
+  page:
+    one: "{{ .Count }} page"
+    other: "{{ .Count }} pages"
+  section:
+    other: Section
+  subsection:
+    one: Subsection
+    other: Subsections
 
-posts:
-  other: 'Posts'
+article:
+  back:
+    other: Back
+  tableOfContents:
+    other: Table of contents
+  relatedContents:
+    other: Related contents
+  lastUpdatedOn:
+    other: Last updated on
+  readingTime:
+    one: "{{ .Count }} min read"
+    ### Seems that there's no need to add 's' even if it's plural in English
+    other: "{{ .Count }} min read"
 
-tagged-in:
-  other: 'Tagged in'
+notFound:
+  title:
+    other: Not Found
+  subtitle:
+    other: This page does not exist.
 
-this-post-translated-into:
-  other: 'This post translated into'
+widget:
+  archives:
+    title:
+      other: Archives
+    more:
+      other: More
+  tagCloud:
+    title:
+      other: Tags
 
-edit-post:
-  other: 'Edit post'
+search:
+  title:
+    other: Search
+  placeholder:
+    other: find . -type f | xargs grep -Hn "something"
+  resultTitle:
+    other: "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
+
+footer:
+  builtWith:
+    other: Built with {{ .Generator }}
+  designedBy:
+    other: Theme {{ .Theme }} designed by {{ .DesignedBy }}
+
+edit-page:
+  other: Edit this page
+
+outdated-post:
+  warning:
+    other: Warning
+  note:
+    other: This post was published over a year ago and may no longer be relevant. But perhaps it is not.

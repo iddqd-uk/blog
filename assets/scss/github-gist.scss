@@ -1,0 +1,190 @@
+/*
+ * GitHub gist
+ */
+body .gist {
+  .gist-file {
+    &, & td {
+      border-color: var(--card-separator-color);
+    }
+  }
+
+  .highlight,
+  .gist-data,
+  .gist-meta,
+  .gist-file td {
+    background: var(--card-background);
+  }
+
+  .gist-data,
+  .gist-file td {
+    border-color: var(--card-separator-color);
+  }
+
+  .gist-meta {
+    &, & a {
+      color: var(--accent-color);
+    }
+  }
+
+  .blob-num,
+  .blob-code-inner,
+  .pl-s2,
+  .pl-stj {
+    border-width: 0;
+    color: var(--body-text-color)
+  }
+
+  .pl-c1 {
+    color: #ae81ff;
+  }
+
+  .pl-enti {
+    color: #a6e22e;
+    font-weight: 700;
+  }
+
+  .pl-st {
+    color: #66d9ef;
+  }
+
+  .pl-mdr {
+    color: #66d9ef;
+    font-weight: 400;
+  }
+
+  .pl-ms1 {
+    background: #fd971f;
+  }
+
+  .pl-c,
+  .pl-c span,
+  .pl-pdc {
+    color: #75715e;
+    font-style: italic;
+  }
+
+  .pl-cce,
+  .pl-cn,
+  .pl-coc,
+  .pl-enc,
+  .pl-ens,
+  .pl-kos,
+  .pl-kou,
+  .pl-mh .pl-pdh,
+  .pl-mp,
+  .pl-mp1 .pl-sf,
+  .pl-mq,
+  .pl-pde,
+  .pl-pse,
+  .pl-pse .pl-s2,
+  .pl-mp .pl-s3,
+  .pl-smi,
+  .pl-stp,
+  .pl-sv,
+  .pl-v,
+  .pl-vi,
+  .pl-vpf,
+  .pl-mri,
+  .pl-va,
+  .pl-vpu {
+    color: #66d9ef;
+  }
+
+  .pl-cos,
+  .pl-ml,
+  .pl-pds,
+  .pl-s,
+  .pl-s1,
+  .pl-sol {
+    color: #e6db74;
+  }
+
+  .pl-e,
+  .pl-ef,
+  .pl-en,
+  .pl-enf,
+  .pl-enm,
+  .pl-entc,
+  .pl-entm,
+  .pl-eoac,
+  .pl-eoac .pl-pde,
+  .pl-eoi,
+  .pl-mai .pl-sf,
+  .pl-mm,
+  .pl-pdv,
+  .pl-som,
+  .pl-sr,
+  .pl-vo {
+    color: #a6e22e;
+  }
+
+  .pl-ent,
+  .pl-eoa,
+  .pl-eoai,
+  .pl-eoai .pl-pde,
+  .pl-k,
+  .pl-ko,
+  .pl-kolp,
+  .pl-mc,
+  .pl-mr,
+  .pl-ms,
+  .pl-s3,
+  .pl-smc,
+  .pl-smp,
+  .pl-sok,
+  .pl-sra,
+  .pl-src,
+  .pl-sre {
+    color: #f92672;
+  }
+
+  .pl-mb,
+  .pl-pdb {
+    color: #e6db74;
+    font-weight: 700;
+  }
+
+  .pl-mi,
+  .pl-pdi {
+    color: #f92672;
+    font-style: italic;
+  }
+
+  .pl-pdc1,
+  .pl-scp {
+    color: #ae81ff;
+  }
+
+  .pl-sc,
+  .pl-sf,
+  .pl-mo,
+  .pl-entl {
+    color: #fd971f;
+  }
+
+  .pl-mi1,
+  .pl-mdht {
+    color: #a6e22e;
+    background: rgba(0, 64, 0, .5);
+  }
+
+  .pl-md,
+  .pl-mdhf {
+    color: #f92672;
+    background: rgba(64, 0, 0, .5);
+  }
+
+  .pl-mdh,
+  .pl-mdi {
+    color: #a6e22e;
+    font-weight: 400;
+  }
+
+  .pl-ib,
+  .pl-id,
+  .pl-ii,
+  .pl-iu {
+    background: #a6e22e;
+    color: #272822;
+  }
+}

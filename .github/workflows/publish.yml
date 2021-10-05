@@ -2,59 +2,29 @@ name: publish
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
     tags-ignore: ['**']
 
 env:
-  BASE_URL: 'https://blog.hook.sh/'
-  HUGO_VERSION: '0.56.0'
+  CNAME: blog.hook.sh
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
   build:
-    name: Build content
+    name: Build the site
     runs-on: ubuntu-20.04
     steps:
-      - name: Check out sources
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
+      - uses: actions/checkout@v2
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with: {hugo-version: 0.83.1, extended: true}
 
       - name: Build
-        run: docker run --rm -v "$(pwd):/src:rw" "tarampampam/hugo:$HUGO_VERSION" --baseURL "$BASE_URL" --noChmod --noTimes
+        run: hugo --noChmod --noTimes --minify --environment production --baseURL "https://${CNAME}/" -d ./dist
 
-      - name: Upload content
-        uses: actions/upload-artifact@v2
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: content
-          path: public/
-
-  publish:
-    name: Publish content
-    runs-on: ubuntu-20.04
-    needs: [build]
-    steps:
-      - name: Check out sources
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-          ref: gh-pages
-
-      - name: Download content
-        uses: actions/download-artifact@v2
-        with:
-          name: content
-
-      - name: Setup git
-        run: |
-          git config --global user.name "$GITHUB_ACTOR"
-          git config --global user.email 'actions@github.com'
-          git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-
-      - name: Stage changes
-        run: git add .
-
-      - name: Commit changes
-        run: git commit -m "Deploying ${GITHUB_SHA} to Github Pages"
-
-      - name: Push changes
-        run: git push github --force
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: ${{ env.CNAME }}
