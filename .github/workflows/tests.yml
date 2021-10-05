@@ -40,7 +40,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
         run: hugo --environment production --i18n-warnings --noChmod --noTimes --baseURL "http://127.0.0.1:8080" --destination ./dist
 
       - name: Pack files
-        run: tar -zcf ./dist.tar.gz ./dist
+        run: tar -zcvf ./dist.tar.gz ./dist
 
       - uses: actions/upload-artifact@v2
         with:
@@ -56,14 +56,22 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
       - uses: actions/download-artifact@v2
         with: {name: content, path: .artifact}
 
-      - working-directory: .artifact
-        run: tar -xf ./dist.tar.gz -C ./..
+      - name: Unpack files
+        working-directory: .artifact
+        run: tar -xvf ./dist.tar.gz -C ./..
 
-      - run: ls -la
+      - name: Start HTTP server
+        run: docker run --rm -d -v "$(pwd)/dist:/usr/share/nginx/html:ro" -p "8080:80/tcp" --name nginx nginx:alpine
+
+      - run: curl -v "http://127.0.0.1:8080"
 
 #      - uses: gaurav-nelson/github-action-markdown-link-check@v1
 #        with:
 #          folder-path: .
+
+      - name: Stop HTTP server
+        if: always()
+        run: docker kill nginx
 
 #  lint-markdown:
 #    name: Lint markdown files
