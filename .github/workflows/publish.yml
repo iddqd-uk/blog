@@ -1,0 +1,31 @@
+name: publish
+
+on:
+  push:
+    branches: [master, main]
+    tags-ignore: ['**']
+  schedule: [cron: '0 0 * * 0'] # once in a week
+
+env:
+  CNAME: blog.hook.sh
+
+jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
+  build:
+    name: Build the site
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with: {hugo-version: 0.83.1, extended: true}
+
+      - name: Build
+        run: hugo --noChmod --noTimes --minify --environment production --baseURL "https://${CNAME}/" -d ./dist
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: ${{ env.CNAME }}

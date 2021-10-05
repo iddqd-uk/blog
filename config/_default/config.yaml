@@ -1,0 +1,48 @@
+languageCode: en-us
+theme: hugo-theme-stack
+paginate: 10
+title: blog [dot] hook
+
+enableRobotsTXT: true
+
+# Enable Emoji emoticons support for page content; see the <https://www.webpagefx.com/tools/emoji-cheat-sheet/>
+enableEmoji: true
+
+# <https://gohugo.io/content-management/multilingual/#configure-languages>
+defaultContentLanguage: ru
+
+# Don’t sync permission mode of files
+noChmod: true
+
+# Don’t sync modification time of files
+noTimes: false
+
+# Hugo will, by default, inject a generator meta tag in the HTML head on the home page only
+disableHugoGeneratorInject: true
+
+### Custom menu
+### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+
+related:
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+
+    - name: categories
+      weight: 200
+
+markup:
+  tableOfContents:
+    endLevel: 4
+    ordered: true
+    startLevel: 2
+  highlight:
+    noClasses: false
+
+outputFormats:
+  RSS:
+    baseName: rss
