@@ -7,25 +7,6 @@ on:
   #pull_request: {}
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
-#  spellcheck:
-#    name: Spell Check
-#    runs-on: ubuntu-20.04
-#    steps:
-#      - name: Check out sources
-#        uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 1
-#
-#      - name: Execute misspell
-#        uses: reviewdog/action-misspell@v1
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          locale: 'US'
-#          pattern: '*.md'
-#          level: warning
-#          ignore: routeros
-#          exclude: '.git/*'
-
   build:
     name: Build the site
     runs-on: ubuntu-20.04
@@ -37,52 +18,4 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
         with: {hugo-version: 0.83.1, extended: true}
 
       - name: Build
-        run: hugo --environment production --i18n-warnings --noChmod --noTimes --minify --baseURL "http://127.0.0.1:8080" --destination ./dist
-
-      - name: Pack files
-        run: tar -zcvf ./dist.tar.gz ./dist
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: content
-          path: dist.tar.gz
-          retention-days: 1
-
-  check-for-broken-links:
-    name: Check site for broken links
-    runs-on: ubuntu-20.04
-    needs: [build]
-    steps:
-      - uses: actions/download-artifact@v2
-        with: {name: content, path: .artifact}
-
-      - name: Unpack files
-        working-directory: .artifact
-        run: tar -xvf ./dist.tar.gz -C ./..
-
-      - name: Start HTTP server
-        run: docker run --rm -d -v "$(pwd)/dist:/usr/share/nginx/html:ro" -p "8080:80/tcp" --name nginx nginx:alpine
-
-      - run: sleep 2
-
-      - uses: filiph/linkcheck@v2.0.15+1 # action page: <https://github.com/marketplace/actions/check-links-with-linkcheck>
-        with:
-          arguments: http://127.0.0.1:8080
-
-      - name: Stop HTTP server
-        if: always()
-        run: docker kill nginx
-
-#  lint-markdown:
-#    name: Lint markdown files
-#    runs-on: ubuntu-20.04
-#    steps:
-#      - name: Check out code
-#        uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 1
-#
-#      - name: Execute linter # Docs: <https://github.com/avto-dev/markdown-lint>
-#        uses: docker://avtodev/markdown-lint:v1
-#        with:
-#          args: '**/*.md'
+        run: hugo --environment production --i18n-warnings --noChmod --noTimes
