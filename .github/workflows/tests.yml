@@ -27,7 +27,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 #          exclude: '.git/*'
 
   build:
-    name: Try to build
+    name: Build the site
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -39,20 +39,25 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
       - name: Build
         run: hugo --environment production --i18n-warnings --noChmod --noTimes --baseURL "http://127.0.0.1:8080" --destination ./dist
 
+      - name: Pack files
+        run: tar -zcf ./dist.tar.gz ./dist
+
       - uses: actions/upload-artifact@v2
         with:
           name: content
-          path: dist/
-          if-no-files-found: error
+          path: dist.tar.gz
           retention-days: 1
 
   check-for-broken-links:
-    name: Check markdown files for broken links
+    name: Check site for broken links
     runs-on: ubuntu-20.04
     needs: [build]
     steps:
       - uses: actions/download-artifact@v2
-        with: {name: content}
+        with: {name: content, path: .artifact}
+
+      - working-directory: .artifact
+        run: tar -xf ./dist.tar.gz -C ./..
 
       - run: ls -la
 
