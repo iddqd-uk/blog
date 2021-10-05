@@ -4,7 +4,7 @@ on:
   push:
     branches: ['**']
     tags-ignore: ['**']
-  #pull_request:
+  #pull_request: {}
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
 #  spellcheck:
@@ -26,16 +26,6 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 #          ignore: routeros
 #          exclude: '.git/*'
 
-  check-for-broken-links:
-    name: Check markdown files for broken links
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
-        with:
-          folder-path: .
-
   build:
     name: Try to build
     runs-on: ubuntu-20.04
@@ -44,12 +34,31 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 0.83.1
-          extended: true
+        with: {hugo-version: 0.83.1, extended: true}
 
       - name: Build
-        run: hugo --environment production --i18n-warnings --noChmod --noTimes --print-mem
+        run: hugo --environment production --i18n-warnings --noChmod --noTimes --baseURL "http://127.0.0.1:8080" --destination ./dist
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: content
+          path: dist/
+          if-no-files-found: error
+          retention-days: 1
+
+  check-for-broken-links:
+    name: Check markdown files for broken links
+    runs-on: ubuntu-20.04
+    needs: [build]
+    steps:
+      - uses: actions/download-artifact@v2
+        with: {name: content}
+
+      - run: ls -la
+
+#      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+#        with:
+#          folder-path: .
 
 #  lint-markdown:
 #    name: Lint markdown files
