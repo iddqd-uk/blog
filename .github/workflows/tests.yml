@@ -63,10 +63,9 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
       - name: Start HTTP server
         run: docker run --rm -d -v "$(pwd)/dist:/usr/share/nginx/html:ro" -p "8080:80/tcp" --name nginx nginx:alpine
 
-      - name: Wait for HTTP server ready state
-        run: until [ "`docker inspect -f {{.State.Running}} nginx`" == "true" ]; do sleep 0.5; done
+      - run: sleep 2
 
-      - uses: filiph/linkcheck@v2.0.15+1
+      - uses: filiph/linkcheck@v2.0.19 # action page: <https://github.com/marketplace/actions/check-links-with-linkcheck>
         with:
           arguments: http://127.0.0.1:8080
 
