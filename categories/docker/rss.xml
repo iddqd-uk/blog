@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on blog [dot] hook</title><link>https://blog.hook.sh/categories/docker/</link><description>Recent content in Docker on blog [dot] hook</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 06 Jul 2020 15:11:47 +0000</lastBuildDate><atom:link href="https://blog.hook.sh/categories/docker/rss.xml" rel="self" type="application/rss+xml"/><item><title>Настройка iptables для swarm кластера</title><link>https://blog.hook.sh/iptables-for-docker-swarm/</link><pubDate>Mon, 06 Jul 2020 15:11:47 +0000</pubDate><guid>https://blog.hook.sh/iptables-for-docker-swarm/</guid><description>Однажды я решил поднять свой крохотный кластер для приложений, запускаемых в docker-контейнерах. Выбор был между nomad (уже не один комрад его настоятельно рекомендовал - обязательно попробую, но позже), K8S (слишком сложно и дорого по ресурсам для pet-проекта) и Docker Swarm (никакого дополнительного софта не потребуется, поставляется вместе с самим докером). Как ты понимаешь - выбор пал именно на последний.
+По тому как его поднять и базово настроить - материалов полно, но когда дело дошло до настройки огненной стены - вот тут начались некоторые трудности.</description></item><item><title>Деплой на Docker Swarm</title><link>https://blog.hook.sh/compose-deploy/</link><pubDate>Mon, 15 Oct 2018 13:35:50 +0000</pubDate><guid>https://blog.hook.sh/compose-deploy/</guid><description>&lt;blockquote>
+&lt;p>Данный пост является переводом &lt;a class="link" href="https://docs.docker.com/compose/compose-file/#deploy" target="_blank" rel="noopener"
+>части документации&lt;/a>, посвященной секции &lt;code>deploy&lt;/code> в &lt;code>docker-compose&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="deploy">&lt;code>deploy&lt;/code>&lt;/h2>
+&lt;blockquote>
+&lt;p>Начиная с &lt;a class="link" href="https://docs.docker.com/compose/compose-file/compose-versioning/#version-3" target="_blank" rel="noopener"
+>версии &lt;strong>3&lt;/strong>&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;p>Группа настроек, посвященная деплою и запуску сервисов. Указанные в данной группе настройки используются &lt;strong>только&lt;/strong> при деплое на &lt;a class="link" href="https://docs.docker.com/engine/swarm/" target="_blank" rel="noopener"
+>swarm&lt;/a> используя &lt;a class="link" href="https://docs.docker.com/engine/reference/commandline/stack_deploy/" target="_blank" rel="noopener"
+>&lt;code>docker stack deploy&lt;/code>&lt;/a>, и игнорируется при использовании команд &lt;code>docker-compose up&lt;/code> и &lt;code>docker-compose run&lt;/code>.&lt;/p></description></item><item><title>Docker + Laravel = ❤</title><link>https://blog.hook.sh/laravel-in-docker/</link><pubDate>Mon, 01 Oct 2018 08:29:51 +0000</pubDate><guid>https://blog.hook.sh/laravel-in-docker/</guid><description>&lt;blockquote>
+&lt;p>Данная статья является копией &lt;a class="link" href="https://habr.com/post/425101/" target="_blank" rel="noopener"
+>публикации на хабре&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>В данной статье я расскажу о своём опыте &amp;ldquo;заворачивания&amp;rdquo; Laravel-приложения в Docker-контейнер да так, что бы и локально с ним могли работать frontend и backend разработчики, и запуск его на production был максимально прост. Так же CI будет автоматически запускать статические анализаторы кода, &lt;code>phpunit&lt;/code>-тесты, производить сборку образов.&lt;/p></description></item></channel></rss>
