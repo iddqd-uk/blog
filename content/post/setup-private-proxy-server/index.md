@@ -2,6 +2,7 @@
 title: Поднимаем свой, приватный прокси-сервер
 slug: setup-private-proxy-server
 date: 2016-08-13T10:57:36+00:00
+expirydate: 2022-03-01
 aliases: [/adm/setup-private-proxy-server]
 image: cover.jpg
 categories: [adm]

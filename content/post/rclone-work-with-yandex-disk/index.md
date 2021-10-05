@@ -2,6 +2,7 @@
 title: Дружим rclone с Яндекс.Диском
 slug: rclone-work-with-yandex-disk
 date: 2016-07-13T17:24:26+00:00
+expirydate: 2022-03-01
 aliases: [/software/rclone-work-with-yandex-disk]
 image: cover.jpg
 categories: [software]

@@ -2,6 +2,7 @@
 title: Небольшая коллекция интересных гифок (часть 1)
 slug: little-gifs-collection-part1
 date: 2015-05-18T15:45:35+00:00
+expirydate: 2024-03-01
 aliases: [/etc/little-gifs-collection-part1]
 categories: [etc]
 tags:

@@ -2,6 +2,7 @@
 title: Пули свищут, народ мрет — красота!
 slug: adrian-karton-di-viart
 date: 2019-01-20T07:52:56Z
+expirydate: 2026-03-01
 aliases: [/text/adrian-karton-di-viart]
 image: cover.jpg
 categories: [text]

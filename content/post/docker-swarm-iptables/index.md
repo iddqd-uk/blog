@@ -2,6 +2,7 @@
 title: Настройка iptables для swarm кластера
 slug: iptables-for-docker-swarm
 date: 2020-07-06T15:11:47Z
+expirydate: 2024-03-01
 aliases: [/adm/iptables-for-docker-swarm]
 image: cover.jpg
 categories: [adm, docker]

@@ -2,6 +2,7 @@
 title: Прошивка принтера Samsung ML-1860
 slug: hack-printer-samsung-ml-1860
 date: 2015-05-18T15:20:41+00:00
+expirydate: 2026-03-01
 aliases: [/hard/hack-printer-samsung-ml-1860]
 image: cover.jpg
 categories: [hard]

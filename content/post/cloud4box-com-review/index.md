@@ -2,6 +2,7 @@
 title: Отзыв о cloud4box.com
 slug: cloud4box-com-review
 date: 2016-08-20T06:27:33+00:00
+expirydate: 2022-03-01
 aliases: [/etc/cloud4box-com-review]
 categories: [etc]
 tags:

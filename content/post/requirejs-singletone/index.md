@@ -2,6 +2,7 @@
 title: Синглтон для RequireJS
 slug: requirejs-singletone
 date: 2017-02-18T05:19:58+00:00
+expirydate: 2022-03-01
 aliases: [/dev/requirejs-singletone]
 image: cover.jpg
 categories: [dev]

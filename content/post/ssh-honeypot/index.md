@@ -2,6 +2,7 @@
 title: SSH Honeypot — просто и со вкусом
 slug: ssh-honeypot
 date: 2015-07-13T11:13:57+00:00
+expirydate: 2022-03-01
 aliases: [/adm/ssh-honeypot]
 image: cover.jpg
 categories: [adm]

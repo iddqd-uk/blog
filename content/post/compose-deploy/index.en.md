@@ -2,6 +2,7 @@
 title: Deploy to Docker Swarm
 slug: compose-deploy
 date: 2018-10-15T13:35:50Z
+expirydate: 2023-03-01
 aliases: [/docker/compose-deploy]
 image: cover.png
 categories: [docker]

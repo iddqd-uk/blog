@@ -2,6 +2,7 @@
 title: Отключаем кэширование загружаемых RequireJS файлов при разработке
 slug: disable-cacheing-requirejs-files-while-develop
 date: 2017-02-19T19:16:00+00:00
+expirydate: 2022-03-01
 aliases: [/dev/disable-cacheing-requirejs-files-while-develop]
 image: cover.jpg
 categories: [dev]

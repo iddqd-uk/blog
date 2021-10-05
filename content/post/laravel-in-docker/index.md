@@ -2,6 +2,7 @@
 title: Docker + Laravel = ❤
 slug: laravel-in-docker
 date: 2018-10-01T08:29:51Z
+expirydate: 2022-03-01
 aliases: [/php/laravel-in-docker, /docker/laravel-in-docker]
 image: cover.png
 categories: [php, docker]
@@ -148,8 +149,6 @@ $ docker build \
 
 Набивать одни и те же команды каждый раз становится скучно после второго раза, и так как программисты по своей натуре - существа ленивые, давай займёмся их "автоматизацией". Держать набор `sh`-скриптов - вариант, но не такой привлекательный, как один `Makefile`, тем более что его применимость в современной разработке сильно недооценена.
 
-> Полный русскоязычный мануал по нему ты сможешь найти по [этой ссылке][makefile-doc].
-
 Давай посмотри как выглядит запуск `make` в корне репозитория:
 
 ```bash
@@ -247,7 +246,6 @@ $ make init
 [fixuid]:https://boxboat.com/2017/07/25/fixuid-change-docker-container-uid-gid/
 [docker-compose-yml]:https://gitlab.com/tarampampam/laravel-in-docker/blob/master/docker-compose.yml
 [passthrough-user-id]:https://gitlab.com/tarampampam/laravel-in-docker/blob/master/docker-compose.yml#L21
-[makefile-doc]:https://blog.hook.sh/nix/makefile-full-doc/
 [makefile]:https://gitlab.com/tarampampam/laravel-in-docker/blob/master/Makefile
 [pipeline-screen]:https://hsto.org/webt/fl/vp/mv/flvpmvfakkf6opnry-ti5he5n00.png
 [gitlab-ci-conf]:https://gitlab.com/tarampampam/laravel-in-docker/blob/master/.gitlab-ci.yml

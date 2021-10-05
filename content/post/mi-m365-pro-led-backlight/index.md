@@ -2,6 +2,7 @@
 title: "Led-подсветка для Xiaomi Mi M365 Pro своими руками"
 slug: mi-m365-pro-led-backlight
 date: 2021-02-26T10:01:21Z
+expirydate: 2025-03-01
 aliases: [/hard/mi-m365-pro-led-backlight]
 image: cover.jpg
 categories: [hard]
