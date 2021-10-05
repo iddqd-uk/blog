@@ -37,7 +37,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
         with: {hugo-version: 0.83.1, extended: true}
 
       - name: Build
-        run: hugo --environment production --i18n-warnings --noChmod --noTimes --baseURL "http://127.0.0.1:8080" --destination ./dist
+        run: hugo --environment production --i18n-warnings --noChmod --noTimes --minify --baseURL "http://127.0.0.1:8080" --destination ./dist
 
       - name: Pack files
         run: tar -zcvf ./dist.tar.gz ./dist
@@ -66,11 +66,9 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
       - name: Wait for HTTP server ready state
         run: until [ "`docker inspect -f {{.State.Running}} nginx`" == "true" ]; do sleep 0.5; done
 
-      - run: curl -v "http://127.0.0.1:8080"
-
-#      - uses: gaurav-nelson/github-action-markdown-link-check@v1
-#        with:
-#          folder-path: .
+      - uses: filiph/linkcheck@v2.0.15+1
+        with:
+          arguments: http://127.0.0.1:8080
 
       - name: Stop HTTP server
         if: always()
