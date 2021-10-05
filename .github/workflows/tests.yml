@@ -65,7 +65,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 
       - run: sleep 2
 
-      - uses: filiph/linkcheck@v2.0.19 # action page: <https://github.com/marketplace/actions/check-links-with-linkcheck>
+      - uses: filiph/linkcheck@v2.0.15+1 # action page: <https://github.com/marketplace/actions/check-links-with-linkcheck>
         with:
           arguments: http://127.0.0.1:8080
 
