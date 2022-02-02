@@ -1,14 +1,84 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=" This post is translation of part of documentation
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=" This post is translation of part of documentation
  deploy  Version 3 only.
  Specify configuration related to the deployment and running of services. This only takes effect when deploying to a swarm with docker stack deploy, and is ignored by docker-compose up and docker-compose run.
-"><title>Deploy to Docker Swarm</title><link rel=canonical href=https://blog.hook.sh/en/compose-deploy/><link rel=stylesheet href=https://blog.hook.sh/scss/style.min.c81ad01c194dc8cda208713c6fcb1aa14f50b41ffb0f7a7aa16860ae4d9babdc.css><meta property="og:title" content="Deploy to Docker Swarm"><meta property="og:description" content=" This post is translation of part of documentation
+"><title>Deploy to Docker Swarm</title>
+<link rel=canonical href=https://blog.hook.sh/en/compose-deploy/>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.08fee184c062c6fc4b0ffa3b88e2be82335f0d7eb1a2475e64e59486388736e0.css>
+<meta property="og:title" content="Deploy to Docker Swarm">
+<meta property="og:description" content=" This post is translation of part of documentation
  deploy  Version 3 only.
  Specify configuration related to the deployment and running of services. This only takes effect when deploying to a swarm with docker stack deploy, and is ignored by docker-compose up and docker-compose run.
-"><meta property="og:url" content="https://blog.hook.sh/en/compose-deploy/"><meta property="og:site_name" content="blog [dot] hook"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="linux"><meta property="article:tag" content="deploy"><meta property="article:tag" content="docker-compose"><meta property="article:tag" content="docker"><meta property="article:tag" content="devops"><meta property="article:published_time" content="2018-10-15T13:35:50+00:00"><meta property="article:modified_time" content="2018-10-15T13:35:50+00:00"><meta property="og:image" content="https://blog.hook.sh/en/compose-deploy/cover.png"><meta name=twitter:title content="Deploy to Docker Swarm"><meta name=twitter:description content=" This post is translation of part of documentation
+">
+<meta property="og:url" content="https://blog.hook.sh/en/compose-deploy/">
+<meta property="og:site_name" content="blog [dot] hook">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="linux"><meta property="article:tag" content="deploy"><meta property="article:tag" content="docker-compose"><meta property="article:tag" content="docker"><meta property="article:tag" content="devops"><meta property="article:published_time" content="2018-10-15T13:35:50+00:00"><meta property="article:modified_time" content="2018-10-15T13:35:50+00:00"><meta property="og:image" content="https://blog.hook.sh/en/compose-deploy/cover.png">
+<meta name=twitter:title content="Deploy to Docker Swarm">
+<meta name=twitter:description content=" This post is translation of part of documentation
  deploy  Version 3 only.
  Specify configuration related to the deployment and running of services. This only takes effect when deploying to a swarm with docker stack deploy, and is ignored by docker-compose up and docker-compose run.
-"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.hook.sh/en/compose-deploy/cover.png"><script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script><script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script><link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1638667059"><link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1638667059"><link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1638667059"><link rel=manifest href=https://blog.hook.sh/webmanifest.json><meta name=msapplication-TileColor content="#303030"><meta name=theme-color content="#303030"></head><body class="article-page has-toc"><script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script><div class="container main-container flex
-extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg><span>Back</span></a></div><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/en/compose-deploy/><img src=/en/compose-deploy/cover_hu65abd86000f73060febdb2dd524fa8aa_21589_800x0_resize_box_2.png srcset="/en/compose-deploy/cover_hu65abd86000f73060febdb2dd524fa8aa_21589_800x0_resize_box_2.png 800w, /en/compose-deploy/cover_hu65abd86000f73060febdb2dd524fa8aa_21589_1600x0_resize_box_2.png 1600w" width=800 height=400 loading=lazy alt="Featured image of post Deploy to Docker Swarm"></a></div><div class=article-details><header class=article-category><a href=/en/categories/docker/>docker</a></header><h2 class=article-title><a href=/en/compose-deploy/>Deploy to Docker Swarm</a>&nbsp;(<a href=https://blog.hook.sh/compose-deploy/ title="Деплой на Docker Swarm">ru</a>)</h2><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>2018.10.15</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>6 min read</time></div></footer></div></header><section class=article-content><div class=outdated-post style=display:none data-posted-at=2018-10-15><strong>Warning!</strong> This post was published over a year ago and may no longer be relevant. But perhaps it is not.</div><blockquote><p>This post is translation of <a class=link href=https://docs.docker.com/compose/compose-file/#deploy target=_blank rel=noopener>part of documentation</a></p></blockquote><h2 id=deploy><code>deploy</code></h2><blockquote><p><a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#version-3 target=_blank rel=noopener>Version 3</a> only.</p></blockquote><p>Specify configuration related to the deployment and running of services. This only takes effect when deploying to a <a class=link href=https://docs.docker.com/engine/swarm/ target=_blank rel=noopener>swarm</a> with <a class=link href=https://docs.docker.com/engine/reference/commandline/stack_deploy/ target=_blank rel=noopener>docker stack deploy</a>, and is ignored by <code>docker-compose up</code> and <code>docker-compose run</code>.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blog.hook.sh/en/compose-deploy/cover.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
+<script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1643782473">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1643782473">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1643782473">
+<link rel=manifest href=https://blog.hook.sh/webmanifest.json>
+<meta name=msapplication-TileColor content="#303030">
+<meta name=theme-color content="#303030">
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=https://blog.hook.sh/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/en/compose-deploy/>
+<img src=/en/compose-deploy/cover_hu65abd86000f73060febdb2dd524fa8aa_21589_800x0_resize_box_3.png srcset="/en/compose-deploy/cover_hu65abd86000f73060febdb2dd524fa8aa_21589_800x0_resize_box_3.png 800w, /en/compose-deploy/cover_hu65abd86000f73060febdb2dd524fa8aa_21589_1600x0_resize_box_3.png 1600w" width=800 height=400 loading=lazy alt="Featured image of post Deploy to Docker Swarm">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/en/categories/docker/>
+docker
+</a>
+</header>
+<h2 class=article-title>
+<a href=/en/compose-deploy/>Deploy to Docker Swarm</a>&nbsp;(<a href=https://blog.hook.sh/compose-deploy/ title="Деплой на Docker Swarm">ru</a>)</h2>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>2018.10.15</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+6 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<div class=outdated-post style=display:none data-posted-at=2018-10-15>
+<strong>Warning!</strong> This post was published over a year ago and may no longer be relevant. But perhaps it is not.
+</div>
+<blockquote>
+<p>This post is translation of <a class=link href=https://docs.docker.com/compose/compose-file/#deploy target=_blank rel=noopener>part of documentation</a></p>
+</blockquote>
+<h2 id=deploy><code>deploy</code></h2>
+<blockquote>
+<p><a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#version-3 target=_blank rel=noopener>Version 3</a> only.</p>
+</blockquote>
+<p>Specify configuration related to the deployment and running of services. This only takes effect when deploying to a <a class=link href=https://docs.docker.com/engine/swarm/ target=_blank rel=noopener>swarm</a> with <a class=link href=https://docs.docker.com/engine/reference/commandline/stack_deploy/ target=_blank rel=noopener>docker stack deploy</a>, and is ignored by <code>docker-compose up</code> and <code>docker-compose run</code>.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>redis</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>redis:alpine</span><span class=w>
@@ -19,7 +89,22 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>        </span><span class=nt>delay</span><span class=p>:</span><span class=w> </span><span class=l>10s</span><span class=w>
 </span><span class=w>      </span><span class=nt>restart_policy</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>condition</span><span class=p>:</span><span class=w> </span><span class=kc>on</span>-<span class=l>failure</span><span class=w>
-</span></code></pre></div><p>Several sub-options are available:</p><h3 id=endpoint_mode><code>ENDPOINT_MODE</code></h3><p>Specify a service discovery method for external clients connecting to a swarm.</p><blockquote><p><a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#version-3 target=_blank rel=noopener>Version 3.3</a> only.</p></blockquote><ul><li><p><code>endpoint_mode: vip</code> - Docker assigns the service a virtual IP (VIP) that acts as the “front end” for clients to reach the service on a network. Docker routes requests between the client and available worker nodes for the service, without client knowledge of how many nodes are participating in the service or their IP addresses or ports. (This is the default.)</p></li><li><p><code>endpoint_mode: dnsrr</code> - DNS round-robin (DNSRR) service discovery does not use a single virtual IP. Docker sets up DNS entries for the service such that a DNS query for the service name returns a list of IP addresses, and the client connects directly to one of these. DNS round-robin is useful in cases where you want to use your own load balancer, or for Hybrid Windows and Linux applications.</p></li></ul><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3.3&#34;</span><span class=w>
+</span></code></pre></div>
+<p>Several sub-options are available:</p>
+<h3 id=endpoint_mode><code>ENDPOINT_MODE</code></h3>
+<p>Specify a service discovery method for external clients connecting to a swarm.</p>
+<blockquote>
+<p><a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#version-3 target=_blank rel=noopener>Version 3.3</a> only.</p>
+</blockquote>
+<ul>
+<li>
+<p><code>endpoint_mode: vip</code> - Docker assigns the service a virtual IP (VIP) that acts as the “front end” for clients to reach the service on a network. Docker routes requests between the client and available worker nodes for the service, without client knowledge of how many nodes are participating in the service or their IP addresses or ports. (This is the default.)</p>
+</li>
+<li>
+<p><code>endpoint_mode: dnsrr</code> - DNS round-robin (DNSRR) service discovery does not use a single virtual IP. Docker sets up DNS entries for the service such that a DNS query for the service name returns a list of IP addresses, and the client connects directly to one of these. DNS round-robin is useful in cases where you want to use your own load balancer, or for Hybrid Windows and Linux applications.</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3.3&#34;</span><span class=w>
 </span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>wordpress</span><span class=p>:</span><span class=w>
@@ -49,26 +134,35 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>
 </span><span class=w></span><span class=nt>networks</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>overlay</span><span class=p>:</span><span class=w>
-</span></code></pre></div><p>The options for <code>endpoint_mode</code> also work as flags on the swarm mode CLI command <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/ target=_blank rel=noopener>docker service create</a>. For a quick list of all swarm related <code>docker</code> commands, see <a class=link href=https://docs.docker.com/engine/swarm/#swarm-mode-key-concepts-and-tutorial target=_blank rel=noopener>Swarm mode CLI commands</a>.</p><p>To learn more about service discovery and networking in swarm mode, see <a class=link href=https://docs.docker.com/network/overlay/ target=_blank rel=noopener>Configure service discovery</a> in the swarm mode topics.</p><h3 id=labels><code>LABELS</code></h3><p>Specify labels for the service. These labels are <em>only</em> set on the service, and <em>not</em> on any containers for the service.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3&#34;</span><span class=w>
+</span></code></pre></div><p>The options for <code>endpoint_mode</code> also work as flags on the swarm mode CLI command <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/ target=_blank rel=noopener>docker service create</a>. For a quick list of all swarm related <code>docker</code> commands, see <a class=link href=https://docs.docker.com/engine/swarm/#swarm-mode-key-concepts-and-tutorial target=_blank rel=noopener>Swarm mode CLI commands</a>.</p>
+<p>To learn more about service discovery and networking in swarm mode, see <a class=link href=https://docs.docker.com/network/overlay/ target=_blank rel=noopener>Configure service discovery</a> in the swarm mode topics.</p>
+<h3 id=labels><code>LABELS</code></h3>
+<p>Specify labels for the service. These labels are <em>only</em> set on the service, and <em>not</em> on any containers for the service.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>web</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>web</span><span class=w>
 </span><span class=w>    </span><span class=nt>deploy</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>labels</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>com.example.description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;This label will appear on the web service&#34;</span><span class=w>
-</span></code></pre></div><p>To set labels on containers instead, use the <code>labels</code> key outside of <code>deploy</code>:</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3&#34;</span><span class=w>
+</span></code></pre></div><p>To set labels on containers instead, use the <code>labels</code> key outside of <code>deploy</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>web</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>web</span><span class=w>
 </span><span class=w>    </span><span class=nt>labels</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>com.example.description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;This label will appear on all containers for the web service&#34;</span><span class=w>
-</span></code></pre></div><h3 id=mode><code>MODE</code></h3><p>Either <code>global</code> (exactly one container per swarm node) or <code>replicated</code> (a specified number of containers). The default is <code>replicated</code>. (To learn more, see <a class=link href=https://docs.docker.com/engine/swarm/how-swarm-mode-works/services/#replicated-and-global-services target=_blank rel=noopener>Replicated and global services</a> in the <a class=link href=https://docs.docker.com/engine/swarm/ target=_blank rel=noopener>swarm</a> topics.)</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></code></pre></div><h3 id=mode><code>MODE</code></h3>
+<p>Either <code>global</code> (exactly one container per swarm node) or <code>replicated</code> (a specified number of containers). The default is <code>replicated</code>. (To learn more, see <a class=link href=https://docs.docker.com/engine/swarm/how-swarm-mode-works/services/#replicated-and-global-services target=_blank rel=noopener>Replicated and global services</a> in the <a class=link href=https://docs.docker.com/engine/swarm/ target=_blank rel=noopener>swarm</a> topics.)</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>worker</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>dockersamples/examplevotingapp_worker</span><span class=w>
 </span><span class=w>    </span><span class=nt>deploy</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>mode</span><span class=p>:</span><span class=w> </span><span class=l>global</span><span class=w>
-</span></code></pre></div><h3 id=placement><code>PLACEMENT</code></h3><p>Specify placement of constraints and preferences. See the docker service create documentation for a full description of the syntax and available types of <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-constraints-constraint target=_blank rel=noopener>constraints</a> and <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-placement-preferences-placement-pref target=_blank rel=noopener>preferences</a>.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.3&#39;</span><span class=w>
+</span></code></pre></div><h3 id=placement><code>PLACEMENT</code></h3>
+<p>Specify placement of constraints and preferences. See the docker service create documentation for a full description of the syntax and available types of <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-constraints-constraint target=_blank rel=noopener>constraints</a> and <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/#specify-service-placement-preferences-placement-pref target=_blank rel=noopener>preferences</a>.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.3&#39;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>db</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>postgres</span><span class=w>
@@ -79,7 +173,9 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>          </span>- <span class=l>engine.labels.operatingsystem == ubuntu 14.04</span><span class=w>
 </span><span class=w>        </span><span class=nt>preferences</span><span class=p>:</span><span class=w>
 </span><span class=w>          </span>- <span class=nt>spread</span><span class=p>:</span><span class=w> </span><span class=l>node.labels.zone</span><span class=w>
-</span></code></pre></div><h3 id=replicas><code>REPLICAS</code></h3><p>If the service is <code>replicated</code> (which is the default), specify the number of containers that should be running at any given time.</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></code></pre></div><h3 id=replicas><code>REPLICAS</code></h3>
+<p>If the service is <code>replicated</code> (which is the default), specify the number of containers that should be running at any given time.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>worker</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>dockersamples/examplevotingapp_worker</span><span class=w>
@@ -89,7 +185,14 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>    </span><span class=nt>deploy</span><span class=p>:</span><span class=w>
 </span><span class=w>      </span><span class=nt>mode</span><span class=p>:</span><span class=w> </span><span class=l>replicated</span><span class=w>
 </span><span class=w>      </span><span class=nt>replicas</span><span class=p>:</span><span class=w> </span><span class=m>6</span><span class=w>
-</span></code></pre></div><h3 id=resources><code>RESOURCES</code></h3><p>Configures resource constraints.</p><blockquote><p><strong>Note:</strong> This replaces the <a class=link href=https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources target=_blank rel=noopener>older resource constraint options</a> for non swarm mode in Compose files prior to version 3 (<code>cpu_shares</code>, <code>cpu_quota</code>, <code>cpuset</code>, <code>mem_limit</code>, <code>memswap_limit</code>, <code>mem_swappiness</code>), as described in <a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#upgrading target=_blank rel=noopener>Upgrading version 2.x to 3.x</a>.</p></blockquote><p>Each of these is a single value, analogous to its <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/ target=_blank rel=noopener>docker service create</a> counterpart.</p><p>In this general example, the <code>redis</code> service is constrained to use no more than 50M of memory and <code>0.50</code> (50%) of available processing time (CPU), and has <code>20M</code> of memory and <code>0.25</code> CPU time reserved (as always available to it).</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></code></pre></div><h3 id=resources><code>RESOURCES</code></h3>
+<p>Configures resource constraints.</p>
+<blockquote>
+<p><strong>Note:</strong> This replaces the <a class=link href=https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources target=_blank rel=noopener>older resource constraint options</a> for non swarm mode in Compose files prior to version 3 (<code>cpu_shares</code>, <code>cpu_quota</code>, <code>cpuset</code>, <code>mem_limit</code>, <code>memswap_limit</code>, <code>mem_swappiness</code>), as described in <a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#upgrading target=_blank rel=noopener>Upgrading version 2.x to 3.x</a>.</p>
+</blockquote>
+<p>Each of these is a single value, analogous to its <a class=link href=https://docs.docker.com/engine/reference/commandline/service_create/ target=_blank rel=noopener>docker service create</a> counterpart.</p>
+<p>In this general example, the <code>redis</code> service is constrained to use no more than 50M of memory and <code>0.50</code> (50%) of available processing time (CPU), and has <code>20M</code> of memory and <code>0.25</code> CPU time reserved (as always available to it).</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>redis</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>redis:alpine</span><span class=w>
@@ -101,7 +204,22 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>        </span><span class=nt>reservations</span><span class=p>:</span><span class=w>
 </span><span class=w>          </span><span class=nt>cpus</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;0.25&#39;</span><span class=w>
 </span><span class=w>          </span><span class=nt>memory</span><span class=p>:</span><span class=w> </span><span class=l>20M</span><span class=w>
-</span></code></pre></div><p>The topics below describe available options to set resource constraints on services or containers in a swarm.</p><blockquote><p><strong>Looking for options to set resources on non swarm mode containers?</strong></p><p>The options described here are specific to the <code>deploy</code> key and swarm mode. If you want to set resource constraints on non swarm deployments, use <a class=link href=https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources target=_blank rel=noopener>Compose file format version 2 CPU, memory, and other resource options</a>. If you have further questions, refer to the discussion on the GitHub issue <a class=link href=https://github.com/docker/compose/issues/4513 target=_blank rel=noopener>docker/compose/4513</a>.</p></blockquote><h4 id=out-of-memory-exceptions-oome>Out Of Memory Exceptions (OOME)</h4><p>If your services or containers attempt to use more memory than the system has available, you may experience an Out Of Memory Exception (OOME) and a container, or the Docker daemon, might be killed by the kernel OOM killer. To prevent this from happening, ensure that your application runs on hosts with adequate memory and see <a class=link href=https://docs.docker.com/engine/admin/resource_constraints/#understand-the-risks-of-running-out-of-memory target=_blank rel=noopener>Understand the risks of running out of memory</a>.</p><h3 id=restart_policy><code>RESTART_POLICY</code></h3><p>Configures if and how to restart containers when they exit. Replaces <code>restart</code>.</p><ul><li><code>condition</code>: One of <code>none</code>, <code>on-failure</code> or <code>any</code> (default: <code>any</code>).</li><li><code>delay</code>: How long to wait between restart attempts, specified as a <a class=link href=https://docs.docker.com/compose/compose-file/#specifying-durations target=_blank rel=noopener>duration</a> (default: 0).</li><li><code>max_attempts</code>: How many times to attempt to restart a container before giving up (default: never give up). If the restart does not succeed within the configured <code>window</code>, this attempt doesn’t count toward the configured <code>max_attempts</code> value. For example, if <code>max_attempts</code> is set to ‘2’, and the restart fails on the first attempt, more than two restarts may be attempted.</li><li><code>window</code>: How long to wait before deciding if a restart has succeeded, specified as a <a class=link href=https://docs.docker.com/compose/compose-file/#specifying-durations target=_blank rel=noopener>duration</a> (default: decide immediately).</li></ul><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3&#34;</span><span class=w>
+</span></code></pre></div><p>The topics below describe available options to set resource constraints on services or containers in a swarm.</p>
+<blockquote>
+<p><strong>Looking for options to set resources on non swarm mode containers?</strong></p>
+<p>The options described here are specific to the <code>deploy</code> key and swarm mode. If you want to set resource constraints on non swarm deployments, use <a class=link href=https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources target=_blank rel=noopener>Compose file format version 2 CPU, memory, and other resource options</a>. If you have further questions, refer to the discussion on the GitHub issue <a class=link href=https://github.com/docker/compose/issues/4513 target=_blank rel=noopener>docker/compose/4513</a>.</p>
+</blockquote>
+<h4 id=out-of-memory-exceptions-oome>Out Of Memory Exceptions (OOME)</h4>
+<p>If your services or containers attempt to use more memory than the system has available, you may experience an Out Of Memory Exception (OOME) and a container, or the Docker daemon, might be killed by the kernel OOM killer. To prevent this from happening, ensure that your application runs on hosts with adequate memory and see <a class=link href=https://docs.docker.com/engine/admin/resource_constraints/#understand-the-risks-of-running-out-of-memory target=_blank rel=noopener>Understand the risks of running out of memory</a>.</p>
+<h3 id=restart_policy><code>RESTART_POLICY</code></h3>
+<p>Configures if and how to restart containers when they exit. Replaces <code>restart</code>.</p>
+<ul>
+<li><code>condition</code>: One of <code>none</code>, <code>on-failure</code> or <code>any</code> (default: <code>any</code>).</li>
+<li><code>delay</code>: How long to wait between restart attempts, specified as a <a class=link href=https://docs.docker.com/compose/compose-file/#specifying-durations target=_blank rel=noopener>duration</a> (default: 0).</li>
+<li><code>max_attempts</code>: How many times to attempt to restart a container before giving up (default: never give up). If the restart does not succeed within the configured <code>window</code>, this attempt doesn’t count toward the configured <code>max_attempts</code> value. For example, if <code>max_attempts</code> is set to ‘2’, and the restart fails on the first attempt, more than two restarts may be attempted.</li>
+<li><code>window</code>: How long to wait before deciding if a restart has succeeded, specified as a <a class=link href=https://docs.docker.com/compose/compose-file/#specifying-durations target=_blank rel=noopener>duration</a> (default: decide immediately).</li>
+</ul>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;3&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>redis</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>redis:alpine</span><span class=w>
@@ -111,7 +229,33 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>        </span><span class=nt>delay</span><span class=p>:</span><span class=w> </span><span class=l>5s</span><span class=w>
 </span><span class=w>        </span><span class=nt>max_attempts</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
 </span><span class=w>        </span><span class=nt>window</span><span class=p>:</span><span class=w> </span><span class=l>120s</span><span class=w>
-</span></code></pre></div><h3 id=rollback_config><code>ROLLBACK_CONFIG</code></h3><blockquote><p><a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#version-37 target=_blank rel=noopener>Version 3.7 file format</a> and up</p></blockquote><p>Configures how the service should be rollbacked in case of a failing update.</p><ul><li><code>parallelism</code>: The number of containers to rollback at a time. If set to 0, all containers rollback simultaneously.</li><li><code>delay</code>: The time to wait between each container group’s rollback (default 0s).</li><li><code>failure_action</code>: What to do if a rollback fails. One of <code>continue</code> or <code>pause</code> (default <code>pause</code>)</li><li><code>monitor</code>: Duration after each task update to monitor for failure <code>(ns|us|ms|s|m|h)</code> (default <code>0s</code>).</li><li><code>max_failure_ratio</code>: Failure rate to tolerate during a rollback (default 0).</li><li><code>order</code>: Order of operations during rollbacks. One of <code>stop-first</code> (old task is stopped before starting new one), or <code>start-first</code> (new task is started first, and the running tasks briefly overlap) (default <code>stop-first</code>).</li></ul><h3 id=update_config><code>UPDATE_CONFIG</code></h3><p>Configures how the service should be updated. Useful for configuring rolling updates.</p><ul><li><code>parallelism</code>: The number of containers to update at a time.</li><li><code>delay</code>: The time to wait between updating a group of containers.</li><li><code>failure_action</code>: What to do if an update fails. One of <code>continue</code>, <code>rollback</code>, or <code>pause</code> (default: <code>pause</code>).</li><li><code>monitor</code>: Duration after each task update to monitor for failure <code>(ns|us|ms|s|m|h)</code> (default <code>0s</code>).</li><li><code>max_failure_ratio</code>: Failure rate to tolerate during an update.</li><li><code>order</code>: Order of operations during updates. One of <code>stop-first</code> (old task is stopped before starting new one), or <code>start-first</code> (new task is started first, and the running tasks briefly overlap) (default <code>stop-first</code>). <strong>Note:</strong> Only supported for v3.4 and higher.</li></ul><blockquote><p><strong>Note:</strong> order is only supported for v3.4 and higher of the compose file format.</p></blockquote><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.4&#39;</span><span class=w>
+</span></code></pre></div><h3 id=rollback_config><code>ROLLBACK_CONFIG</code></h3>
+<blockquote>
+<p><a class=link href=https://docs.docker.com/compose/compose-file/compose-versioning/#version-37 target=_blank rel=noopener>Version 3.7 file format</a> and up</p>
+</blockquote>
+<p>Configures how the service should be rollbacked in case of a failing update.</p>
+<ul>
+<li><code>parallelism</code>: The number of containers to rollback at a time. If set to 0, all containers rollback simultaneously.</li>
+<li><code>delay</code>: The time to wait between each container group’s rollback (default 0s).</li>
+<li><code>failure_action</code>: What to do if a rollback fails. One of <code>continue</code> or <code>pause</code> (default <code>pause</code>)</li>
+<li><code>monitor</code>: Duration after each task update to monitor for failure <code>(ns|us|ms|s|m|h)</code> (default <code>0s</code>).</li>
+<li><code>max_failure_ratio</code>: Failure rate to tolerate during a rollback (default 0).</li>
+<li><code>order</code>: Order of operations during rollbacks. One of <code>stop-first</code> (old task is stopped before starting new one), or <code>start-first</code> (new task is started first, and the running tasks briefly overlap) (default <code>stop-first</code>).</li>
+</ul>
+<h3 id=update_config><code>UPDATE_CONFIG</code></h3>
+<p>Configures how the service should be updated. Useful for configuring rolling updates.</p>
+<ul>
+<li><code>parallelism</code>: The number of containers to update at a time.</li>
+<li><code>delay</code>: The time to wait between updating a group of containers.</li>
+<li><code>failure_action</code>: What to do if an update fails. One of <code>continue</code>, <code>rollback</code>, or <code>pause</code> (default: <code>pause</code>).</li>
+<li><code>monitor</code>: Duration after each task update to monitor for failure <code>(ns|us|ms|s|m|h)</code> (default <code>0s</code>).</li>
+<li><code>max_failure_ratio</code>: Failure rate to tolerate during an update.</li>
+<li><code>order</code>: Order of operations during updates. One of <code>stop-first</code> (old task is stopped before starting new one), or <code>start-first</code> (new task is started first, and the running tasks briefly overlap) (default <code>stop-first</code>). <strong>Note:</strong> Only supported for v3.4 and higher.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> order is only supported for v3.4 and higher of the compose file format.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.4&#39;</span><span class=w>
 </span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>vote</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=l>dockersamples/examplevotingapp_vote:before</span><span class=w>
@@ -123,14 +267,133 @@ extended"><div id=article-toolbar><a href=https://blog.hook.sh/ class=back-home>
 </span><span class=w>        </span><span class=nt>parallelism</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
 </span><span class=w>        </span><span class=nt>delay</span><span class=p>:</span><span class=w> </span><span class=l>10s</span><span class=w>
 </span><span class=w>        </span><span class=nt>order</span><span class=p>:</span><span class=w> </span><span class=l>stop-first</span><span class=w>
-</span></code></pre></div><h3 id=not-supported-for-docker-stack-deploy>NOT SUPPORTED FOR <code>DOCKER STACK DEPLOY</code></h3><p>The following sub-options (supported for <code>docker-compose up</code> and <code>docker-compose run</code>) are <em>not supported</em> for <code>docker stack deploy</code> or the <code>deploy</code> key.</p><ul><li><code>build</code></li><li><code>cgroup_parent</code></li><li><code>container_name</code></li><li><code>devices</code></li><li><code>tmpfs</code></li><li><code>external_links</code></li><li><code>links</code></li><li><code>network_mode</code></li><li><code>restart</code></li><li><code>security_opt</code></li><li><code>stop_signal</code></li><li><code>sysctls</code></li><li><code>userns_mode</code></li></ul><blockquote><p><strong>Tip:</strong> See the section on <a class=link href=https://docs.docker.com/compose/compose-file/#volumes-for-services-swarms-and-stack-files target=_blank rel=noopener>how to configure volumes for services, swarms, and docker-stack.yml files</a>. Volumes are supported but to work with swarms and services, they must be configured as named volumes or associated with services that are constrained to nodes with access to the requisite volumes.</p></blockquote></section><footer class=article-footer><section class=article-tags><a href=/en/tags/linux/>linux</a>
+</span></code></pre></div><h3 id=not-supported-for-docker-stack-deploy>NOT SUPPORTED FOR <code>DOCKER STACK DEPLOY</code></h3>
+<p>The following sub-options (supported for <code>docker-compose up</code> and <code>docker-compose run</code>) are <em>not supported</em> for <code>docker stack deploy</code> or the <code>deploy</code> key.</p>
+<ul>
+<li><code>build</code></li>
+<li><code>cgroup_parent</code></li>
+<li><code>container_name</code></li>
+<li><code>devices</code></li>
+<li><code>tmpfs</code></li>
+<li><code>external_links</code></li>
+<li><code>links</code></li>
+<li><code>network_mode</code></li>
+<li><code>restart</code></li>
+<li><code>security_opt</code></li>
+<li><code>stop_signal</code></li>
+<li><code>sysctls</code></li>
+<li><code>userns_mode</code></li>
+</ul>
+<blockquote>
+<p><strong>Tip:</strong> See the section on <a class=link href=https://docs.docker.com/compose/compose-file/#volumes-for-services-swarms-and-stack-files target=_blank rel=noopener>how to configure volumes for services, swarms, and docker-stack.yml files</a>. Volumes are supported but to work with swarms and services, they must be configured as named volumes or associated with services that are constrained to nodes with access to the requisite volumes.</p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/en/tags/linux/>linux</a>
 <a href=/en/tags/deploy/>deploy</a>
 <a href=/en/tags/docker-compose/>docker-compose</a>
 <a href=/en/tags/docker/>docker</a>
-<a href=/en/tags/devops/>devops</a></section><div style=display:flex;justify-content:space-between;margin-top:1em><div><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>WTFPL</span></section></div><div style=margin-left:auto><section style=height:100%><a href=https://github.com/hook-sh/blog/edit/master/content/post/compose-deploy/index.en.md style=font-size:.7em;color:var(--card-text-color-tertiary)>Edit this page</a></section></div></div></footer></article><aside class=related-contents--wrapper></aside><script src=https://utteranc.es/client.js repo=hook-sh/blog issue-term=pathname crossorigin=anonymous async></script><style>.utterances{max-width:unset}</style><script>function setUtterancesTheme(b){let a=document.querySelector('.utterances iframe');a&&a.contentWindow.postMessage({type:'set-theme',theme:`github-${b}`},'https://utteranc.es')}addEventListener('message',a=>{if(a.origin!=='https://utteranc.es')return;setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener('onColorSchemeChange',a=>{setUtterancesTheme(a.detail)})</script><footer class=site-footer><section class=copyright>&copy;
+<a href=/en/tags/devops/>devops</a>
+</section>
+<div style=display:flex;justify-content:space-between;margin-top:1em>
+<div>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>WTFPL</span>
+</section>
+</div>
+<div style=margin-left:auto><section style=height:100%>
+<a href=https://github.com/hook-sh/blog/edit/master/content/post/compose-deploy/index.en.md style=font-size:.7em;color:var(--card-text-color-tertiary)>Edit this page</a>
+</section>
+</div>
+</div></footer>
+</article>
+<aside class=related-contents--wrapper>
+</aside>
+<script src=https://utteranc.es/client.js repo=hook-sh/blog issue-term=pathname crossorigin=anonymous async></script>
+<style>.utterances{max-width:unset}</style>
+<script>function setUtterancesTheme(b){let a=document.querySelector('.utterances iframe');a&&a.contentWindow.postMessage({type:'set-theme',theme:`github-${b}`},'https://utteranc.es')}addEventListener('message',a=>{if(a.origin!=='https://utteranc.es')return;setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener('onColorSchemeChange',a=>{setUtterancesTheme(a.detail)})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
 2014 -
-2021 blog [dot] hook</section><section class=powerby>Make love, not war<br></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+2022 blog [dot] hook
+</section>
+<section class=powerby>
+Make love, not war <br>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous></main><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#deploy><code>deploy</code></a><ol><li><a href=#endpoint_mode><code>ENDPOINT_MODE</code></a></li><li><a href=#labels><code>LABELS</code></a></li><li><a href=#mode><code>MODE</code></a></li><li><a href=#placement><code>PLACEMENT</code></a></li><li><a href=#replicas><code>REPLICAS</code></a></li><li><a href=#resources><code>RESOURCES</code></a><ol><li><a href=#out-of-memory-exceptions-oome>Out Of Memory Exceptions (OOME)</a></li></ol></li><li><a href=#restart_policy><code>RESTART_POLICY</code></a></li><li><a href=#rollback_config><code>ROLLBACK_CONFIG</code></a></li><li><a href=#update_config><code>UPDATE_CONFIG</code></a></li><li><a href=#not-supported-for-docker-stack-deploy>NOT SUPPORTED FOR <code>DOCKER STACK DEPLOY</code></a></li></ol></li></ol></nav></div></section></aside></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script><script data-no-instant>(function(){const a=document.querySelectorAll('.outdated-post'),b=new Date;for(let c=0,f=a.length;c<f;c++){const d=a[c],e=new Date(d.getAttribute('data-posted-at'));if(!isNaN(e.valueOf())&&e.getFullYear()>1){const a=Math.abs(b.getTime()-e.getTime()),c=Math.ceil(a/(1e3*3600*24));c>=547&&(d.style.display='block',d.style.visibility='visible')}}})()</script></body></html>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#deploy><code>deploy</code></a>
+<ol>
+<li><a href=#endpoint_mode><code>ENDPOINT_MODE</code></a></li>
+<li><a href=#labels><code>LABELS</code></a></li>
+<li><a href=#mode><code>MODE</code></a></li>
+<li><a href=#placement><code>PLACEMENT</code></a></li>
+<li><a href=#replicas><code>REPLICAS</code></a></li>
+<li><a href=#resources><code>RESOURCES</code></a>
+<ol>
+<li><a href=#out-of-memory-exceptions-oome>Out Of Memory Exceptions (OOME)</a></li>
+</ol>
+</li>
+<li><a href=#restart_policy><code>RESTART_POLICY</code></a></li>
+<li><a href=#rollback_config><code>ROLLBACK_CONFIG</code></a></li>
+<li><a href=#update_config><code>UPDATE_CONFIG</code></a></li>
+<li><a href=#not-supported-for-docker-stack-deploy>NOT SUPPORTED FOR <code>DOCKER STACK DEPLOY</code></a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+<script data-no-instant>(function(){const a=document.querySelectorAll('.outdated-post'),b=new Date;for(let c=0,f=a.length;c<f;c++){const d=a[c],e=new Date(d.getAttribute('data-posted-at'));if(!isNaN(e.valueOf())&&e.getFullYear()>1){const a=Math.abs(b.getTime()-e.getTime()),c=Math.ceil(a/(1e3*3600*24));c>=547&&(d.style.display='block',d.style.visibility='visible')}}})()</script>
+</body>
+</html>
