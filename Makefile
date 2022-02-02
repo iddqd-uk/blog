@@ -5,7 +5,7 @@
 SHELL = /bin/bash
 
 # Image page: <https://hub.docker.com/r/klakegg/hugo>
-HUGO_IMAGE := klakegg/hugo:0.83.1-ext-alpine
+HUGO_IMAGE := klakegg/hugo:0.92.1-ext-alpine
 RUN_ARGS = --rm -v "$(shell pwd):/src:rw" --user "$(shell id -u):$(shell id -g)"
 
 .PHONY : help shell start post clean
