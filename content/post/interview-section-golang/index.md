@@ -15,6 +15,10 @@ tags: [golang, interview, coding]
 
 {{< table_of_contents >}}
 
+Для того, чтоб вспомнить историю о Go и о его особенностях можно посмотреть:
+
+{{< youtube ql-uncsqoAU >}}
+
 <!--more-->
 
 ## Расскажи о себе?
