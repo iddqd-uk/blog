@@ -98,4 +98,13 @@
 &lt;/li>
 &lt;/ol>
 &lt;/nav>
+&lt;/div>
+&lt;p>Для того, чтоб вспомнить историю о Go и о его особенностях можно посмотреть:&lt;/p>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/ql-uncsqoAU"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
 &lt;/div></description></item></channel></rss>
