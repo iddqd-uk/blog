@@ -14,7 +14,7 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
-        with: {hugo-version: 0.83.1, extended: true}
+        with: {hugo-version: 0.92.1, extended: true}
 
       - name: Build
         run: hugo --environment production --i18n-warnings --noChmod --noTimes

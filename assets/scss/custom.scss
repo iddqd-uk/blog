@@ -27,3 +27,39 @@
   display: block;
   width: 100%;
 }
+
+.widget--toc {
+  ::-webkit-scrollbar-thumb {
+      background-color: var(--body-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 10px;
+  }
+
+  #TableOfContents {
+    padding: 10px 0 10px 10px;
+    opacity: .8;
+    transition: opacity 200ms ease-out;
+    max-height: 80vh;
+
+    ol, ul {
+      font-size: .9em;
+
+      li {
+        margin: 5px 0;
+        padding: 3px 5px;
+
+        &::before {
+          margin-right: 2px;
+        }
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

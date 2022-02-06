@@ -5,6 +5,7 @@ slug: {{ replace .Name " " "-" | title | urlize }}
 date: {{ .Date }}
 expirydate: {{ ((.Date | time ).AddDate 2 6 1).Format "2006-01-02T15:04:05Z07:00" }}
 #draft: true
+toc: true
 image: cover.jpg
 categories: [change_me]
 tags: [etc]
