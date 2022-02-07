@@ -1,24 +1,24 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
- Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  TDT, Table-driven tests (табличное тестирование) Имя пакета с тестами Статические анализаторы (линтеры) Ошибка в бенчмарке Что про функциональное тестирование?   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       "><title>Вопросы и ответы для интервью Golang разработчика</title>
+ Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Как работает init? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  TDT, Table-driven tests (табличное тестирование) Имя пакета с тестами Статические анализаторы (линтеры) Ошибка в бенчмарке Что про функциональное тестирование?   Профилирование (pprof)  Пример использования pprof Так как же профилировщик работает в принципе?   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       "><title>Вопросы и ответы для интервью Golang разработчика</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang/>
 <link rel=stylesheet href=https://blog.hook.sh/scss/style.min.11011b406a9d6a17fced5ecbfc52fd41c541086d59a06d93e286ac2dee3c2327.css>
 <meta property="og:title" content="Вопросы и ответы для интервью Golang разработчика">
 <meta property="og:description" content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
- Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  TDT, Table-driven tests (табличное тестирование) Имя пакета с тестами Статические анализаторы (линтеры) Ошибка в бенчмарке Что про функциональное тестирование?   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       ">
+ Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Как работает init? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  TDT, Table-driven tests (табличное тестирование) Имя пакета с тестами Статические анализаторы (линтеры) Ошибка в бенчмарке Что про функциональное тестирование?   Профилирование (pprof)  Пример использования pprof Так как же профилировщик работает в принципе?   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       ">
 <meta property="og:url" content="https://blog.hook.sh/interview-section-golang/">
 <meta property="og:site_name" content="blog [dot] hook">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="golang"><meta property="article:tag" content="interview"><meta property="article:tag" content="coding"><meta property="article:published_time" content="2022-02-02T06:17:19+00:00"><meta property="article:modified_time" content="2022-02-02T06:17:19+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-golang/cover.png">
 <meta name=twitter:title content="Вопросы и ответы для интервью Golang разработчика">
 <meta name=twitter:description content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
- Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  TDT, Table-driven tests (табличное тестирование) Имя пакета с тестами Статические анализаторы (линтеры) Ошибка в бенчмарке Что про функциональное тестирование?   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       "><meta name=twitter:card content="summary_large_image">
+ Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Как работает init? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  TDT, Table-driven tests (табличное тестирование) Имя пакета с тестами Статические анализаторы (линтеры) Ошибка в бенчмарке Что про функциональное тестирование?   Профилирование (pprof)  Пример использования pprof Так как же профилировщик работает в принципе?   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       "><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644232977">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644232977">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644232977">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644241319">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644241319">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644241319">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -54,7 +54,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Чтение не займёт больше минуты
+Время чтения: 55 мин.
 </time>
 </div>
 </footer>
@@ -109,6 +109,7 @@ Go
 <li><a href=#дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</a></li>
 <li><a href=#что-такое-захват-переменной>Что такое захват переменной?</a></li>
 <li><a href=#как-работает-defer>Как работает <code>defer</code>?</a></li>
+<li><a href=#как-работает-init>Как работает <code>init</code>?</a></li>
 <li><a href=#прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</a></li>
 <li><a href=#сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</a></li>
 </ol>
@@ -170,6 +171,12 @@ Go
 <li><a href=#что-про-функциональное-тестирование>Что про функциональное тестирование?</a></li>
 </ol>
 </li>
+<li><a href=#профилирование-pprof>Профилирование (<code>pprof</code>)</a>
+<ol>
+<li><a href=#пример-использования-pprof>Пример использования <code>pprof</code></a></li>
+<li><a href=#так-как-же-профилировщик-работает-в-принципе>Так как же профилировщик работает в принципе?</a></li>
+</ol>
+</li>
 <li><a href=#компилятор>Компилятор</a>
 <ol>
 <li><a href=#какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</a>
@@ -199,7 +206,7 @@ Go
 <li>Разработанный мной сервис состоял из такого-то набора микросервисов, такие-то службы и протоколы использовал, были такие-то ключевые проблемы которые мы так-то зарешали; основной ценностью было то-то.</li>
 </ul>
 <h2 id=кем-был-создан-язык-какие-его-особенности>Кем был создан язык, какие его особенности?</h2>
-<p>Go <em>(часто также golang)</em> — компилируемый многопоточный язык программирования, разработанный внутри компании Google. Разработка началась в 2007 году, его непосредственным проектированием занимались <a class=link href=https://github.com/griesemer target=_blank rel=noopener>Роберт Гризмер</a>, <a class=link href=https://github.com/robpike target=_blank rel=noopener>Роб Пайк</a> и Кен Томпсон. Официально язык был представлен в ноябре 2009 года.</p>
+<p>Go <em>(часто также golang)</em> - компилируемый многопоточный язык программирования, разработанный внутри компании Google. Разработка началась в 2007 году, его непосредственным проектированием занимались <a class=link href=https://github.com/griesemer target=_blank rel=noopener>Роберт Гризмер</a>, <a class=link href=https://github.com/robpike target=_blank rel=noopener>Роб Пайк</a> и Кен Томпсон. Официально язык был представлен в ноябре 2009 года.</p>
 <p>В качестве ключевых особенностей можно выделить:</p>
 <ul>
 <li>Простая грамматика (минимум ключевых слов - язык создавался по принципу &ldquo;что ещё можно выкинуть&rdquo; вместо &ldquo;что бы ещё в него добавить&rdquo;)</li>
@@ -806,6 +813,11 @@ Go
 	<span class=nb>panic</span><span class=p>(</span><span class=s>&#34;panic is here&#34;</span><span class=p>)</span>
 <span class=p>}</span>
 </code></pre></div><p>Когда выполняется ключевое слово <code>defer</code>, оно помещает следующий за ним оператор в список, который будет вызван до возврата функции.</p>
+<h3 id=как-работает-init>Как работает <code>init</code>?</h3>
+<p>В Go есть предопределенная функция <code>init()</code>. Она выделяет фрагмент кода, который должен выполняться перед всеми другими частями пакета. Этот код будет выполняться сразу после <strong>импорта</strong> пакета.</p>
+<p>Также функция <code>init()</code> используется для автоматической регистрации одного пакета в другом (например, так работает подавляющее большинство &ldquo;драйверов&rdquo; для различных СУБД, например - <a class=link href=https://github.com/go-sql-driver/mysql/blob/217d05049e5a88d529b9a2d5fe5675120831efab/driver.go#L83-L85 target=_blank rel=noopener>go-sql-driver/mysql/driver.go</a>).</p>
+<p>Функцию <code>init()</code> можно использовать <strong>неоднократно</strong> в рамках даже одного файла, выполняться они будут в этом случае в порядке, как их встречает компилятор.</p>
+<p>Хотя использование <code>init()</code> и является довольно полезным, но часто оно затрудняет чтение/понимание кода, и (почти) всегда можно обойтись без неё, поэтому необходимость её использования - всегда <strong>очень</strong> большой вопрос.</p>
 <h3 id=прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</h3>
 <p>Что произойдёт в следующем примере, если <code>f()</code> вернёт <code>true</code>?</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=k>for</span> <span class=p>{</span>
@@ -1091,7 +1103,7 @@ Go
 <ul>
 <li><a class=link href=https://habr.com/ru/post/490336/ target=_blank rel=noopener>Анатомия каналов в Go</a></li>
 <li><a class=link href=https://habr.com/ru/post/308070/ target=_blank rel=noopener>Как устроены каналы в Go</a></li>
-<li><a class=link href=https://medium.com/@victor_nerd/%D0%BF%D0%BE%D0%B4-%D0%BA%D0%B0%D0%BF%D0%BE%D1%82%D0%BE%D0%BC-golang-%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%D1%82-%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D1%8B-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-e1da9e3e104d target=_blank rel=noopener>Под капотом Golang — как работают каналы. Часть 1</a></li>
+<li><a class=link href=https://medium.com/@victor_nerd/%D0%BF%D0%BE%D0%B4-%D0%BA%D0%B0%D0%BF%D0%BE%D1%82%D0%BE%D0%BC-golang-%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%D1%82-%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D1%8B-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-e1da9e3e104d target=_blank rel=noopener>Под капотом Golang - как работают каналы. Часть 1</a></li>
 <li><a class=link href=https://medium.com/@victor_nerd/golang-channel-internal-part2-b4e37ad9a118 target=_blank rel=noopener>Строение каналов в Golang. Часть 2</a></li>
 </ul>
 </blockquote>
@@ -1145,21 +1157,21 @@ Go
 </ul>
 </blockquote>
 <h3 id=что-такое-горутина>Что такое горутина?</h3>
-<p>Горутина (goroutine) — это функция, выполняющаяся конкурентно с другими горутинами в том же адресном пространстве.</p>
+<p>Горутина (goroutine) - это функция, выполняющаяся конкурентно с другими горутинами в том же адресном пространстве.</p>
 <p>Для её запуска достаточно использовать ключевое слово <code>go</code> перед именем вызываемой (или анонимной) функции.</p>
-<p>Горутины очень легковесны (~<strong>2,6Kb</strong> на горутину). Практически все расходы — это создание стека, который очень невелик, хотя при необходимости может расти. Область их применения чаще всего следующая:</p>
+<p>Горутины очень легковесны (~<strong>2,6Kb</strong> на горутину). Практически все расходы - это создание стека, который очень невелик, хотя при необходимости может расти. Область их применения чаще всего следующая:</p>
 <ul>
 <li>Когда нужна асинхронность <em>(например когда мы работаем с сетью, диском, базой данных, защищенным мьютексом ресурсом и т.п.)</em></li>
 <li>Когда время выполнения функции достаточно велико и можно получить выигрыш, нагрузив другие ядра</li>
 </ul>
 <p>Сама структура горутины занимает порядка 600 байт, но для неё ещё выделяется и её собственный стек, минимальный размер котого составляет 2Kb, который увеличивается и уменьшается по мере необходимости <em>(максимум зависит от архитектуры и составляет 1 ГБ для 64-разрядных систем и 250 МБ для 32-разрядных систем)</em>.</p>
-<p>Переключение между двумя Горутинами — супер дешевое, <code>O(1)</code>, то есть, не зависит от количества созданных горутин в системе. Всё, что нужно сделать для переключения, это поменять 3 регистра — <code>Program counter</code>, <code>Stack Pointer</code> и <code>DX</code>.</p>
+<p>Переключение между двумя Горутинами - супер дешевое, <code>O(1)</code>, то есть, не зависит от количества созданных горутин в системе. Всё, что нужно сделать для переключения, это поменять 3 регистра - <code>Program counter</code>, <code>Stack Pointer</code> и <code>DX</code>.</p>
 <h4 id=в-чем-отличия-горутин-от-потов-ос>В чем отличия горутин от потов ОС?</h4>
 <ul>
-<li>Каждый поток операционной системы имеет блок памяти фиксированного размера (зачастую до <strong>2 Мбайт</strong>) для стека — рабочей области, в которой он хранит локальные переменные вызовов функций, находящиеся в работе или приостановленные на время вызова другой функции. В противоположность этому go-подпрограмма начинает работу с небольшим стеком, обычно около <strong>2 Кбайт</strong>. Стек горутины, подобно стеку потока операционной системы, хранит локальные переменные активных и приостановленных функций, но, в отличие от потоков операционной системы, не является фиксированным; при необходимости он может расти и уменьшаться</li>
+<li>Каждый поток операционной системы имеет блок памяти фиксированного размера (зачастую до <strong>2 Мбайт</strong>) для стека - рабочей области, в которой он хранит локальные переменные вызовов функций, находящиеся в работе или приостановленные на время вызова другой функции. В противоположность этому go-подпрограмма начинает работу с небольшим стеком, обычно около <strong>2 Кбайт</strong>. Стек горутины, подобно стеку потока операционной системы, хранит локальные переменные активных и приостановленных функций, но, в отличие от потоков операционной системы, не является фиксированным; при необходимости он может расти и уменьшаться</li>
 <li>Потоки операционной системы планируются в ее ядре, а у go есть собственный планировщик (m:n) мультиплексирующий (раскидывающий) горутинки (m) по потокам (n). Основной плюс - отсутствие оверхеда на переключение контекста</li>
 <li>Планировщик Go использует параметр с именем <code>GOMAXPROCS</code> для определения, сколько потоков операционной системы могут одновременно активно выполнять код Go. Его значение по умолчанию равно <strong>количеству процессоров (ядер) компьютера</strong>, так что на машине с 8 процессорами (ядрами) планировщик будет планировать код Go для выполнения на 8 потоках одновременно. Спящие или заблокированные в процессе коммуникации go-подпрограммы потоков для себя не требуют. Go-подпрограммы, заблокированные в операции ввода-вывода или в других системных вызовах, или при вызове функций, не являющихся функциями Go, нуждаются в потоке операционной системы, но GOMAXPROCS их не учитывает</li>
-<li>В большинстве операционных систем и языков программирования, поддерживающих многопоточность, текущий поток имеет идентификацию, которая может быть легко получена как обычное значение (обычно — целое число или указатель). У горутин нет идентификации, доступной программисту. Так решено во время проектирования языка, поскольку локальной памятью потока программисты злоупотребляют</li>
+<li>В большинстве операционных систем и языков программирования, поддерживающих многопоточность, текущий поток имеет идентификацию, которая может быть легко получена как обычное значение (обычно - целое число или указатель). У горутин нет идентификации, доступной программисту. Так решено во время проектирования языка, поскольку локальной памятью потока программисты злоупотребляют</li>
 </ul>
 <h4 id=где-аллоцируется-память-для-горутин>Где аллоцируется память для горутин?</h4>
 <p>Так как горутины являются <strong>stackful</strong> - то и память для них (их состояние) хранится на стеке. Поэтому, теоритически, если очень постараться и сделать милилард вложенных вызовов, то можно сделать себе переполнение стека.</p>
@@ -1167,7 +1179,7 @@ Go
 <blockquote>
 <p>Что можно почитать:</p>
 <ul>
-<li><a class=link href=https://hixon.ru/o-zhizni/dostuchatsya-do-nebes-korutiny-gorutiny-i-prochie-rutiny.html target=_blank rel=noopener>Достучаться до небес — Корутины, Горутины и прочие Рутины</a></li>
+<li><a class=link href=https://hixon.ru/o-zhizni/dostuchatsya-do-nebes-korutiny-gorutiny-i-prochie-rutiny.html target=_blank rel=noopener>Достучаться до небес - Корутины, Горутины и прочие Рутины</a></li>
 <li><a class=link href=https://habr.com/ru/company/otus/blog/586108/ target=_blank rel=noopener>Go: как изменяется размер стека горутины?</a></li>
 </ul>
 </blockquote>
@@ -1401,6 +1413,104 @@ Go
 <h3 id=что-про-функциональное-тестирование>Что про функциональное тестирование?</h3>
 <p>Тут всё зависит от того, что мы собираемся тестировать, и тянет на отдельную тему для разговора. Для HTTP посоветовать можно <a class=link href=https://www.postman.com/ target=_blank rel=noopener>postman</a> и его CLI-версию <a class=link href=https://github.com/postmanlabs/newman target=_blank rel=noopener>newman</a>. Ещё как вариант &ldquo;быстро и просто&rdquo; - это <a class=link href=https://hurl.dev/ target=_blank rel=noopener>hurl</a>.</p>
 <p>Для за-mock-ивания стороннего HTTP API - <a class=link href=https://github.com/jmartin82/mmock target=_blank rel=noopener>jmartin82/mmock</a> или <a class=link href=https://github.com/lamoda/gonkey target=_blank rel=noopener>lamoda/gonkey</a>.</p>
+<h2 id=профилирование-pprof>Профилирование (<code>pprof</code>)</h2>
+<p>Для профилирования &ldquo;родными&rdquo; средствами в поставке с Go имеется пакет <code>pprof</code> и одноименная консольная утилита <code>go tool pprof</code>. Причинами необходимости в профилировании могут стать:</p>
+<ul>
+<li>Длительная работа различных частей программы</li>
+<li>Высокое потребление памяти</li>
+<li>Высокое потребление ресурсов процессора</li>
+</ul>
+<p>Профилировщик является семплирующим - с какой-то периодичностью мы прерываем работу программы, берем стек-трейс, записываем его куда-то, а в конце, на основе того, как часто в стек-трейсах встречаются разные функции, мы понимаем, какие из них использовали больше ресурсов процессора, а какие меньше. Работа с ним состоит из двух этапов - сбор статистики по работе сервиса, и её визуализация + анализ. Собирать статистику можно добавив вызовы пакета <code>pprof</code>, либо запустив HTTP сервер.</p>
+<h3 id=пример-использования-pprof>Пример использования <code>pprof</code></h3>
+<p>Рассмотрим простой случай, когда у нас есть функция, которая выполняется по какой-то причине очень долго. Обрамим вызовы потенциально-тяжелого кода в <code>startPprof</code> и <code>stopPprof</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kn>import</span> <span class=p>(</span>
+	<span class=s>&#34;os&#34;</span>
+	<span class=s>&#34;runtime/pprof&#34;</span>
+	<span class=s>&#34;time&#34;</span>
+<span class=p>)</span>
+
+<span class=kd>func</span> <span class=nf>startPprof</span><span class=p>()</span> <span class=o>*</span><span class=nx>os</span><span class=p>.</span><span class=nx>File</span> <span class=p>{</span> <span class=c1>// вспомогательная функция начала профилирования
+</span><span class=c1></span>	<span class=nx>f</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>Create</span><span class=p>(</span><span class=s>&#34;profile.pprof&#34;</span><span class=p>)</span>
+	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+		<span class=nb>panic</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+	<span class=p>}</span>
+
+	<span class=k>if</span> <span class=nx>err</span> <span class=p>=</span> <span class=nx>pprof</span><span class=p>.</span><span class=nf>StartCPUProfile</span><span class=p>(</span><span class=nx>f</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+		<span class=nb>panic</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+	<span class=p>}</span>
+
+	<span class=k>return</span> <span class=nx>f</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>stopPprof</span><span class=p>(</span><span class=nx>f</span> <span class=o>*</span><span class=nx>os</span><span class=p>.</span><span class=nx>File</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// вспомогательная функция завершения профилирования
+</span><span class=c1></span>	<span class=nx>pprof</span><span class=p>.</span><span class=nf>StopCPUProfile</span><span class=p>()</span>
+
+	<span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>f</span><span class=p>.</span><span class=nf>Close</span><span class=p>();</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+		<span class=nb>panic</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+	<span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// наша основания функция
+</span><span class=c1></span>	<span class=kd>var</span> <span class=p>(</span>
+		<span class=nx>slice</span> <span class=p>=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+		<span class=nx>m</span>     <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>int</span><span class=p>]</span><span class=kt>int</span><span class=p>)</span>
+	<span class=p>)</span>
+
+	<span class=nx>pprofFile</span> <span class=o>:=</span> <span class=nf>startPprof</span><span class=p>()</span> <span class=c1>// начинаем профилирование
+</span><span class=c1></span>
+	<span class=c1>// тут начинается какая-то &#34;тяжелая&#34; работа
+</span><span class=c1></span>	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>10_000_000</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nx>slice</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>slice</span><span class=p>,</span> <span class=nx>i</span><span class=o>*</span><span class=nx>i</span><span class=p>)</span>
+	<span class=p>}</span>
+
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>10_000_000</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nx>m</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=p>=</span> <span class=nx>i</span> <span class=o>*</span> <span class=nx>i</span>
+	<span class=p>}</span>
+
+	<span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span>
+	<span class=c1>// а тут она завершается
+</span><span class=c1></span>
+	<span class=nf>stopPprof</span><span class=p>(</span><span class=nx>pprofFile</span><span class=p>)</span> <span class=c1>// завершаем профилирование
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></div><p>После компиляции и запуска приложения (<code>go build -o ./main . && ./main</code>) в текущей директории появится файл с именем <code>profile.pprof</code>, содержащий профиль работы. &ldquo;Конвертируем&rdquo; его в читаемое представление в виде <code>svg</code> изображения с помощью <code>go tool pprof -svg ./profile.pprof</code> (на Linux для этого понадобится установленный пакет <code>graphviz</code>) и открываем его (имя файла будет в виде <code>profile001.svg</code>):</p>
+<p><figure class=gallery-image style=flex-grow:159;flex-basis:382px>
+<a href=/interview-section-golang/ppropf-before.png data-size=2428x1525>
+<img src=/interview-section-golang/ppropf-before.png width=2428 height=1525 srcset="/interview-section-golang/ppropf-before_hu7a1100d125a2f212a8d65d9fba34d4ae_157454_480x0_resize_box_3.png 480w, /interview-section-golang/ppropf-before_hu7a1100d125a2f212a8d65d9fba34d4ae_157454_1024x0_resize_box_3.png 1024w" loading=lazy>
+</a>
+</figure></p>
+<p>Посмотрим на получившийся граф вызовов. Изучая такой граф, в первую очередь нужно обращать внимание на толщину ребер (стрелочек) и на размер узлов графа (квадратиков). На ребрах подписано время - сколько времени данный узел или любой из ниже лежащих узлов находился в стек-трейсе во время профилирования.</p>
+<p>В нашем профиле можем заметить, что <code>runtime evacuate_fast64</code> занимает очень много времени. Связано это с тем, что из мапы данным приходиться эвакуироваться, так как размер мапы очень сильно растёт. Исправляем это (а заодно и слайс) всего в двух строчках:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=p>(</span>
+  <span class=nx>slice</span> <span class=p>=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>10_000_000</span><span class=p>)</span>    <span class=c1>// заставляем аллоцировать память в слайсе
+</span><span class=c1></span>  <span class=nx>m</span>     <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>int</span><span class=p>]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>10_000_000</span><span class=p>)</span> <span class=c1>// и в мапе заранее
+</span><span class=c1></span><span class=p>)</span>
+</code></pre></div><p>Повторяем все сделанные ранее операции снова, и видим уже совсем другую картину:</p>
+<p><figure class=gallery-image style=flex-grow:162;flex-basis:390px>
+<a href=/interview-section-golang/ppropf-after.png data-size=1594x979>
+<img src=/interview-section-golang/ppropf-after.png width=1594 height=979 srcset="/interview-section-golang/ppropf-after_hu09dec72797f8675a4ecad00a352f102c_54522_480x0_resize_box_3.png 480w, /interview-section-golang/ppropf-after_hu09dec72797f8675a4ecad00a352f102c_54522_1024x0_resize_box_3.png 1024w" loading=lazy>
+</a>
+</figure></p>
+<p>Теперь картина значительно лучше, и следующее место оптимизации (потенциально) это пересмотреть работу с данными, а именно - нужна ли нам работа с мапой в принципе (может заменить её каким-то слайсом), и если нет - то как можно улучшить (оптимизировать) запись в неё.</p>
+<h3 id=так-как-же-профилировщик-работает-в-принципе>Так как же профилировщик работает в принципе?</h3>
+<p>Go runtime просит ОС посылать сигнал (<code>man setitimer</code>) с определенной периодичностью и назначает на этот сигнал обработчик. Обработчик берет стек-трейс всех горутин, какую-то дополнительную информацию, записывает ее в буфер и выходит.</p>
+<p>Каковы же недостатки данного подхода?</p>
+<ul>
+<li>Каждый сигнал - это изменение контекста, вещь довольно затратная в наше время. В Go сейчас получается получить порядка 100 в секунду. Иногда этого мало</li>
+<li>Для нестандартных сборок, например, с использованием <code>-buildmode=c-archive</code> или <code>-buildmode=c-shared</code>, профайлер работать по умолчанию не будет. Это связано с тем, что сигнал <code>SIGPROF</code> (который посылает ОС) придет в основной поток программы, который не контролируется Go</li>
+<li>Процесс <code>user space</code>, которым является программа на Go, не может получить ядерный стек-трейс. Неоптимальности и проблемы иногда кроются и в ядре</li>
+</ul>
+<p>Основное преимущество, конечно, в том, что Go runtime обладает полной информацией о своем внутреннем устройстве. Внешние средства, например, по умолчанию ничего не знают о горутинах. Для них существуют только процессы и треды.</p>
+<div class=video-wrapper>
+<iframe loading=lazy src=https://www.youtube.com/embed/0i1nO9gwACY allowfullscreen title="YouTube Video"></iframe>
+</div>
+<blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://habr.com/ru/company/badoo/blog/301990/ target=_blank rel=noopener>Профилирование и оптимизация программ на Go</a></li>
+</ul>
+</blockquote>
 <h2 id=компилятор>Компилятор</h2>
 <h3 id=какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</h3>
 <p>Компилятор Go понимает некоторые директивы (пишутся они в виде комментариев, как правило <code>//go:directive</code>), которые влияют на процесс компиляции (оптимизации, проверок, и т.д.) но не являются частью языка. Вот некоторые из них:</p>
@@ -1609,6 +1719,7 @@ Make love, not war <br>
 <li><a href=#дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</a></li>
 <li><a href=#что-такое-захват-переменной>Что такое захват переменной?</a></li>
 <li><a href=#как-работает-defer>Как работает <code>defer</code>?</a></li>
+<li><a href=#как-работает-init>Как работает <code>init</code>?</a></li>
 <li><a href=#прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</a></li>
 <li><a href=#сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</a></li>
 </ol>
@@ -1668,6 +1779,12 @@ Make love, not war <br>
 <li><a href=#статические-анализаторы-линтеры>Статические анализаторы (линтеры)</a></li>
 <li><a href=#ошибка-в-бенчмарке>Ошибка в бенчмарке</a></li>
 <li><a href=#что-про-функциональное-тестирование>Что про функциональное тестирование?</a></li>
+</ol>
+</li>
+<li><a href=#профилирование-pprof>Профилирование (<code>pprof</code>)</a>
+<ol>
+<li><a href=#пример-использования-pprof>Пример использования <code>pprof</code></a></li>
+<li><a href=#так-как-же-профилировщик-работает-в-принципе>Так как же профилировщик работает в принципе?</a></li>
 </ol>
 </li>
 <li><a href=#компилятор>Компилятор</a>
