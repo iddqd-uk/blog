@@ -44,9 +44,24 @@
     opacity: .8;
     transition: opacity 200ms ease-out;
     max-height: 80vh;
+    font-size: .9em;
 
     ol, ul {
-      font-size: .9em;
+      code {
+        color: var(--code-text-color);
+        background-color: var(--code-background-color);
+        padding: 1px 4px;
+        border-radius: var(--tag-border-radius);
+        font-family: var(--code-font-family);
+      }
+
+      & > li {
+        font-weight: bold;
+
+        li {
+          font-weight: normal;
+        }
+      }
 
       li {
         margin: 5px 0;
