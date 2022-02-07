@@ -1,27 +1,24 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
- Расскажи о себе? Расскажи о своем самом интересном проекте? Что такое ООП? Как это сделано в Golang? Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива?  TL;DR Развёрнуто   Как работает append в слайсе? Задача про слайсы #1  Вопрос Ответ   Что можно сказать про map?  Как растет map? Что там про поиск?   Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Что такое synс.Map? Как устроен мьютекс? В чем отличие sync.Mutex от sync.RWMutex? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Race condition. Потокобезопасна ли мапа? Как задетектить гонку? Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Как устроен Duck-typing в Go? Что такое интерфейс?  Интерфейсный тип Пустой interface{}   Что можешь рассказать про escape analysis? Дополнительный блок фигурных скобок в функции Что такое замыкание? Что такое захват переменной? Какое поведение по умолчанию используется в Go при передаче в функцию? Сколько можно возвращать значений из функции? Как сделать свои методы для стороннего пакета? Какие битовые операции знаешь? Как работает defer? Прерывание for/switch или for/select Инвертирование зависимости Какие типы каналов существуют? Что можно делать с закрытым каналом? Что такое горутина?  Планировщик горутин   Где аллоцируется память для горутин? Как завершить много горутин? Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed   Тестирование  Ошибка в бенчмарке      Для того, чтоб вспомнить историю о Go и о его особенностях можно посмотреть:
- "><title>Вопросы и ответы для интервью Golang разработчика</title>
+ Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  Ошибка в бенчмарке   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       "><title>Вопросы и ответы для интервью Golang разработчика</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.b10a0330f5831b27ddd37f1308ceed352993b8814f848ed17b90c43df05b589c.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.11011b406a9d6a17fced5ecbfc52fd41c541086d59a06d93e286ac2dee3c2327.css>
 <meta property="og:title" content="Вопросы и ответы для интервью Golang разработчика">
 <meta property="og:description" content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
- Расскажи о себе? Расскажи о своем самом интересном проекте? Что такое ООП? Как это сделано в Golang? Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива?  TL;DR Развёрнуто   Как работает append в слайсе? Задача про слайсы #1  Вопрос Ответ   Что можно сказать про map?  Как растет map? Что там про поиск?   Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Что такое synс.Map? Как устроен мьютекс? В чем отличие sync.Mutex от sync.RWMutex? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Race condition. Потокобезопасна ли мапа? Как задетектить гонку? Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Как устроен Duck-typing в Go? Что такое интерфейс?  Интерфейсный тип Пустой interface{}   Что можешь рассказать про escape analysis? Дополнительный блок фигурных скобок в функции Что такое замыкание? Что такое захват переменной? Какое поведение по умолчанию используется в Go при передаче в функцию? Сколько можно возвращать значений из функции? Как сделать свои методы для стороннего пакета? Какие битовые операции знаешь? Как работает defer? Прерывание for/switch или for/select Инвертирование зависимости Какие типы каналов существуют? Что можно делать с закрытым каналом? Что такое горутина?  Планировщик горутин   Где аллоцируется память для горутин? Как завершить много горутин? Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed   Тестирование  Ошибка в бенчмарке      Для того, чтоб вспомнить историю о Go и о его особенностях можно посмотреть:
- ">
+ Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  Ошибка в бенчмарке   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       ">
 <meta property="og:url" content="https://blog.hook.sh/interview-section-golang/">
 <meta property="og:site_name" content="blog [dot] hook">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="golang"><meta property="article:tag" content="interview"><meta property="article:tag" content="coding"><meta property="article:published_time" content="2022-02-02T06:17:19+00:00"><meta property="article:modified_time" content="2022-02-02T06:17:19+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-golang/cover.png">
 <meta name=twitter:title content="Вопросы и ответы для интервью Golang разработчика">
 <meta name=twitter:description content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
- Расскажи о себе? Расскажи о своем самом интересном проекте? Что такое ООП? Как это сделано в Golang? Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива?  TL;DR Развёрнуто   Как работает append в слайсе? Задача про слайсы #1  Вопрос Ответ   Что можно сказать про map?  Как растет map? Что там про поиск?   Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Что такое synс.Map? Как устроен мьютекс? В чем отличие sync.Mutex от sync.RWMutex? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Race condition. Потокобезопасна ли мапа? Как задетектить гонку? Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Как устроен Duck-typing в Go? Что такое интерфейс?  Интерфейсный тип Пустой interface{}   Что можешь рассказать про escape analysis? Дополнительный блок фигурных скобок в функции Что такое замыкание? Что такое захват переменной? Какое поведение по умолчанию используется в Go при передаче в функцию? Сколько можно возвращать значений из функции? Как сделать свои методы для стороннего пакета? Какие битовые операции знаешь? Как работает defer? Прерывание for/switch или for/select Инвертирование зависимости Какие типы каналов существуют? Что можно делать с закрытым каналом? Что такое горутина?  Планировщик горутин   Где аллоцируется память для горутин? Как завершить много горутин? Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed   Тестирование  Ошибка в бенчмарке      Для того, чтоб вспомнить историю о Go и о его особенностях можно посмотреть:
- "><meta name=twitter:card content="summary_large_image">
+ Расскажи о себе? Расскажи о своем самом интересном проекте? Кем был создан язык, какие его особенности? Что такое ООП? Как это сделано в Golang?  Как устроено инвертирование зависимостей? Как сделать свои методы для стороннего пакета?   Типы данных и синтаксис  Как устроены строки в Go? В чём ключевое отличие слайса (среза) от массива? Как работает append в слайсе?  Задача про слайсы #1   Что можешь рассказать про map?  Как растет map? Что там про поиск? Есть ли у map такие же методы как у слайса: len, cap? Какие типы ключей разрешены для ключа в map? Может ли ключом быть структура? Если может, то всегда ли? Что будет в map, если не делать make или short assign? Race condition. Потокобезопасна ли мапа?   Что такое интерфейс?  Как устроен Duck-typing в Go? Интерфейсный тип Пустой interface{}   Что такое замыкание? Какие битовые операции знаешь? Дополнительный блок фигурных скобок в функции Что такое захват переменной? Как работает defer? Прерывание for/switch или for/select Сколько можно возвращать значений из функции?   Память и управление ей  Что такое heap и stack? Где выделяется память под переменную? Можно ли этим управлять? Какое поведение по умолчанию используется в Go при передаче в функцию? Что можешь рассказать про escape analysis?   Сoncurrency (конкурентность)  Как устроен мьютекс?  В чем отличие sync.Mutex от sync.RWMutex?   Что такое synс.Map? Какие ещё примитивы синхронизации знаешь?  sync.WaitGroup sync.Cond sync.Once sync.Pool   Какие типы каналов существуют?  Что можно делать с закрытым каналом?   Расскажи про планировщик (горутин) Что такое горутина?  В чем отличия горутин от потов ОС? Где аллоцируется память для горутин? Как завершить много горутин?   Кейсы использования контекста  context.WithCancel() context.WithDeadline() context.WithTimeout() context.WithValue()   Как задетектить гонку?   Тестирование  Ошибка в бенчмарке   Компилятор  Какие директивы компилятора знаешь?  //go:linkname //go:nosplit //go:norace //go:noinline //go:noescape //go:build //go:generate //go:embed       "><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644141515">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644141515">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644141515">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644225750">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644225750">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644225750">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -57,7 +54,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 46 мин.
+Время чтения: 49 мин.
 </time>
 </div>
 </footer>
@@ -73,34 +70,65 @@ Go
 <ol>
 <li><a href=#расскажи-о-себе>Расскажи о себе?</a></li>
 <li><a href=#расскажи-о-своем-самом-интересном-проекте>Расскажи о своем самом интересном проекте?</a></li>
-<li><a href=#что-такое-ооп-как-это-сделано-в-golang>Что такое ООП? Как это сделано в Golang?</a></li>
+<li><a href=#кем-был-создан-язык-какие-его-особенности>Кем был создан язык, какие его особенности?</a></li>
+<li><a href=#что-такое-ооп-как-это-сделано-в-golang>Что такое ООП? Как это сделано в Golang?</a>
+<ol>
+<li><a href=#как-устроено-инвертирование-зависимостей>Как устроено инвертирование зависимостей?</a></li>
+<li><a href=#как-сделать-свои-методы-для-стороннего-пакета>Как сделать свои методы для стороннего пакета?</a></li>
+</ol>
+</li>
+<li><a href=#типы-данных-и-синтаксис>Типы данных и синтаксис</a>
+<ol>
 <li><a href=#как-устроены-строки-в-go>Как устроены строки в Go?</a></li>
-<li><a href=#в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</a>
+<li><a href=#в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</a></li>
+<li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a>
 <ol>
-<li><a href=#tldr>TL;DR</a></li>
-<li><a href=#развёрнуто>Развёрнуто</a></li>
+<li><a href=#задача-про-слайсы-1>Задача про слайсы #1</a></li>
 </ol>
 </li>
-<li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a></li>
-<li><a href=#задача-про-слайсы-1>Задача про слайсы #1</a>
-<ol>
-<li><a href=#вопрос>Вопрос</a></li>
-<li><a href=#ответ>Ответ</a></li>
-</ol>
-</li>
-<li><a href=#что-можно-сказать-про-map>Что можно сказать про <code>map</code>?</a>
+<li><a href=#что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</a>
 <ol>
 <li><a href=#как-растет-map>Как растет <code>map</code>?</a></li>
 <li><a href=#что-там-про-поиск>Что там про поиск?</a></li>
-</ol>
-</li>
 <li><a href=#есть-ли-у-map-такие-же-методы-как-у-слайса-len-cap>Есть ли у <code>map</code> такие же методы как у слайса: <code>len</code>, <code>cap</code>?</a></li>
 <li><a href=#какие-типы-ключей-разрешены-для-ключа-в-map>Какие типы ключей разрешены для ключа в <code>map</code>?</a></li>
 <li><a href=#может-ли-ключом-быть-структура-если-может-то-всегда-ли>Может ли ключом быть структура? Если может, то всегда ли?</a></li>
 <li><a href=#что-будет-в-map-если-не-делать-make-или-short-assign>Что будет в <code>map</code>, если не делать <code>make</code> или <code>short assign</code>?</a></li>
-<li><a href=#что-такое-synсmap>Что такое <code>synс.Map</code>?</a></li>
-<li><a href=#как-устроен-мьютекс>Как устроен мьютекс?</a></li>
+<li><a href=#race-condition-потокобезопасна-ли-мапа>Race condition. Потокобезопасна ли мапа?</a></li>
+</ol>
+</li>
+<li><a href=#что-такое-интерфейс>Что такое интерфейс?</a>
+<ol>
+<li><a href=#как-устроен-duck-typing-в-go>Как устроен Duck-typing в Go?</a></li>
+<li><a href=#интерфейсный-тип>Интерфейсный тип</a></li>
+<li><a href=#пустой-interface>Пустой <code>interface{}</code></a></li>
+</ol>
+</li>
+<li><a href=#что-такое-замыкание>Что такое замыкание?</a></li>
+<li><a href=#какие-битовые-операции-знаешь>Какие битовые операции знаешь?</a></li>
+<li><a href=#дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</a></li>
+<li><a href=#что-такое-захват-переменной>Что такое захват переменной?</a></li>
+<li><a href=#как-работает-defer>Как работает <code>defer</code>?</a></li>
+<li><a href=#прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</a></li>
+<li><a href=#сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</a></li>
+</ol>
+</li>
+<li><a href=#память-и-управление-ей>Память и управление ей</a>
+<ol>
+<li><a href=#что-такое-heap-и-stack>Что такое <code>heap</code> и <code>stack</code>?</a></li>
+<li><a href=#где-выделяется-память-под-переменную-можно-ли-этим-управлять>Где выделяется память под переменную? Можно ли этим управлять?</a></li>
+<li><a href=#какое-поведение-по-умолчанию-используется-в-go-при-передаче-в-функцию>Какое поведение по умолчанию используется в Go при передаче в функцию?</a></li>
+<li><a href=#что-можешь-рассказать-про-escape-analysis>Что можешь рассказать про escape analysis?</a></li>
+</ol>
+</li>
+<li><a href=#сoncurrency-конкурентность>Сoncurrency (конкурентность)</a>
+<ol>
+<li><a href=#как-устроен-мьютекс>Как устроен мьютекс?</a>
+<ol>
 <li><a href=#в-чем-отличие-syncmutex-от-syncrwmutex>В чем отличие <code>sync.Mutex</code> от <code>sync.RWMutex</code>?</a></li>
+</ol>
+</li>
+<li><a href=#что-такое-synсmap>Что такое <code>synс.Map</code>?</a></li>
 <li><a href=#какие-ещё-примитивы-синхронизации-знаешь>Какие ещё примитивы синхронизации знаешь?</a>
 <ol>
 <li><a href=#syncwaitgroup><code>sync.WaitGroup</code></a></li>
@@ -109,37 +137,19 @@ Go
 <li><a href=#syncpool><code>sync.Pool</code></a></li>
 </ol>
 </li>
-<li><a href=#race-condition-потокобезопасна-ли-мапа>Race condition. Потокобезопасна ли мапа?</a></li>
-<li><a href=#как-задетектить-гонку>Как задетектить гонку?</a></li>
-<li><a href=#что-такое-heap-и-stack>Что такое <code>heap</code> и <code>stack</code>?</a></li>
-<li><a href=#где-выделяется-память-под-переменную-можно-ли-этим-управлять>Где выделяется память под переменную? Можно ли этим управлять?</a></li>
-<li><a href=#как-устроен-duck-typing-в-go>Как устроен Duck-typing в Go?</a></li>
-<li><a href=#что-такое-интерфейс>Что такое интерфейс?</a>
+<li><a href=#какие-типы-каналов-существуют>Какие типы каналов существуют?</a>
 <ol>
-<li><a href=#интерфейсный-тип>Интерфейсный тип</a></li>
-<li><a href=#пустой-interface>Пустой <code>interface{}</code></a></li>
+<li><a href=#что-можно-делать-с-закрытым-каналом>Что можно делать с закрытым каналом?</a></li>
 </ol>
 </li>
-<li><a href=#что-можешь-рассказать-про-escape-analysis>Что можешь рассказать про escape analysis?</a></li>
-<li><a href=#дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</a></li>
-<li><a href=#что-такое-замыкание>Что такое замыкание?</a></li>
-<li><a href=#что-такое-захват-переменной>Что такое захват переменной?</a></li>
-<li><a href=#какое-поведение-по-умолчанию-используется-в-go-при-передаче-в-функцию>Какое поведение по умолчанию используется в Go при передаче в функцию?</a></li>
-<li><a href=#сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</a></li>
-<li><a href=#как-сделать-свои-методы-для-стороннего-пакета>Как сделать свои методы для стороннего пакета?</a></li>
-<li><a href=#какие-битовые-операции-знаешь>Какие битовые операции знаешь?</a></li>
-<li><a href=#как-работает-defer>Как работает <code>defer</code>?</a></li>
-<li><a href=#прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</a></li>
-<li><a href=#инвертирование-зависимости>Инвертирование зависимости</a></li>
-<li><a href=#какие-типы-каналов-существуют>Какие типы каналов существуют?</a></li>
-<li><a href=#что-можно-делать-с-закрытым-каналом>Что можно делать с закрытым каналом?</a></li>
+<li><a href=#расскажи-про-планировщик-горутин>Расскажи про планировщик (горутин)</a></li>
 <li><a href=#что-такое-горутина>Что такое горутина?</a>
 <ol>
-<li><a href=#планировщик-горутин>Планировщик горутин</a></li>
-</ol>
-</li>
+<li><a href=#в-чем-отличия-горутин-от-потов-ос>В чем отличия горутин от потов ОС?</a></li>
 <li><a href=#где-аллоцируется-память-для-горутин>Где аллоцируется память для горутин?</a></li>
 <li><a href=#как-завершить-много-горутин>Как завершить много горутин?</a></li>
+</ol>
+</li>
 <li><a href=#кейсы-использования-контекста>Кейсы использования контекста</a>
 <ol>
 <li><a href=#contextwithcancel><code>context.WithCancel()</code></a></li>
@@ -148,6 +158,16 @@ Go
 <li><a href=#contextwithvalue><code>context.WithValue()</code></a></li>
 </ol>
 </li>
+<li><a href=#как-задетектить-гонку>Как задетектить гонку?</a></li>
+</ol>
+</li>
+<li><a href=#тестирование>Тестирование</a>
+<ol>
+<li><a href=#ошибка-в-бенчмарке>Ошибка в бенчмарке</a></li>
+</ol>
+</li>
+<li><a href=#компилятор>Компилятор</a>
+<ol>
 <li><a href=#какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</a>
 <ol>
 <li><a href=#golinkname><code>//go:linkname</code></a></li>
@@ -160,17 +180,10 @@ Go
 <li><a href=#goembed><code>//go:embed</code></a></li>
 </ol>
 </li>
-<li><a href=#тестирование>Тестирование</a>
-<ol>
-<li><a href=#ошибка-в-бенчмарке>Ошибка в бенчмарке</a></li>
 </ol>
 </li>
 </ol>
 </nav>
-</div>
-<p>Для того, чтоб вспомнить историю о Go и о его особенностях можно посмотреть:</p>
-<div class=video-wrapper>
-<iframe loading=lazy src=https://www.youtube.com/embed/ql-uncsqoAU allowfullscreen title="YouTube Video"></iframe>
 </div>
 <h2 id=расскажи-о-себе>Расскажи о себе?</h2>
 <p>Чаще всего этот вопрос идёт первым и даёт возможность интервьюверу задать вопросы связанные с твоим резюме, познакомиться с тобой, попытаться понять твой характер для построения последующих вопросов. Следует иметь в виду, что интервьюверу не всегда удается подготовиться к интервью, или он банально не имеет перед глазами твоего резюме. Тут есть смысл ещё раз представиться (часто в мессенджерах используются никнеймы, а твоё реальное имя он мог забыть), назвать свой возраст, образование, рассказать о предыдущих местах работы и должностях, сколько лет в индустрии, какие ЯП и технологии использовал - только &ldquo;по верхам&rdquo;, для того чтоб твой собеседник просто понял с кем он &ldquo;имеет дело&rdquo;.</p>
@@ -181,8 +194,24 @@ Go
 <li>Внедренные мной практики в CI/CD пайплайны позволили сократить время на ревью изменений в проектах на 25..40%, а зная сколько стоит время работы разработчиков - вы сами всё понимаете;</li>
 <li>Разработанный мной сервис состоял из такого-то набора микросервисов, такие-то службы и протоколы использовал, были такие-то ключевые проблемы которые мы так-то зарешали; основной ценностью было то-то.</li>
 </ul>
+<h2 id=кем-был-создан-язык-какие-его-особенности>Кем был создан язык, какие его особенности?</h2>
+<p>Go <em>(часто также golang)</em> — компилируемый многопоточный язык программирования, разработанный внутри компании Google. Разработка началась в 2007 году, его непосредственным проектированием занимались <a class=link href=https://github.com/griesemer target=_blank rel=noopener>Роберт Гризмер</a>, <a class=link href=https://github.com/robpike target=_blank rel=noopener>Роб Пайк</a> и Кен Томпсон. Официально язык был представлен в ноябре 2009 года.</p>
+<p>В качестве ключевых особенностей можно выделить:</p>
+<ul>
+<li>Простая грамматика (минимум ключевых слов - язык создавался по принципу &ldquo;что ещё можно выкинуть&rdquo; вместо &ldquo;что бы ещё в него добавить&rdquo;)</li>
+<li>Строгая типизация и отказ от иерархии типов (но с сохранением объектно-ориентированных возможностей)</li>
+<li>Сборка мусора (GC)</li>
+<li>Простые и эффективные средства для распараллеливания вычислений</li>
+<li>Чёткое разделение интерфейса и реализации</li>
+<li>Наличие системы пакетов и возможность импортирования внешних зависимостей (пакетов)</li>
+<li>Богатый тулинг &ldquo;из корочки&rdquo; (бенчмарки, тесты, генерация кода и документации), быстрая компиляция</li>
+</ul>
+<p>Для того, чтоб вспомнить историю создания Go и о его особенностях можно посмотреть:</p>
+<div class=video-wrapper>
+<iframe loading=lazy src=https://www.youtube.com/embed/ql-uncsqoAU allowfullscreen title="YouTube Video"></iframe>
+</div>
 <h2 id=что-такое-ооп-как-это-сделано-в-golang>Что такое ООП? Как это сделано в Golang?</h2>
-<p>ООП это методология (подход) программирования, основанный на том, что программа представляет собой некоторую совокупность объектов-классов, которые образую иерархию наследования. Ключевые фишки - минимализация повторяемости кода (<a class=link href=https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself target=_blank rel=noopener>принцип DRY</a>) и удобство понимания/управления. Фундаментом ООП можно считать идею описания объектов в программировании подобно объектам из реального мира - у них есть свойства, поведение, они могут взаимодействовать. Мы (люди) так понимаем мир, и нам (людям) так проще описывать всякие штуки в коде. Основные принципы в ООП:</p>
+<p>ООП это методология (подход) программирования, основанная на том, что программа представляет собой некоторую совокупность объектов-классов, которые образую иерархию наследования. Ключевые фишки - минимализация повторяемости кода (<a class=link href=https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself target=_blank rel=noopener>принцип DRY</a>) и удобство понимания/управления. Фундаментом ООП можно считать идею описания объектов в программировании подобно объектам из реального мира - у них есть свойства, поведение, они могут взаимодействовать. Мы (люди) так понимаем мир, и нам (людям) так проще описывать всякие штуки в коде. Основные принципы в ООП:</p>
 <ul>
 <li>
 <p><strong>Абстракция</strong> вообще присуща для любого программирования, а не только для ООП. По большому счету (топорный, но понятный пример) это про выделение общего и объединение этого в какие-то сущности но без реализации, про контракты. Например - экземпляры абстрактных классов не могут быть созданы (<code>new AbstractClass</code>), но могут содержать абстрактные методы, чтоб разработчик решив наследоваться от этого абстрактного класса их реализовал так, как ему нужно для своих целей (например - ходить в SQL СУБД или файл). Другой пример - это интерфейсы, они же контракты чистой воды - содержат только сигнатуры методов и ни капельки реализации. Но абстракция не ограничивается ими и должна быть умеренной, так как усложняет архитектуру приложения в общем и целом. Опираться следует на интуицию и опыт. Слишком много слоев абстракции (ещё раз - тут дело не ограничивается интерфейсами и абстрактными классами) приводит к переусложнению и головной боли последующего сопровождения продукта. Недостаточная - к сложности внесения изменений и расширению функционала.</p>
@@ -272,17 +301,105 @@ Go
 <li><a class=link href=https://habr.com/ru/post/243593/ target=_blank rel=noopener>Golang и ООП</a></li>
 </ul>
 </blockquote>
-<h2 id=как-устроены-строки-в-go>Как устроены строки в Go?</h2>
-<p>В Go строка в действительности является слайсом байт, доступным только для чтения. Строка содержит произвольные байты. Не требуется хранить текст Unicode, текст UTF-8 или любой другой предопределенный формат.</p>
-<p><em>WIP</em> описать про руны</p>
+<h3 id=как-устроено-инвертирование-зависимостей>Как устроено инвертирование зависимостей?</h3>
+<p>Инвертирование зависимостей позволяет в нашем коде не &ldquo;завязываться&rdquo; на конкретную реализацию (используя, например, интерфейсы), тем самым понижая связанность кода и повышая его тестируемость. Так же сужается зона ответственности конечной структуры/пакета, что повышает его переиспользуемость.</p>
+<p>Принцип инверсии зависимостей (dependency inversion principle) в Go который можно реализовывать следующим образом:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>import</span> <span class=p>(</span>
+	<span class=s>&#34;errors&#34;</span>
+	<span class=s>&#34;fmt&#34;</span>
+<span class=p>)</span>
+
+<span class=kd>type</span> <span class=nx>speaker</span> <span class=kd>interface</span> <span class=p>{</span>
+	<span class=nf>Speak</span><span class=p>()</span> <span class=kt>string</span>
+<span class=p>}</span>
+
+<span class=kd>type</span> <span class=nx>Foo</span> <span class=kd>struct</span> <span class=p>{</span>
+	<span class=nx>s</span> <span class=nx>speaker</span> <span class=c1>// s *Foo - было бы плохо
+</span><span class=c1></span><span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>NewFoo</span><span class=p>(</span><span class=nx>s</span> <span class=nx>speaker</span><span class=p>)</span> <span class=p>(</span><span class=o>*</span><span class=nx>Foo</span><span class=p>,</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
+	<span class=k>if</span> <span class=nx>s</span> <span class=o>==</span> <span class=kc>nil</span> <span class=p>{</span>
+		<span class=k>return</span> <span class=kc>nil</span><span class=p>,</span> <span class=nx>errors</span><span class=p>.</span><span class=nf>New</span><span class=p>(</span><span class=s>&#34;speaker is nil&#34;</span><span class=p>)</span>
+	<span class=p>}</span>
+
+	<span class=k>return</span> <span class=o>&amp;</span><span class=nx>Foo</span><span class=p>{</span><span class=nx>s</span><span class=p>:</span> <span class=nx>s</span><span class=p>},</span> <span class=kc>nil</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>f</span> <span class=nx>Foo</span><span class=p>)</span> <span class=nf>SaySomething</span><span class=p>()</span> <span class=kt>string</span> <span class=p>{</span> <span class=k>return</span> <span class=nx>f</span><span class=p>.</span><span class=nx>s</span><span class=p>.</span><span class=nf>Speak</span><span class=p>()</span> <span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>foo</span><span class=p>,</span> <span class=nx>err</span> <span class=p>=</span> <span class=nf>NewFoo</span><span class=p>(</span><span class=nx>someSpeaker</span><span class=p>)</span>
+
+	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+		<span class=nb>panic</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+	<span class=p>}</span>
+
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>foo</span><span class=p>.</span><span class=nf>SaySomething</span><span class=p>())</span> <span class=c1>// depends on the speaker implementation
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></div><p>Мы объявляем интерфейс <code>speaker</code> не экспортируемым на нашей, принимающей стороне, и используя псевдо-конструктор <code>NewFoo</code> гарантируем что свойство <code>s</code> будет проинициализировано верным типом (дополнительно проверяя его на <code>nil</code>).</p>
+<h3 id=как-сделать-свои-методы-для-стороннего-пакета>Как сделать свои методы для стороннего пакета?</h3>
+<p>Например, если мы используем логгер <strong><a class=link href=https://github.com/uber-go/zap target=_blank rel=noopener>Zap</a></strong> в нашем проекте, и хотим к этому Zap-у прикрутить наши методы - то для этого нам нужно будет создать <strong>свою структуру</strong>, внутри в неё встраивать логгер Zap-а, и к этой структуре уже прикручивать требуемые методы. Просто &ldquo;навесить сверху&rdquo; функции на сторонний пакет мы не можем.</p>
+<h2 id=типы-данных-и-синтаксис>Типы данных и синтаксис</h2>
+<p>К фундаментальным типам данных можно отнести:</p>
+<ul>
+<li>Целочисленные - <code>int{8,16,32,64}</code>, <code>int</code>, <code>uint{8,16,32,64}</code>, <code>uint</code>, <code>byte</code> как синоним <code>uint8</code> и <code>rune</code> как синоним <code>int32</code>. Типы <code>int</code> и <code>uint</code> имеют наиболее эффективный размер для определенной платформы (32 или 64 бита), причем различные компиляторы могут предоставлять различный размер для этих типов даже для одной и той же платформы</li>
+<li>Числа с плавающей запятой - <code>float32</code> (занимает 4 байта/32 бита) и <code>float64</code> (занимает 8 байт/64 бита)</li>
+<li>Комплексные числа - <code>complex64</code> (вещественная и мнимая части представляют числа <code>float32</code>) и <code>complex128</code> (вещественная и мнимая части представляют числа <code>float64</code>)</li>
+<li>Логические aka <code>bool</code></li>
+<li>Строки <code>string</code></li>
+</ul>
+<h3 id=как-устроены-строки-в-go>Как устроены строки в Go?</h3>
+<p>В Go строка в действительности является <strong>слайсом (срезом) байт</strong>, доступным <strong>только для чтения</strong>. Строка содержит произвольные байты, и у неё нет ёмкости (<code>cap</code>). При преобразовании слайса байт в строку (<code>str := string(slice)</code>) или обратно (<code>slice := []byte(str)</code>) - происходит копирование массива (со всеми следствиями).</p>
+<p>Создание <strong>под</strong>строк работает очень эффективно. Поскольку строка предназначена только для чтения, исходная строка и строка, полученная в результате операции среза, могут безопасно совместно использовать один и тот же массив:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=p>(</span>
+	<span class=nx>str</span> <span class=p>=</span> <span class=s>&#34;hello world&#34;</span>
+	<span class=nx>sub</span> <span class=p>=</span> <span class=nx>str</span><span class=p>[</span><span class=mi>0</span><span class=p>:</span><span class=mi>5</span><span class=p>]</span>
+	<span class=nx>usr</span> <span class=p>=</span> <span class=s>&#34;/usr/kot&#34;</span><span class=p>[</span><span class=mi>5</span><span class=p>:]</span>
+<span class=p>)</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=nx>sub</span><span class=p>,</span> <span class=s>&#34; &#34;</span><span class=p>,</span> <span class=nx>usr</span><span class=p>)</span> <span class=c1>// hello kot
+</span></code></pre></div><p>Go использует тип <code>rune</code> (алиас <code>int32</code>) для представления Unicode. Конструкция <code>for ... range</code> итерирует строку <strong>посимвольно</strong> (а не побайтово, как можно было бы предположить):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>str</span> <span class=p>=</span> <span class=s>&#34;привет&#34;</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=nx>str</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>str</span><span class=p>))</span> <span class=c1>// привет 12
+</span><span class=c1></span>
+<span class=k>for</span> <span class=nx>i</span><span class=p>,</span> <span class=nx>c</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>str</span> <span class=p>{</span>
+	<span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=nx>c</span><span class=p>,</span> <span class=nb>string</span><span class=p>(</span><span class=nx>c</span><span class=p>))</span>
+<span class=p>}</span>
+
+<span class=c1>// 0 1087 п
+</span><span class=c1>// 2 1088 р
+</span><span class=c1>// 4 1080 и
+</span><span class=c1>// 6 1074 в
+</span><span class=c1>// 8 1077 е
+</span><span class=c1>// 10 1090 т
+</span></code></pre></div><p>И мы видим, что для кодирования каждого символа кириллицы используются по 2 байта.</p>
+<p>Эффективным способом работы со строками (когда есть необходимость часто выполнять конкатенацию, например) является использование слайса байт или <code>strings.Builder</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>import</span> <span class=s>&#34;strings&#34;</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// происходит только 1 аллокация при вызове `Grow()`
+</span><span class=c1></span>	<span class=kd>var</span> <span class=nx>str</span> <span class=nx>strings</span><span class=p>.</span><span class=nx>Builder</span>
+
+	<span class=nx>str</span><span class=p>.</span><span class=nf>Grow</span><span class=p>(</span><span class=mi>12</span><span class=p>)</span> <span class=c1>// сразу выделяем память
+</span><span class=c1></span>
+	<span class=nx>str</span><span class=p>.</span><span class=nf>WriteString</span><span class=p>(</span><span class=s>&#34;hello&#34;</span><span class=p>)</span>
+	<span class=nx>str</span><span class=p>.</span><span class=nf>WriteRune</span><span class=p>(</span><span class=sc>&#39; &#39;</span><span class=p>)</span>
+	<span class=nx>str</span><span class=p>.</span><span class=nf>WriteString</span><span class=p>(</span><span class=s>&#34;мир&#34;</span><span class=p>)</span>
+
+	<span class=nb>println</span><span class=p>(</span><span class=nx>str</span><span class=p>.</span><span class=nf>String</span><span class=p>())</span> <span class=c1>// hello мир
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></div><p>И ещё одну важную особенность стоит иметь в виду - это подсчет длины строки (например - для какой-нибудь валидации). Если считать по количеству байт, и строка содержит не только ASCII символы - то количество байт и фактическое количество <strong>символов</strong> будут расходиться:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>const</span> <span class=nx>str</span> <span class=p>=</span> <span class=s>&#34;hello мир!&#34;</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=nx>str</span><span class=p>),</span> <span class=nx>utf8</span><span class=p>.</span><span class=nf>RuneCountInString</span><span class=p>(</span><span class=nx>str</span><span class=p>))</span> <span class=c1>// 13 10
+</span></code></pre></div><p>Тут дело в том, что для кодирования символов <code>м</code>, <code>и</code> и <code>р</code> используются 2 байта вместо одного. Поэтому <code>len == 13</code>, а фактически в строке лишь 10 символов (пакет <code>utf8</code>, к примеру, нам в помощь).</p>
 <blockquote>
 <p>Что можно почитать:</p>
 <ul>
 <li><a class=link href=https://golang-blog.blogspot.com/2019/09/string-byte-rune-character-golang.html target=_blank rel=noopener>Строка, байт, руна, символ в Golang</a></li>
 </ul>
 </blockquote>
-<h2 id=в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</h2>
-<h3 id=tldr>TL;DR</h3>
+<h3 id=в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</h3>
 <ul>
 <li>Срез - всегда указатель на массив, массив - значение</li>
 <li>Срез может менять свой размер и динамически аллоцировать память</li>
@@ -290,7 +407,6 @@ Go
 <blockquote>
 <p>В Go не бывает ссылок - но есть указатели. Где говорится про &ldquo;по ссылке&rdquo; имеется в виду &ldquo;по указателю&rdquo;</p>
 </blockquote>
-<h3 id=развёрнуто>Развёрнуто</h3>
 <p>Слайсы и массивы в Go это проиндексированные упорядоченные структуры данных последовательностей элементов. Ёмкость <strong>массива</strong> объявляется в момент его создания, и после изменить её уже нельзя (его длина это часть его типа). Память, необходимая для хранения элементов массива выделяется соответственно сразу при его объявлении, и по умолчанию инициализируется в соответствии с нулевыми значением для типа (<code>fasle</code> для <code>bool</code>, <code>0</code> для <code>int</code>, <code>nil</code> для интерфейсов и т.д.). На стеке можно разместить массив объемом 10 MB. В качестве размера можно использовать константы (компилятор должен знать это значение на этапе компиляции, т.е. что-то вида <code>var a [getSize()]int</code> или <code>i := 3; var a [i]int</code> недопустимо):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>const</span> <span class=nx>mySize</span> <span class=kt>uint8</span> <span class=p>=</span> <span class=mi>8</span>
 
@@ -347,7 +463,7 @@ Go
 <li><a class=link href=https://golangforall.com/ru/post/golang-slice.html target=_blank rel=noopener>Принцип работы типа slice в GO</a></li>
 </ul>
 </blockquote>
-<h2 id=как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</h2>
+<h3 id=как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</h3>
 <p><code>append()</code> делает простую операцию - добавляет элементы в слайс и возвращает новый. Но под капотом там делаются довольно сложные манипуляции, чтобы выделять память только при необходимости и делать это эффективно.</p>
 <p>Сперва <code>append</code> сравнивает значения <code>len</code> и <code>cap</code> у слайса. Если <code>len</code> меньше чем <code>cap</code>, то значение <code>len</code> увеличивается, а само добавляемое значение помещается в конец слайса. В противном случае происходит выделение памяти под новый массив для элементов слайса, в него копируются значения из старого, и значение помещается уже в новый массив.</p>
 <p><a class=link href=https://github.com/golang/go/blob/36b81acfa19d9fedf6a0cd60c394fd7a7703834e/src/runtime/slice.go#L188-L211 target=_blank rel=noopener>Увеличении размера слайса (метод <code>growslice</code>)</a> происходит по следующему алгоритму - если его размер <strong>менее 1024</strong> элементов, то его размер будет увеличиваться вдвое; иначе же слайс увеличивается на ~12.5% от своего текущего размера.</p>
@@ -370,18 +486,17 @@ Go
 
 <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>one</span><span class=p>,</span> <span class=nx>two</span><span class=p>)</span>           <span class=c1>// [0 0 22 0 1] [0 11]
 </span><span class=c1></span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%p %p\n&#34;</span><span class=p>,</span> <span class=nx>one</span><span class=p>,</span> <span class=nx>two</span><span class=p>)</span> <span class=c1>// 0xc00001c1c0 0xc0000161c8
-</span></code></pre></div><blockquote>
+</span></code></pre></div><p>Есть еще много примеров добавления, копирования и других способов использования слайсов тут - <a class=link href=https://github.com/golang/go/wiki/SliceTricks target=_blank rel=noopener>Slice Tricks</a>.</p>
+<blockquote>
 <p>Что можно почитать:</p>
 <ul>
 <li><a class=link href=https://habrahabr.ru/post/325468/#dobavlenie-k-slaysu-append target=_blank rel=noopener>Как не наступать на грабли в Go</a></li>
 </ul>
 </blockquote>
-<h2 id=задача-про-слайсы-1>Задача про слайсы #1</h2>
-<h3 id=вопрос>Вопрос</h3>
-<p>У нас есть 2 функции - одна делает <code>append()</code> чего-то в слайс, а другая просто сортирует слайс, используя пакет <code>sort</code>. Модифицируют ли слайс первая и (или) вторая функции?</p>
-<h3 id=ответ>Ответ</h3>
-<p><code>append()</code> не модифицирует а возвращает новый слайс, а <code>sort</code> модифицирует порядок элементов, если он изначально был не отсортирован.</p>
-<h2 id=что-можно-сказать-про-map>Что можно сказать про <code>map</code>?</h2>
+<h4 id=задача-про-слайсы-1>Задача про слайсы #1</h4>
+<p>Вопрос: У нас есть 2 функции - одна делает <code>append()</code> чего-то в слайс, а другая просто сортирует слайс, используя пакет <code>sort</code>. Модифицируют ли слайс первая и (или) вторая функции?</p>
+<p>Ответ: <code>append()</code> не модифицирует а возвращает новый слайс, а <code>sort</code> модифицирует порядок элементов, если он изначально был не отсортирован.</p>
+<h3 id=что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</h3>
 <p>Карта (<code>map</code> или <code>hashmap</code>) - это <strong>неупорядоченная</strong> коллекция пар вида ключ-значение. Пример:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>myMap</span> <span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span>
 </code></pre></div><p>Подобно массивам и слайсам, к элементам мапы можно обратиться с помощью скобок:</p>
@@ -442,10 +557,10 @@ Go
 </figure></p>
 <p>На картинке схематичное изображение структуры в памяти - есть хэдер hmap, указатель на который и есть map в Go (именно он создается при объявлении с помощью var, но не инициализируется, из-за чего падает программа при попытке вставки). Поле <code>buckets</code> - хранилище пар ключ-значение, таких &ldquo;ведер&rdquo; несколько, в каждом лежит 8 пар. Сначала в &ldquo;ведре&rdquo; лежат слоты для дополнительных битов хэшей (<code>e0..e7</code> названо <code>e</code> - потому что extra hash bits). Далее лежат ключи и значения как сначала список всех ключей, потом список всех значений.</p>
 <p>По хэш функции определяется в какое &ldquo;ведро&rdquo; мы кладем значение, внутри каждого &ldquo;ведра&rdquo; может лежать до 8 коллизий, в конце каждого &ldquo;ведра&rdquo; есть указатель на дополнительное, если вдруг предыдущее переполнилось.</p>
-<h3 id=как-растет-map>Как растет <code>map</code>?</h3>
+<h4 id=как-растет-map>Как растет <code>map</code>?</h4>
 <p>В исходном коде можно <a class=link href=https://github.com/golang/go/blob/36b81acfa19d9fedf6a0cd60c394fd7a7703834e/src/runtime/map.go#L69 target=_blank rel=noopener>найти строчку</a> <code>Maximum average load of a bucket that triggers growth is 6.5</code>. То есть, если в каждом &ldquo;ведре&rdquo; в среднем более 6,5 элементов, происходит увеличение массива <code>buckets</code>. При этом выделяется массив <strong>в 2 раза больше</strong>, а старые данные копируются в него маленькими порциями каждые вставку или удаление, чтобы не создавать очень крупные задержки. Поэтому все операции будут чуть медленнее в процессе <strong>эвакуации данных</strong> (при поиске тоже, нам же приходится искать в двух местах). После успешной эвакуации начинают использоваться новые данные.</p>
 <p>Из-за эвакуации данных нельзя и взять адрес мапы - представьте, что мы взяли адрес значения, а потом мапа выросла, выделилась новая память, данные эвакуировались, старые удалились, указатель стал неправильным, поэтому такие операции запрещены.</p>
-<h3 id=что-там-про-поиск>Что там про поиск?</h3>
+<h4 id=что-там-про-поиск>Что там про поиск?</h4>
 <p>Поиск, если разобраться, устроен не так уж и сложно: проходимся по цепочкам &ldquo;ведер&rdquo;, переходя в следующее, если в этом не нашли. Поиск в &ldquo;ведре&rdquo; начинается с быстрого сравнения дополнительного хэша, для которого используется всего 8 бит (вот для чего эти <code>e0...e7</code> в начале каждого - это &ldquo;мини&rdquo; хэш пары для быстрого сравнения). Если не совпало, идем дальше, если совпало, то проверяем тщательнее - определяем где лежит в памяти ключ, подозреваемый как искомый, сравниваем равен ли он тому, что запросили. Если равен, определяем положение значения в памяти и возвращаем.</p>
 <p>К сожалению, мир не совершенен. Когда имя хешируется, то некоторые данные теряются, так как хеш, как правило, короче исходной строки. Таким образом, в любой реализации хеш таблицы неизбежны коллизии когда по двум ключам получаются одинаковые хеши. Как следствие, поиск может быть дороже чем <code>O(1)</code> (возможно это связано с кешем процессора и коллизиями коротких хэшей), так что иногда выгоднее использовать бинарный поиск по слайсу данных нежели чем поиск в мапе (пишите бенчмарки).</p>
 <blockquote>
@@ -455,125 +570,15 @@ Go
 <li><a class=link href=https://kodazm.ru/articles/go/kazhetsya-poisk-v-map-dorozhe-chem-o1/ target=_blank rel=noopener>Кажется, поиск в map дороже чем O(1)</a></li>
 </ul>
 </blockquote>
-<h2 id=есть-ли-у-map-такие-же-методы-как-у-слайса-len-cap>Есть ли у <code>map</code> такие же методы как у слайса: <code>len</code>, <code>cap</code>?</h2>
+<h4 id=есть-ли-у-map-такие-же-методы-как-у-слайса-len-cap>Есть ли у <code>map</code> такие же методы как у слайса: <code>len</code>, <code>cap</code>?</h4>
 <p>У мапы есть <code>len</code> но нет <code>cap</code>. У нас есть только <code>overflow</code> который указывает &ldquo;куда-то&rdquo; когда мапа переполняется, и поэтому у нас не может быть <code>capacity</code>.</p>
-<h2 id=какие-типы-ключей-разрешены-для-ключа-в-map>Какие типы ключей разрешены для ключа в <code>map</code>?</h2>
+<h4 id=какие-типы-ключей-разрешены-для-ключа-в-map>Какие типы ключей разрешены для ключа в <code>map</code>?</h4>
 <p>Любым <strong>сравнимым</strong> (comparable) типом, т.е. булевы, числовые, строковые, указатели, канальные и интерфейсные типы, а также <strong>структуры</strong> или <strong>массивы</strong>, содержащие только эти типы. Слайсы, мапы и функции использовать нельзя, так как эти типы не сравнить с помощью оператора <code>==</code> или <code>!=</code>.</p>
-<h2 id=может-ли-ключом-быть-структура-если-может-то-всегда-ли>Может ли ключом быть структура? Если может, то всегда ли?</h2>
+<h4 id=может-ли-ключом-быть-структура-если-может-то-всегда-ли>Может ли ключом быть структура? Если может, то всегда ли?</h4>
 <p>Как было сказано выше - структура может быть ключом до тех пор, пока мы в поля структуры не поместим какой-либо слайс, мапу или любой другой non-comparable тип данных (например - функцию).</p>
-<h2 id=что-будет-в-map-если-не-делать-make-или-short-assign>Что будет в <code>map</code>, если не делать <code>make</code> или <code>short assign</code>?</h2>
+<h4 id=что-будет-в-map-если-не-делать-make-или-short-assign>Что будет в <code>map</code>, если не делать <code>make</code> или <code>short assign</code>?</h4>
 <p>Будет паника (например - при попытке что-нибудь в неё поместить), так как любые &ldquo;структурные&rdquo; типы (а мапа как мы знаем таковой является) должны быть инициализированы для работы с ними.</p>
-<h2 id=что-такое-synсmap>Что такое <code>synс.Map</code>?</h2>
-<p>Коротко - предоставляет атомарный доступ к элементам <code>map</code>.</p>
-<p>Go, как известно, является языком созданным для написания concurrent программ - программ, который эффективно работают на мультипроцессорных системах. Но тип <code>map</code> не безопасен для параллельного доступа. То есть для чтения, конечно, безопасен - 1000 горутин могут читать из map без опасений, но вот параллельно в неё ещё и писать - уже нет.</p>
-<p>Для обеспечения потоко-безопасного доступа к <code>map</code> можно использовать <code>sync.RWMutex</code>, но он имеет проблему производительности при работе на большом количестве ядер процессора (в <code>RWMutex</code> <a class=link href=https://github.com/golang/go/blob/36b81acfa19d9fedf6a0cd60c394fd7a7703834e/src/sync/rwmutex.go#L61 target=_blank rel=noopener>при блокировке на чтение</a> каждая горутина должна обновить поле <code>readerCount</code> - простой счётчик, с помощью <code>atomic.AddInt32()</code>, что проиводит к сбросу кэша для этого адреса памяти для всех ядер, и каждое ядро становится в очередь и ждёт этот сброс и вычитывание из кэша - эта проблема называется <strong>cache contention</strong>).</p>
-<p><code>sync.Map</code> решает совершенно конкретную проблему <strong>cache contention</strong> в стандартной библиотеке для таких случаев, когда ключи в map стабильны (не обновляются часто) и происходит намного больше чтений, чем записей.</p>
-<p>Пример работы с <code>sync.Map</code>:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>m</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>Map</span>
-
-<span class=nx>m</span><span class=p>.</span><span class=nf>Store</span><span class=p>(</span><span class=s>&#34;one&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>        <span class=c1>// запись
-</span><span class=c1></span><span class=nx>one</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>m</span><span class=p>.</span><span class=nf>Load</span><span class=p>(</span><span class=s>&#34;one&#34;</span><span class=p>)</span> <span class=c1>// чтение
-</span><span class=c1></span>
-<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>one</span><span class=p>,</span> <span class=nx>ok</span><span class=p>)</span> <span class=c1>// 1 true
-</span><span class=c1></span>
-<span class=nx>m</span><span class=p>.</span><span class=nf>Range</span><span class=p>(</span><span class=kd>func</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span> <span class=kd>interface</span><span class=p>{})</span> <span class=kt>bool</span> <span class=p>{</span> <span class=c1>// итерация эл-ов мапы
-</span><span class=c1></span>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span> <span class=c1>// one 1
-</span><span class=c1></span>
-	<span class=k>return</span> <span class=kc>true</span>
-<span class=p>})</span>
-
-<span class=nx>m</span><span class=p>.</span><span class=nf>Delete</span><span class=p>(</span><span class=s>&#34;one&#34;</span><span class=p>)</span> <span class=c1>// удаление
-</span></code></pre></div><blockquote>
-<p>Что можно почитать:</p>
-<ul>
-<li><a class=link href=https://habr.com/ru/post/338718/ target=_blank rel=noopener>Разбираемся с новым sync.Map в Go 1.9</a></li>
-</ul>
-</blockquote>
-<h2 id=как-устроен-мьютекс>Как устроен мьютекс?</h2>
-<p>Mutex означает <strong>MUTual EXclusion</strong> (взаимное исключение), и обеспечивает безопасный доступ к общим ресурсам.</p>
-<p>Под капотом мьютекса используются функции из пакета <code>atomic</code> (<code>atomic.CompareAndSwapInt32</code> и <code>atomic.AddInt32</code>), так что можно считать мьютекс надстройкой над <code>atomic</code>. Мьютекс медленнее чем <code>atomic</code>, потому что он блокирует другие горутины на всё время действия блокировки. А в свою очередь <code>atomic</code> быстрее потому как использует атомарные инструкции процессора.</p>
-<p>В момент, когда нужно обеспечить защиту доступа - вызываем метод <code>Lock()</code>, а по завершению операции изменения/чтения данных - метод <code>Unlock()</code>.</p>
-<h2 id=в-чем-отличие-syncmutex-от-syncrwmutex>В чем отличие <code>sync.Mutex</code> от <code>sync.RWMutex</code>?</h2>
-<p>Помимо <code>Lock()</code> и <code>Unlock()</code> (у <code>sync.Mutex</code>), у <code>sync.RWMutex</code> есть отдельные аналогичные методы <strong>только для чтения</strong> - <code>RLock()</code> и <code>RUnlock()</code>. Если участок в памяти нуждается только в чтении - он использует <code>RLock()</code>, который не заблокирует другие операции чтения, <strong>но заблокирует операцию записи</strong> и наоборот.</p>
-<p>По большому счёту, <code>RWMutex</code> это комбинация из двух мьютексов.</p>
-<h2 id=какие-ещё-примитивы-синхронизации-знаешь>Какие ещё примитивы синхронизации знаешь?</h2>
-<p>Как было сказано выше - для синхронизации можно использовать <strong>мьютексы</strong>. Кроме того из стандартной библиотеки нам доступны:</p>
-<h3 id=syncwaitgroup><code>sync.WaitGroup</code></h3>
-<p>Используется для координации в случае, когда программе приходится ждать окончания работы нескольких горутин (эта конструкция похожа на <code>CountDownLatch</code> в Java). Отличный способ дождаться завершения набора одновременных операций. Принцип работы следующий:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>wg</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>WaitGroup</span>
-
-<span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=c1>// увеличиваем счётчик на 1
-</span><span class=c1></span><span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
-	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 1&#34;</span><span class=p>)</span>
-	<span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span>
-	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 1 done&#34;</span><span class=p>)</span>
-
-	<span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span> <span class=c1>// уменьшаем счётчик на 1
-</span><span class=c1></span><span class=p>}()</span>
-
-<span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=c1>// увеличиваем счётчик на 1
-</span><span class=c1></span><span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
-	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 2&#34;</span><span class=p>)</span>
-	<span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span>
-	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 2 done&#34;</span><span class=p>)</span>
-
-	<span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span> <span class=c1>// уменьшаем счётчик на 1
-</span><span class=c1></span><span class=p>}()</span>
-
-<span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span> <span class=c1>// блокируемся, пока счётчик не будет == 0
-</span><span class=c1>// task 2
-</span><span class=c1>// task 1
-</span><span class=c1>// task 2 done
-</span><span class=c1>// task 1 done
-</span><span class=c1>// Total time: 1.00s
-</span></code></pre></div><h3 id=synccond><code>sync.Cond</code></h3>
-<p>Условная переменная (<strong>CONDition variable</strong>) полезна, например, если мы хотим разблокировать сразу несколько горутин (<code>Broadcast</code>), что не получится сделать с помощью канала. Метод <code>Signal</code> отправляет сообщение самой долго-ожидающей горутине. Пример использования:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=p>(</span>
-	<span class=nx>c</span>  <span class=p>=</span> <span class=nx>sync</span><span class=p>.</span><span class=nf>NewCond</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>sync</span><span class=p>.</span><span class=nx>Mutex</span><span class=p>{})</span>
-	<span class=nx>wg</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>WaitGroup</span> <span class=c1>// нужна только для примера
-</span><span class=c1></span>
-	<span class=nx>free</span> <span class=p>=</span> <span class=kc>true</span>
-<span class=p>)</span>
-
-<span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-<span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
-	<span class=k>defer</span> <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
-	<span class=nx>c</span><span class=p>.</span><span class=nx>L</span><span class=p>.</span><span class=nf>Lock</span><span class=p>()</span>
-
-	<span class=k>for</span> <span class=p>!</span><span class=nx>free</span> <span class=p>{</span> <span class=c1>// проверяем, что ресурс свободен
-</span><span class=c1></span>		<span class=nx>c</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span>
-	<span class=p>}</span>
-	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;work&#34;</span><span class=p>)</span>
-
-	<span class=nx>c</span><span class=p>.</span><span class=nx>L</span><span class=p>.</span><span class=nf>Unlock</span><span class=p>()</span>
-<span class=p>}()</span>
-
-<span class=nx>free</span> <span class=p>=</span> <span class=kc>false</span>                  <span class=c1>// забрали ресурс, чтобы выполнить с ним работу
-</span><span class=c1></span><span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=mi>1</span> <span class=o>*</span> <span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span> <span class=c1>// эмуляция работы
-</span><span class=c1></span><span class=nx>free</span> <span class=p>=</span> <span class=kc>true</span>                   <span class=c1>// освободили ресурс
-</span><span class=c1></span><span class=nx>c</span><span class=p>.</span><span class=nf>Signal</span><span class=p>()</span>                    <span class=c1>// оповестили горутину
-</span><span class=c1></span>
-<span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span>
-</code></pre></div><h3 id=synconce><code>sync.Once</code></h3>
-<p>Позволяет определить задачу для однократного выполнения за всё время работы программы. Содержит одну-единственную функцию <code>Do</code>, позволяющую передавать другую функцию для однократного применения.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>once</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>Once</span>
-
-<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-	<span class=nx>once</span><span class=p>.</span><span class=nf>Do</span><span class=p>(</span><span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
-		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Hell yeah!&#34;</span><span class=p>)</span>
-	<span class=p>})</span>
-<span class=p>}</span>
-
-<span class=c1>// Hell yeah! (выводится 1 раз вместо 10)
-</span></code></pre></div><h3 id=syncpool><code>sync.Pool</code></h3>
-<p>Используется для уменьшения давления на GC путём повторного использования выделенной памяти (потоко-безопасно). Пул необязательно освободит данные при первом пробуждении GC, но он может освободить их в любой момент. У пула нет возможности определить и установить размер и нет необходимости заботиться о его переполнении.</p>
-<blockquote>
-<p>Что можно почитать:</p>
-<ul>
-<li><a class=link href=https://habr.com/ru/post/277137/ target=_blank rel=noopener>Go sync.Pool</a></li>
-</ul>
-</blockquote>
-<h2 id=race-condition-потокобезопасна-ли-мапа>Race condition. Потокобезопасна ли мапа?</h2>
+<h4 id=race-condition-потокобезопасна-ли-мапа>Race condition. Потокобезопасна ли мапа?</h4>
 <p>Нет, потокобезопасной является <code>sync.Map</code>. Для обеспечения безопасности вокруг мапы обычно строится структура вида:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>ProtectedIntMap</span> <span class=kd>struct</span> <span class=p>{</span>
 	<span class=nx>mx</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>RWMutex</span>
@@ -593,59 +598,15 @@ Go
 	<span class=nx>m</span><span class=p>.</span><span class=nx>m</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=p>=</span> <span class=nx>value</span>
 	<span class=nx>m</span><span class=p>.</span><span class=nx>mx</span><span class=p>.</span><span class=nf>Unlock</span><span class=p>()</span>
 <span class=p>}</span>
-</code></pre></div><h2 id=как-задетектить-гонку>Как задетектить гонку?</h2>
-<p>Пишем тесты, и запускаем их с флагом <code>-race</code> (в этом случае рантайм будет в случайном порядке переключаться между горутинами (если не ошибаюсь), и компилятор генерирует дополнительный код, который &ldquo;журналирует&rdquo; обращения к памяти). Этот флаг можно использовать как для <code>go test</code>, так и для <code>go run</code> или <code>go build</code>.</p>
-<p>Детектор гонки основан на библиотеке времени выполнения (runtime library) C/C++ ThreadSanitizer.</p>
-<p>Так же предпочитаю писать тесты, провоцирующие гонку. Код в этом случае будет работать значительно медленнее, но для этапа тестирования это и не так важно. А именно для тестируемоой структуры запускаю (например) 100 горутин которые читают и пишут что-то в случайном порядке.</p>
-<p>Важно и ещё одно высказывание - &ldquo;<strong>Если race detector обнаруживает состояние гонки, то оно у вас наверняка есть; если же не обнаруживает - то это не означает что его нет</strong>&rdquo;.</p>
-<h2 id=что-такое-heap-и-stack>Что такое <code>heap</code> и <code>stack</code>?</h2>
-<p><strong>Стек</strong> (stack) - это область оперативной памяти, которая создаётся для каждого потока. Он работает в порядке LIFO (Last In, First Out), то есть последний добавленный в стек кусок памяти будет первым в очереди на вывод из стека. Каждый раз, когда функция объявляет новую переменную, она добавляется в стек, а когда эта переменная пропадает из области видимости (например, когда функция заканчивается), она автоматически удаляется из стека. Когда стековая переменная освобождается, эта область памяти становится доступной для других стековых переменных.</p>
-<p>Стек быстрый, так как часто привязан к кэшу процессора. Размер стека ограничен, и задаётся при создании потока.</p>
-<p><strong>Куча</strong> (heap) - это хранилище памяти, также расположенное в ОЗУ, которое допускает динамическое выделение памяти и не работает по принципу стека: это просто склад для ваших переменных. Когда вы выделяете в куче участок памяти для хранения переменной, к ней можно обратиться не только в потоке, но и во всем приложении. Именно так определяются глобальные переменные. По завершении приложения все выделенные участки памяти освобождаются. Размер кучи задаётся при запуске приложения, но, в отличие от стека, он ограничен лишь физически, и это позволяет создавать динамические переменные.</p>
-<p>В сравнении со стеком, куча работает медленнее, поскольку переменные разбросаны по памяти, а не сидят на верхушке стека. То что попадает в кучу, живёт там пока не придёт GC.</p>
-<p>Но почему стек так быстр? Основных причин две:</p>
-<ul>
-<li>Стеку не нужно иметь сборщик мусора (garbage collector). Как мы уже упоминали, переменные просто создаются и затем вытесняются, когда функция завершается. Не нужно запускать сложный процесс освобождения памяти от неиспользуемых переменных и т.п.</li>
-<li>Стек принадлежит одной горутине, переменные не нужно синхронизировать в сравнении с теми, что находятся в куче. Что также повышает производительность</li>
-</ul>
-<h2 id=где-выделяется-память-под-переменную-можно-ли-этим-управлять>Где выделяется память под переменную? Можно ли этим управлять?</h2>
-<p>Прямых инструментов для управления местом, где будет выделена память у нас, к сожалению - нет. Но есть некоторые практики, которые позволяют это понять и использовать эффективно.</p>
-<p>Память под переменную может быть выделена в куче (heap) или стеке (stack). Очень приблизительно:</p>
-<ul>
-<li><strong>Стек</strong> содержит последовательность переменных для заданной горутины (как только функция завершила работу, переменные вытесняются из стека)</li>
-<li><strong>Куча</strong> содержит общие (shared) переменные (глобальные и т.п.)</li>
-</ul>
-<p>Давайте рассмотрим простой пример, в котором вы возвращаем значение:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>getFooValue</span><span class=p>()</span> <span class=nx>foo</span> <span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>result</span> <span class=nx>foo</span>
-	<span class=c1>// Do something
-</span><span class=c1></span>	<span class=k>return</span> <span class=nx>result</span>
-<span class=p>}</span>
-</code></pre></div><p>Здесь переменная <code>result</code> создаётся в текущей горутине. И эта переменная помещается в <strong>стек</strong>. Как только функция завершает работу, клиент получает <strong>копию этой переменной</strong>. Исходная переменная вытесняется из стека. Эта переменная всё ещё существует в памяти, до тех пор, пока не будет затёрта другой переменной, но к этой переменной <strong>уже нельзя получить доступ</strong>.</p>
-<p>Теперь тот же пример, но с <strong>указателем</strong>:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>getFooPointer</span><span class=p>()</span> <span class=o>*</span><span class=nx>foo</span> <span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>result</span> <span class=nx>foo</span>
-	<span class=c1>// Do something
-</span><span class=c1></span>	<span class=k>return</span> <span class=o>&amp;</span><span class=nx>result</span>
-<span class=p>}</span>
-</code></pre></div><p>Переменная <code>result</code> также создаётся текущей горутиной, но клиент получает указатель (копию адреса переменной). Если <code>result</code> вытеснена из стека, клиент функции <strong>не сможет получить доступ к переменной</strong>.</p>
-<p>В подобном сценарии компилятор Go вынужден переместить переменную <code>result</code> туда, где она может быть доступна (shared) – <strong>в кучу (heap)</strong>.</p>
-<p>Хотя есть и исключение. Для примера:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span>  <span class=p>{</span>
-	<span class=nx>p</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>foo</span><span class=p>{}</span>
-	<span class=nf>f</span><span class=p>(</span><span class=nx>p</span><span class=p>)</span>
-<span class=p>}</span>
-</code></pre></div><p>Поскольку мы вызываем функцию <code>f()</code> в той же горутине, что и функцию <code>main()</code>, переменную <code>p</code> не нужно перемещать. Она просто находится в стеке и вложенная функция <code>f()</code> будет иметь к ней доступ.</p>
-<p>В качестве заключения, когда мы создаём функцию - поведением по умолчанию должно быть использование <strong>передачи по значению</strong>, а не по указателю. Указатель должен быть использован только когда мы <strong>действительно</strong> хотим переиспользовать данные.</p>
-<h2 id=как-устроен-duck-typing-в-go>Как устроен Duck-typing в Go?</h2>
+</code></pre></div><h3 id=что-такое-интерфейс>Что такое интерфейс?</h3>
+<p><strong>Интерфейсы</strong> - это инструменты для определения наборов действий и поведения. Интерфейсы - это в первую очередь контракты. Они позволяют объектам опираться на абстракции, а не фактические реализации других объектов. При этом для компоновки различных поведений можно группировать несколько интерфейсов. В общем смысле - это набор методов, представляющих стандартное поведение для различных типов данных.</p>
+<h4 id=как-устроен-duck-typing-в-go>Как устроен Duck-typing в Go?</h4>
 <blockquote>
 <p>Если это выглядит как утка, плавает как утка и крякает как утка, то это, вероятно, утка и есть.</p>
 </blockquote>
 <p>Если структура содержит в себе все методы, что объявлены в интерфейсе, и их сигнатуры совпадают - она автоматически удовлетворяет интерфейс.</p>
 <p>Такой подход позволяет полиморфно <em>(полиморфизм - способность функции обрабатывать данные разных типов)</em> работать с объектами, которые не связаны в иерархии наследования. Достаточно, чтобы все эти объекты поддерживали необходимый набор методов.</p>
-<h2 id=что-такое-интерфейс>Что такое интерфейс?</h2>
-<p><strong>Интерфейсы</strong> - это инструменты для определения наборов действий и поведения. Интерфейсы - это в первую очередь контракты. Они позволяют объектам опираться на абстракции, а не фактические реализации других объектов. При этом для компоновки различных поведений можно группировать несколько интерфейсов. В общем смысле - это набор методов, представляющих стандартное поведение для различных типов данных.</p>
-<h3 id=интерфейсный-тип>Интерфейсный тип</h3>
+<h4 id=интерфейсный-тип>Интерфейсный тип</h4>
 <p>В Go интерфейсный тип <a class=link href=https://github.com/golang/go/blob/36b81acfa19d9fedf6a0cd60c394fd7a7703834e/src/runtime/runtime2.go#L202-L205 target=_blank rel=noopener>выглядит вот так</a>:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>iface</span> <span class=kd>struct</span> <span class=p>{</span>
 	<span class=nx>tab</span>  <span class=o>*</span><span class=nx>itab</span>
@@ -669,7 +630,7 @@ Go
 <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>builder</span><span class=p>,</span> <span class=nx>stringer</span><span class=p>)</span> <span class=c1>// nil nil
 </span><span class=c1></span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>stringer</span> <span class=o>==</span> <span class=kc>nil</span><span class=p>)</span>   <span class=c1>// false (!!!)
 </span><span class=c1></span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>builder</span> <span class=o>==</span> <span class=kc>nil</span><span class=p>)</span>    <span class=c1>// true
-</span></code></pre></div><h3 id=пустой-interface>Пустой <code>interface{}</code></h3>
+</span></code></pre></div><h4 id=пустой-interface>Пустой <code>interface{}</code></h4>
 <p>Ему удовлетворяет вообще любой тип. Пустой интерфейс ничего не означает, никакой абстракции. Поэтому использовать пустые интерфейсы нужно в самых крайних случаях.</p>
 <blockquote>
 <p>Что можно почитать:</p>
@@ -679,34 +640,7 @@ Go
 <li><a class=link href=https://habr.com/ru/post/597461/ target=_blank rel=noopener>Интерфейсы в Go - как красиво выстрелить себе в ногу</a></li>
 </ul>
 </blockquote>
-<h2 id=что-можешь-рассказать-про-escape-analysis>Что можешь рассказать про escape analysis?</h2>
-<p>Escape analysis - это процесс, который компилятор использует для определения размещения значений, созданных вашей программой.</p>
-<p>В частности, компилятор выполняет статический анализ кода, чтобы определить, может ли значение быть помещено в стековый фрейм для функции, которая его строит, или значение должно &ldquo;сбежать&rdquo; в кучу. Используется разработчиками для оптимизации кода и аналитики причин возможного замедления.</p>
-<p>Команда для запуска escape-анализа: <code>go build -gcflags="-m"</code> (так же можно использовать флаги <code>-N</code> для отключени оптимизаций, <code>-l</code> для отключения &ldquo;инлайнинга&rdquo;).</p>
-<blockquote>
-<p>Что можно почитать:</p>
-<ul>
-<li><a class=link href=https://habr.com/ru/post/497994/ target=_blank rel=noopener>Языковая механика escape analysis</a></li>
-<li><a class=link href=https://mayurwadekar2.medium.com/escape-analysis-in-golang-ee40a1c064c1 target=_blank rel=noopener>Escape Analysis in Golang</a></li>
-</ul>
-</blockquote>
-<h2 id=дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</h2>
-<p>Его можно использовать, и он означает <strong>отдельный скоуп</strong> для всех переменных, объявленных в нём (возможен и &ldquo;захват переменных&rdquo; объявленных вне скоупа ранее, естественно). Иногда используется для декомпозиции какого-то отдельного куска функции, к примеру.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>i</span><span class=p>,</span> <span class=nx>s1</span> <span class=p>=</span> <span class=mi>1</span><span class=p>,</span> <span class=s>&#34;foo&#34;</span>
-
-<span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>j</span><span class=p>,</span> <span class=nx>s2</span> <span class=p>=</span> <span class=mi>2</span><span class=p>,</span> <span class=s>&#34;bar&#34;</span>
-
-	<span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=nx>s1</span><span class=p>)</span> <span class=c1>// 1 foo
-</span><span class=c1></span>	<span class=nb>println</span><span class=p>(</span><span class=nx>j</span><span class=p>,</span> <span class=nx>s2</span><span class=p>)</span> <span class=c1>// 2 bar
-</span><span class=c1></span>
-	<span class=nx>s1</span> <span class=p>=</span> <span class=s>&#34;baz&#34;</span>
-<span class=p>}</span>
-
-<span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=nx>s1</span><span class=p>)</span> <span class=c1>// 1 baz
-</span><span class=c1>//println(j, s2) // ERROR: undefined: j and s2
-</span></code></pre></div><p>Так же это может быть связано с AST (Abstract Syntax Tree) - когда оно строится и происходят SSA (Static Single Assignment) оптимизации, к сожалению SSA не работает на всю длину дерева. Как следствие, если у нас слишком длинная функция <em>(примерно дохулион строк)</em> и мы по каким-то причинам не можем её декомпозировать, но можем изолировать какие-то скоупы то, таким образом, мы помогаем SSA произвести оптимизации (если они возможно).</p>
-<h2 id=что-такое-замыкание>Что такое замыкание?</h2>
+<h3 id=что-такое-замыкание>Что такое замыкание?</h3>
 <p>Замыкания - это такие функции, которые вы можете создавать в рантайме и им будет доступно текущее окружение, в рамках которого они были созданы.</p>
 <p>Функции, у которых есть имя - это <strong>именованные</strong> функции. Функции, которые могут быть созданы без указания имени - это <strong>анонимные</strong> функции.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
@@ -747,53 +681,7 @@ Go
 <li><a class=link href=https://kodazm.ru/articles/go/zamykaniya/ target=_blank rel=noopener>Замыкания</a></li>
 </ul>
 </blockquote>
-<h2 id=что-такое-захват-переменной>Что такое захват переменной?</h2>
-<p>Во вложенном скоупе есть возможность обращаться к переменным, объявленных в скоупе выше (но не наоборот). Обращение к переменным из вышестоящего скоупа и есть их захват. Типичной ошибкой является использование значение итератора в цикле:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>out</span> <span class=p>[]</span><span class=o>*</span><span class=kt>int</span>
-
-<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-	<span class=nx>out</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>out</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>i</span><span class=p>)</span>
-<span class=p>}</span>
-
-<span class=nb>println</span><span class=p>(</span><span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>// 3 3 3
-</span></code></pre></div><p>Испраляется путём создания локальной (для скоупа цикла) переменной с копией знаяения итератора:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>out</span> <span class=p>[]</span><span class=o>*</span><span class=kt>int</span>
-
-<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-	<span class=nx>i</span> <span class=o>:=</span> <span class=nx>i</span> <span class=c1>// Copy i into a new variable.
-</span><span class=c1></span>	<span class=nx>out</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>out</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>i</span><span class=p>)</span>
-<span class=p>}</span>
-
-<span class=nb>println</span><span class=p>(</span><span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>// 0 1 2
-</span></code></pre></div><blockquote>
-<p>Что можно почитать:</p>
-<ul>
-<li><a class=link href=https://github.com/golang/go/wiki/CommonMistakes target=_blank rel=noopener>Using reference to loop iterator variable</a></li>
-</ul>
-</blockquote>
-<h2 id=какое-поведение-по-умолчанию-используется-в-go-при-передаче-в-функцию>Какое поведение по умолчанию используется в Go при передаче в функцию?</h2>
-<p>По умолчанию всегда используется копирование, т.е. передача по значению. Для передачи по указателю необходимо это явно указывать:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>i</span> <span class=p>=</span> <span class=mi>5</span>
-
-	<span class=nf>byValue</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span>    <span class=c1>// 5
-</span><span class=c1></span>	<span class=nf>byPointer</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>i</span><span class=p>)</span> <span class=c1>// 5
-</span><span class=c1></span><span class=p>}</span>
-
-<span class=kd>func</span> <span class=nf>byValue</span><span class=p>(</span><span class=nx>i</span> <span class=kt>int</span><span class=p>)</span>    <span class=p>{</span> <span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span> <span class=p>}</span>  <span class=c1>// передача по значению (копии переменной)
-</span><span class=c1></span><span class=kd>func</span> <span class=nf>byPointer</span><span class=p>(</span><span class=nx>i</span> <span class=o>*</span><span class=kt>int</span><span class=p>)</span> <span class=p>{</span> <span class=nb>println</span><span class=p>(</span><span class=o>*</span><span class=nx>i</span><span class=p>)</span> <span class=p>}</span> <span class=c1>// передача по указателю
-</span></code></pre></div><h2 id=сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</h2>
-<p>Теоретически, <strong>неограниченное</strong> количество значений. Так же хочется отметить, что есть правила &ldquo;де-факто&rdquo;, которых следует придерживаться:</p>
-<ul>
-<li><strong>Последним</strong> значением возвращать ошибку, если её возврат подразумевается</li>
-<li><strong>Первым</strong> значением возвращать контекст, если он подразумевается</li>
-<li>Хорошим тоном является не возвращать более четырёх значений</li>
-<li>Если функция что-то проверяет и возвращает значение + булевый результат проверки - то результат проверки возвращать последним (пример - <code>os.LookupEnv(key string) (string, bool)</code>)</li>
-<li>Если возвращается <strong>ошибка</strong>, то остальные значения возвращать нулевыми или <code>nil</code></li>
-</ul>
-<h2 id=как-сделать-свои-методы-для-стороннего-пакета>Как сделать свои методы для стороннего пакета?</h2>
-<p>Например, если мы используем логгер <strong><a class=link href=https://github.com/uber-go/zap target=_blank rel=noopener>Zap</a></strong> в нашем проекте, и хотим к этому Zap-у прикрутить наши методы - то для этого нам нужно будет создать <strong>свою структуру</strong>, внутри в неё встраивать логгер Zap-а, и к этой структуре уже прикручивать требуемые методы. Просто &ldquo;навесить сверху&rdquo; функции на сторонний пакет мы не можем.</p>
-<h2 id=какие-битовые-операции-знаешь>Какие битовые операции знаешь?</h2>
+<h3 id=какие-битовые-операции-знаешь>Какие битовые операции знаешь?</h3>
 <p>Побитовые операторы проводят операции непосредственно на битах числа.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=c1>// Побитовое И/AND (разряд результата равен 1 только тогда, когда оба соответствующих бита операндов равны 1)
 </span><span class=c1></span><span class=nb>println</span><span class=p>(</span><span class=mb>0b111_000</span> <span class=cm>/* 56 */</span> <span class=o>&amp;</span> <span class=mb>0b011_110</span> <span class=cm>/* 30 */</span> <span class=o>==</span> <span class=mb>0b011_000</span> <span class=cm>/* 24 */</span><span class=p>)</span>
@@ -846,7 +734,47 @@ Go
 <li><a class=link href=https://metanit.com/go/tutorial/2.7.php target=_blank rel=noopener>Поразрядные операции</a></li>
 </ul>
 </blockquote>
-<h2 id=как-работает-defer>Как работает <code>defer</code>?</h2>
+<h3 id=дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</h3>
+<p>Его можно использовать, и он означает <strong>отдельный скоуп</strong> для всех переменных, объявленных в нём (возможен и &ldquo;захват переменных&rdquo; объявленных вне скоупа ранее, естественно). Иногда используется для декомпозиции какого-то отдельного куска функции, к примеру.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>i</span><span class=p>,</span> <span class=nx>s1</span> <span class=p>=</span> <span class=mi>1</span><span class=p>,</span> <span class=s>&#34;foo&#34;</span>
+
+<span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>j</span><span class=p>,</span> <span class=nx>s2</span> <span class=p>=</span> <span class=mi>2</span><span class=p>,</span> <span class=s>&#34;bar&#34;</span>
+
+	<span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=nx>s1</span><span class=p>)</span> <span class=c1>// 1 foo
+</span><span class=c1></span>	<span class=nb>println</span><span class=p>(</span><span class=nx>j</span><span class=p>,</span> <span class=nx>s2</span><span class=p>)</span> <span class=c1>// 2 bar
+</span><span class=c1></span>
+	<span class=nx>s1</span> <span class=p>=</span> <span class=s>&#34;baz&#34;</span>
+<span class=p>}</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=nx>s1</span><span class=p>)</span> <span class=c1>// 1 baz
+</span><span class=c1>//println(j, s2) // ERROR: undefined: j and s2
+</span></code></pre></div><p>Так же это может быть связано с AST (Abstract Syntax Tree) - когда оно строится и происходят SSA (Static Single Assignment) оптимизации, к сожалению SSA не работает на всю длину дерева. Как следствие, если у нас слишком длинная функция <em>(примерно дохулион строк)</em> и мы по каким-то причинам не можем её декомпозировать, но можем изолировать какие-то скоупы то, таким образом, мы помогаем SSA произвести оптимизации (если они возможно).</p>
+<h3 id=что-такое-захват-переменной>Что такое захват переменной?</h3>
+<p>Во вложенном скоупе есть возможность обращаться к переменным, объявленных в скоупе выше (но не наоборот). Обращение к переменным из вышестоящего скоупа и есть их захват. Типичной ошибкой является использование значение итератора в цикле:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>out</span> <span class=p>[]</span><span class=o>*</span><span class=kt>int</span>
+
+<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+	<span class=nx>out</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>out</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>i</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>// 3 3 3
+</span></code></pre></div><p>Испраляется путём создания локальной (для скоупа цикла) переменной с копией знаяения итератора:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>out</span> <span class=p>[]</span><span class=o>*</span><span class=kt>int</span>
+
+<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+	<span class=nx>i</span> <span class=o>:=</span> <span class=nx>i</span> <span class=c1>// Copy i into a new variable.
+</span><span class=c1></span>	<span class=nx>out</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>out</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>i</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=o>*</span><span class=nx>out</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>// 0 1 2
+</span></code></pre></div><blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://github.com/golang/go/wiki/CommonMistakes target=_blank rel=noopener>Using reference to loop iterator variable</a></li>
+</ul>
+</blockquote>
+<h3 id=как-работает-defer>Как работает <code>defer</code>?</h3>
 <p><code>Defer</code> является функцией отложенного вызова. Выполняется <strong>всегда</strong> (даже в случае паники внутри функции вызываемой) после того, как функция завершила своё выполнение <strong>но</strong> до того, как управление вернётся вызывающей стороне (более того - внутри <code>defer</code> возможен захват переменных, и даже возвращаемого результата). Часто используется для освобождения ресурсов/снятия блокировок. Пример использования:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
 	<span class=nb>println</span><span class=p>(</span><span class=s>&#34;result =&#34;</span><span class=p>,</span> <span class=nf>f</span><span class=p>())</span>
@@ -874,7 +802,7 @@ Go
 	<span class=nb>panic</span><span class=p>(</span><span class=s>&#34;panic is here&#34;</span><span class=p>)</span>
 <span class=p>}</span>
 </code></pre></div><p>Когда выполняется ключевое слово <code>defer</code>, оно помещает следующий за ним оператор в список, который будет вызван до возврата функции.</p>
-<h2 id=прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</h2>
+<h3 id=прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</h3>
 <p>Что произойдёт в следующем примере, если <code>f()</code> вернёт <code>true</code>?</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=k>for</span> <span class=p>{</span>
   <span class=k>switch</span> <span class=nf>f</span><span class=p>()</span> <span class=p>{</span>
@@ -894,43 +822,190 @@ Go
       <span class=c1>// Do something
 </span><span class=c1></span>    <span class=p>}</span>
   <span class=p>}</span>
-</code></pre></div><h2 id=инвертирование-зависимости>Инвертирование зависимости</h2>
-<p>Инвертирование зависимостей позволяет в нашем коде не &ldquo;завязываться&rdquo; на конкретную реализацию (используя, например, интерфейсы), тем самым понижая связанность кода и повышая его тестируемость. Так же сужается зона ответственности конечной структуры/пакета, что повышает его переиспользуемость.</p>
-<p>Принцип инверсии зависимостей (dependency inversion principle) в Go который можно реализовывать следующим образом:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>import</span> <span class=p>(</span>
-	<span class=s>&#34;errors&#34;</span>
-	<span class=s>&#34;fmt&#34;</span>
+</code></pre></div><h3 id=сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</h3>
+<p>Теоретически, <strong>неограниченное</strong> количество значений. Так же хочется отметить, что есть правила &ldquo;де-факто&rdquo;, которых следует придерживаться:</p>
+<ul>
+<li><strong>Последним</strong> значением возвращать ошибку, если её возврат подразумевается</li>
+<li><strong>Первым</strong> значением возвращать контекст, если он подразумевается</li>
+<li>Хорошим тоном является не возвращать более четырёх значений</li>
+<li>Если функция что-то проверяет и возвращает значение + булевый результат проверки - то результат проверки возвращать последним (пример - <code>os.LookupEnv(key string) (string, bool)</code>)</li>
+<li>Если возвращается <strong>ошибка</strong>, то остальные значения возвращать нулевыми или <code>nil</code></li>
+</ul>
+<h2 id=память-и-управление-ей>Память и управление ей</h2>
+<h3 id=что-такое-heap-и-stack>Что такое <code>heap</code> и <code>stack</code>?</h3>
+<p><strong>Стек</strong> (stack) - это область оперативной памяти, которая создаётся для каждого потока. Он работает в порядке LIFO (Last In, First Out), то есть последний добавленный в стек кусок памяти будет первым в очереди на вывод из стека. Каждый раз, когда функция объявляет новую переменную, она добавляется в стек, а когда эта переменная пропадает из области видимости (например, когда функция заканчивается), она автоматически удаляется из стека. Когда стековая переменная освобождается, эта область памяти становится доступной для других стековых переменных.</p>
+<p>Стек быстрый, так как часто привязан к кэшу процессора. Размер стека ограничен, и задаётся при создании потока.</p>
+<p><strong>Куча</strong> (heap) - это хранилище памяти, также расположенное в ОЗУ, которое допускает динамическое выделение памяти и не работает по принципу стека: это просто склад для ваших переменных. Когда вы выделяете в куче участок памяти для хранения переменной, к ней можно обратиться не только в потоке, но и во всем приложении. Именно так определяются глобальные переменные. По завершении приложения все выделенные участки памяти освобождаются. Размер кучи задаётся при запуске приложения, но, в отличие от стека, он ограничен лишь физически, и это позволяет создавать динамические переменные.</p>
+<p>В сравнении со стеком, куча работает медленнее, поскольку переменные разбросаны по памяти, а не сидят на верхушке стека. То что попадает в кучу, живёт там пока не придёт GC.</p>
+<p>Но почему стек так быстр? Основных причин две:</p>
+<ul>
+<li>Стеку не нужно иметь сборщик мусора (garbage collector). Как мы уже упоминали, переменные просто создаются и затем вытесняются, когда функция завершается. Не нужно запускать сложный процесс освобождения памяти от неиспользуемых переменных и т.п.</li>
+<li>Стек принадлежит одной горутине, переменные не нужно синхронизировать в сравнении с теми, что находятся в куче. Что также повышает производительность</li>
+</ul>
+<h3 id=где-выделяется-память-под-переменную-можно-ли-этим-управлять>Где выделяется память под переменную? Можно ли этим управлять?</h3>
+<p>Прямых инструментов для управления местом, где будет выделена память у нас, к сожалению - нет. Но есть некоторые практики, которые позволяют это понять и использовать эффективно.</p>
+<p>Память под переменную может быть выделена в куче (heap) или стеке (stack). Очень приблизительно:</p>
+<ul>
+<li><strong>Стек</strong> содержит последовательность переменных для заданной горутины (как только функция завершила работу, переменные вытесняются из стека)</li>
+<li><strong>Куча</strong> содержит общие (shared) переменные (глобальные и т.п.)</li>
+</ul>
+<p>Давайте рассмотрим простой пример, в котором вы возвращаем значение:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>getFooValue</span><span class=p>()</span> <span class=nx>foo</span> <span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>result</span> <span class=nx>foo</span>
+	<span class=c1>// Do something
+</span><span class=c1></span>	<span class=k>return</span> <span class=nx>result</span>
+<span class=p>}</span>
+</code></pre></div><p>Здесь переменная <code>result</code> создаётся в текущей горутине. И эта переменная помещается в <strong>стек</strong>. Как только функция завершает работу, клиент получает <strong>копию этой переменной</strong>. Исходная переменная вытесняется из стека. Эта переменная всё ещё существует в памяти, до тех пор, пока не будет затёрта другой переменной, но к этой переменной <strong>уже нельзя получить доступ</strong>.</p>
+<p>Теперь тот же пример, но с <strong>указателем</strong>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>getFooPointer</span><span class=p>()</span> <span class=o>*</span><span class=nx>foo</span> <span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>result</span> <span class=nx>foo</span>
+	<span class=c1>// Do something
+</span><span class=c1></span>	<span class=k>return</span> <span class=o>&amp;</span><span class=nx>result</span>
+<span class=p>}</span>
+</code></pre></div><p>Переменная <code>result</code> также создаётся текущей горутиной, но клиент получает указатель (копию адреса переменной). Если <code>result</code> вытеснена из стека, клиент функции <strong>не сможет получить доступ к переменной</strong>.</p>
+<p>В подобном сценарии компилятор Go вынужден переместить переменную <code>result</code> туда, где она может быть доступна (shared) – <strong>в кучу (heap)</strong>.</p>
+<p>Хотя есть и исключение. Для примера:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span>  <span class=p>{</span>
+	<span class=nx>p</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>foo</span><span class=p>{}</span>
+	<span class=nf>f</span><span class=p>(</span><span class=nx>p</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>Поскольку мы вызываем функцию <code>f()</code> в той же горутине, что и функцию <code>main()</code>, переменную <code>p</code> не нужно перемещать. Она просто находится в стеке и вложенная функция <code>f()</code> будет иметь к ней доступ.</p>
+<p>В качестве заключения, когда мы создаём функцию - поведением по умолчанию должно быть использование <strong>передачи по значению</strong>, а не по указателю. Указатель должен быть использован только когда мы <strong>действительно</strong> хотим переиспользовать данные.</p>
+<h3 id=какое-поведение-по-умолчанию-используется-в-go-при-передаче-в-функцию>Какое поведение по умолчанию используется в Go при передаче в функцию?</h3>
+<p>По умолчанию всегда используется копирование, т.е. передача по значению. Для передачи по указателю необходимо это явно указывать:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>i</span> <span class=p>=</span> <span class=mi>5</span>
+
+	<span class=nf>byValue</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span>    <span class=c1>// 5
+</span><span class=c1></span>	<span class=nf>byPointer</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>i</span><span class=p>)</span> <span class=c1>// 5
+</span><span class=c1></span><span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>byValue</span><span class=p>(</span><span class=nx>i</span> <span class=kt>int</span><span class=p>)</span>    <span class=p>{</span> <span class=nb>println</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span> <span class=p>}</span>  <span class=c1>// передача по значению (копии переменной)
+</span><span class=c1></span><span class=kd>func</span> <span class=nf>byPointer</span><span class=p>(</span><span class=nx>i</span> <span class=o>*</span><span class=kt>int</span><span class=p>)</span> <span class=p>{</span> <span class=nb>println</span><span class=p>(</span><span class=o>*</span><span class=nx>i</span><span class=p>)</span> <span class=p>}</span> <span class=c1>// передача по указателю
+</span></code></pre></div><h3 id=что-можешь-рассказать-про-escape-analysis>Что можешь рассказать про escape analysis?</h3>
+<p>Escape analysis - это процесс, который компилятор использует для определения размещения значений, созданных вашей программой.</p>
+<p>В частности, компилятор выполняет статический анализ кода, чтобы определить, может ли значение быть помещено в стековый фрейм для функции, которая его строит, или значение должно &ldquo;сбежать&rdquo; в кучу. Используется разработчиками для оптимизации кода и аналитики причин возможного замедления.</p>
+<p>Команда для запуска escape-анализа: <code>go build -gcflags="-m"</code> (так же можно использовать флаги <code>-N</code> для отключени оптимизаций, <code>-l</code> для отключения &ldquo;инлайнинга&rdquo;).</p>
+<blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://habr.com/ru/post/497994/ target=_blank rel=noopener>Языковая механика escape analysis</a></li>
+<li><a class=link href=https://mayurwadekar2.medium.com/escape-analysis-in-golang-ee40a1c064c1 target=_blank rel=noopener>Escape Analysis in Golang</a></li>
+</ul>
+</blockquote>
+<h2 id=сoncurrency-конкурентность>Сoncurrency (конкурентность)</h2>
+<p>В данном разделе будут вопросы, относящиеся к параллелизму и конкурентной работе.</p>
+<h3 id=как-устроен-мьютекс>Как устроен мьютекс?</h3>
+<p>Mutex означает <strong>MUTual EXclusion</strong> (взаимное исключение), и обеспечивает безопасный доступ к общим ресурсам.</p>
+<p>Под капотом мьютекса используются функции из пакета <code>atomic</code> (<code>atomic.CompareAndSwapInt32</code> и <code>atomic.AddInt32</code>), так что можно считать мьютекс надстройкой над <code>atomic</code>. Мьютекс медленнее чем <code>atomic</code>, потому что он блокирует другие горутины на всё время действия блокировки. А в свою очередь <code>atomic</code> быстрее потому как использует атомарные инструкции процессора.</p>
+<p>В момент, когда нужно обеспечить защиту доступа - вызываем метод <code>Lock()</code>, а по завершению операции изменения/чтения данных - метод <code>Unlock()</code>.</p>
+<h4 id=в-чем-отличие-syncmutex-от-syncrwmutex>В чем отличие <code>sync.Mutex</code> от <code>sync.RWMutex</code>?</h4>
+<p>Помимо <code>Lock()</code> и <code>Unlock()</code> (у <code>sync.Mutex</code>), у <code>sync.RWMutex</code> есть отдельные аналогичные методы <strong>только для чтения</strong> - <code>RLock()</code> и <code>RUnlock()</code>. Если участок в памяти нуждается только в чтении - он использует <code>RLock()</code>, который не заблокирует другие операции чтения, <strong>но заблокирует операцию записи</strong> и наоборот.</p>
+<p>По большому счёту, <code>RWMutex</code> это комбинация из двух мьютексов.</p>
+<h3 id=что-такое-synсmap>Что такое <code>synс.Map</code>?</h3>
+<p>Коротко - предоставляет атомарный доступ к элементам <code>map</code>.</p>
+<p>Go, как известно, является языком созданным для написания concurrent программ - программ, который эффективно работают на мультипроцессорных системах. Но тип <code>map</code> не безопасен для параллельного доступа. То есть для чтения, конечно, безопасен - 1000 горутин могут читать из map без опасений, но вот параллельно в неё ещё и писать - уже нет.</p>
+<p>Для обеспечения потоко-безопасного доступа к <code>map</code> можно использовать <code>sync.RWMutex</code>, но он имеет проблему производительности при работе на большом количестве ядер процессора (в <code>RWMutex</code> <a class=link href=https://github.com/golang/go/blob/36b81acfa19d9fedf6a0cd60c394fd7a7703834e/src/sync/rwmutex.go#L61 target=_blank rel=noopener>при блокировке на чтение</a> каждая горутина должна обновить поле <code>readerCount</code> - простой счётчик, с помощью <code>atomic.AddInt32()</code>, что проиводит к сбросу кэша для этого адреса памяти для всех ядер, и каждое ядро становится в очередь и ждёт этот сброс и вычитывание из кэша - эта проблема называется <strong>cache contention</strong>).</p>
+<p><code>sync.Map</code> решает совершенно конкретную проблему <strong>cache contention</strong> в стандартной библиотеке для таких случаев, когда ключи в map стабильны (не обновляются часто) и происходит намного больше чтений, чем записей.</p>
+<p>Пример работы с <code>sync.Map</code>:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>m</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>Map</span>
+
+<span class=nx>m</span><span class=p>.</span><span class=nf>Store</span><span class=p>(</span><span class=s>&#34;one&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>        <span class=c1>// запись
+</span><span class=c1></span><span class=nx>one</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>m</span><span class=p>.</span><span class=nf>Load</span><span class=p>(</span><span class=s>&#34;one&#34;</span><span class=p>)</span> <span class=c1>// чтение
+</span><span class=c1></span>
+<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>one</span><span class=p>,</span> <span class=nx>ok</span><span class=p>)</span> <span class=c1>// 1 true
+</span><span class=c1></span>
+<span class=nx>m</span><span class=p>.</span><span class=nf>Range</span><span class=p>(</span><span class=kd>func</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span> <span class=kd>interface</span><span class=p>{})</span> <span class=kt>bool</span> <span class=p>{</span> <span class=c1>// итерация эл-ов мапы
+</span><span class=c1></span>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span> <span class=c1>// one 1
+</span><span class=c1></span>
+	<span class=k>return</span> <span class=kc>true</span>
+<span class=p>})</span>
+
+<span class=nx>m</span><span class=p>.</span><span class=nf>Delete</span><span class=p>(</span><span class=s>&#34;one&#34;</span><span class=p>)</span> <span class=c1>// удаление
+</span></code></pre></div><blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://habr.com/ru/post/338718/ target=_blank rel=noopener>Разбираемся с новым sync.Map в Go 1.9</a></li>
+</ul>
+</blockquote>
+<h3 id=какие-ещё-примитивы-синхронизации-знаешь>Какие ещё примитивы синхронизации знаешь?</h3>
+<p>Как было сказано выше - для синхронизации можно использовать <strong>мьютексы</strong>. Кроме того из стандартной библиотеки нам доступны:</p>
+<h4 id=syncwaitgroup><code>sync.WaitGroup</code></h4>
+<p>Используется для координации в случае, когда программе приходится ждать окончания работы нескольких горутин (эта конструкция похожа на <code>CountDownLatch</code> в Java). Отличный способ дождаться завершения набора одновременных операций. Принцип работы следующий:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>wg</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>WaitGroup</span>
+
+<span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=c1>// увеличиваем счётчик на 1
+</span><span class=c1></span><span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 1&#34;</span><span class=p>)</span>
+	<span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 1 done&#34;</span><span class=p>)</span>
+
+	<span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span> <span class=c1>// уменьшаем счётчик на 1
+</span><span class=c1></span><span class=p>}()</span>
+
+<span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=c1>// увеличиваем счётчик на 1
+</span><span class=c1></span><span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 2&#34;</span><span class=p>)</span>
+	<span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;task 2 done&#34;</span><span class=p>)</span>
+
+	<span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span> <span class=c1>// уменьшаем счётчик на 1
+</span><span class=c1></span><span class=p>}()</span>
+
+<span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span> <span class=c1>// блокируемся, пока счётчик не будет == 0
+</span><span class=c1>// task 2
+</span><span class=c1>// task 1
+</span><span class=c1>// task 2 done
+</span><span class=c1>// task 1 done
+</span><span class=c1>// Total time: 1.00s
+</span></code></pre></div><h4 id=synccond><code>sync.Cond</code></h4>
+<p>Условная переменная (<strong>CONDition variable</strong>) полезна, например, если мы хотим разблокировать сразу несколько горутин (<code>Broadcast</code>), что не получится сделать с помощью канала. Метод <code>Signal</code> отправляет сообщение самой долго-ожидающей горутине. Пример использования:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=p>(</span>
+	<span class=nx>c</span>  <span class=p>=</span> <span class=nx>sync</span><span class=p>.</span><span class=nf>NewCond</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>sync</span><span class=p>.</span><span class=nx>Mutex</span><span class=p>{})</span>
+	<span class=nx>wg</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>WaitGroup</span> <span class=c1>// нужна только для примера
+</span><span class=c1></span>
+	<span class=nx>free</span> <span class=p>=</span> <span class=kc>true</span>
 <span class=p>)</span>
 
-<span class=kd>type</span> <span class=nx>speaker</span> <span class=kd>interface</span> <span class=p>{</span>
-	<span class=nf>Speak</span><span class=p>()</span> <span class=kt>string</span>
+<span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+	<span class=k>defer</span> <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
+	<span class=nx>c</span><span class=p>.</span><span class=nx>L</span><span class=p>.</span><span class=nf>Lock</span><span class=p>()</span>
+
+	<span class=k>for</span> <span class=p>!</span><span class=nx>free</span> <span class=p>{</span> <span class=c1>// проверяем, что ресурс свободен
+</span><span class=c1></span>		<span class=nx>c</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span>
+	<span class=p>}</span>
+	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;work&#34;</span><span class=p>)</span>
+
+	<span class=nx>c</span><span class=p>.</span><span class=nx>L</span><span class=p>.</span><span class=nf>Unlock</span><span class=p>()</span>
+<span class=p>}()</span>
+
+<span class=nx>free</span> <span class=p>=</span> <span class=kc>false</span>                  <span class=c1>// забрали ресурс, чтобы выполнить с ним работу
+</span><span class=c1></span><span class=o>&lt;-</span><span class=nx>time</span><span class=p>.</span><span class=nf>After</span><span class=p>(</span><span class=mi>1</span> <span class=o>*</span> <span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span> <span class=c1>// эмуляция работы
+</span><span class=c1></span><span class=nx>free</span> <span class=p>=</span> <span class=kc>true</span>                   <span class=c1>// освободили ресурс
+</span><span class=c1></span><span class=nx>c</span><span class=p>.</span><span class=nf>Signal</span><span class=p>()</span>                    <span class=c1>// оповестили горутину
+</span><span class=c1></span>
+<span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span>
+</code></pre></div><h4 id=synconce><code>sync.Once</code></h4>
+<p>Позволяет определить задачу для однократного выполнения за всё время работы программы. Содержит одну-единственную функцию <code>Do</code>, позволяющую передавать другую функцию для однократного применения.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>once</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>Once</span>
+
+<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+	<span class=nx>once</span><span class=p>.</span><span class=nf>Do</span><span class=p>(</span><span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Hell yeah!&#34;</span><span class=p>)</span>
+	<span class=p>})</span>
 <span class=p>}</span>
 
-<span class=kd>type</span> <span class=nx>Foo</span> <span class=kd>struct</span> <span class=p>{</span>
-	<span class=nx>s</span> <span class=nx>speaker</span> <span class=c1>// s *Foo - было бы плохо
-</span><span class=c1></span><span class=p>}</span>
-
-<span class=kd>func</span> <span class=nf>NewFoo</span><span class=p>(</span><span class=nx>s</span> <span class=nx>speaker</span><span class=p>)</span> <span class=p>(</span><span class=o>*</span><span class=nx>Foo</span><span class=p>,</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
-	<span class=k>if</span> <span class=nx>s</span> <span class=o>==</span> <span class=kc>nil</span> <span class=p>{</span>
-		<span class=k>return</span> <span class=kc>nil</span><span class=p>,</span> <span class=nx>errors</span><span class=p>.</span><span class=nf>New</span><span class=p>(</span><span class=s>&#34;speaker is nil&#34;</span><span class=p>)</span>
-	<span class=p>}</span>
-
-	<span class=k>return</span> <span class=o>&amp;</span><span class=nx>Foo</span><span class=p>{</span><span class=nx>s</span><span class=p>:</span> <span class=nx>s</span><span class=p>},</span> <span class=kc>nil</span>
-<span class=p>}</span>
-
-<span class=kd>func</span> <span class=p>(</span><span class=nx>f</span> <span class=nx>Foo</span><span class=p>)</span> <span class=nf>SaySomething</span><span class=p>()</span> <span class=kt>string</span> <span class=p>{</span> <span class=k>return</span> <span class=nx>f</span><span class=p>.</span><span class=nx>s</span><span class=p>.</span><span class=nf>Speak</span><span class=p>()</span> <span class=p>}</span>
-
-<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>foo</span><span class=p>,</span> <span class=nx>err</span> <span class=p>=</span> <span class=nf>NewFoo</span><span class=p>(</span><span class=nx>someSpeaker</span><span class=p>)</span>
-
-	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-		<span class=nb>panic</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
-	<span class=p>}</span>
-
-	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>foo</span><span class=p>.</span><span class=nf>SaySomething</span><span class=p>())</span> <span class=c1>// depends on the speaker implementation
-</span><span class=c1></span><span class=p>}</span>
-</code></pre></div><p>Мы объявляем интерфейс <code>speaker</code> не экспортируемым на нашей, принимающей стороне, и используя псевдо-конструктор <code>NewFoo</code> гарантируем что свойство <code>s</code> будет проинициализировано верным типом (дополнительно проверяя его на <code>nil</code>).</p>
-<h2 id=какие-типы-каналов-существуют>Какие типы каналов существуют?</h2>
+<span class=c1>// Hell yeah! (выводится 1 раз вместо 10)
+</span></code></pre></div><h4 id=syncpool><code>sync.Pool</code></h4>
+<p>Используется для уменьшения давления на GC путём повторного использования выделенной памяти (потоко-безопасно). Пул необязательно освободит данные при первом пробуждении GC, но он может освободить их в любой момент. У пула нет возможности определить и установить размер и нет необходимости заботиться о его переполнении.</p>
+<blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://habr.com/ru/post/277137/ target=_blank rel=noopener>Go sync.Pool</a></li>
+</ul>
+</blockquote>
+<h3 id=какие-типы-каналов-существуют>Какие типы каналов существуют?</h3>
 <p>Если которотко, то синхронные (<strong>небуферизированным</strong>) и асинхронные (<strong>буферизированные</strong>), оба работают по принципу FIFO (first in, first out) очереди.</p>
 <p>Канал - это объект связи, с помощью которого (чаще всего) горутины обмениваются данными. Потокобезопасен, передаётся &ldquo;по указателю&rdquo;. Технически это можно представить как конвейер <em>(или трубу)</em>, откуда можно считывать и помещать данные. Для создания канала предоставляет ключевое слово <code>chan</code> - создание не буферизированного канала <code>c := make(chan int)</code>, для чтения из канала - <code>data := &lt;-c</code>, для записи - <code>c &lt;- 123</code>, и закрытие <code>close(c)</code>.</p>
 <p><strong>Запись</strong> данных в закрытый канал <strong>вызовет панику</strong>.</p>
@@ -986,6 +1061,7 @@ Go
 </span><span class=c1>// channel 2 bar
 </span><span class=c1>// Total execution time: 1.00s
 </span></code></pre></div><p>В случае, если в оба канала одновременно придут сообщения (или они уже там были), то <code>case</code> будет выбран <strong>случайно</strong> (а не по порядку их объявления, как могло бы показаться).</p>
+<p>Если ни один из каналов недоступен для взаимодействия, и секция <code>default</code> отсутствует, то текущая горутина переходит в состояние <code>waiting</code> до тех пор, пока какой-то из каналов не станет доступен.</p>
 <p>Если в <code>select</code> указан <code>default</code>, то он будет выбран в том случае, если все каналы не имеют сообщений (таким образом <code>select</code> становится <strong>не блокируемым</strong>).</p>
 <p>Под капотом (<a class=link href=https://github.com/golang/go/blob/36b81acfa19d9fedf6a0cd60c394fd7a7703834e/src/runtime/chan.go#L33-L52 target=_blank rel=noopener>src/runtime/chan.go</a>) канал представлен структурой:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>hchan</span> <span class=kd>struct</span> <span class=p>{</span>
@@ -1015,7 +1091,7 @@ Go
 <li><a class=link href=https://medium.com/@victor_nerd/golang-channel-internal-part2-b4e37ad9a118 target=_blank rel=noopener>Строение каналов в Golang. Часть 2</a></li>
 </ul>
 </blockquote>
-<h2 id=что-можно-делать-с-закрытым-каналом>Что можно делать с закрытым каналом?</h2>
+<h4 id=что-можно-делать-с-закрытым-каналом>Что можно делать с закрытым каналом?</h4>
 <p>Из закрытого канала можно читать с помощью <code>for val := range c { ... }</code> - вычитает все сообщения что в нём есть, или с помощью:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=k>for</span> <span class=p>{</span>
 	<span class=k>if</span> <span class=nx>val</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>c</span><span class=p>;</span> <span class=nx>ok</span> <span class=p>{</span>
@@ -1024,18 +1100,7 @@ Go
 		<span class=k>break</span>
 	<span class=p>}</span>
 <span class=p>}</span>
-</code></pre></div><p>При этом <code>ok == true</code> до того момента, пока в канале есть сообщения (вне зависимости от того, открыт он или закрыт), в противном случае <code>ok == false</code> а <code>val</code> будет нулевым значением в зависимости от типа данных канала. При попытке записи в закрытый канал будет паника (авторы языка так сделали &ldquo;ибо нефиг - канал закрыт значит закрыт&rdquo;).</p>
-<h2 id=что-такое-горутина>Что такое горутина?</h2>
-<p>Горутина (goroutine) — это функция, выполняющаяся конкурентно с другими горутинами в том же адресном пространстве.</p>
-<p>Для её запуска достаточно использовать ключевое слово <code>go</code> перед именем вызываемой (или анонимной) функции.</p>
-<p>Горутины очень легковесны (~<strong>2,6Kb</strong> на горутину). Практически все расходы — это создание стека, который очень невелик, хотя при необходимости может расти. Область их применения чаще всего следующая:</p>
-<ul>
-<li>Когда нужна асинхронность <em>(например когда мы работаем с сетью, диском, базой данных, защищенным мьютексом ресурсом и т.п.)</em></li>
-<li>Когда время выполнения функции достаточно велико и можно получить выигрыш, нагрузив другие ядра</li>
-</ul>
-<p>Сама структура горутины занимает порядка 600 байт, но для неё ещё выделяется и её собственный стек, минимальный размер котого составляет 2Kb, который увеличивается и уменьшается по мере необходимости <em>(максимум зависит от архитектуры и составляет 1 ГБ для 64-разрядных систем и 250 МБ для 32-разрядных систем)</em>.</p>
-<p>Переключение между двумя Горутинами — супер дешевое, <code>O(1)</code>, то есть, не зависит от количества созданных горутин в системе. Всё, что нужно сделать для переключения, это поменять 3 регистра — <code>Program counter</code>, <code>Stack Pointer</code> и <code>DX</code>.</p>
-<h3 id=планировщик-горутин>Планировщик горутин</h3>
+</code></pre></div><h3 id=расскажи-про-планировщик-горутин>Расскажи про планировщик (горутин)</h3>
 <p><a class=link href=https://github.com/golang/go/blob/f296b7a6f045325a230f77e9bda1470b1270f817/src/runtime/proc.go#L19 target=_blank rel=noopener>Goroutine scheduler</a> является перехватывающим задачи (work-stealing) планировщиком, который был введен еще в Go 1.1 Дмитрием Вьюковым вместе с командой Go. Основная его суть заключается в том, что он управляет:</p>
 <ul>
 <li><a class=link href=https://github.com/golang/go/blob/f296b7a6f045325a230f77e9bda1470b1270f817/src/runtime/runtime2.go#L395 target=_blank rel=noopener><code>G</code> (<strong>горутинами</strong>)</a> - просто горутины Go</li>
@@ -1075,7 +1140,24 @@ Go
 <li><a class=link href=https://habr.com/ru/company/otus/blog/527748/ target=_blank rel=noopener>Что такое горутины и каков их размер?</a></li>
 </ul>
 </blockquote>
-<h2 id=где-аллоцируется-память-для-горутин>Где аллоцируется память для горутин?</h2>
+<h3 id=что-такое-горутина>Что такое горутина?</h3>
+<p>Горутина (goroutine) — это функция, выполняющаяся конкурентно с другими горутинами в том же адресном пространстве.</p>
+<p>Для её запуска достаточно использовать ключевое слово <code>go</code> перед именем вызываемой (или анонимной) функции.</p>
+<p>Горутины очень легковесны (~<strong>2,6Kb</strong> на горутину). Практически все расходы — это создание стека, который очень невелик, хотя при необходимости может расти. Область их применения чаще всего следующая:</p>
+<ul>
+<li>Когда нужна асинхронность <em>(например когда мы работаем с сетью, диском, базой данных, защищенным мьютексом ресурсом и т.п.)</em></li>
+<li>Когда время выполнения функции достаточно велико и можно получить выигрыш, нагрузив другие ядра</li>
+</ul>
+<p>Сама структура горутины занимает порядка 600 байт, но для неё ещё выделяется и её собственный стек, минимальный размер котого составляет 2Kb, который увеличивается и уменьшается по мере необходимости <em>(максимум зависит от архитектуры и составляет 1 ГБ для 64-разрядных систем и 250 МБ для 32-разрядных систем)</em>.</p>
+<p>Переключение между двумя Горутинами — супер дешевое, <code>O(1)</code>, то есть, не зависит от количества созданных горутин в системе. Всё, что нужно сделать для переключения, это поменять 3 регистра — <code>Program counter</code>, <code>Stack Pointer</code> и <code>DX</code>.</p>
+<h4 id=в-чем-отличия-горутин-от-потов-ос>В чем отличия горутин от потов ОС?</h4>
+<ul>
+<li>Каждый поток операционной системы имеет блок памяти фиксированного размера (зачастую до <strong>2 Мбайт</strong>) для стека — рабочей области, в которой он хранит локальные переменные вызовов функций, находящиеся в работе или приостановленные на время вызова другой функции. В противоположность этому go-подпрограмма начинает работу с небольшим стеком, обычно около <strong>2 Кбайт</strong>. Стек горутины, подобно стеку потока операционной системы, хранит локальные переменные активных и приостановленных функций, но, в отличие от потоков операционной системы, не является фиксированным; при необходимости он может расти и уменьшаться</li>
+<li>Потоки операционной системы планируются в ее ядре, а у go есть собственный планировщик (m:n) мультиплексирующий (раскидывающий) горутинки (m) по потокам (n). Основной плюс - отсутствие оверхеда на переключение контекста</li>
+<li>Планировщик Go использует параметр с именем <code>GOMAXPROCS</code> для определения, сколько потоков операционной системы могут одновременно активно выполнять код Go. Его значение по умолчанию равно <strong>количеству процессоров (ядер) компьютера</strong>, так что на машине с 8 процессорами (ядрами) планировщик будет планировать код Go для выполнения на 8 потоках одновременно. Спящие или заблокированные в процессе коммуникации go-подпрограммы потоков для себя не требуют. Go-подпрограммы, заблокированные в операции ввода-вывода или в других системных вызовах, или при вызове функций, не являющихся функциями Go, нуждаются в потоке операционной системы, но GOMAXPROCS их не учитывает</li>
+<li>В большинстве операционных систем и языков программирования, поддерживающих многопоточность, текущий поток имеет идентификацию, которая может быть легко получена как обычное значение (обычно — целое число или указатель). У горутин нет идентификации, доступной программисту. Так решено во время проектирования языка, поскольку локальной памятью потока программисты злоупотребляют</li>
+</ul>
+<h4 id=где-аллоцируется-память-для-горутин>Где аллоцируется память для горутин?</h4>
 <p>Так как горутины являются <strong>stackful</strong> - то и память для них (их состояние) хранится на стеке. Поэтому, теоритически, если очень постараться и сделать милилард вложенных вызовов, то можно сделать себе переполнение стека.</p>
 <p>Для самих же переменных, что используются внутри горутин память берётся с хипа (ограничены только размером &ldquo;физического&rdquo; хипа, т.е. объемом памяти сколько есть на машине).</p>
 <blockquote>
@@ -1085,7 +1167,7 @@ Go
 <li><a class=link href=https://habr.com/ru/company/otus/blog/586108/ target=_blank rel=noopener>Go: как изменяется размер стека горутины?</a></li>
 </ul>
 </blockquote>
-<h2 id=как-завершить-много-горутин>Как завершить много горутин?</h2>
+<h4 id=как-завершить-много-горутин>Как завершить много горутин?</h4>
 <p>Один из вариантов - это пристрелить <code>main</code> (шутка). Работу одной гороутины в принципе нельзя принудительно остановить из другой. Механизмы их завершения необходимо реализовывать отдельно (учить сами горутины завершаться).</p>
 <p>Наиболее часто используются 2 подхода - это использование контекста <code>context.Context</code>:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>import</span> <span class=p>(</span>
@@ -1171,9 +1253,9 @@ Go
 </span><span class=c1></span>	<span class=c1>// break f
 </span><span class=c1></span>	<span class=c1>// break f
 </span><span class=c1></span><span class=p>}</span>
-</code></pre></div><h2 id=кейсы-использования-контекста>Кейсы использования контекста</h2>
+</code></pre></div><h3 id=кейсы-использования-контекста>Кейсы использования контекста</h3>
 <p>Пакет <code>context</code> в Go особенно полезен при взаимодействиях с API и медленными процессами, особенно в production-grade системах. С его помощью можно уведомить горутины о необходимости завершить свою работу, &ldquo;пошарить&rdquo; какие-то данные (например, в middleware), или легко организовать работу с таймаутом.</p>
-<h3 id=contextwithcancel><code>context.WithCancel()</code></h3>
+<h4 id=contextwithcancel><code>context.WithCancel()</code></h4>
 <p>Эта функция создает новый контекст из переданного ей родительского, возвращая первым аргуметом функцию &ldquo;отмены контекста&rdquo; (при её вызове родительский контект &ldquo;отменен&rdquo; не будет), а вторым - новый контекст. Важно - вызывать функцию отмены контекста должна только та функция, <strong>которая его создает</strong>. При вызове функции отмены сам контекст и все котнекты, созданные на основе него получат в <code>ctx.Done()</code> пустую структуру и в <code>ctx.Err()</code> ошибку <code>context.Canceled</code>.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=nx>ctx</span><span class=p>,</span> <span class=nx>cancel</span> <span class=o>:=</span> <span class=nx>context</span><span class=p>.</span><span class=nf>WithCancel</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nf>Background</span><span class=p>())</span>
 <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Err</span><span class=p>())</span> <span class=c1>// nil
@@ -1182,7 +1264,7 @@ Go
 
 <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=o>&lt;-</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Done</span><span class=p>())</span>      <span class=c1>// {}
 </span><span class=c1></span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Err</span><span class=p>().</span><span class=nf>Error</span><span class=p>())</span> <span class=c1>// context canceled
-</span></code></pre></div><h3 id=contextwithdeadline><code>context.WithDeadline()</code></h3>
+</span></code></pre></div><h4 id=contextwithdeadline><code>context.WithDeadline()</code></h4>
 <p>Так же создает контекст от родительского, который отменится <strong>самостоятельно</strong> при наступлении переданного ему временной отметке, или при вызове функции отмены. Отмена/таймаут затрагивает только сам контекст и его &ldquo;наследников&rdquo;. <code>ctx.Err()</code> возвращает ошибку <code>context.DeadlineExceeded</code>. Полезно для реализации таймаутов:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=nx>ctx</span><span class=p>,</span> <span class=nx>cancel</span> <span class=o>:=</span> <span class=nx>context</span><span class=p>.</span><span class=nf>WithDeadline</span><span class=p>(</span>
 	<span class=nx>context</span><span class=p>.</span><span class=nf>Background</span><span class=p>(),</span>
@@ -1195,10 +1277,10 @@ Go
 
 <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=o>&lt;-</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Done</span><span class=p>())</span>      <span class=c1>// {}
 </span><span class=c1></span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Err</span><span class=p>().</span><span class=nf>Error</span><span class=p>())</span> <span class=c1>// context deadline exceeded
-</span></code></pre></div><h3 id=contextwithtimeout><code>context.WithTimeout()</code></h3>
+</span></code></pre></div><h4 id=contextwithtimeout><code>context.WithTimeout()</code></h4>
 <p>Работает аналогично <code>context.WithDeadline()</code> за исключением того, что принимает в качестве значения таймаута длительность (например - <code>time.Second</code>):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=nx>ctx</span><span class=p>,</span> <span class=nx>cancel</span> <span class=o>:=</span> <span class=nx>context</span><span class=p>.</span><span class=nf>WithTimeout</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nf>Background</span><span class=p>(),</span> <span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=o>*</span><span class=mi>2</span><span class=p>)</span>
-</code></pre></div><h3 id=contextwithvalue><code>context.WithValue()</code></h3>
+</code></pre></div><h4 id=contextwithvalue><code>context.WithValue()</code></h4>
 <p>Позволяет &ldquo;пошарить&rdquo; данные через всё контекстное деверо &ldquo;ниже&rdquo;. Часто используют чтоб передать таким образом, например, логгер или HTTP запрос в цепочке middleware (но в 9 из 10 случаев так делать не надо, это можно считать антипаттерном). Лучше всего использовать функции для помещения/извлечения данных из контекста (так как &ldquo;в нём&rdquo; они храняться как <code>interface{}</code>):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>import</span> <span class=p>(</span>
 	<span class=s>&#34;context&#34;</span>
@@ -1248,9 +1330,36 @@ Go
 <li><a class=link href=https://habr.com/ru/company/nixys/blog/461723/ target=_blank rel=noopener>Разбираемся с пакетом Context в Golang</a></li>
 </ul>
 </blockquote>
-<h2 id=какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</h2>
+<p>При этом <code>ok == true</code> до того момента, пока в канале есть сообщения (вне зависимости от того, открыт он или закрыт), в противном случае <code>ok == false</code> а <code>val</code> будет нулевым значением в зависимости от типа данных канала. При попытке записи в закрытый канал будет паника (авторы языка так сделали &ldquo;ибо нефиг - канал закрыт значит закрыт&rdquo;).</p>
+<h3 id=как-задетектить-гонку>Как задетектить гонку?</h3>
+<p>Пишем тесты, и запускаем их с флагом <code>-race</code> (в этом случае рантайм будет в случайном порядке переключаться между горутинами (если не ошибаюсь), и компилятор генерирует дополнительный код, который &ldquo;журналирует&rdquo; обращения к памяти). Этот флаг можно использовать как для <code>go test</code>, так и для <code>go run</code> или <code>go build</code>.</p>
+<p>Детектор гонки основан на библиотеке времени выполнения (runtime library) C/C++ ThreadSanitizer.</p>
+<p>Так же предпочитаю писать тесты, провоцирующие гонку. Код в этом случае будет работать значительно медленнее, но для этапа тестирования это и не так важно. А именно для тестируемоой структуры запускаю (например) 100 горутин которые читают и пишут что-то в случайном порядке.</p>
+<p>Важно и ещё одно высказывание - &ldquo;<strong>Если race detector обнаруживает состояние гонки, то оно у вас наверняка есть; если же не обнаруживает - то это не означает что его нет</strong>&rdquo;.</p>
+<h2 id=тестирование>Тестирование</h2>
+<p><em>WIP</em></p>
+<h3 id=ошибка-в-бенчмарке>Ошибка в бенчмарке</h3>
+<p>Про бенчмарки - иногда встречается кейс с написанием бенчмарка который внутри своего цикла выполняет тестируемую функцию, а результат этого действия никуда не присваивается и не передаётся:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>BenchmarkWrong</span><span class=p>(</span><span class=nx>b</span> <span class=o>*</span><span class=nx>testing</span><span class=p>.</span><span class=nx>B</span><span class=p>)</span> <span class=p>{</span>
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>b</span><span class=p>.</span><span class=nx>N</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nf>ourFunc</span><span class=p>()</span>
+	<span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p>Компилятор может принять это во внимание, и будет выполнять её содержимое как inline-последовательность инструкций. После чего, компилятор определит, что вызовы тестируемой функции не имеет никаких побочных эффектов (side-effects), т.е. никак не влияет на среду исполнения. После чего вызов тестируемой функции будет просто удалён. Один из вариантов избежать сценария выше – присваивать результат выполнения функции переменной уровня пакета. Примерно так:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>result</span> <span class=kt>uint64</span>
+
+<span class=kd>func</span> <span class=nf>BenchmarkCorrect</span><span class=p>(</span><span class=nx>b</span> <span class=o>*</span><span class=nx>testing</span><span class=p>.</span><span class=nx>B</span><span class=p>)</span> <span class=p>{</span>
+	<span class=kd>var</span> <span class=nx>r</span> <span class=kt>uint64</span>
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>b</span><span class=p>.</span><span class=nx>N</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nx>r</span> <span class=p>=</span> <span class=nf>ourFunc</span><span class=p>()</span>
+	<span class=p>}</span>
+	<span class=nx>result</span> <span class=p>=</span> <span class=nx>r</span>
+<span class=p>}</span>
+</code></pre></div><p>Теперь компилятор не будет знать, есть ли у функции side-effect и бенчмарк будет точен.</p>
+<h2 id=компилятор>Компилятор</h2>
+<h3 id=какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</h3>
 <p>Компилятор Go понимает некоторые директивы (пишутся они в виде комментариев, как правило <code>//go:directive</code>), которые влияют на процесс компиляции (оптимизации, проверок, и т.д.) но не являются частью языка. Вот некоторые из них:</p>
-<h3 id=golinkname><code>//go:linkname</code></h3>
+<h4 id=golinkname><code>//go:linkname</code></h4>
 <p>Указывает компилятору реальное местонахождение функции или переменной. Можно использовать <strong>для вызова приватных функций</strong> из других пакетов. Требует импортирования пакета <code>unsafe</code> (<code>import _ "unsafe"</code>). Формат следующий:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=c1>//go:linkname localname [importpath.name]
 </span></code></pre></div><p>Пример использования:</p>
@@ -1271,15 +1380,15 @@ Go
 	<span class=nb>println</span><span class=p>(</span><span class=nf>foo</span><span class=p>())</span>                    <span class=c1>// bar
 </span><span class=c1></span>	<span class=nb>println</span><span class=p>(</span><span class=nf>explodeString</span><span class=p>(</span><span class=s>&#34;foo&#34;</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>))</span> <span class=c1>// [3/3]0xc0000a00f0
 </span><span class=c1></span><span class=p>}</span>
-</code></pre></div><h3 id=gonosplit><code>//go:nosplit</code></h3>
+</code></pre></div><h4 id=gonosplit><code>//go:nosplit</code></h4>
 <p>Указывается при объявлении функции, и указывает на то, что вызов функции должен пропускать все обычные проверки на переполнение стека.</p>
-<h3 id=gonorace><code>//go:norace</code></h3>
+<h4 id=gonorace><code>//go:norace</code></h4>
 <p>Так же указывается при объявлении функции и &ldquo;выключает&rdquo; детектор гонки (race detector) для неё.</p>
-<h3 id=gonoinline><code>//go:noinline</code></h3>
+<h4 id=gonoinline><code>//go:noinline</code></h4>
 <p>Отключает оптимизацию &ldquo;инлайнига&rdquo; для функции. Обычно используется отладки компилятора, escape-аналитики или бенчаркинга.</p>
-<h3 id=gonoescape><code>//go:noescape</code></h3>
+<h4 id=gonoescape><code>//go:noescape</code></h4>
 <p>Тоже &ldquo;функциональная&rdquo; директива, смысл которой сводится к тому, что &ldquo;я доверяю этой функции, и ни один указатель, переданных в качестве аргументов (или возвращенных) этой функции не должен быть помещен в кучу (heap)&rdquo;.</p>
-<h3 id=gobuild><code>//go:build</code></h3>
+<h4 id=gobuild><code>//go:build</code></h4>
 <p>Эта директива обеспечивает условную сборку. То есть мы можем &ldquo;размечать&rdquo; тегами файлы, и таким образом компилировать только определенные их &ldquo;наборы&rdquo; (тегов может быть несколько, а так же можно использовать <code>!</code> для указания &ldquo;не&rdquo;). Часто используется для кодогенерации, указывая какой-то специфичный тег (например <code>ignore</code> - <code>//go:build ignore</code>) чтоб файл никогда не учавствовал с борке итогового приложения.</p>
 <p>В качестве примера создадим 2 файла в одной директории:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=c1>// file: main.go
@@ -1300,7 +1409,7 @@ one!
 
 $ go run -tags two .
 two!
-</code></pre></div><h3 id=gogenerate><code>//go:generate</code></h3>
+</code></pre></div><h4 id=gogenerate><code>//go:generate</code></h4>
 <p>Позволяет указать какие <strong>внешние</strong> команды должны вызваться при запуске <code>go generate</code>. Таким образом, мы можем использовать кодогенерацию, к примеру, или выполнять какие-то операции что дожны предшевствовать сборке (например - <code>//go:generate go run gen.go</code> где <code>gen.go</code> это файл, что содержит <code>//go:build ignore</code> т.е. исключён из компиляции, но при этом генерирует для нас какие-то полезные данные и/или целые <code>.go</code> файлы):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
@@ -1310,7 +1419,7 @@ two!
 <span class=p>}</span>
 </code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>$ go generate
 my build process
-</code></pre></div><h3 id=goembed><code>//go:embed</code></h3>
+</code></pre></div><h4 id=goembed><code>//go:embed</code></h4>
 <p>Позволяет &ldquo;встраивать&rdquo; внешние файлы в Go приложение. Требует импортирования пакета <code>embed</code> (<code>import _ "embed"</code>). Поддерживает типы <code>string</code>, <code>[]byte</code> и <code>embed.FS</code>. Пример использования:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
@@ -1335,26 +1444,6 @@ hello world
 <li><a class=link href=https://pkg.go.dev/embed target=_blank rel=noopener>pkg.go.dev/embed</a></li>
 </ul>
 </blockquote>
-<h2 id=тестирование>Тестирование</h2>
-<p><em>WIP</em></p>
-<h3 id=ошибка-в-бенчмарке>Ошибка в бенчмарке</h3>
-<p>Про бенчмарки - иногда встречается кейс с написанием бенчмарка который внутри своего цикла выполняет тестируемую функцию, а результат этого действия никуда не присваивается и не передаётся:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>BenchmarkWrong</span><span class=p>(</span><span class=nx>b</span> <span class=o>*</span><span class=nx>testing</span><span class=p>.</span><span class=nx>B</span><span class=p>)</span> <span class=p>{</span>
-	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>b</span><span class=p>.</span><span class=nx>N</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-		<span class=nf>ourFunc</span><span class=p>()</span>
-	<span class=p>}</span>
-<span class=p>}</span>
-</code></pre></div><p>Компилятор может принять это во внимание, и будет выполнять её содержимое как inline-последовательность инструкций. После чего, компилятор определит, что вызовы тестируемой функции не имеет никаких побочных эффектов (side-effects), т.е. никак не влияет на среду исполнения. После чего вызов тестируемой функции будет просто удалён. Один из вариантов избежать сценария выше – присваивать результат выполнения функции переменной уровня пакета. Примерно так:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>result</span> <span class=kt>uint64</span>
-
-<span class=kd>func</span> <span class=nf>BenchmarkCorrect</span><span class=p>(</span><span class=nx>b</span> <span class=o>*</span><span class=nx>testing</span><span class=p>.</span><span class=nx>B</span><span class=p>)</span> <span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>r</span> <span class=kt>uint64</span>
-	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>b</span><span class=p>.</span><span class=nx>N</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-		<span class=nx>r</span> <span class=p>=</span> <span class=nf>ourFunc</span><span class=p>()</span>
-	<span class=p>}</span>
-	<span class=nx>result</span> <span class=p>=</span> <span class=nx>r</span>
-<span class=p>}</span>
-</code></pre></div><p>Теперь компилятор не будет знать, есть ли у функции side-effect и бенчмарк будет точен.</p>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
@@ -1436,34 +1525,65 @@ Make love, not war <br>
 <ol>
 <li><a href=#расскажи-о-себе>Расскажи о себе?</a></li>
 <li><a href=#расскажи-о-своем-самом-интересном-проекте>Расскажи о своем самом интересном проекте?</a></li>
-<li><a href=#что-такое-ооп-как-это-сделано-в-golang>Что такое ООП? Как это сделано в Golang?</a></li>
+<li><a href=#кем-был-создан-язык-какие-его-особенности>Кем был создан язык, какие его особенности?</a></li>
+<li><a href=#что-такое-ооп-как-это-сделано-в-golang>Что такое ООП? Как это сделано в Golang?</a>
+<ol>
+<li><a href=#как-устроено-инвертирование-зависимостей>Как устроено инвертирование зависимостей?</a></li>
+<li><a href=#как-сделать-свои-методы-для-стороннего-пакета>Как сделать свои методы для стороннего пакета?</a></li>
+</ol>
+</li>
+<li><a href=#типы-данных-и-синтаксис>Типы данных и синтаксис</a>
+<ol>
 <li><a href=#как-устроены-строки-в-go>Как устроены строки в Go?</a></li>
-<li><a href=#в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</a>
+<li><a href=#в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</a></li>
+<li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a>
 <ol>
-<li><a href=#tldr>TL;DR</a></li>
-<li><a href=#развёрнуто>Развёрнуто</a></li>
+<li><a href=#задача-про-слайсы-1>Задача про слайсы #1</a></li>
 </ol>
 </li>
-<li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a></li>
-<li><a href=#задача-про-слайсы-1>Задача про слайсы #1</a>
-<ol>
-<li><a href=#вопрос>Вопрос</a></li>
-<li><a href=#ответ>Ответ</a></li>
-</ol>
-</li>
-<li><a href=#что-можно-сказать-про-map>Что можно сказать про <code>map</code>?</a>
+<li><a href=#что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</a>
 <ol>
 <li><a href=#как-растет-map>Как растет <code>map</code>?</a></li>
 <li><a href=#что-там-про-поиск>Что там про поиск?</a></li>
-</ol>
-</li>
 <li><a href=#есть-ли-у-map-такие-же-методы-как-у-слайса-len-cap>Есть ли у <code>map</code> такие же методы как у слайса: <code>len</code>, <code>cap</code>?</a></li>
 <li><a href=#какие-типы-ключей-разрешены-для-ключа-в-map>Какие типы ключей разрешены для ключа в <code>map</code>?</a></li>
 <li><a href=#может-ли-ключом-быть-структура-если-может-то-всегда-ли>Может ли ключом быть структура? Если может, то всегда ли?</a></li>
 <li><a href=#что-будет-в-map-если-не-делать-make-или-short-assign>Что будет в <code>map</code>, если не делать <code>make</code> или <code>short assign</code>?</a></li>
-<li><a href=#что-такое-synсmap>Что такое <code>synс.Map</code>?</a></li>
-<li><a href=#как-устроен-мьютекс>Как устроен мьютекс?</a></li>
+<li><a href=#race-condition-потокобезопасна-ли-мапа>Race condition. Потокобезопасна ли мапа?</a></li>
+</ol>
+</li>
+<li><a href=#что-такое-интерфейс>Что такое интерфейс?</a>
+<ol>
+<li><a href=#как-устроен-duck-typing-в-go>Как устроен Duck-typing в Go?</a></li>
+<li><a href=#интерфейсный-тип>Интерфейсный тип</a></li>
+<li><a href=#пустой-interface>Пустой <code>interface{}</code></a></li>
+</ol>
+</li>
+<li><a href=#что-такое-замыкание>Что такое замыкание?</a></li>
+<li><a href=#какие-битовые-операции-знаешь>Какие битовые операции знаешь?</a></li>
+<li><a href=#дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</a></li>
+<li><a href=#что-такое-захват-переменной>Что такое захват переменной?</a></li>
+<li><a href=#как-работает-defer>Как работает <code>defer</code>?</a></li>
+<li><a href=#прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</a></li>
+<li><a href=#сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</a></li>
+</ol>
+</li>
+<li><a href=#память-и-управление-ей>Память и управление ей</a>
+<ol>
+<li><a href=#что-такое-heap-и-stack>Что такое <code>heap</code> и <code>stack</code>?</a></li>
+<li><a href=#где-выделяется-память-под-переменную-можно-ли-этим-управлять>Где выделяется память под переменную? Можно ли этим управлять?</a></li>
+<li><a href=#какое-поведение-по-умолчанию-используется-в-go-при-передаче-в-функцию>Какое поведение по умолчанию используется в Go при передаче в функцию?</a></li>
+<li><a href=#что-можешь-рассказать-про-escape-analysis>Что можешь рассказать про escape analysis?</a></li>
+</ol>
+</li>
+<li><a href=#сoncurrency-конкурентность>Сoncurrency (конкурентность)</a>
+<ol>
+<li><a href=#как-устроен-мьютекс>Как устроен мьютекс?</a>
+<ol>
 <li><a href=#в-чем-отличие-syncmutex-от-syncrwmutex>В чем отличие <code>sync.Mutex</code> от <code>sync.RWMutex</code>?</a></li>
+</ol>
+</li>
+<li><a href=#что-такое-synсmap>Что такое <code>synс.Map</code>?</a></li>
 <li><a href=#какие-ещё-примитивы-синхронизации-знаешь>Какие ещё примитивы синхронизации знаешь?</a>
 <ol>
 <li><a href=#syncwaitgroup><code>sync.WaitGroup</code></a></li>
@@ -1472,37 +1592,19 @@ Make love, not war <br>
 <li><a href=#syncpool><code>sync.Pool</code></a></li>
 </ol>
 </li>
-<li><a href=#race-condition-потокобезопасна-ли-мапа>Race condition. Потокобезопасна ли мапа?</a></li>
-<li><a href=#как-задетектить-гонку>Как задетектить гонку?</a></li>
-<li><a href=#что-такое-heap-и-stack>Что такое <code>heap</code> и <code>stack</code>?</a></li>
-<li><a href=#где-выделяется-память-под-переменную-можно-ли-этим-управлять>Где выделяется память под переменную? Можно ли этим управлять?</a></li>
-<li><a href=#как-устроен-duck-typing-в-go>Как устроен Duck-typing в Go?</a></li>
-<li><a href=#что-такое-интерфейс>Что такое интерфейс?</a>
+<li><a href=#какие-типы-каналов-существуют>Какие типы каналов существуют?</a>
 <ol>
-<li><a href=#интерфейсный-тип>Интерфейсный тип</a></li>
-<li><a href=#пустой-interface>Пустой <code>interface{}</code></a></li>
+<li><a href=#что-можно-делать-с-закрытым-каналом>Что можно делать с закрытым каналом?</a></li>
 </ol>
 </li>
-<li><a href=#что-можешь-рассказать-про-escape-analysis>Что можешь рассказать про escape analysis?</a></li>
-<li><a href=#дополнительный-блок-фигурных-скобок-в-функции>Дополнительный блок фигурных скобок в функции</a></li>
-<li><a href=#что-такое-замыкание>Что такое замыкание?</a></li>
-<li><a href=#что-такое-захват-переменной>Что такое захват переменной?</a></li>
-<li><a href=#какое-поведение-по-умолчанию-используется-в-go-при-передаче-в-функцию>Какое поведение по умолчанию используется в Go при передаче в функцию?</a></li>
-<li><a href=#сколько-можно-возвращать-значений-из-функции>Сколько можно возвращать значений из функции?</a></li>
-<li><a href=#как-сделать-свои-методы-для-стороннего-пакета>Как сделать свои методы для стороннего пакета?</a></li>
-<li><a href=#какие-битовые-операции-знаешь>Какие битовые операции знаешь?</a></li>
-<li><a href=#как-работает-defer>Как работает <code>defer</code>?</a></li>
-<li><a href=#прерывание-forswitch-или-forselect>Прерывание for/switch или for/select</a></li>
-<li><a href=#инвертирование-зависимости>Инвертирование зависимости</a></li>
-<li><a href=#какие-типы-каналов-существуют>Какие типы каналов существуют?</a></li>
-<li><a href=#что-можно-делать-с-закрытым-каналом>Что можно делать с закрытым каналом?</a></li>
+<li><a href=#расскажи-про-планировщик-горутин>Расскажи про планировщик (горутин)</a></li>
 <li><a href=#что-такое-горутина>Что такое горутина?</a>
 <ol>
-<li><a href=#планировщик-горутин>Планировщик горутин</a></li>
-</ol>
-</li>
+<li><a href=#в-чем-отличия-горутин-от-потов-ос>В чем отличия горутин от потов ОС?</a></li>
 <li><a href=#где-аллоцируется-память-для-горутин>Где аллоцируется память для горутин?</a></li>
 <li><a href=#как-завершить-много-горутин>Как завершить много горутин?</a></li>
+</ol>
+</li>
 <li><a href=#кейсы-использования-контекста>Кейсы использования контекста</a>
 <ol>
 <li><a href=#contextwithcancel><code>context.WithCancel()</code></a></li>
@@ -1511,6 +1613,16 @@ Make love, not war <br>
 <li><a href=#contextwithvalue><code>context.WithValue()</code></a></li>
 </ol>
 </li>
+<li><a href=#как-задетектить-гонку>Как задетектить гонку?</a></li>
+</ol>
+</li>
+<li><a href=#тестирование>Тестирование</a>
+<ol>
+<li><a href=#ошибка-в-бенчмарке>Ошибка в бенчмарке</a></li>
+</ol>
+</li>
+<li><a href=#компилятор>Компилятор</a>
+<ol>
 <li><a href=#какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</a>
 <ol>
 <li><a href=#golinkname><code>//go:linkname</code></a></li>
@@ -1523,9 +1635,6 @@ Make love, not war <br>
 <li><a href=#goembed><code>//go:embed</code></a></li>
 </ol>
 </li>
-<li><a href=#тестирование>Тестирование</a>
-<ol>
-<li><a href=#ошибка-в-бенчмарке>Ошибка в бенчмарке</a></li>
 </ol>
 </li>
 </ol>
