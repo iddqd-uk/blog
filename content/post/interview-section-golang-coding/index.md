@@ -128,156 +128,158 @@ OK https://stackoverflow.com/
 package main
 
 import (
-	"bufio"
-	"context"
-	"errors"
-	"net/http"
-	"os"
-	"strings"
-	"time"
+  "bufio"
+  "context"
+  "errors"
+  "net/http"
+  "os"
+  "strings"
+  "time"
 )
 
 func main() {
-	if err := run(); err != nil {
-		println("Fatal error:", err.Error())
+  if err := run(); err != nil {
+    println("Fatal error:", err.Error())
 
-		os.Exit(1)
-	}
+    os.Exit(1)
+  }
 }
 
 type result struct { // объявляем структуру для описания результата опроса URL
-	url string
-	ok  bool
+  url string
+  ok  bool
 }
 
 func run() error {
-	var ctx, cancel = context.WithCancel(context.Background()) // заменяем контекст на контекст с отменой
-	defer cancel()
+  var ctx, cancel = context.WithCancel(context.Background()) // заменяем контекст на контекст с отменой
+  defer cancel()
 
-	f, err := os.Open("links_list.txt")
-	if err != nil {
-		return err
-	}
-	defer func() { _ = f.Close() }()
+  f, err := os.Open("links_list.txt")
+  if err != nil {
+    return err
+  }
+  defer func() { _ = f.Close() }()
 
-	var urlsCh, errCh, resultsCh = make(chan string), make(chan error), make(chan result) // объявляем каналы для работы
-	defer func() { close(errCh); close(resultsCh) }()
+  var urlsCh, errCh, resultsCh = make(chan string), make(chan error), make(chan result) // объявляем каналы для работы
+  defer func() { close(errCh); close(resultsCh) }()
 
-	go func() { // читаем файл построчно в отдельной горутине и пишем в каналы (запускаем "планировщик")
-		defer close(urlsCh) // не забываем закрыть канал (когда список кончится или контекст отменится)
+  go func() { // читаем файл построчно в отдельной горутине и пишем в каналы (запускаем "планировщик")
+    defer close(urlsCh) // не забываем закрыть канал (когда список кончится или контекст отменится)
 
-		var scan = bufio.NewScanner(f)
-		for scan.Scan() {
-			select {
-			case <-ctx.Done(): // проверяем контекст на факт его отмены
-				return
+    var scan = bufio.NewScanner(f)
+    for scan.Scan() {
+      select {
+      case <-ctx.Done(): // проверяем контекст на факт его отмены
+        return
 
-			default:
-				if url := strings.TrimSpace(scan.Text()); url != "" {
-					urlsCh <- url // и пишем в канал для ссылок по одной
-				}
-			}
-		}
+      default:
+        if url := strings.TrimSpace(scan.Text()); url != "" {
+          urlsCh <- url // и пишем в канал для ссылок по одной
+        }
+      }
+    }
 
-		if err = scan.Err(); err != nil {
-			errCh <- err
-		}
-	}()
+    if err = scan.Err(); err != nil {
+      errCh <- err
+    }
+  }()
 
-	const workersCount uint8 = 4 // объявляем константу с количеством "воркеров"
+  const workersCount uint8 = 4 // объявляем константу с количеством "воркеров"
 
-	var progress, done = make(chan struct{}), make(chan struct{}) // каналы для сообщений о ходе работы и её завершении
-	defer func() { close(progress); close(done) }()
+  var progress, done = make(chan struct{}), make(chan struct{}) // каналы для сообщений о ходе работы и её завершении
+  defer close(done)
 
-	go func() { // запускаем горутину, что будет N раз ничего не делать, а по завершении запишет в канал done
-		for i := uint8(0); i < workersCount; i++ {
-			<-progress
-		}
+  go func() { // запускаем горутину, что будет N раз ничего не делать, а по завершении запишет в канал done
+    for i := uint8(0); i < workersCount; i++ {
+      <-progress
+    }
 
-		done <- struct{}{}
-	}()
+    close(progress)
 
-	for i := uint8(0); i < workersCount; i++ { // запускаем горутины для выполнения HTTP запросов
-		go func() {
-			defer func() { progress <- struct{}{} }() // когда она завершится, то запишет в канал progress
+    done <- struct{}{}
+  }()
 
-			for {
-				select {
-				case <-ctx.Done(): // так же проверяем контекст на факт его отмены
-					return
+  for i := uint8(0); i < workersCount; i++ { // запускаем горутины для выполнения HTTP запросов
+    go func() {
+      defer func() { progress <- struct{}{} }() // когда она завершится, то запишет в канал progress
 
-				case url, isOpened := <-urlsCh: // и читаем из канала для ссылок
-					if !isOpened { // если он закрыт нашим "планировщиком"
-						return // то выходим
-					}
+      for {
+        select {
+        case <-ctx.Done(): // так же проверяем контекст на факт его отмены
+          return
 
-					if ok, fetchErr := fetchLink(ctx, http.MethodGet, url); fetchErr != nil {
-						errCh <- fetchErr
-					} else if ctx.Err() == nil { // дополнительно проверяем контекст
-						resultsCh <- result{url: url, ok: ok} // результаты пишем в канал для ответов
-					}
-				}
-			}
-		}()
-	}
+        case url, isOpened := <-urlsCh: // и читаем из канала для ссылок
+          if !isOpened { // если он закрыт нашим "планировщиком"
+            return // то выходим
+          }
 
-	var (
-		okCounter uint  // счётчик успешных запросов
-		lastError error // переменная для последней "пойманной" ошибки
-	)
+          if ok, fetchErr := fetchLink(ctx, http.MethodGet, url); fetchErr != nil {
+            errCh <- fetchErr
+          } else if ctx.Err() == nil { // дополнительно проверяем контекст
+            resultsCh <- result{url: url, ok: ok} // результаты пишем в канал для ответов
+          }
+        }
+      }
+    }()
+  }
+
+  var (
+    okCounter uint  // счётчик успешных запросов
+    lastError error // переменная для последней "пойманной" ошибки
+  )
 
 loop:
-	for {
-		select {
-		case workingErr, isOpened := <-errCh: // если пришла ошибка (при чтении файла или HTTP)
-			if isOpened && !errors.Is(workingErr, context.Canceled) { // игнорируем ошибку "отмены контекста"
-				lastError = workingErr // то сохраняем её в lastError
-				cancel()               // и отменяем контекст (чтоб горутины завершились) но не прерываем цикл
-			}
+  for {
+    select {
+    case workingErr, isOpened := <-errCh: // если пришла ошибка (при чтении файла или HTTP)
+      if isOpened && !errors.Is(workingErr, context.Canceled) { // игнорируем ошибку "отмены контекста"
+        lastError = workingErr // то сохраняем её в lastError
+        cancel()               // и отменяем контекст (чтоб горутины завершились) но не прерываем цикл
+      }
 
-		case res := <-resultsCh: // если пришел результат от воркера
-			if res.ok {
-				okCounter++
-				println("OK", res.url)
-			} else {
-				println("Not OK", res.url)
-			}
+    case res := <-resultsCh: // если пришел результат от воркера
+      if res.ok {
+        okCounter++
+        println("OK", res.url)
+      } else {
+        println("Not OK", res.url)
+      }
 
-			if okCounter >= 2 { // а вот как раз и наше условие для отмены
-				cancel()
-			}
+      if okCounter >= 2 { // а вот как раз и наше условие для отмены
+        cancel()
+      }
 
-		case <-done: // и выход из цикла обязательно должен осуществится после сообщения в done
-			println("work is done")
+    case <-done: // и выход из цикла обязательно должен осуществится после сообщения в done
+      println("work is done")
 
-			break loop // только тут прерываем цикл, так как горутины все вышли и никто не напишет в закрытые каналы
-		}
-	}
+      break loop // только тут прерываем цикл, так как горутины все вышли и никто не напишет в закрытые каналы
+    }
+  }
 
-	return lastError
+  return lastError
 }
 
 // объявляем HTTP клиент для переиспользования
 var httpClient = http.Client{Timeout: time.Second * 5}
 
 func fetchLink(ctx context.Context, method, url string) (bool, error) {
-	// создаём объект запроса
-	var req, err = http.NewRequestWithContext(ctx, method, url, http.NoBody)
-	if err != nil {
-		return false, err
-	}
+  // создаём объект запроса
+  var req, err = http.NewRequestWithContext(ctx, method, url, http.NoBody)
+  if err != nil {
+    return false, err
+  }
 
-	// выполняем его
-	resp, err := httpClient.Do(req)
-	if err != nil {
-		return false, err
-	}
+  // выполняем его
+  resp, err := httpClient.Do(req)
+  if err != nil {
+    return false, err
+  }
 
-	// валидируем статус код
-	if resp.StatusCode == http.StatusOK {
-		return true, nil
-	}
+  // валидируем статус код
+  if resp.StatusCode == http.StatusOK {
+    return true, nil
+  }
 
-	return false, nil
+  return false, nil
 }
 ```
