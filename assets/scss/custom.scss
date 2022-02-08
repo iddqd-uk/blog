@@ -28,6 +28,11 @@
   width: 100%;
 }
 
+code, pre {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
 .widget--toc {
   ::-webkit-scrollbar-thumb {
       background-color: var(--body-background);
