@@ -7,7 +7,6 @@ expirydate: 2027-08-03T06:17:19Z
 #draft: true
 image: cover.png
 categories: [go]
-categories: [go]
 toc: true
 tags: [golang, interview, coding]
 ---
