@@ -3,7 +3,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Однажды я решил поднять свой крохотный кластер для приложений, запускаемых в docker-контейнерах. Выбор был между nomad (уже не один комрад его настоятельно рекомендовал - обязательно попробую, но позже), K8S (слишком сложно и дорого по ресурсам для pet-проекта) и Docker Swarm (никакого дополнительного софта не потребуется, поставляется вместе с самим докером). Как ты понимаешь - выбор пал именно на последний.
 По тому как его поднять и базово настроить - материалов полно, но когда дело дошло до настройки огненной стены - вот тут начались некоторые трудности."><title>Настройка iptables для swarm кластера</title>
 <link rel=canonical href=https://blog.hook.sh/iptables-for-docker-swarm/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.11011b406a9d6a17fced5ecbfc52fd41c541086d59a06d93e286ac2dee3c2327.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.34b629f31c5d473ce517c990918273ec1d17e1834d7e3e85bbb174f4ba5967e4.css>
 <meta property="og:title" content="Настройка iptables для swarm кластера">
 <meta property="og:description" content="Однажды я решил поднять свой крохотный кластер для приложений, запускаемых в docker-контейнерах. Выбор был между nomad (уже не один комрад его настоятельно рекомендовал - обязательно попробую, но позже), K8S (слишком сложно и дорого по ресурсам для pet-проекта) и Docker Swarm (никакого дополнительного софта не потребуется, поставляется вместе с самим докером). Как ты понимаешь - выбор пал именно на последний.
 По тому как его поднять и базово настроить - материалов полно, но когда дело дошло до настройки огненной стены - вот тут начались некоторые трудности.">
@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/iptables-for-docker-swarm/cover.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644241314">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644241314">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644241314">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644319114">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644319114">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644319114">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
