@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644319117">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644319117">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644319117">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644330537">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644330537">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644330537">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -163,157 +163,159 @@ OK https://stackoverflow.com/
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=p>(</span>
-	<span class=s>&#34;bufio&#34;</span>
-	<span class=s>&#34;context&#34;</span>
-	<span class=s>&#34;errors&#34;</span>
-	<span class=s>&#34;net/http&#34;</span>
-	<span class=s>&#34;os&#34;</span>
-	<span class=s>&#34;strings&#34;</span>
-	<span class=s>&#34;time&#34;</span>
+  <span class=s>&#34;bufio&#34;</span>
+  <span class=s>&#34;context&#34;</span>
+  <span class=s>&#34;errors&#34;</span>
+  <span class=s>&#34;net/http&#34;</span>
+  <span class=s>&#34;os&#34;</span>
+  <span class=s>&#34;strings&#34;</span>
+  <span class=s>&#34;time&#34;</span>
 <span class=p>)</span>
 
 <span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-	<span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nf>run</span><span class=p>();</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-		<span class=nb>println</span><span class=p>(</span><span class=s>&#34;Fatal error:&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>.</span><span class=nf>Error</span><span class=p>())</span>
+  <span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nf>run</span><span class=p>();</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+    <span class=nb>println</span><span class=p>(</span><span class=s>&#34;Fatal error:&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>.</span><span class=nf>Error</span><span class=p>())</span>
 
-		<span class=nx>os</span><span class=p>.</span><span class=nf>Exit</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-	<span class=p>}</span>
+    <span class=nx>os</span><span class=p>.</span><span class=nf>Exit</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+  <span class=p>}</span>
 <span class=p>}</span>
 
 <span class=kd>type</span> <span class=nx>result</span> <span class=kd>struct</span> <span class=p>{</span> <span class=c1>// объявляем структуру для описания результата опроса URL
-</span><span class=c1></span>	<span class=nx>url</span> <span class=kt>string</span>
-	<span class=nx>ok</span>  <span class=kt>bool</span>
+</span><span class=c1></span>  <span class=nx>url</span> <span class=kt>string</span>
+  <span class=nx>ok</span>  <span class=kt>bool</span>
 <span class=p>}</span>
 
 <span class=kd>func</span> <span class=nf>run</span><span class=p>()</span> <span class=kt>error</span> <span class=p>{</span>
-	<span class=kd>var</span> <span class=nx>ctx</span><span class=p>,</span> <span class=nx>cancel</span> <span class=p>=</span> <span class=nx>context</span><span class=p>.</span><span class=nf>WithCancel</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nf>Background</span><span class=p>())</span> <span class=c1>// заменяем контекст на контекст с отменой
-</span><span class=c1></span>	<span class=k>defer</span> <span class=nf>cancel</span><span class=p>()</span>
+  <span class=kd>var</span> <span class=nx>ctx</span><span class=p>,</span> <span class=nx>cancel</span> <span class=p>=</span> <span class=nx>context</span><span class=p>.</span><span class=nf>WithCancel</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nf>Background</span><span class=p>())</span> <span class=c1>// заменяем контекст на контекст с отменой
+</span><span class=c1></span>  <span class=k>defer</span> <span class=nf>cancel</span><span class=p>()</span>
 
-	<span class=nx>f</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>Open</span><span class=p>(</span><span class=s>&#34;links_list.txt&#34;</span><span class=p>)</span>
-	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-		<span class=k>return</span> <span class=nx>err</span>
-	<span class=p>}</span>
-	<span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nx>_</span> <span class=p>=</span> <span class=nx>f</span><span class=p>.</span><span class=nf>Close</span><span class=p>()</span> <span class=p>}()</span>
+  <span class=nx>f</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>Open</span><span class=p>(</span><span class=s>&#34;links_list.txt&#34;</span><span class=p>)</span>
+  <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=nx>err</span>
+  <span class=p>}</span>
+  <span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nx>_</span> <span class=p>=</span> <span class=nx>f</span><span class=p>.</span><span class=nf>Close</span><span class=p>()</span> <span class=p>}()</span>
 
-	<span class=kd>var</span> <span class=nx>urlsCh</span><span class=p>,</span> <span class=nx>errCh</span><span class=p>,</span> <span class=nx>resultsCh</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>string</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>error</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=nx>result</span><span class=p>)</span> <span class=c1>// объявляем каналы для работы
-</span><span class=c1></span>	<span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nb>close</span><span class=p>(</span><span class=nx>errCh</span><span class=p>);</span> <span class=nb>close</span><span class=p>(</span><span class=nx>resultsCh</span><span class=p>)</span> <span class=p>}()</span>
+  <span class=kd>var</span> <span class=nx>urlsCh</span><span class=p>,</span> <span class=nx>errCh</span><span class=p>,</span> <span class=nx>resultsCh</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>string</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>error</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=nx>result</span><span class=p>)</span> <span class=c1>// объявляем каналы для работы
+</span><span class=c1></span>  <span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nb>close</span><span class=p>(</span><span class=nx>errCh</span><span class=p>);</span> <span class=nb>close</span><span class=p>(</span><span class=nx>resultsCh</span><span class=p>)</span> <span class=p>}()</span>
 
-	<span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// читаем файл построчно в отдельной горутине и пишем в каналы (запускаем &#34;планировщик&#34;)
-</span><span class=c1></span>		<span class=k>defer</span> <span class=nb>close</span><span class=p>(</span><span class=nx>urlsCh</span><span class=p>)</span> <span class=c1>// не забываем закрыть канал (когда список кончится или контекст отменится)
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// читаем файл построчно в отдельной горутине и пишем в каналы (запускаем &#34;планировщик&#34;)
+</span><span class=c1></span>    <span class=k>defer</span> <span class=nb>close</span><span class=p>(</span><span class=nx>urlsCh</span><span class=p>)</span> <span class=c1>// не забываем закрыть канал (когда список кончится или контекст отменится)
 </span><span class=c1></span>
-		<span class=kd>var</span> <span class=nx>scan</span> <span class=p>=</span> <span class=nx>bufio</span><span class=p>.</span><span class=nf>NewScanner</span><span class=p>(</span><span class=nx>f</span><span class=p>)</span>
-		<span class=k>for</span> <span class=nx>scan</span><span class=p>.</span><span class=nf>Scan</span><span class=p>()</span> <span class=p>{</span>
-			<span class=k>select</span> <span class=p>{</span>
-			<span class=k>case</span> <span class=o>&lt;-</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Done</span><span class=p>():</span> <span class=c1>// проверяем контекст на факт его отмены
-</span><span class=c1></span>				<span class=k>return</span>
+    <span class=kd>var</span> <span class=nx>scan</span> <span class=p>=</span> <span class=nx>bufio</span><span class=p>.</span><span class=nf>NewScanner</span><span class=p>(</span><span class=nx>f</span><span class=p>)</span>
+    <span class=k>for</span> <span class=nx>scan</span><span class=p>.</span><span class=nf>Scan</span><span class=p>()</span> <span class=p>{</span>
+      <span class=k>select</span> <span class=p>{</span>
+      <span class=k>case</span> <span class=o>&lt;-</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Done</span><span class=p>():</span> <span class=c1>// проверяем контекст на факт его отмены
+</span><span class=c1></span>        <span class=k>return</span>
 
-			<span class=k>default</span><span class=p>:</span>
-				<span class=k>if</span> <span class=nx>url</span> <span class=o>:=</span> <span class=nx>strings</span><span class=p>.</span><span class=nf>TrimSpace</span><span class=p>(</span><span class=nx>scan</span><span class=p>.</span><span class=nf>Text</span><span class=p>());</span> <span class=nx>url</span> <span class=o>!=</span> <span class=s>&#34;&#34;</span> <span class=p>{</span>
-					<span class=nx>urlsCh</span> <span class=o>&lt;-</span> <span class=nx>url</span> <span class=c1>// и пишем в канал для ссылок по одной
-</span><span class=c1></span>				<span class=p>}</span>
-			<span class=p>}</span>
-		<span class=p>}</span>
+      <span class=k>default</span><span class=p>:</span>
+        <span class=k>if</span> <span class=nx>url</span> <span class=o>:=</span> <span class=nx>strings</span><span class=p>.</span><span class=nf>TrimSpace</span><span class=p>(</span><span class=nx>scan</span><span class=p>.</span><span class=nf>Text</span><span class=p>());</span> <span class=nx>url</span> <span class=o>!=</span> <span class=s>&#34;&#34;</span> <span class=p>{</span>
+          <span class=nx>urlsCh</span> <span class=o>&lt;-</span> <span class=nx>url</span> <span class=c1>// и пишем в канал для ссылок по одной
+</span><span class=c1></span>        <span class=p>}</span>
+      <span class=p>}</span>
+    <span class=p>}</span>
 
-		<span class=k>if</span> <span class=nx>err</span> <span class=p>=</span> <span class=nx>scan</span><span class=p>.</span><span class=nf>Err</span><span class=p>();</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-			<span class=nx>errCh</span> <span class=o>&lt;-</span> <span class=nx>err</span>
-		<span class=p>}</span>
-	<span class=p>}()</span>
+    <span class=k>if</span> <span class=nx>err</span> <span class=p>=</span> <span class=nx>scan</span><span class=p>.</span><span class=nf>Err</span><span class=p>();</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+      <span class=nx>errCh</span> <span class=o>&lt;-</span> <span class=nx>err</span>
+    <span class=p>}</span>
+  <span class=p>}()</span>
 
-	<span class=kd>const</span> <span class=nx>workersCount</span> <span class=kt>uint8</span> <span class=p>=</span> <span class=mi>4</span> <span class=c1>// объявляем константу с количеством &#34;воркеров&#34;
+  <span class=kd>const</span> <span class=nx>workersCount</span> <span class=kt>uint8</span> <span class=p>=</span> <span class=mi>4</span> <span class=c1>// объявляем константу с количеством &#34;воркеров&#34;
 </span><span class=c1></span>
-	<span class=kd>var</span> <span class=nx>progress</span><span class=p>,</span> <span class=nx>done</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{}),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{})</span> <span class=c1>// каналы для сообщений о ходе работы и её завершении
-</span><span class=c1></span>	<span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nb>close</span><span class=p>(</span><span class=nx>progress</span><span class=p>);</span> <span class=nb>close</span><span class=p>(</span><span class=nx>done</span><span class=p>)</span> <span class=p>}()</span>
+  <span class=kd>var</span> <span class=nx>progress</span><span class=p>,</span> <span class=nx>done</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{}),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{})</span> <span class=c1>// каналы для сообщений о ходе работы и её завершении
+</span><span class=c1></span>  <span class=k>defer</span> <span class=nb>close</span><span class=p>(</span><span class=nx>done</span><span class=p>)</span>
 
-	<span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// запускаем горутину, что будет N раз ничего не делать, а по завершении запишет в канал done
-</span><span class=c1></span>		<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=nb>uint8</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>workersCount</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-			<span class=o>&lt;-</span><span class=nx>progress</span>
-		<span class=p>}</span>
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// запускаем горутину, что будет N раз ничего не делать, а по завершении запишет в канал done
+</span><span class=c1></span>    <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=nb>uint8</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>workersCount</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+      <span class=o>&lt;-</span><span class=nx>progress</span>
+    <span class=p>}</span>
 
-		<span class=nx>done</span> <span class=o>&lt;-</span> <span class=kd>struct</span><span class=p>{}{}</span>
-	<span class=p>}()</span>
+    <span class=nb>close</span><span class=p>(</span><span class=nx>progress</span><span class=p>)</span>
 
-	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=nb>uint8</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>workersCount</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span> <span class=c1>// запускаем горутины для выполнения HTTP запросов
-</span><span class=c1></span>		<span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
-			<span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nx>progress</span> <span class=o>&lt;-</span> <span class=kd>struct</span><span class=p>{}{}</span> <span class=p>}()</span> <span class=c1>// когда она завершится, то запишет в канал progress
+    <span class=nx>done</span> <span class=o>&lt;-</span> <span class=kd>struct</span><span class=p>{}{}</span>
+  <span class=p>}()</span>
+
+  <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=nb>uint8</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>workersCount</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span> <span class=c1>// запускаем горутины для выполнения HTTP запросов
+</span><span class=c1></span>    <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+      <span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nx>progress</span> <span class=o>&lt;-</span> <span class=kd>struct</span><span class=p>{}{}</span> <span class=p>}()</span> <span class=c1>// когда она завершится, то запишет в канал progress
 </span><span class=c1></span>
-			<span class=k>for</span> <span class=p>{</span>
-				<span class=k>select</span> <span class=p>{</span>
-				<span class=k>case</span> <span class=o>&lt;-</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Done</span><span class=p>():</span> <span class=c1>// так же проверяем контекст на факт его отмены
-</span><span class=c1></span>					<span class=k>return</span>
+      <span class=k>for</span> <span class=p>{</span>
+        <span class=k>select</span> <span class=p>{</span>
+        <span class=k>case</span> <span class=o>&lt;-</span><span class=nx>ctx</span><span class=p>.</span><span class=nf>Done</span><span class=p>():</span> <span class=c1>// так же проверяем контекст на факт его отмены
+</span><span class=c1></span>          <span class=k>return</span>
 
-				<span class=k>case</span> <span class=nx>url</span><span class=p>,</span> <span class=nx>isOpened</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>urlsCh</span><span class=p>:</span> <span class=c1>// и читаем из канала для ссылок
-</span><span class=c1></span>					<span class=k>if</span> <span class=p>!</span><span class=nx>isOpened</span> <span class=p>{</span> <span class=c1>// если он закрыт нашим &#34;планировщиком&#34;
-</span><span class=c1></span>						<span class=k>return</span> <span class=c1>// то выходим
-</span><span class=c1></span>					<span class=p>}</span>
+        <span class=k>case</span> <span class=nx>url</span><span class=p>,</span> <span class=nx>isOpened</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>urlsCh</span><span class=p>:</span> <span class=c1>// и читаем из канала для ссылок
+</span><span class=c1></span>          <span class=k>if</span> <span class=p>!</span><span class=nx>isOpened</span> <span class=p>{</span> <span class=c1>// если он закрыт нашим &#34;планировщиком&#34;
+</span><span class=c1></span>            <span class=k>return</span> <span class=c1>// то выходим
+</span><span class=c1></span>          <span class=p>}</span>
 
-					<span class=k>if</span> <span class=nx>ok</span><span class=p>,</span> <span class=nx>fetchErr</span> <span class=o>:=</span> <span class=nf>fetchLink</span><span class=p>(</span><span class=nx>ctx</span><span class=p>,</span> <span class=nx>http</span><span class=p>.</span><span class=nx>MethodGet</span><span class=p>,</span> <span class=nx>url</span><span class=p>);</span> <span class=nx>fetchErr</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-						<span class=nx>errCh</span> <span class=o>&lt;-</span> <span class=nx>fetchErr</span>
-					<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=nx>ctx</span><span class=p>.</span><span class=nf>Err</span><span class=p>()</span> <span class=o>==</span> <span class=kc>nil</span> <span class=p>{</span> <span class=c1>// дополнительно проверяем контекст
-</span><span class=c1></span>						<span class=nx>resultsCh</span> <span class=o>&lt;-</span> <span class=nx>result</span><span class=p>{</span><span class=nx>url</span><span class=p>:</span> <span class=nx>url</span><span class=p>,</span> <span class=nx>ok</span><span class=p>:</span> <span class=nx>ok</span><span class=p>}</span> <span class=c1>// результаты пишем в канал для ответов
-</span><span class=c1></span>					<span class=p>}</span>
-				<span class=p>}</span>
-			<span class=p>}</span>
-		<span class=p>}()</span>
-	<span class=p>}</span>
+          <span class=k>if</span> <span class=nx>ok</span><span class=p>,</span> <span class=nx>fetchErr</span> <span class=o>:=</span> <span class=nf>fetchLink</span><span class=p>(</span><span class=nx>ctx</span><span class=p>,</span> <span class=nx>http</span><span class=p>.</span><span class=nx>MethodGet</span><span class=p>,</span> <span class=nx>url</span><span class=p>);</span> <span class=nx>fetchErr</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+            <span class=nx>errCh</span> <span class=o>&lt;-</span> <span class=nx>fetchErr</span>
+          <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=nx>ctx</span><span class=p>.</span><span class=nf>Err</span><span class=p>()</span> <span class=o>==</span> <span class=kc>nil</span> <span class=p>{</span> <span class=c1>// дополнительно проверяем контекст
+</span><span class=c1></span>            <span class=nx>resultsCh</span> <span class=o>&lt;-</span> <span class=nx>result</span><span class=p>{</span><span class=nx>url</span><span class=p>:</span> <span class=nx>url</span><span class=p>,</span> <span class=nx>ok</span><span class=p>:</span> <span class=nx>ok</span><span class=p>}</span> <span class=c1>// результаты пишем в канал для ответов
+</span><span class=c1></span>          <span class=p>}</span>
+        <span class=p>}</span>
+      <span class=p>}</span>
+    <span class=p>}()</span>
+  <span class=p>}</span>
 
-	<span class=kd>var</span> <span class=p>(</span>
-		<span class=nx>okCounter</span> <span class=kt>uint</span>  <span class=c1>// счётчик успешных запросов
-</span><span class=c1></span>		<span class=nx>lastError</span> <span class=kt>error</span> <span class=c1>// переменная для последней &#34;пойманной&#34; ошибки
-</span><span class=c1></span>	<span class=p>)</span>
+  <span class=kd>var</span> <span class=p>(</span>
+    <span class=nx>okCounter</span> <span class=kt>uint</span>  <span class=c1>// счётчик успешных запросов
+</span><span class=c1></span>    <span class=nx>lastError</span> <span class=kt>error</span> <span class=c1>// переменная для последней &#34;пойманной&#34; ошибки
+</span><span class=c1></span>  <span class=p>)</span>
 
 <span class=nx>loop</span><span class=p>:</span>
-	<span class=k>for</span> <span class=p>{</span>
-		<span class=k>select</span> <span class=p>{</span>
-		<span class=k>case</span> <span class=nx>workingErr</span><span class=p>,</span> <span class=nx>isOpened</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>errCh</span><span class=p>:</span> <span class=c1>// если пришла ошибка (при чтении файла или HTTP)
-</span><span class=c1></span>			<span class=k>if</span> <span class=nx>isOpened</span> <span class=o>&amp;&amp;</span> <span class=p>!</span><span class=nx>errors</span><span class=p>.</span><span class=nf>Is</span><span class=p>(</span><span class=nx>workingErr</span><span class=p>,</span> <span class=nx>context</span><span class=p>.</span><span class=nx>Canceled</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// игнорируем ошибку &#34;отмены контекста&#34;
-</span><span class=c1></span>				<span class=nx>lastError</span> <span class=p>=</span> <span class=nx>workingErr</span> <span class=c1>// то сохраняем её в lastError
-</span><span class=c1></span>				<span class=nf>cancel</span><span class=p>()</span>               <span class=c1>// и отменяем контекст (чтоб горутины завершились) но не прерываем цикл
-</span><span class=c1></span>			<span class=p>}</span>
+  <span class=k>for</span> <span class=p>{</span>
+    <span class=k>select</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=nx>workingErr</span><span class=p>,</span> <span class=nx>isOpened</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>errCh</span><span class=p>:</span> <span class=c1>// если пришла ошибка (при чтении файла или HTTP)
+</span><span class=c1></span>      <span class=k>if</span> <span class=nx>isOpened</span> <span class=o>&amp;&amp;</span> <span class=p>!</span><span class=nx>errors</span><span class=p>.</span><span class=nf>Is</span><span class=p>(</span><span class=nx>workingErr</span><span class=p>,</span> <span class=nx>context</span><span class=p>.</span><span class=nx>Canceled</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// игнорируем ошибку &#34;отмены контекста&#34;
+</span><span class=c1></span>        <span class=nx>lastError</span> <span class=p>=</span> <span class=nx>workingErr</span> <span class=c1>// то сохраняем её в lastError
+</span><span class=c1></span>        <span class=nf>cancel</span><span class=p>()</span>               <span class=c1>// и отменяем контекст (чтоб горутины завершились) но не прерываем цикл
+</span><span class=c1></span>      <span class=p>}</span>
 
-		<span class=k>case</span> <span class=nx>res</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>resultsCh</span><span class=p>:</span> <span class=c1>// если пришел результат от воркера
-</span><span class=c1></span>			<span class=k>if</span> <span class=nx>res</span><span class=p>.</span><span class=nx>ok</span> <span class=p>{</span>
-				<span class=nx>okCounter</span><span class=o>++</span>
-				<span class=nb>println</span><span class=p>(</span><span class=s>&#34;OK&#34;</span><span class=p>,</span> <span class=nx>res</span><span class=p>.</span><span class=nx>url</span><span class=p>)</span>
-			<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-				<span class=nb>println</span><span class=p>(</span><span class=s>&#34;Not OK&#34;</span><span class=p>,</span> <span class=nx>res</span><span class=p>.</span><span class=nx>url</span><span class=p>)</span>
-			<span class=p>}</span>
+    <span class=k>case</span> <span class=nx>res</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>resultsCh</span><span class=p>:</span> <span class=c1>// если пришел результат от воркера
+</span><span class=c1></span>      <span class=k>if</span> <span class=nx>res</span><span class=p>.</span><span class=nx>ok</span> <span class=p>{</span>
+        <span class=nx>okCounter</span><span class=o>++</span>
+        <span class=nb>println</span><span class=p>(</span><span class=s>&#34;OK&#34;</span><span class=p>,</span> <span class=nx>res</span><span class=p>.</span><span class=nx>url</span><span class=p>)</span>
+      <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+        <span class=nb>println</span><span class=p>(</span><span class=s>&#34;Not OK&#34;</span><span class=p>,</span> <span class=nx>res</span><span class=p>.</span><span class=nx>url</span><span class=p>)</span>
+      <span class=p>}</span>
 
-			<span class=k>if</span> <span class=nx>okCounter</span> <span class=o>&gt;=</span> <span class=mi>2</span> <span class=p>{</span> <span class=c1>// а вот как раз и наше условие для отмены
-</span><span class=c1></span>				<span class=nf>cancel</span><span class=p>()</span>
-			<span class=p>}</span>
+      <span class=k>if</span> <span class=nx>okCounter</span> <span class=o>&gt;=</span> <span class=mi>2</span> <span class=p>{</span> <span class=c1>// а вот как раз и наше условие для отмены
+</span><span class=c1></span>        <span class=nf>cancel</span><span class=p>()</span>
+      <span class=p>}</span>
 
-		<span class=k>case</span> <span class=o>&lt;-</span><span class=nx>done</span><span class=p>:</span> <span class=c1>// и выход из цикла обязательно должен осуществится после сообщения в done
-</span><span class=c1></span>			<span class=nb>println</span><span class=p>(</span><span class=s>&#34;work is done&#34;</span><span class=p>)</span>
+    <span class=k>case</span> <span class=o>&lt;-</span><span class=nx>done</span><span class=p>:</span> <span class=c1>// и выход из цикла обязательно должен осуществится после сообщения в done
+</span><span class=c1></span>      <span class=nb>println</span><span class=p>(</span><span class=s>&#34;work is done&#34;</span><span class=p>)</span>
 
-			<span class=k>break</span> <span class=nx>loop</span> <span class=c1>// только тут прерываем цикл, так как горутины все вышли и никто не напишет в закрытые каналы
-</span><span class=c1></span>		<span class=p>}</span>
-	<span class=p>}</span>
+      <span class=k>break</span> <span class=nx>loop</span> <span class=c1>// только тут прерываем цикл, так как горутины все вышли и никто не напишет в закрытые каналы
+</span><span class=c1></span>    <span class=p>}</span>
+  <span class=p>}</span>
 
-	<span class=k>return</span> <span class=nx>lastError</span>
+  <span class=k>return</span> <span class=nx>lastError</span>
 <span class=p>}</span>
 
 <span class=c1>// объявляем HTTP клиент для переиспользования
 </span><span class=c1></span><span class=kd>var</span> <span class=nx>httpClient</span> <span class=p>=</span> <span class=nx>http</span><span class=p>.</span><span class=nx>Client</span><span class=p>{</span><span class=nx>Timeout</span><span class=p>:</span> <span class=nx>time</span><span class=p>.</span><span class=nx>Second</span> <span class=o>*</span> <span class=mi>5</span><span class=p>}</span>
 
 <span class=kd>func</span> <span class=nf>fetchLink</span><span class=p>(</span><span class=nx>ctx</span> <span class=nx>context</span><span class=p>.</span><span class=nx>Context</span><span class=p>,</span> <span class=nx>method</span><span class=p>,</span> <span class=nx>url</span> <span class=kt>string</span><span class=p>)</span> <span class=p>(</span><span class=kt>bool</span><span class=p>,</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
-	<span class=c1>// создаём объект запроса
-</span><span class=c1></span>	<span class=kd>var</span> <span class=nx>req</span><span class=p>,</span> <span class=nx>err</span> <span class=p>=</span> <span class=nx>http</span><span class=p>.</span><span class=nf>NewRequestWithContext</span><span class=p>(</span><span class=nx>ctx</span><span class=p>,</span> <span class=nx>method</span><span class=p>,</span> <span class=nx>url</span><span class=p>,</span> <span class=nx>http</span><span class=p>.</span><span class=nx>NoBody</span><span class=p>)</span>
-	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-		<span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=nx>err</span>
-	<span class=p>}</span>
+  <span class=c1>// создаём объект запроса
+</span><span class=c1></span>  <span class=kd>var</span> <span class=nx>req</span><span class=p>,</span> <span class=nx>err</span> <span class=p>=</span> <span class=nx>http</span><span class=p>.</span><span class=nf>NewRequestWithContext</span><span class=p>(</span><span class=nx>ctx</span><span class=p>,</span> <span class=nx>method</span><span class=p>,</span> <span class=nx>url</span><span class=p>,</span> <span class=nx>http</span><span class=p>.</span><span class=nx>NoBody</span><span class=p>)</span>
+  <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=nx>err</span>
+  <span class=p>}</span>
 
-	<span class=c1>// выполняем его
-</span><span class=c1></span>	<span class=nx>resp</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>httpClient</span><span class=p>.</span><span class=nf>Do</span><span class=p>(</span><span class=nx>req</span><span class=p>)</span>
-	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-		<span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=nx>err</span>
-	<span class=p>}</span>
+  <span class=c1>// выполняем его
+</span><span class=c1></span>  <span class=nx>resp</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>httpClient</span><span class=p>.</span><span class=nf>Do</span><span class=p>(</span><span class=nx>req</span><span class=p>)</span>
+  <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=nx>err</span>
+  <span class=p>}</span>
 
-	<span class=c1>// валидируем статус код
-</span><span class=c1></span>	<span class=k>if</span> <span class=nx>resp</span><span class=p>.</span><span class=nx>StatusCode</span> <span class=o>==</span> <span class=nx>http</span><span class=p>.</span><span class=nx>StatusOK</span> <span class=p>{</span>
-		<span class=k>return</span> <span class=kc>true</span><span class=p>,</span> <span class=kc>nil</span>
-	<span class=p>}</span>
+  <span class=c1>// валидируем статус код
+</span><span class=c1></span>  <span class=k>if</span> <span class=nx>resp</span><span class=p>.</span><span class=nx>StatusCode</span> <span class=o>==</span> <span class=nx>http</span><span class=p>.</span><span class=nx>StatusOK</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=kc>true</span><span class=p>,</span> <span class=kc>nil</span>
+  <span class=p>}</span>
 
-	<span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=kc>nil</span>
+  <span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=kc>nil</span>
 <span class=p>}</span>
 </code></pre></div>
 </section>
