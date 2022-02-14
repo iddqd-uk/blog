@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644715207">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644715207">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644715207">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1644821568">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1644821568">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1644821568">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -54,7 +54,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 5 мин.
+Время чтения: 6 мин.
 </time>
 </div>
 </footer>
@@ -65,7 +65,30 @@ Go
 <strong>Внимание!</strong> Данный пост был опубликован более года назад и, возможно, уже утратил свою былую актуальность. Но это не точно.
 </div>
 <p>В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.</p>
-<h2 id=обход-ссылок-из-файла>Обход ссылок из файла</h2>
+<h2 id=алгоритм-бинарного-двоичного-поиска>Алгоритм бинарного (двоичного) поиска</h2>
+<p>Также известен как метод деления пополам или дихотомия - классический алгоритм поиска элемента в отсортированном массиве (слайсе), использующий дробление массива (слайса) на половины. У нас на входе может быть слайс вида <code>[]int{1, 3, 4, 6, 8, 10, 55, 56, 59, 70, 79, 81, 91, 10001}</code>, и нужно вернуть индекс числа <code>55</code> (результат будет <code>6 true</code>):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>BinarySearch</span><span class=p>(</span><span class=nx>in</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>searchFor</span> <span class=kt>int</span><span class=p>)</span> <span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>bool</span><span class=p>)</span> <span class=p>{</span>
+	<span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=nx>in</span><span class=p>)</span> <span class=o>==</span> <span class=mi>0</span> <span class=p>{</span>
+		<span class=k>return</span> <span class=mi>0</span><span class=p>,</span> <span class=kc>false</span>
+	<span class=p>}</span>
+
+	<span class=kd>var</span> <span class=nx>first</span><span class=p>,</span> <span class=nx>last</span> <span class=p>=</span> <span class=mi>0</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>in</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span>
+
+	<span class=k>for</span> <span class=nx>first</span> <span class=o>&lt;=</span> <span class=nx>last</span> <span class=p>{</span>
+		<span class=kd>var</span> <span class=nx>mid</span> <span class=p>=</span> <span class=p>((</span><span class=nx>last</span> <span class=o>-</span> <span class=nx>first</span><span class=p>)</span> <span class=o>/</span> <span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=nx>first</span>
+
+		<span class=k>if</span> <span class=nx>in</span><span class=p>[</span><span class=nx>mid</span><span class=p>]</span> <span class=o>==</span> <span class=nx>searchFor</span> <span class=p>{</span>
+			<span class=k>return</span> <span class=nx>mid</span><span class=p>,</span> <span class=kc>true</span>
+		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=nx>in</span><span class=p>[</span><span class=nx>mid</span><span class=p>]</span> <span class=p>&gt;</span> <span class=nx>searchFor</span> <span class=p>{</span> <span class=c1>// нужно искать в &#34;левой&#34; части слайса
+</span><span class=c1></span>			<span class=nx>last</span> <span class=p>=</span> <span class=nx>mid</span> <span class=o>-</span> <span class=mi>1</span>
+		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=nx>in</span><span class=p>[</span><span class=nx>mid</span><span class=p>]</span> <span class=p>&lt;</span> <span class=nx>searchFor</span> <span class=p>{</span> <span class=c1>// нужно искать в &#34;правой&#34; части слайса
+</span><span class=c1></span>			<span class=nx>first</span> <span class=p>=</span> <span class=nx>mid</span> <span class=o>+</span> <span class=mi>1</span>
+		<span class=p>}</span>
+	<span class=p>}</span>
+
+	<span class=k>return</span> <span class=mi>0</span><span class=p>,</span> <span class=kc>false</span>
+<span class=p>}</span>
+</code></pre></div><h2 id=обход-ссылок-из-файла>Обход ссылок из файла</h2>
 <p>Дан некоторый файл, в котором содержатся HTTP ссылки на различные ресурсы. Нужно реализовать обход всех этих ссылок, и вывести в терминал <code>OK</code> в случае <code>200</code>-го кода ответа, и <code>Not OK</code> в противном случае. Засучаем рукава и в бой, пишем наивный вариант (читаем файл в память, и итерируем слайс ссылок):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
@@ -412,6 +435,7 @@ Make love, not war <br>
 <div class=widget--toc>
 <nav id=TableOfContents>
 <ol>
+<li><a href=#алгоритм-бинарного-двоичного-поиска>Алгоритм бинарного (двоичного) поиска</a></li>
 <li><a href=#обход-ссылок-из-файла>Обход ссылок из файла</a></li>
 </ol>
 </nav>
