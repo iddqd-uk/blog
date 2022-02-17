@@ -2,26 +2,26 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
-"><title>Задачи для лайв-кодинга на Go</title>
+"><title>Задачи и решения для лайв-кодинга на Go</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang-coding/>
 <link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2505968f44d2e3e27dc3b1cecad9c2bcba873012fafced7bdfa0bccfbd890b11.css>
-<meta property="og:title" content="Задачи для лайв-кодинга на Go">
+<meta property="og:title" content="Задачи и решения для лайв-кодинга на Go">
 <meta property="og:description" content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 ">
 <meta property="og:url" content="https://blog.hook.sh/interview-section-golang-coding/">
 <meta property="og:site_name" content="blog [dot] hook">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="golang"><meta property="article:tag" content="interview"><meta property="article:tag" content="coding"><meta property="article:published_time" content="2022-02-08T06:47:03+00:00"><meta property="article:modified_time" content="2022-02-08T06:47:03+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
-<meta name=twitter:title content="Задачи для лайв-кодинга на Go">
+<meta name=twitter:title content="Задачи и решения для лайв-кодинга на Go">
 <meta name=twitter:description content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 "><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645110708">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645110708">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645110708">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645119005">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645119005">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645119005">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -40,7 +40,7 @@ extended">
 <header class=article-header>
 <div class=article-image>
 <a href=/interview-section-golang-coding/>
-<img src=/interview-section-golang-coding/cover_hu4d5f4dc7f2d724f04232b4b244db50a4_20156_800x0_resize_box_3.png srcset="/interview-section-golang-coding/cover_hu4d5f4dc7f2d724f04232b4b244db50a4_20156_800x0_resize_box_3.png 800w, /interview-section-golang-coding/cover_hu4d5f4dc7f2d724f04232b4b244db50a4_20156_1600x0_resize_box_3.png 1600w" width=800 height=303 loading=lazy alt="Featured image of post Задачи для лайв-кодинга на Go">
+<img src=/interview-section-golang-coding/cover_hu6c745680144d0a85df5a67b80461116c_57776_800x0_resize_box_3.png srcset="/interview-section-golang-coding/cover_hu6c745680144d0a85df5a67b80461116c_57776_800x0_resize_box_3.png 800w, /interview-section-golang-coding/cover_hu6c745680144d0a85df5a67b80461116c_57776_1600x0_resize_box_3.png 1600w" width=800 height=331 loading=lazy alt="Featured image of post Задачи и решения для лайв-кодинга на Go">
 </a>
 </div>
 <div class=article-details>
@@ -50,7 +50,7 @@ Go
 </a>
 </header>
 <h2 class=article-title>
-<a href=/interview-section-golang-coding/>Задачи для лайв-кодинга на Go</a></h2>
+<a href=/interview-section-golang-coding/>Задачи и решения для лайв-кодинга на Go</a></h2>
 <footer class=article-time>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
 <time class=article-time--published>2022.02.08</time>
@@ -794,10 +794,10 @@ OK https://stackoverflow.com/
 <article class=has-image>
 <a href=/interview-section-golang/>
 <div class=article-image>
-<img src=/interview-section-golang/cover.c5f910fcb3b724994ac955ae33317d15_hu946eb1caa4a6453922f3e6db1d3c2e8f_124759_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=interview-section-golang data-hash="md5-xfkQ/LO3JJlKyVWuMzF9FQ==">
+<img src=/interview-section-golang/cover.f4a8a0debf71679bfd758da95e284bcb_hu032bd5f7e68e559a642ecef405e28712_26494_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=interview-section-golang data-hash="md5-9Kig3r9xZ5v9dY2pXihLyw==">
 </div>
 <div class=article-details>
-<h2 class=article-title>Вопросы и ответы для собеседования Golang разработчика</h2>
+<h2 class=article-title>Вопросы и ответы для собеседования Go-разработчика</h2>
 </div>
 </a>
 </article>
