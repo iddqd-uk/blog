@@ -27,6 +27,8 @@ article:
     one: "{{ .Count }} min read"
     ### Seems that there's no need to add 's' even if it's plural in English
     other: "{{ .Count }} min read"
+  spoiler:
+    other: Spoiler (click to expand)
 
 notFound:
   title:

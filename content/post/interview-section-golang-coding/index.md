@@ -13,6 +13,8 @@ tags: [golang, interview, coding]
 
 В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
 
+Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
+
 <!--more-->
 
 ## Найти пересечение двух неупорядоченных слайсов любой длины
@@ -24,6 +26,7 @@ tags: [golang, interview, coding]
 
 Можно решить сортировкой, за более долгое время, но без выделения дополнительной памяти. А можно выделить дополнительную память и решить за линейное время:
 
+{{< spoiler text="Решение" >}}
 ```go
 package main
 
@@ -57,11 +60,13 @@ func main() {
   fmt.Printf("%v\n", intersection([]int{1, 1, 1}, []int{1, 1, 1, 1}))      // [1, 1, 1]
 }
 ```
+{{< /spoiler >}}
 
 Сложность этого решения получается `O(n+m)` где `n` - это длина первого слайса и `m` второго (сложность вставки в мапу `O(1)`; поиска тоже, чаще всего).
 
 Или вот универсальный вариант, что ищет пересечение в неограниченном количестве слайсов на входе:
 
+{{< spoiler text="Универсальное решение" >}}
 ```go
 package main
 
@@ -126,11 +131,13 @@ func main() {
   fmt.Printf("%v\n", intersection([]int{4, 9, 5}, []int{9, 4, 9, 8, 4}))   // [9, 4]
 }
 ```
+{{< /spoiler >}}
 
 ## Написать генератор случайных чисел
 
 Легкая задача, на базовые знания по асинхронному взаимодействию в Go. Главная особенность - не выделять память заранее под случайные числа, так как их могут быть миллионы (в этом же и есть весть смысл генератора). Функция `RandomGen` возвращает канал, в который пишутся случайные сислы и функцию, которая генератор останавливает, освобождая все необходимые ресурсы:
 
+{{< spoiler text="Решение" >}}
 ```go
 package main
 
@@ -162,7 +169,7 @@ func RandomGen() (<-chan int, func()) {
   }()
 
   return out, func() { // вызов функции закроет канал exit
-    if old := atomic.SwapUint32(&exited, 1); old == 0 { // защита от повторного вызова
+    if atomic.CompareAndSwapUint32(&exited, 0, 1) { // защита от повторного вызова
       close(exit)
     }
   }
@@ -181,12 +188,255 @@ func main() {
   println(<-rnd, <-rnd) // вернёт дважды 0
 }
 ```
+{{< /spoiler >}}
+
+## Слить N каналов в один
+
+Даны n каналов типа chan int. Надо написать функцию, которая смерджит все данные из этих каналов в один и вернет его. Мы хотим, чтобы результат работы функции выглядел примерно так:
+
+```go
+package main
+
+func main() {
+  var a, b, c = make(chan int), make(chan int), make(chan int)
+
+  // ...
+
+  for num := range joinChannels(a, b, c) {
+    println(num)
+  }
+}
+```
+
+Для этого создаём канал для смердженных данных, запускаем N горутин для чтения из каналов (по количеству каналов), и используем дополнительный канал для того, чтоб определить когда у нас работа будет завершена (эдакий аналог `sync.WaitGroup`):
+
+{{< spoiler text="Решение" >}}
+```go
+package main
+
+func joinChannels(in ...<-chan int) <-chan int {
+  var (
+    out  = make(chan int, len(in))
+    done = make(chan struct{}) // канал для пустых сообщений, аналог sync.WaitGroup
+  )
+
+  for i := 0; i < len(in); i++ { // запускаем горутины по кол-ву каналов на входе
+    go func(c <-chan int) {
+      defer func() { done <- struct{}{} }() // по завершению работы пишем в канал "done"
+
+      for {
+        value, isOpened := <-c
+        if !isOpened { // если канал закрылся - то выходим
+          return
+        }
+
+        out <- value // иначе пишем в результирующий канал
+      }
+    }(in[i])
+  }
+
+  go func() { // запускаем отдельную горутину, которая ожидает завершения работы
+    for i := 0; i < len(in); i++ { // с помощью этого счётчика
+      <-done // который N раз просто читает пустую структуру и блокируется
+    }
+
+    close(done)
+    close(out)
+  }()
+
+  return out
+}
+
+func main() {
+  var a, b, c = make(chan int), make(chan int), make(chan int)
+
+  go func() {
+    for _, num := range []int{1, 2, 3} { a <- num }
+    close(a)
+  }()
+
+  go func() {
+    for _, num := range []int{20, 10, 30} { b <- num }
+    close(b)
+  }()
+
+  go func() {
+    for _, num := range []int{300, 200, 100} { c <- num }
+    close(c)
+  }()
+
+  for num := range joinChannels(a, b, c) {
+    println(num) // 1, 2, 3, 20, 10, 300, 200, 30, 100
+  }
+}
+```
+{{< /spoiler >}}
+
+## Сделать конвейер чисел
+
+Даны два канала. В первый пишутся числа. Нужно, чтобы числа читались из первого по мере поступления, что-то с ними происходило (допустим, возводились в квадрат) и результат записывался во второй канал. Задача **пердельно** простая.
+
+{{< spoiler text="Решение" >}}
+```go
+package main
+
+func main() {
+  var in, out = make(chan int), make(chan int)
+
+  go func() {
+    for i := 0; i < 10; i++ {
+      in <- i
+    }
+
+    close(in)
+  }()
+
+  go func() {
+    defer close(out)
+
+    for {
+      num, isOpened := <-in
+      if !isOpened {
+        return
+      }
+
+      out <- num * num
+    }
+  }()
+
+  for num := range out {
+    println(num)
+  }
+}
+```
+{{< /spoiler >}}
+
+## Сделать кастомную WaitGroup на семафоре
+
+> Семафо́р (англ. `semaphore`) — примитив синхронизации работы процессов и потоков, в основе которого лежит счётчик, над которым можно производить две атомарные операции: увеличение и уменьшение значения на единицу, при этом операция уменьшения для нулевого значения счётчика является блокирующейся.
+
+Семафор можно легко получить из канала. Чтоб не аллоцировать лишние данные, будем складывать туда пустые структуры.
+
+{{< spoiler text="Решение" >}}
+```go
+package main
+
+type Semaphore chan struct{}
+
+func (s Semaphore) Increment(n int) {
+	for i := 0; i < n; i++ {
+		s <- struct{}{}
+	}
+}
+
+func (s Semaphore) Decrement(n int) {
+	for i := 0; i < n; i++ {
+		<-s
+	}
+}
+
+func main() {
+	const count = 5
+
+	var s = make(Semaphore, count)
+
+	for i := 0; i < count; i++ {
+		go func(n int) {
+			defer s.Increment(1)
+
+			print(n, " ")
+		}(i)
+	}
+
+	s.Decrement(count) // 1 4 3 2 0 (порядок будет произвольный)
+}
+```
+{{< /spoiler >}}
+
+{{< spoiler text="Решение с использованием atomic и каналов, полностью повторяет API sync.WaitGroup" >}}
+```go
+package main
+
+import (
+  "sync"
+  "sync/atomic"
+)
+
+type WaitGroup struct {
+  state int32 // atomic usage only
+
+  subsMu sync.Mutex
+  subs   []chan struct{}
+}
+
+func NewWaitGroup() WaitGroup { return WaitGroup{subs: make([]chan struct{}, 0)} }
+
+func (wg *WaitGroup) Add(n uint) { atomic.AddInt32(&wg.state, int32(n)) }
+
+func (wg *WaitGroup) Done() {
+  if atomic.AddInt32(&wg.state, -1); atomic.LoadInt32(&wg.state) <= 0 {
+    wg.subsMu.Lock()
+
+    if wg.subs != nil {
+      for i := 0; i < len(wg.subs); i++ {
+        close(wg.subs[i]) // закрытие "стриггерит" все каналы
+      }
+
+      wg.subs = nil
+    }
+
+    wg.subsMu.Unlock()
+  }
+}
+
+func (wg *WaitGroup) Wait() {
+  if atomic.LoadInt32(&wg.state) > 0 {
+    var c = make(chan struct{})
+
+    wg.subsMu.Lock()
+    wg.subs = append(wg.subs, c)
+    wg.subsMu.Unlock()
+
+    <-c // ожидаем закрытия канала (блокируемся)
+  }
+
+  return
+}
+
+func main() {
+  var wg = NewWaitGroup()
+
+  wg.Wait() // пролетает сразу же, так как не было вызовов Add()
+
+  wg.Add(2)
+  wg.Add(0) // ничего не делает
+  wg.Done()
+  wg.Done()
+  wg.Wait() // тоже пролетает сразу же
+
+  for i := 0; i < 5; i++ {
+    wg.Add(1)
+
+    go func(n int) {
+      defer wg.Done()
+
+      print(n, " ")
+    }(i)
+  }
+
+  wg.Wait() // 1 4 3 2 0 (порядок будет произвольный)
+}
+```
+{{< /spoiler >}}
 
 ## Алгоритм бинарного (двоичного) поиска
 
 Также известен как метод деления пополам или дихотомия - классический алгоритм поиска элемента в отсортированном массиве (слайсе), использующий дробление массива (слайса) на половины. У нас на входе может быть слайс вида `[]int{1, 3, 4, 6, 8, 10, 55, 56, 59, 70, 79, 81, 91, 10001}`, и нужно вернуть индекс числа `55` (результат будет `6 true`):
 
+{{< spoiler text="Решение" >}}
 ```go
+package main
+
 func BinarySearch(in []int, searchFor int) (int, bool) {
 	if len(in) == 0 {
 		return 0, false
@@ -209,12 +459,13 @@ func BinarySearch(in []int, searchFor int) (int, bool) {
 	return 0, false
 }
 ```
-
+{{< /spoiler >}}
 
 ## Обход ссылок из файла
 
 Дан некоторый файл, в котором содержатся HTTP ссылки на различные ресурсы. Нужно реализовать обход всех этих ссылок, и вывести в терминал `OK` в случае `200`-го кода ответа, и `Not OK` в противном случае. Засучаем рукава и в бой, пишем наивный вариант (читаем файл в память, и итерируем слайс ссылок):
 
+{{< spoiler text="Первая итерация" >}}
 ```go
 package main
 
@@ -293,6 +544,7 @@ func fetchLink(ctx context.Context, method, url string) (bool, error) {
   return false, nil
 }
 ```
+{{< /spoiler >}}
 
 Файл со списком ссылок (`links_list.txt`):
 
@@ -320,6 +572,7 @@ OK https://stackoverflow.com/
 
 И тут интервьювер обновляет постановку задачи - нужно выполнять работу асинхронно. И сделать так, чтоб после получения **двух** `OK` останавливать всю работу, отменяя уже отправленные запросы. Приводим свой код в соответствие, используя каналы по-максимуму:
 
+{{< spoiler text="Вторая итерация" >}}
 ```go
 package main
 
@@ -479,3 +732,4 @@ func fetchLink(ctx context.Context, method, url string) (bool, error) {
   return false, nil
 }
 ```
+{{< /spoiler >}}

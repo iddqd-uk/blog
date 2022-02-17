@@ -1,6 +1,6 @@
 @import "github-gist.scss";
 
-/*
+/**
  * Outdated post message
  */
 .outdated-post {
@@ -13,7 +13,7 @@
   border-radius: var(--tag-border-radius);
 }
 
-/*
+/**
  * Scroll bar
  */
 ::-webkit-scrollbar-thumb {
@@ -28,11 +28,42 @@
   width: 100%;
 }
 
+/**
+ * Code format
+ */
 code, pre {
   -moz-tab-size: 2;
   tab-size: 2;
 }
 
+/**
+ * Test spoiler
+ */
+details.spoiler {
+  margin-left: calc((var(--card-padding)) * -1);
+  margin-right: calc((var(--card-padding)) * -1);
+  padding-left: var(--card-padding);
+  padding-right: var(--card-padding);
+  background-color: rgba(0, 0, 0, .035);
+  box-shadow: var(--shadow-l1);
+
+  summary {
+    padding-top: calc(var(--card-padding) / 4);
+    padding-bottom: calc(var(--card-padding) / 4);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Table Of Contents widget
+ */
 .widget--toc {
   ::-webkit-scrollbar-thumb {
       background-color: var(--body-background);

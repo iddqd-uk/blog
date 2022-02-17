@@ -1,0 +1,6 @@
+<details class="spoiler">
+  <summary>{{ with .Get "text" }}{{ . | safeHTML }}{{ else }}{{ T "article.spoiler" }}{{ end }}</summary>
+  <div>
+    {{ .Inner | markdownify }}
+  </div>
+</details>
