@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы для собеседования Golang разработчика
+title: Вопросы и ответы для собеседования Go-разработчика
 slug: interview-section-golang
 #description: Go Interview Cheat
 date: 2022-02-02T06:17:19Z

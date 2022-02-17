@@ -1,5 +1,5 @@
 ---
-title: Задачи для лайв-кодинга на Go
+title: Задачи и решения для лайв-кодинга на Go
 slug: interview-section-golang-coding
 #description: Go Interview Coding
 date: 2022-02-08T06:47:03Z

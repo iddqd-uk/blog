@@ -1,11 +1,11 @@
 ---
-title: Вопросы и ответы для собеседования - сети
+title: Вопросы и ответы по сетям и протоколам
 slug: interview-section-network
 #description: Interview section network
 date: 2022-02-14T12:37:08Z
 expirydate: 2027-08-15T12:37:08Z
 #draft: true
-image: cover.jpg
+image: cover.png
 categories: [dev]
 toc: true
 tags: [interview, network]

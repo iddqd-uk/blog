@@ -3,6 +3,7 @@ title: Вопросы и ответы для собеседования по т�
 slug: interview-section-devops
 date: 2022-02-17T11:13:55Z
 expirydate: 2024-08-18T11:13:55Z
+draft: true
 image: cover.png
 categories: [dev]
 tags: [interview, network]
