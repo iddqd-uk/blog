@@ -3,7 +3,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
 "><title>Вопросы и ответы для собеседования Golang разработчика</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.34b629f31c5d473ce517c990918273ec1d17e1834d7e3e85bbb174f4ba5967e4.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2505968f44d2e3e27dc3b1cecad9c2bcba873012fafced7bdfa0bccfbd890b11.css>
 <meta property="og:title" content="Вопросы и ответы для собеседования Golang разработчика">
 <meta property="og:description" content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
 ">
@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645043726">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645043726">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645043726">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645110709">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645110709">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645110709">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -54,7 +54,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 56 мин.
+Время чтения: 57 мин.
 </time>
 </div>
 </footer>
@@ -84,6 +84,7 @@ Go
 <li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a>
 <ol>
 <li><a href=#задача-про-слайсы-1>Задача про слайсы #1</a></li>
+<li><a href=#задача-про-слайсы-2>Задача про слайсы #2</a></li>
 </ol>
 </li>
 <li><a href=#что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</a>
@@ -513,6 +514,33 @@ Go
 <h4 id=задача-про-слайсы-1>Задача про слайсы #1</h4>
 <p>Вопрос: У нас есть 2 функции - одна делает <code>append()</code> чего-то в слайс, а другая просто сортирует слайс, используя пакет <code>sort</code>. Модифицируют ли слайс первая и (или) вторая функции?</p>
 <p>Ответ: <code>append()</code> не модифицирует а возвращает новый слайс, а <code>sort</code> модифицирует порядок элементов, если он изначально был не отсортирован.</p>
+<h4 id=задача-про-слайсы-2>Задача про слайсы #2</h4>
+<p>Вопрос: Что выведет следующая программа?</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+  <span class=nx>a</span> <span class=o>:=</span> <span class=p>[</span><span class=mi>5</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>}</span>
+  <span class=nx>t</span> <span class=o>:=</span> <span class=nx>a</span><span class=p>[</span><span class=mi>3</span><span class=p>:</span><span class=mi>4</span><span class=p>:</span><span class=mi>4</span><span class=p>]</span>
+
+  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>t</span><span class=p>[</span><span class=mi>0</span><span class=p>])</span>
+<span class=p>}</span>
+</code></pre></div><details class=spoiler>
+<summary>Ответ</summary>
+<div>
+Выведет <code>4</code>
+</div>
+</details>
+<p>Объяснение: Такой синтаксис позволяет задать <code>capacity</code> (вместимость) для полученного под-слайса, который будет равен &ldquo;последний элемент минус первый элемент из выражения в квадратных скобках&rdquo;, т.е. из примера выше он будет равен 1 (т.к. от четырёх, т.е. третьего сегмента вычитаем первый, т.е. тройку). Если бы выражение имело вид <code>a[3:4:5]</code>, то <code>cap</code> была бы равна 2 (5 - 3 = 2). Но при этом на сами данные он не влияет.</p>
+<p>Появилась эта штука в Go 1.2.</p>
+<blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://stackoverflow.com/a/27938683/2252921 target=_blank rel=noopener>Slicing a slice with slice <code>[a : b : c]</code></a></li>
+<li><a class=link href=https://go.dev/ref/spec#Slice_expressions target=_blank rel=noopener>Full slice expressions</a></li>
+</ul>
+</blockquote>
 <h3 id=что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</h3>
 <p>Карта (<code>map</code> или <code>hashmap</code>) - это <strong>неупорядоченная</strong> коллекция пар вида ключ-значение. Пример:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>myMap</span> <span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span>
@@ -1479,6 +1507,9 @@ Go
 <p>Профилировщик является семплирующим - с какой-то периодичностью мы прерываем работу программы, берем стек-трейс, записываем его куда-то, а в конце, на основе того, как часто в стек-трейсах встречаются разные функции, мы понимаем, какие из них использовали больше ресурсов процессора, а какие меньше. Работа с ним состоит из двух этапов - сбор статистики по работе сервиса, и её визуализация + анализ. Собирать статистику можно добавив вызовы пакета <code>pprof</code>, либо запустив HTTP сервер.</p>
 <h3 id=пример-использования-pprof>Пример использования <code>pprof</code></h3>
 <p>Рассмотрим простой случай, когда у нас есть функция, которая выполняется по какой-то причине очень долго. Обрамим вызовы потенциально-тяжелого кода в <code>startPprof</code> и <code>stopPprof</code>:</p>
+<details class=spoiler>
+<summary>Спойлер (нажми чтоб раскрыть)</summary>
+<div>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=p>(</span>
@@ -1531,11 +1562,7 @@ Go
 	<span class=nf>stopPprof</span><span class=p>(</span><span class=nx>pprofFile</span><span class=p>)</span> <span class=c1>// завершаем профилирование
 </span><span class=c1></span><span class=p>}</span>
 </code></pre></div><p>После компиляции и запуска приложения (<code>go build -o ./main . && ./main</code>) в текущей директории появится файл с именем <code>profile.pprof</code>, содержащий профиль работы. &ldquo;Конвертируем&rdquo; его в читаемое представление в виде <code>svg</code> изображения с помощью <code>go tool pprof -svg ./profile.pprof</code> (на Linux для этого понадобится установленный пакет <code>graphviz</code>) и открываем его (имя файла будет в виде <code>profile001.svg</code>):</p>
-<p><figure class=gallery-image style=flex-grow:159;flex-basis:382px>
-<a href=/interview-section-golang/ppropf-before.png data-size=2428x1525>
-<img src=/interview-section-golang/ppropf-before.png width=2428 height=1525 srcset="/interview-section-golang/ppropf-before_hu7a1100d125a2f212a8d65d9fba34d4ae_157454_480x0_resize_box_3.png 480w, /interview-section-golang/ppropf-before_hu7a1100d125a2f212a8d65d9fba34d4ae_157454_1024x0_resize_box_3.png 1024w" loading=lazy>
-</a>
-</figure></p>
+<p><img src=ppropf-before.png alt></p>
 <p>Посмотрим на получившийся граф вызовов. Изучая такой граф, в первую очередь нужно обращать внимание на толщину ребер (стрелочек) и на размер узлов графа (квадратиков). На ребрах подписано время - сколько времени данный узел или любой из ниже лежащих узлов находился в стек-трейсе во время профилирования.</p>
 <p>В нашем профиле можем заметить, что <code>runtime evacuate_fast64</code> занимает очень много времени. Связано это с тем, что из мапы данным приходиться эвакуироваться, так как размер мапы очень сильно растёт. Исправляем это (а заодно и слайс) всего в двух строчках:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=p>(</span>
@@ -1543,12 +1570,10 @@ Go
 </span><span class=c1></span>  <span class=nx>m</span>     <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>int</span><span class=p>]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>10_000_000</span><span class=p>)</span> <span class=c1>// и в мапе заранее
 </span><span class=c1></span><span class=p>)</span>
 </code></pre></div><p>Повторяем все сделанные ранее операции снова, и видим уже совсем другую картину:</p>
-<p><figure class=gallery-image style=flex-grow:162;flex-basis:390px>
-<a href=/interview-section-golang/ppropf-after.png data-size=1594x979>
-<img src=/interview-section-golang/ppropf-after.png width=1594 height=979 srcset="/interview-section-golang/ppropf-after_hu09dec72797f8675a4ecad00a352f102c_54522_480x0_resize_box_3.png 480w, /interview-section-golang/ppropf-after_hu09dec72797f8675a4ecad00a352f102c_54522_1024x0_resize_box_3.png 1024w" loading=lazy>
-</a>
-</figure></p>
+<p><img src=ppropf-after.png alt></p>
 <p>Теперь картина значительно лучше, и следующее место оптимизации (потенциально) это пересмотреть работу с данными, а именно - нужна ли нам работа с мапой в принципе (может заменить её каким-то слайсом), и если нет - то как можно улучшить (оптимизировать) запись в неё.</p>
+</div>
+</details>
 <h3 id=так-как-же-профилировщик-работает-в-принципе>Так как же профилировщик работает в принципе?</h3>
 <p>Go runtime просит ОС посылать сигнал (<code>man setitimer</code>) с определенной периодичностью и назначает на этот сигнал обработчик. Обработчик берет стек-трейс всех горутин, какую-то дополнительную информацию, записывает ее в буфер и выходит.</p>
 <p>Каковы же недостатки данного подхода?</p>
@@ -1765,6 +1790,7 @@ Make love, not war <br>
 <li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a>
 <ol>
 <li><a href=#задача-про-слайсы-1>Задача про слайсы #1</a></li>
+<li><a href=#задача-про-слайсы-2>Задача про слайсы #2</a></li>
 </ol>
 </li>
 <li><a href=#что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</a>

@@ -1,24 +1,27 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
+Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 "><title>Задачи для лайв-кодинга на Go</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang-coding/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.34b629f31c5d473ce517c990918273ec1d17e1834d7e3e85bbb174f4ba5967e4.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2505968f44d2e3e27dc3b1cecad9c2bcba873012fafced7bdfa0bccfbd890b11.css>
 <meta property="og:title" content="Задачи для лайв-кодинга на Go">
 <meta property="og:description" content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
+Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 ">
 <meta property="og:url" content="https://blog.hook.sh/interview-section-golang-coding/">
 <meta property="og:site_name" content="blog [dot] hook">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="golang"><meta property="article:tag" content="interview"><meta property="article:tag" content="coding"><meta property="article:published_time" content="2022-02-08T06:47:03+00:00"><meta property="article:modified_time" content="2022-02-08T06:47:03+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <meta name=twitter:title content="Задачи для лайв-кодинга на Go">
 <meta name=twitter:description content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
+Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 "><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645043723">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645043723">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645043723">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645110708">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645110708">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645110708">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -54,7 +57,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 9 мин.
+Время чтения: 13 мин.
 </time>
 </div>
 </footer>
@@ -65,6 +68,7 @@ Go
 <strong>Внимание!</strong> Данный пост был опубликован более года назад и, возможно, уже утратил свою былую актуальность. Но это не точно.
 </div>
 <p>В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.</p>
+<p>Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.</p>
 <h2 id=найти-пересечение-двух-неупорядоченных-слайсов-любой-длины>Найти пересечение двух неупорядоченных слайсов любой длины</h2>
 <p>Перечесение - это те элементы, что присутствуют в обоих слайсах, то есть:</p>
 <ul>
@@ -72,6 +76,9 @@ Go
 <li><code>f([]int{4, 9, 5}, []int{9, 4, 9, 8, 4}) == []int{4, 9} or []int{9, 4}</code></li>
 </ul>
 <p>Можно решить сортировкой, за более долгое время, но без выделения дополнительной памяти. А можно выделить дополнительную память и решить за линейное время:</p>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
@@ -103,8 +110,14 @@ Go
   <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>23</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>6</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>23</span><span class=p>}))</span> <span class=c1>// [2, 23]
 </span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}))</span>      <span class=c1>// [1, 1, 1]
 </span><span class=c1></span><span class=p>}</span>
-</code></pre></div><p>Сложность этого решения получается <code>O(n+m)</code> где <code>n</code> - это длина первого слайса и <code>m</code> второго (сложность вставки в мапу <code>O(1)</code>; поиска тоже, чаще всего).</p>
+</code></pre></div>
+</div>
+</details>
+<p>Сложность этого решения получается <code>O(n+m)</code> где <code>n</code> - это длина первого слайса и <code>m</code> второго (сложность вставки в мапу <code>O(1)</code>; поиска тоже, чаще всего).</p>
 <p>Или вот универсальный вариант, что ищет пересечение в неограниченном количестве слайсов на входе:</p>
+<details class=spoiler>
+<summary>Универсальное решение</summary>
+<div>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
@@ -167,8 +180,14 @@ Go
 </span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>1</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>}))</span>         <span class=c1>// [2, 2]
 </span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>4</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>5</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>9</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>4</span><span class=p>}))</span>   <span class=c1>// [9, 4]
 </span><span class=c1></span><span class=p>}</span>
-</code></pre></div><h2 id=написать-генератор-случайных-чисел>Написать генератор случайных чисел</h2>
+</code></pre></div>
+</div>
+</details>
+<h2 id=написать-генератор-случайных-чисел>Написать генератор случайных чисел</h2>
 <p>Легкая задача, на базовые знания по асинхронному взаимодействию в Go. Главная особенность - не выделять память заранее под случайные числа, так как их могут быть миллионы (в этом же и есть весть смысл генератора). Функция <code>RandomGen</code> возвращает канал, в который пишутся случайные сислы и функцию, которая генератор останавливает, освобождая все необходимые ресурсы:</p>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=p>(</span>
@@ -199,7 +218,7 @@ Go
   <span class=p>}()</span>
 
   <span class=k>return</span> <span class=nx>out</span><span class=p>,</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// вызов функции закроет канал exit
-</span><span class=c1></span>    <span class=k>if</span> <span class=nx>old</span> <span class=o>:=</span> <span class=nx>atomic</span><span class=p>.</span><span class=nf>SwapUint32</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>exited</span><span class=p>,</span> <span class=mi>1</span><span class=p>);</span> <span class=nx>old</span> <span class=o>==</span> <span class=mi>0</span> <span class=p>{</span> <span class=c1>// защита от повторного вызова
+</span><span class=c1></span>    <span class=k>if</span> <span class=nx>atomic</span><span class=p>.</span><span class=nf>CompareAndSwapUint32</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>exited</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// защита от повторного вызова
 </span><span class=c1></span>      <span class=nb>close</span><span class=p>(</span><span class=nx>exit</span><span class=p>)</span>
     <span class=p>}</span>
   <span class=p>}</span>
@@ -217,9 +236,251 @@ Go
 </span><span class=c1></span>
   <span class=nb>println</span><span class=p>(</span><span class=o>&lt;-</span><span class=nx>rnd</span><span class=p>,</span> <span class=o>&lt;-</span><span class=nx>rnd</span><span class=p>)</span> <span class=c1>// вернёт дважды 0
 </span><span class=c1></span><span class=p>}</span>
-</code></pre></div><h2 id=алгоритм-бинарного-двоичного-поиска>Алгоритм бинарного (двоичного) поиска</h2>
+</code></pre></div>
+</div>
+</details>
+<h2 id=слить-n-каналов-в-один>Слить N каналов в один</h2>
+<p>Даны n каналов типа chan int. Надо написать функцию, которая смерджит все данные из этих каналов в один и вернет его. Мы хотим, чтобы результат работы функции выглядел примерно так:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>)</span>
+
+  <span class=c1>// ...
+</span><span class=c1></span>
+  <span class=k>for</span> <span class=nx>num</span> <span class=o>:=</span> <span class=k>range</span> <span class=nf>joinChannels</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nb>println</span><span class=p>(</span><span class=nx>num</span><span class=p>)</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p>Для этого создаём канал для смердженных данных, запускаем N горутин для чтения из каналов (по количеству каналов), и используем дополнительный канал для того, чтоб определить когда у нас работа будет завершена (эдакий аналог <code>sync.WaitGroup</code>):</p>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kd>func</span> <span class=nf>joinChannels</span><span class=p>(</span><span class=nx>in</span> <span class=o>...&lt;-</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>)</span> <span class=o>&lt;-</span><span class=kd>chan</span> <span class=kt>int</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=p>(</span>
+    <span class=nx>out</span>  <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>in</span><span class=p>))</span>
+    <span class=nx>done</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{})</span> <span class=c1>// канал для пустых сообщений, аналог sync.WaitGroup
+</span><span class=c1></span>  <span class=p>)</span>
+
+  <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>in</span><span class=p>);</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span> <span class=c1>// запускаем горутины по кол-ву каналов на входе
+</span><span class=c1></span>    <span class=k>go</span> <span class=kd>func</span><span class=p>(</span><span class=nx>c</span> <span class=o>&lt;-</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+      <span class=k>defer</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=nx>done</span> <span class=o>&lt;-</span> <span class=kd>struct</span><span class=p>{}{}</span> <span class=p>}()</span> <span class=c1>// по завершению работы пишем в канал &#34;done&#34;
+</span><span class=c1></span>
+      <span class=k>for</span> <span class=p>{</span>
+        <span class=nx>value</span><span class=p>,</span> <span class=nx>isOpened</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>c</span>
+        <span class=k>if</span> <span class=p>!</span><span class=nx>isOpened</span> <span class=p>{</span> <span class=c1>// если канал закрылся - то выходим
+</span><span class=c1></span>          <span class=k>return</span>
+        <span class=p>}</span>
+
+        <span class=nx>out</span> <span class=o>&lt;-</span> <span class=nx>value</span> <span class=c1>// иначе пишем в результирующий канал
+</span><span class=c1></span>      <span class=p>}</span>
+    <span class=p>}(</span><span class=nx>in</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
+  <span class=p>}</span>
+
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// запускаем отдельную горутину, которая ожидает завершения работы
+</span><span class=c1></span>    <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>in</span><span class=p>);</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span> <span class=c1>// с помощью этого счётчика
+</span><span class=c1></span>      <span class=o>&lt;-</span><span class=nx>done</span> <span class=c1>// который N раз просто читает пустую структуру и блокируется
+</span><span class=c1></span>    <span class=p>}</span>
+
+    <span class=nb>close</span><span class=p>(</span><span class=nx>done</span><span class=p>)</span>
+    <span class=nb>close</span><span class=p>(</span><span class=nx>out</span><span class=p>)</span>
+  <span class=p>}()</span>
+
+  <span class=k>return</span> <span class=nx>out</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>)</span>
+
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+    <span class=k>for</span> <span class=nx>_</span><span class=p>,</span> <span class=nx>num</span> <span class=o>:=</span> <span class=k>range</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>}</span> <span class=p>{</span> <span class=nx>a</span> <span class=o>&lt;-</span> <span class=nx>num</span> <span class=p>}</span>
+    <span class=nb>close</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span>
+  <span class=p>}()</span>
+
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+    <span class=k>for</span> <span class=nx>_</span><span class=p>,</span> <span class=nx>num</span> <span class=o>:=</span> <span class=k>range</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>20</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>30</span><span class=p>}</span> <span class=p>{</span> <span class=nx>b</span> <span class=o>&lt;-</span> <span class=nx>num</span> <span class=p>}</span>
+    <span class=nb>close</span><span class=p>(</span><span class=nx>b</span><span class=p>)</span>
+  <span class=p>}()</span>
+
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+    <span class=k>for</span> <span class=nx>_</span><span class=p>,</span> <span class=nx>num</span> <span class=o>:=</span> <span class=k>range</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>300</span><span class=p>,</span> <span class=mi>200</span><span class=p>,</span> <span class=mi>100</span><span class=p>}</span> <span class=p>{</span> <span class=nx>c</span> <span class=o>&lt;-</span> <span class=nx>num</span> <span class=p>}</span>
+    <span class=nb>close</span><span class=p>(</span><span class=nx>c</span><span class=p>)</span>
+  <span class=p>}()</span>
+
+  <span class=k>for</span> <span class=nx>num</span> <span class=o>:=</span> <span class=k>range</span> <span class=nf>joinChannels</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nb>println</span><span class=p>(</span><span class=nx>num</span><span class=p>)</span> <span class=c1>// 1, 2, 3, 20, 10, 300, 200, 30, 100
+</span><span class=c1></span>  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div>
+</div>
+</details>
+<h2 id=сделать-конвейер-чисел>Сделать конвейер чисел</h2>
+<p>Даны два канала. В первый пишутся числа. Нужно, чтобы числа читались из первого по мере поступления, что-то с ними происходило (допустим, возводились в квадрат) и результат записывался во второй канал. Задача <strong>пердельно</strong> простая.</p>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>in</span><span class=p>,</span> <span class=nx>out</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>),</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kt>int</span><span class=p>)</span>
+
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+    <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+      <span class=nx>in</span> <span class=o>&lt;-</span> <span class=nx>i</span>
+    <span class=p>}</span>
+
+    <span class=nb>close</span><span class=p>(</span><span class=nx>in</span><span class=p>)</span>
+  <span class=p>}()</span>
+
+  <span class=k>go</span> <span class=kd>func</span><span class=p>()</span> <span class=p>{</span>
+    <span class=k>defer</span> <span class=nb>close</span><span class=p>(</span><span class=nx>out</span><span class=p>)</span>
+
+    <span class=k>for</span> <span class=p>{</span>
+      <span class=nx>num</span><span class=p>,</span> <span class=nx>isOpened</span> <span class=o>:=</span> <span class=o>&lt;-</span><span class=nx>in</span>
+      <span class=k>if</span> <span class=p>!</span><span class=nx>isOpened</span> <span class=p>{</span>
+        <span class=k>return</span>
+      <span class=p>}</span>
+
+      <span class=nx>out</span> <span class=o>&lt;-</span> <span class=nx>num</span> <span class=o>*</span> <span class=nx>num</span>
+    <span class=p>}</span>
+  <span class=p>}()</span>
+
+  <span class=k>for</span> <span class=nx>num</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>out</span> <span class=p>{</span>
+    <span class=nb>println</span><span class=p>(</span><span class=nx>num</span><span class=p>)</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div>
+</div>
+</details>
+<h2 id=сделать-кастомную-waitgroup-на-семафоре>Сделать кастомную WaitGroup на семафоре</h2>
+<blockquote>
+<p>Семафо́р (англ. <code>semaphore</code>) — примитив синхронизации работы процессов и потоков, в основе которого лежит счётчик, над которым можно производить две атомарные операции: увеличение и уменьшение значения на единицу, при этом операция уменьшения для нулевого значения счётчика является блокирующейся.</p>
+</blockquote>
+<p>Семафор можно легко получить из канала. Чтоб не аллоцировать лишние данные, будем складывать туда пустые структуры.</p>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kd>type</span> <span class=nx>Semaphore</span> <span class=kd>chan</span> <span class=kd>struct</span><span class=p>{}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>s</span> <span class=nx>Semaphore</span><span class=p>)</span> <span class=nf>Increment</span><span class=p>(</span><span class=nx>n</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>n</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=nx>s</span> <span class=o>&lt;-</span> <span class=kd>struct</span><span class=p>{}{}</span>
+	<span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>s</span> <span class=nx>Semaphore</span><span class=p>)</span> <span class=nf>Decrement</span><span class=p>(</span><span class=nx>n</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>n</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=o>&lt;-</span><span class=nx>s</span>
+	<span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+	<span class=kd>const</span> <span class=nx>count</span> <span class=p>=</span> <span class=mi>5</span>
+
+	<span class=kd>var</span> <span class=nx>s</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=nx>Semaphore</span><span class=p>,</span> <span class=nx>count</span><span class=p>)</span>
+
+	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nx>count</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+		<span class=k>go</span> <span class=kd>func</span><span class=p>(</span><span class=nx>n</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+			<span class=k>defer</span> <span class=nx>s</span><span class=p>.</span><span class=nf>Increment</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+
+			<span class=nb>print</span><span class=p>(</span><span class=nx>n</span><span class=p>,</span> <span class=s>&#34; &#34;</span><span class=p>)</span>
+		<span class=p>}(</span><span class=nx>i</span><span class=p>)</span>
+	<span class=p>}</span>
+
+	<span class=nx>s</span><span class=p>.</span><span class=nf>Decrement</span><span class=p>(</span><span class=nx>count</span><span class=p>)</span> <span class=c1>// 1 4 3 2 0 (порядок будет произвольный)
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></div>
+</div>
+</details>
+<details class=spoiler>
+<summary>Решение с использованием atomic и каналов, полностью повторяет API sync.WaitGroup</summary>
+<div>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kn>import</span> <span class=p>(</span>
+  <span class=s>&#34;sync&#34;</span>
+  <span class=s>&#34;sync/atomic&#34;</span>
+<span class=p>)</span>
+
+<span class=kd>type</span> <span class=nx>WaitGroup</span> <span class=kd>struct</span> <span class=p>{</span>
+  <span class=nx>state</span> <span class=kt>int32</span> <span class=c1>// atomic usage only
+</span><span class=c1></span>
+  <span class=nx>subsMu</span> <span class=nx>sync</span><span class=p>.</span><span class=nx>Mutex</span>
+  <span class=nx>subs</span>   <span class=p>[]</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{}</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>NewWaitGroup</span><span class=p>()</span> <span class=nx>WaitGroup</span> <span class=p>{</span> <span class=k>return</span> <span class=nx>WaitGroup</span><span class=p>{</span><span class=nx>subs</span><span class=p>:</span> <span class=nb>make</span><span class=p>([]</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{},</span> <span class=mi>0</span><span class=p>)}</span> <span class=p>}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>wg</span> <span class=o>*</span><span class=nx>WaitGroup</span><span class=p>)</span> <span class=nf>Add</span><span class=p>(</span><span class=nx>n</span> <span class=kt>uint</span><span class=p>)</span> <span class=p>{</span> <span class=nx>atomic</span><span class=p>.</span><span class=nf>AddInt32</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>wg</span><span class=p>.</span><span class=nx>state</span><span class=p>,</span> <span class=nb>int32</span><span class=p>(</span><span class=nx>n</span><span class=p>))</span> <span class=p>}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>wg</span> <span class=o>*</span><span class=nx>WaitGroup</span><span class=p>)</span> <span class=nf>Done</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>if</span> <span class=nx>atomic</span><span class=p>.</span><span class=nf>AddInt32</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>wg</span><span class=p>.</span><span class=nx>state</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>);</span> <span class=nx>atomic</span><span class=p>.</span><span class=nf>LoadInt32</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>wg</span><span class=p>.</span><span class=nx>state</span><span class=p>)</span> <span class=o>&lt;=</span> <span class=mi>0</span> <span class=p>{</span>
+    <span class=nx>wg</span><span class=p>.</span><span class=nx>subsMu</span><span class=p>.</span><span class=nf>Lock</span><span class=p>()</span>
+
+    <span class=k>if</span> <span class=nx>wg</span><span class=p>.</span><span class=nx>subs</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+      <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>wg</span><span class=p>.</span><span class=nx>subs</span><span class=p>);</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+        <span class=nb>close</span><span class=p>(</span><span class=nx>wg</span><span class=p>.</span><span class=nx>subs</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span> <span class=c1>// закрытие &#34;стриггерит&#34; все каналы
+</span><span class=c1></span>      <span class=p>}</span>
+
+      <span class=nx>wg</span><span class=p>.</span><span class=nx>subs</span> <span class=p>=</span> <span class=kc>nil</span>
+    <span class=p>}</span>
+
+    <span class=nx>wg</span><span class=p>.</span><span class=nx>subsMu</span><span class=p>.</span><span class=nf>Unlock</span><span class=p>()</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>wg</span> <span class=o>*</span><span class=nx>WaitGroup</span><span class=p>)</span> <span class=nf>Wait</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>if</span> <span class=nx>atomic</span><span class=p>.</span><span class=nf>LoadInt32</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>wg</span><span class=p>.</span><span class=nx>state</span><span class=p>)</span> <span class=p>&gt;</span> <span class=mi>0</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nx>c</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>chan</span> <span class=kd>struct</span><span class=p>{})</span>
+
+    <span class=nx>wg</span><span class=p>.</span><span class=nx>subsMu</span><span class=p>.</span><span class=nf>Lock</span><span class=p>()</span>
+    <span class=nx>wg</span><span class=p>.</span><span class=nx>subs</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>wg</span><span class=p>.</span><span class=nx>subs</span><span class=p>,</span> <span class=nx>c</span><span class=p>)</span>
+    <span class=nx>wg</span><span class=p>.</span><span class=nx>subsMu</span><span class=p>.</span><span class=nf>Unlock</span><span class=p>()</span>
+
+    <span class=o>&lt;-</span><span class=nx>c</span> <span class=c1>// ожидаем закрытия канала (блокируемся)
+</span><span class=c1></span>  <span class=p>}</span>
+
+  <span class=k>return</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>wg</span> <span class=p>=</span> <span class=nf>NewWaitGroup</span><span class=p>()</span>
+
+  <span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span> <span class=c1>// пролетает сразу же, так как не было вызовов Add()
+</span><span class=c1></span>
+  <span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+  <span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span> <span class=c1>// ничего не делает
+</span><span class=c1></span>  <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
+  <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
+  <span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span> <span class=c1>// тоже пролетает сразу же
+</span><span class=c1></span>
+  <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+    <span class=nx>wg</span><span class=p>.</span><span class=nf>Add</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+
+    <span class=k>go</span> <span class=kd>func</span><span class=p>(</span><span class=nx>n</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+      <span class=k>defer</span> <span class=nx>wg</span><span class=p>.</span><span class=nf>Done</span><span class=p>()</span>
+
+      <span class=nb>print</span><span class=p>(</span><span class=nx>n</span><span class=p>,</span> <span class=s>&#34; &#34;</span><span class=p>)</span>
+    <span class=p>}(</span><span class=nx>i</span><span class=p>)</span>
+  <span class=p>}</span>
+
+  <span class=nx>wg</span><span class=p>.</span><span class=nf>Wait</span><span class=p>()</span> <span class=c1>// 1 4 3 2 0 (порядок будет произвольный)
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></div>
+</div>
+</details>
+<h2 id=алгоритм-бинарного-двоичного-поиска>Алгоритм бинарного (двоичного) поиска</h2>
 <p>Также известен как метод деления пополам или дихотомия - классический алгоритм поиска элемента в отсортированном массиве (слайсе), использующий дробление массива (слайса) на половины. У нас на входе может быть слайс вида <code>[]int{1, 3, 4, 6, 8, 10, 55, 56, 59, 70, 79, 81, 91, 10001}</code>, и нужно вернуть индекс числа <code>55</code> (результат будет <code>6 true</code>):</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>func</span> <span class=nf>BinarySearch</span><span class=p>(</span><span class=nx>in</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>searchFor</span> <span class=kt>int</span><span class=p>)</span> <span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>bool</span><span class=p>)</span> <span class=p>{</span>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kd>func</span> <span class=nf>BinarySearch</span><span class=p>(</span><span class=nx>in</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>searchFor</span> <span class=kt>int</span><span class=p>)</span> <span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>bool</span><span class=p>)</span> <span class=p>{</span>
 	<span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=nx>in</span><span class=p>)</span> <span class=o>==</span> <span class=mi>0</span> <span class=p>{</span>
 		<span class=k>return</span> <span class=mi>0</span><span class=p>,</span> <span class=kc>false</span>
 	<span class=p>}</span>
@@ -240,8 +501,14 @@ Go
 
 	<span class=k>return</span> <span class=mi>0</span><span class=p>,</span> <span class=kc>false</span>
 <span class=p>}</span>
-</code></pre></div><h2 id=обход-ссылок-из-файла>Обход ссылок из файла</h2>
+</code></pre></div>
+</div>
+</details>
+<h2 id=обход-ссылок-из-файла>Обход ссылок из файла</h2>
 <p>Дан некоторый файл, в котором содержатся HTTP ссылки на различные ресурсы. Нужно реализовать обход всех этих ссылок, и вывести в терминал <code>OK</code> в случае <code>200</code>-го кода ответа, и <code>Not OK</code> в противном случае. Засучаем рукава и в бой, пишем наивный вариант (читаем файл в память, и итерируем слайс ссылок):</p>
+<details class=spoiler>
+<summary>Первая итерация</summary>
+<div>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=p>(</span>
@@ -318,7 +585,10 @@ Go
 
   <span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=kc>nil</span>
 <span class=p>}</span>
-</code></pre></div><p>Файл со списком ссылок (<code>links_list.txt</code>):</p>
+</code></pre></div>
+</div>
+</details>
+<p>Файл со списком ссылок (<code>links_list.txt</code>):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text>https://www.yahoo.com/foobar
 https://stackoverflow.com/foobar
 https://blog.hook.sh/
@@ -335,6 +605,9 @@ OK https://ya.ru/
 Not OK https://github.com/foo/bar
 OK https://stackoverflow.com/
 </code></pre></div><p>И тут интервьювер обновляет постановку задачи - нужно выполнять работу асинхронно. И сделать так, чтоб после получения <strong>двух</strong> <code>OK</code> останавливать всю работу, отменяя уже отправленные запросы. Приводим свой код в соответствие, используя каналы по-максимуму:</p>
+<details class=spoiler>
+<summary>Вторая итерация</summary>
+<div>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
 <span class=kn>import</span> <span class=p>(</span>
@@ -493,6 +766,8 @@ OK https://stackoverflow.com/
   <span class=k>return</span> <span class=kc>false</span><span class=p>,</span> <span class=kc>nil</span>
 <span class=p>}</span>
 </code></pre></div>
+</div>
+</details>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
@@ -589,6 +864,9 @@ Make love, not war <br>
 <ol>
 <li><a href=#найти-пересечение-двух-неупорядоченных-слайсов-любой-длины>Найти пересечение двух неупорядоченных слайсов любой длины</a></li>
 <li><a href=#написать-генератор-случайных-чисел>Написать генератор случайных чисел</a></li>
+<li><a href=#слить-n-каналов-в-один>Слить N каналов в один</a></li>
+<li><a href=#сделать-конвейер-чисел>Сделать конвейер чисел</a></li>
+<li><a href=#сделать-кастомную-waitgroup-на-семафоре>Сделать кастомную WaitGroup на семафоре</a></li>
 <li><a href=#алгоритм-бинарного-двоичного-поиска>Алгоритм бинарного (двоичного) поиска</a></li>
 <li><a href=#обход-ссылок-из-файла>Обход ссылок из файла</a></li>
 </ol>
