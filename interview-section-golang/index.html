@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645190154">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645190154">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645190154">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645205443">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645205443">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645205443">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -57,7 +57,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 62 мин.
+Время чтения: 63 мин.
 </time>
 </div>
 </footer>
@@ -89,7 +89,7 @@ Go
 <li><a href=#как-устроены-строки-в-go>Как устроены строки в Go?</a></li>
 <li><a href=#в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</a>
 <ol>
-<li><a href=#как-вы-отсортируете-массив-структур-по-алфавиту-по-полю-name>Как вы отсортируете массив структур по алфавиту по полю <code>Name</code>?</a></li>
+<li><a href=#как-вы-отсортируете-массив-структур-по-алфавиту-по-полю-name>Как вы отсортируете <strong>массив структур</strong> по алфавиту по полю <code>Name</code>?</a></li>
 </ol>
 </li>
 <li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a>
@@ -98,6 +98,7 @@ Go
 <li><a href=#задача-про-слайсы-2>Задача про слайсы #2</a></li>
 </ol>
 </li>
+<li><a href=#какое-у-слайса-zero-value-какие-операции-над-ним-возможны>Какое у слайса zero value? Какие операции над ним возможны?</a></li>
 <li><a href=#что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</a>
 <ol>
 <li><a href=#как-растет-map>Как растет <code>map</code>?</a></li>
@@ -500,7 +501,7 @@ Go
 <li><a class=link href=https://golangforall.com/ru/post/golang-slice.html target=_blank rel=noopener>Принцип работы типа slice в GO</a></li>
 </ul>
 </blockquote>
-<h4 id=как-вы-отсортируете-массив-структур-по-алфавиту-по-полю-name>Как вы отсортируете массив структур по алфавиту по полю <code>Name</code>?</h4>
+<h4 id=как-вы-отсортируете-массив-структур-по-алфавиту-по-полю-name>Как вы отсортируете <strong>массив структур</strong> по алфавиту по полю <code>Name</code>?</h4>
 <p>Например, преобразую массив в слайс и воспользуюсь функцией <code>sort.SliceStable</code>:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
 
@@ -581,6 +582,15 @@ Go
 <li><a class=link href=https://go.dev/ref/spec#Slice_expressions target=_blank rel=noopener>Full slice expressions</a></li>
 </ul>
 </blockquote>
+<h3 id=какое-у-слайса-zero-value-какие-операции-над-ним-возможны>Какое у слайса zero value? Какие операции над ним возможны?</h3>
+<p>Zero value у слайса всегда <code>nil</code>, а <code>len</code> и <code>cap</code> равны нулю, так как &ldquo;под ним&rdquo; нет инициализированного массива:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>var</span> <span class=nx>a</span> <span class=p>[]</span><span class=kt>int</span>
+
+<span class=nb>println</span><span class=p>(</span><span class=nx>a</span> <span class=o>==</span> <span class=kc>nil</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>a</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>a</span><span class=p>))</span> <span class=c1>// true 0 0
+</span><span class=c1></span><span class=nx>a</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+<span class=nb>println</span><span class=p>(</span><span class=nx>a</span> <span class=o>==</span> <span class=kc>nil</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>a</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>a</span><span class=p>))</span> <span class=c1>// false 1 1
+</span></code></pre></div><p>Как видно из примера выше - несмотря на то, что <code>a == nil</code> (слайс &ldquo;не инициализирован&rdquo;), с этим слайсом возможна операция <code>append</code> - в этом случае Go самостоятельно создаёт нижележащий массив и всё работает так, как и ожидается. Более того - <strong>для полной очистки слайса</strong> рекомендуется его присваивать к <code>nil</code>.</p>
+<p>Так же важно помнить, что не делая <code>make</code> для слайса - не получится сделать пре-аллокацию, что часто очень болезненно для производительности.</p>
 <h3 id=что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</h3>
 <p>Карта (<code>map</code> или <code>hashmap</code>) - это <strong>неупорядоченная</strong> коллекция пар вида ключ-значение. Пример:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>myMap</span> <span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span>
@@ -1959,7 +1969,7 @@ Make love, not war <br>
 <li><a href=#как-устроены-строки-в-go>Как устроены строки в Go?</a></li>
 <li><a href=#в-чём-ключевое-отличие-слайса-среза-от-массива>В чём ключевое отличие слайса (среза) от массива?</a>
 <ol>
-<li><a href=#как-вы-отсортируете-массив-структур-по-алфавиту-по-полю-name>Как вы отсортируете массив структур по алфавиту по полю <code>Name</code>?</a></li>
+<li><a href=#как-вы-отсортируете-массив-структур-по-алфавиту-по-полю-name>Как вы отсортируете <strong>массив структур</strong> по алфавиту по полю <code>Name</code>?</a></li>
 </ol>
 </li>
 <li><a href=#как-работает-append-в-слайсе>Как работает <code>append</code> в слайсе?</a>
@@ -1968,6 +1978,7 @@ Make love, not war <br>
 <li><a href=#задача-про-слайсы-2>Задача про слайсы #2</a></li>
 </ol>
 </li>
+<li><a href=#какое-у-слайса-zero-value-какие-операции-над-ним-возможны>Какое у слайса zero value? Какие операции над ним возможны?</a></li>
 <li><a href=#что-можешь-рассказать-про-map>Что можешь рассказать про <code>map</code>?</a>
 <ol>
 <li><a href=#как-растет-map>Как растет <code>map</code>?</a></li>
