@@ -3,7 +3,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
 "><title>Вопросы и ответы для собеседования Go-разработчика</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.b11ad654907f68754459d2767397b189020e3b4145a700672602bfd9b65675a9.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2a99c8d35075b709daf9ac6b930d33a2caa676a328c16bed44b32faa852938ae.css>
 <meta property="og:title" content="Вопросы и ответы для собеседования Go-разработчика">
 <meta property="og:description" content="Структурирование информации - очень полезный навык. И дабы привнести некоторый порядок в этап подготовки к интервью на должность Golang разработчика (и немножко техлида) решил записывать в этой заметке в формате FAQ те вопросы, которые я задавал, задавали мне или просто были мной найдены на просторах сети вместе с ответами на них. Стоит относиться к ним как к шпаргалке (если затупишь на реальном интервью - будет где подсмотреть) и просто набору тем, которым тебе стоит уделить внимание.
 ">
@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645205443">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645205443">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645205443">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645207404">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645207404">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645207404">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -28,7 +28,7 @@
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://blog.hook.sh/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Назад</span>
 </a>
 </div>
@@ -644,12 +644,7 @@ Go
 <li>Seed для рандомизации хэшей (чтобы было сложнее заddosить - попытаться подобрать ключи так, что будут сплошные коллизии)</li>
 <li>Всякие служебные поля и главное указатель на buckets, где хранятся значения</li>
 </ul>
-<p><figure class=gallery-image style=flex-grow:209;flex-basis:503px>
-<a href=/interview-section-golang/hmap.png data-size=3078x1468>
-<img src=/interview-section-golang/hmap.png width=3078 height=1468 srcset="/interview-section-golang/hmap_hufdd9a202a51571b308bbd0093c120e39_177443_480x0_resize_box_3.png 480w, /interview-section-golang/hmap_hufdd9a202a51571b308bbd0093c120e39_177443_1024x0_resize_box_3.png 1024w" loading=lazy alt=hmap>
-</a>
-<figcaption>hmap</figcaption>
-</figure></p>
+<p><img src=/interview-section-golang/hmap.png width=3078 height=1468 srcset="/interview-section-golang/hmap_hufdd9a202a51571b308bbd0093c120e39_177443_480x0_resize_box_3.png 480w, /interview-section-golang/hmap_hufdd9a202a51571b308bbd0093c120e39_177443_1024x0_resize_box_3.png 1024w" loading=lazy alt=hmap class=gallery-image data-flex-grow=209 data-flex-basis=503px></p>
 <p>На картинке схематичное изображение структуры в памяти - есть хэдер hmap, указатель на который и есть map в Go (именно он создается при объявлении с помощью var, но не инициализируется, из-за чего падает программа при попытке вставки). Поле <code>buckets</code> - хранилище пар ключ-значение, таких &ldquo;ведер&rdquo; несколько, в каждом лежит 8 пар. Сначала в &ldquo;ведре&rdquo; лежат слоты для дополнительных битов хэшей (<code>e0..e7</code> названо <code>e</code> - потому что extra hash bits). Далее лежат ключи и значения как сначала список всех ключей, потом список всех значений.</p>
 <p>По хэш функции определяется в какое &ldquo;ведро&rdquo; мы кладем значение, внутри каждого &ldquo;ведра&rdquo; может лежать до 8 коллизий, в конце каждого &ldquo;ведра&rdquo; есть указатель на дополнительное, если вдруг предыдущее переполнилось.</p>
 <h4 id=как-растет-map>Как растет <code>map</code>?</h4>
@@ -1873,7 +1868,7 @@ hello world
 <article class=has-image>
 <a href=/interview-section-golang-coding/>
 <div class=article-image>
-<img src=/interview-section-golang-coding/cover.1e3a141317c9794e24ee16d558687723_hu6c745680144d0a85df5a67b80461116c_57776_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=interview-section-golang-coding data-hash="md5-HjoUExfJeU4k7hbVWGh3Iw==">
+<img src=/interview-section-golang-coding/cover.1e3a141317c9794e24ee16d558687723_hu6c745680144d0a85df5a67b80461116c_57776_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post Задачи и решения для лайв-кодинга на Go" data-key=interview-section-golang-coding data-hash="md5-HjoUExfJeU4k7hbVWGh3Iw==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Задачи и решения для лайв-кодинга на Go</h2>
@@ -1883,7 +1878,7 @@ hello world
 <article class=has-image>
 <a href=/interview-section-network/>
 <div class=article-image>
-<img src=/interview-section-network/cover.c258292f544432328883fabf607bf92b_hu21de3eef183cf18e204d3e54b899aa35_31715_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=interview-section-network data-hash="md5-wlgpL1REMjKIg/q/YHv5Kw==">
+<img src=/interview-section-network/cover.c258292f544432328883fabf607bf92b_hu21de3eef183cf18e204d3e54b899aa35_31715_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post Вопросы и ответы по сетям и протоколам" data-key=interview-section-network data-hash="md5-wlgpL1REMjKIg/q/YHv5Kw==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Вопросы и ответы по сетям и протоколам</h2>
@@ -2103,7 +2098,7 @@ Make love, not war <br>
 </section>
 </aside>
 </div>
-<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
 <script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
 <script data-no-instant>(function(){const a=document.querySelectorAll('.outdated-post'),b=new Date;for(let c=0,f=a.length;c<f;c++){const d=a[c],e=new Date(d.getAttribute('data-posted-at'));if(!isNaN(e.valueOf())&&e.getFullYear()>1){const a=Math.abs(b.getTime()-e.getTime()),c=Math.ceil(a/(1e3*3600*24));c>=547&&(d.style.display='block',d.style.visibility='visible')}}})()</script>
 </body>

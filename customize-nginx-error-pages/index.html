@@ -3,7 +3,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="При работе с web-ресурсом возникают ошибки, и причина их может быть совершенно различна - от опечатки в URL, до ошибок самого сервера. И если у нас внешним сервером является nginx - мы можем довольно удобно указать свое содержание, которое будет выводиться при той или иной ситуации. Во-первых, это позволяет в какой-то мере замаскировать используемое ПО (т.к. определение по сигнатурам ответа становится невозможным); во-вторых - это визуальная кастомизация, которая положительно говорит о ресурсе в целом.
 "><title>Настройка страниц ошибок для nginx</title>
 <link rel=canonical href=https://blog.hook.sh/customize-nginx-error-pages/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.b11ad654907f68754459d2767397b189020e3b4145a700672602bfd9b65675a9.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2a99c8d35075b709daf9ac6b930d33a2caa676a328c16bed44b32faa852938ae.css>
 <meta property="og:title" content="Настройка страниц ошибок для nginx">
 <meta property="og:description" content="При работе с web-ресурсом возникают ошибки, и причина их может быть совершенно различна - от опечатки в URL, до ошибок самого сервера. И если у нас внешним сервером является nginx - мы можем довольно удобно указать свое содержание, которое будет выводиться при той или иной ситуации. Во-первых, это позволяет в какой-то мере замаскировать используемое ПО (т.к. определение по сигнатурам ответа становится невозможным); во-вторых - это визуальная кастомизация, которая положительно говорит о ресурсе в целом.
 ">
@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/customize-nginx-error-pages/cover.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645205437">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645205437">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645205437">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645207399">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645207399">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645207399">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -28,7 +28,7 @@
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://blog.hook.sh/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Назад</span>
 </a>
 </div>
@@ -162,11 +162,7 @@ Admin
   <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
 <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
 </code></pre></div><p>Превью примера:</p>
-<p><figure>
-<a href=https://hsto.org/files/2f2/eef/c10/2f2eefc100fe4c918cad22b54f5efe72.gif>
-<img src=https://hsto.org/files/2f2/eef/c10/2f2eefc100fe4c918cad22b54f5efe72.gif loading=lazy>
-</a>
-</figure></p>
+<p><img src=https://hsto.org/files/2f2/eef/c10/2f2eefc100fe4c918cad22b54f5efe72.gif loading=lazy></p>
 <p>Для создания других страниц будет достаточно изменить в примере все вхождения <code>404</code> на необходимый код, и поправить описание ошибки между <code>&lt;h4>...&lt;/h4></code>.</p>
 </section>
 <footer class=article-footer>
@@ -195,7 +191,7 @@ Admin
 <article class=has-image>
 <a href=/compile-and-config-msmtp/>
 <div class=article-image>
-<img src=/compile-and-config-msmtp/cover.74e5f5752c378bc5c249233e9c0f8284_hub577c79af8463c924351e5a1445741f0_93501_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=compile-and-config-msmtp data-hash="md5-dOX1dSw3i8XCSSM+nA+ChA==">
+<img src=/compile-and-config-msmtp/cover.74e5f5752c378bc5c249233e9c0f8284_hub577c79af8463c924351e5a1445741f0_93501_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Собираем и настраиваем msmtp" data-key=compile-and-config-msmtp data-hash="md5-dOX1dSw3i8XCSSM+nA+ChA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Собираем и настраиваем msmtp</h2>
@@ -205,7 +201,7 @@ Admin
 <article class=has-image>
 <a href=/iptables-for-docker-swarm/>
 <div class=article-image>
-<img src=/iptables-for-docker-swarm/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=iptables-for-docker-swarm data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
+<img src=/iptables-for-docker-swarm/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Настройка iptables для swarm кластера" data-key=iptables-for-docker-swarm data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Настройка iptables для swarm кластера</h2>
@@ -215,7 +211,7 @@ Admin
 <article class=has-image>
 <a href=/ssh-honeypot/>
 <div class=article-image>
-<img src=/ssh-honeypot/cover.a3b24e7c925b55ba3b2c0728bc5d5145_hu3201198c97328eef28a158f0c8170276_222779_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=ssh-honeypot data-hash="md5-o7JOfJJbVbo7LAcovF1RRQ==">
+<img src=/ssh-honeypot/cover.a3b24e7c925b55ba3b2c0728bc5d5145_hu3201198c97328eef28a158f0c8170276_222779_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post SSH Honeypot — просто и со вкусом" data-key=ssh-honeypot data-hash="md5-o7JOfJJbVbo7LAcovF1RRQ==">
 </div>
 <div class=article-details>
 <h2 class=article-title>SSH Honeypot — просто и со вкусом</h2>
@@ -225,7 +221,7 @@ Admin
 <article class=has-image>
 <a href=/setup-private-proxy-server/>
 <div class=article-image>
-<img src=/setup-private-proxy-server/cover.a7487377d94a76a3454be12889ada512_hu07b4d3c852e20c10f4c2e2e158cf3f2d_95916_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=setup-private-proxy-server data-hash="md5-p0hzd9lKdqNFS+Eoia2lEg==">
+<img src=/setup-private-proxy-server/cover.a7487377d94a76a3454be12889ada512_hu07b4d3c852e20c10f4c2e2e158cf3f2d_95916_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Поднимаем свой, приватный прокси-сервер" data-key=setup-private-proxy-server data-hash="md5-p0hzd9lKdqNFS+Eoia2lEg==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Поднимаем свой, приватный прокси-сервер</h2>
@@ -235,7 +231,7 @@ Admin
 <article class=has-image>
 <a href=/little-iptables-tips/>
 <div class=article-image>
-<img src=/little-iptables-tips/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=little-iptables-tips data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
+<img src=/little-iptables-tips/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Маленькая хитрость iptables" data-key=little-iptables-tips data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Маленькая хитрость iptables</h2>
@@ -310,7 +306,7 @@ Make love, not war <br>
 </section>
 </aside>
 </div>
-<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
 <script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
 <script data-no-instant>(function(){const a=document.querySelectorAll('.outdated-post'),b=new Date;for(let c=0,f=a.length;c<f;c++){const d=a[c],e=new Date(d.getAttribute('data-posted-at'));if(!isNaN(e.valueOf())&&e.getFullYear()>1){const a=Math.abs(b.getTime()-e.getTime()),c=Math.ceil(a/(1e3*3600*24));c>=547&&(d.style.display='block',d.style.visibility='visible')}}})()</script>
 </body>

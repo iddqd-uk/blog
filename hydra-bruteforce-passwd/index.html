@@ -4,7 +4,7 @@
  В тот момент, когда пинтест заходит в тупик - одним из крайних аргументов в тесте на проникновение является подбор паролей. Сервисы, к которым можно применить данный метод атаки - самые различные. А как следствие - различны и протоколы, и форматы обращений. Надо бы как то унифицировать инструменты для решения этой задачи - не хорошо под каждый новый случай писать новый брутер своими ручками.
 "><title>Брутим пароли с Гидрой (hydra)</title>
 <link rel=canonical href=https://blog.hook.sh/hydra-bruteforce-passwd/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.b11ad654907f68754459d2767397b189020e3b4145a700672602bfd9b65675a9.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2a99c8d35075b709daf9ac6b930d33a2caa676a328c16bed44b32faa852938ae.css>
 <meta property="og:title" content="Брутим пароли с Гидрой (hydra)">
 <meta property="og:description" content=" Статья носит носит строго познавательный характер, за применение кем либо описанных в статье методик автор ответственности не несет.
  В тот момент, когда пинтест заходит в тупик - одним из крайних аргументов в тесте на проникновение является подбор паролей. Сервисы, к которым можно применить данный метод атаки - самые различные. А как следствие - различны и протоколы, и форматы обращений. Надо бы как то унифицировать инструменты для решения этой задачи - не хорошо под каждый новый случай писать новый брутер своими ручками.
@@ -19,9 +19,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/hydra-bruteforce-passwd/cover.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645205441">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645205441">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645205441">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645207402">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645207402">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645207402">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -31,7 +31,7 @@
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://blog.hook.sh/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Назад</span>
 </a>
 </div>
@@ -260,12 +260,7 @@ Examples:
 </blockquote>
 <h4 id=basic-authentication>Basic Authentication</h4>
 <p>Например, сканируя диапазон адресов мы натыкаемся на некоторый интерфейс, доступный по http протоколу, но закрытый для доступа при помощи Basic Authentication (<a class=link href=http://nginx.org/ru/docs/http/ngx_http_auth_basic_module.html target=_blank rel=noopener>пример настройки с помощью nginx</a>):</p>
-<p><figure>
-<a href=https://habrastorage.org/files/2b8/736/1f8/2b87361f8217444ea5a12e36482fac53>
-<img src=https://habrastorage.org/files/2b8/736/1f8/2b87361f8217444ea5a12e36482fac53 loading=lazy alt=screen>
-</a>
-<figcaption>screen</figcaption>
-</figure></p>
+<p><img src=https://habrastorage.org/files/2b8/736/1f8/2b87361f8217444ea5a12e36482fac53 loading=lazy alt=screen></p>
 <p>И у нас стоит задача вспомнить наш же забытый пароль ;) Давай определимся с тем, какие данные у нас есть:</p>
 <ul>
 <li>IP сервера <code>192.168.1.2</code></li>
@@ -302,12 +297,7 @@ $ cat ./hydra_result.log
 <h4 id=ftp>FTP</h4>
 <p>Другой пример - случайно находим в сети роутер MikroTik, да с открытыми наружу портами 80 (http) и 21 (ftp). Решаем сообщить его владельцу о наличии данной неприятности, но для этого нужно сперва получить доступ к этому самому микротику.</p>
 <p>Брутить вебморду микротика можно, но проходит это значительно медленнее, чем например брутить ftp. А мы знаем, что стандартный логин на микротиках <code>admin</code>, и используется один пароль ко всем сервисам. Получив пароль для ftp - получим доступ ко всему остальному:</p>
-<p><figure>
-<a href=https://habrastorage.org/files/01f/0d6/e97/01f0d6e979af4ac6a654c89a7923fd02>
-<img src=https://habrastorage.org/files/01f/0d6/e97/01f0d6e979af4ac6a654c89a7923fd02 loading=lazy alt=screenshot>
-</a>
-<figcaption>screenshot</figcaption>
-</figure></p>
+<p><img src=https://habrastorage.org/files/01f/0d6/e97/01f0d6e979af4ac6a654c89a7923fd02 loading=lazy alt=screenshot></p>
 <p>Исходные данные:</p>
 <ul>
 <li>IP сервера <code>178.72.83.246</code></li>
@@ -334,28 +324,13 @@ $ cat ./hydra_result.log
 <span class=m>1</span> of <span class=m>1</span> target successfully completed, <span class=m>1</span> valid password found
 Hydra <span class=o>(</span>http://www.thc.org/thc-hydra<span class=o>)</span> finished at 2015-08-12 13:46:51
 </code></pre></div><p>Спустя каких то 30 секунд ещё один словарный пароль <code>adminadmin</code> был успешно подобран. После этого успешно логинимся в веб-панель:</p>
-<p><figure>
-<a href=https://habrastorage.org/files/7c2/bba/0cb/7c2bba0cbb864ce6953a3a7adcf0dc9c>
-<img src=https://habrastorage.org/files/7c2/bba/0cb/7c2bba0cbb864ce6953a3a7adcf0dc9c loading=lazy alt=screenshot>
-</a>
-<figcaption>screenshot</figcaption>
-</figure></p>
+<p><img src=https://habrastorage.org/files/7c2/bba/0cb/7c2bba0cbb864ce6953a3a7adcf0dc9c loading=lazy alt=screenshot></p>
 <p>Выясняем контакты администратора, сообщаем ему о наличии уязвимости, и больше ничего не делаем ;)</p>
 <h4 id=веб---авторизация>Веб - авторизация</h4>
 <p>Например - мы забыли пароль к роутеру, который использует веб-авторизацию. Т.е. не просто &ldquo;выплывающее окошко браузера&rdquo;, а полноценные поля для ввода пары логин:пароль. Давай попытаемся подобрать пароль и к нему. В рассматриваемом примере это OpenWrt:</p>
-<p><figure>
-<a href=https://habrastorage.org/files/ad2/e6d/ba9/ad2e6dba902c4c07adddcdda88ae4ba8>
-<img src=https://habrastorage.org/files/ad2/e6d/ba9/ad2e6dba902c4c07adddcdda88ae4ba8 loading=lazy alt=screenshot>
-</a>
-<figcaption>screenshot</figcaption>
-</figure></p>
+<p><img src=https://habrastorage.org/files/ad2/e6d/ba9/ad2e6dba902c4c07adddcdda88ae4ba8 loading=lazy alt=screenshot></p>
 <p>Открываем панель отладки браузера (<code>F12</code> в Chromium-based браузерах), вкладка <code>Network</code> и отмечаем галочкой <code>Preserve log</code>. После этого вводим пароль, например, <code>test_passw0rd</code> (<em>логин у нас уже введен</em>), жмем кнопку &ldquo;Login&rdquo;, и смотрим в консоли что и куда уходит:</p>
-<p><figure>
-<a href=https://habrastorage.org/files/3c8/62d/0d0/3c862d0d07034913a3e285feb5f3fe5c>
-<img src=https://habrastorage.org/files/3c8/62d/0d0/3c862d0d07034913a3e285feb5f3fe5c loading=lazy alt=screenshot>
-</a>
-<figcaption>screenshot</figcaption>
-</figure></p>
+<p><img src=https://habrastorage.org/files/3c8/62d/0d0/3c862d0d07034913a3e285feb5f3fe5c loading=lazy alt=screenshot></p>
 <p>Отлично, теперь давай подытожим те данные, которыми мы располагаем:</p>
 <ul>
 <li>IP сервера <code>178.72.90.181</code></li>
@@ -445,7 +420,7 @@ $ <span class=k>for</span> proc in <span class=k>$(</span>ps ax <span class=p>|<
 <article class=has-image>
 <a href=/ssh-honeypot/>
 <div class=article-image>
-<img src=/ssh-honeypot/cover.a3b24e7c925b55ba3b2c0728bc5d5145_hu3201198c97328eef28a158f0c8170276_222779_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=ssh-honeypot data-hash="md5-o7JOfJJbVbo7LAcovF1RRQ==">
+<img src=/ssh-honeypot/cover.a3b24e7c925b55ba3b2c0728bc5d5145_hu3201198c97328eef28a158f0c8170276_222779_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post SSH Honeypot — просто и со вкусом" data-key=ssh-honeypot data-hash="md5-o7JOfJJbVbo7LAcovF1RRQ==">
 </div>
 <div class=article-details>
 <h2 class=article-title>SSH Honeypot — просто и со вкусом</h2>
@@ -455,7 +430,7 @@ $ <span class=k>for</span> proc in <span class=k>$(</span>ps ax <span class=p>|<
 <article class=has-image>
 <a href=/iptables-for-docker-swarm/>
 <div class=article-image>
-<img src=/iptables-for-docker-swarm/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=iptables-for-docker-swarm data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
+<img src=/iptables-for-docker-swarm/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Настройка iptables для swarm кластера" data-key=iptables-for-docker-swarm data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Настройка iptables для swarm кластера</h2>
@@ -465,7 +440,7 @@ $ <span class=k>for</span> proc in <span class=k>$(</span>ps ax <span class=p>|<
 <article class=has-image>
 <a href=/compile-and-config-msmtp/>
 <div class=article-image>
-<img src=/compile-and-config-msmtp/cover.74e5f5752c378bc5c249233e9c0f8284_hub577c79af8463c924351e5a1445741f0_93501_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=compile-and-config-msmtp data-hash="md5-dOX1dSw3i8XCSSM+nA+ChA==">
+<img src=/compile-and-config-msmtp/cover.74e5f5752c378bc5c249233e9c0f8284_hub577c79af8463c924351e5a1445741f0_93501_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Собираем и настраиваем msmtp" data-key=compile-and-config-msmtp data-hash="md5-dOX1dSw3i8XCSSM+nA+ChA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Собираем и настраиваем msmtp</h2>
@@ -475,7 +450,7 @@ $ <span class=k>for</span> proc in <span class=k>$(</span>ps ax <span class=p>|<
 <article class=has-image>
 <a href=/little-iptables-tips/>
 <div class=article-image>
-<img src=/little-iptables-tips/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy data-key=little-iptables-tips data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
+<img src=/little-iptables-tips/cover.46786305ea94fea9001f78310af2161c_huca17b364cb926e2346fafd474740dcec_161710_250x150_fill_q75_box_smart1.jpg width=250 height=150 loading=lazy alt="Featured image of post Маленькая хитрость iptables" data-key=little-iptables-tips data-hash="md5-RnhjBeqU/qkAH3gxCvIWHA==">
 </div>
 <div class=article-details>
 <h2 class=article-title>Маленькая хитрость iptables</h2>
@@ -564,7 +539,7 @@ Make love, not war <br>
 </section>
 </aside>
 </div>
-<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
 <script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
 <script data-no-instant>(function(){const a=document.querySelectorAll('.outdated-post'),b=new Date;for(let c=0,f=a.length;c<f;c++){const d=a[c],e=new Date(d.getAttribute('data-posted-at'));if(!isNaN(e.valueOf())&&e.getFullYear()>1){const a=Math.abs(b.getTime()-e.getTime()),c=Math.ceil(a/(1e3*3600*24));c>=547&&(d.style.display='block',d.style.visibility='visible')}}})()</script>
 </body>
