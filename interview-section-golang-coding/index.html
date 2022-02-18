@@ -4,14 +4,14 @@
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 "><title>Задачи и решения для лайв-кодинга на Go</title>
 <link rel=canonical href=https://blog.hook.sh/interview-section-golang-coding/>
-<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2505968f44d2e3e27dc3b1cecad9c2bcba873012fafced7bdfa0bccfbd890b11.css>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.b11ad654907f68754459d2767397b189020e3b4145a700672602bfd9b65675a9.css>
 <meta property="og:title" content="Задачи и решения для лайв-кодинга на Go">
 <meta property="og:description" content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 ">
 <meta property="og:url" content="https://blog.hook.sh/interview-section-golang-coding/">
 <meta property="og:site_name" content="blog [dot] hook">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="golang"><meta property="article:tag" content="interview"><meta property="article:tag" content="coding"><meta property="article:published_time" content="2022-02-08T06:47:03+00:00"><meta property="article:modified_time" content="2022-02-08T06:47:03+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="go"><meta property="article:tag" content="coding"><meta property="article:published_time" content="2022-02-08T06:47:03+00:00"><meta property="article:modified_time" content="2022-02-08T06:47:03+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <meta name=twitter:title content="Задачи и решения для лайв-кодинга на Go">
 <meta name=twitter:description content="В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
@@ -19,9 +19,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang-coding/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645119005">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645119005">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645119005">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645190152">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645190152">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645190152">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -45,6 +45,9 @@ extended">
 </div>
 <div class=article-details>
 <header class=article-category>
+<a href=/categories/interview/ style=background-color:#0b2a4f;color:#fff>
+Interview
+</a>
 <a href=/categories/go/ style=background-color:#4fa2ac;color:#fff>
 Go
 </a>
@@ -57,7 +60,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 13 мин.
+Время чтения: 14 мин.
 </time>
 </div>
 </footer>
@@ -69,6 +72,20 @@ Go
 </div>
 <p>В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.</p>
 <p>Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.</p>
+<div class=toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#найти-пересечение-двух-неупорядоченных-слайсов-любой-длины>Найти пересечение двух неупорядоченных слайсов любой длины</a></li>
+<li><a href=#развернуть-односвязный-список>Развернуть односвязный список</a></li>
+<li><a href=#написать-генератор-случайных-чисел>Написать генератор случайных чисел</a></li>
+<li><a href=#слить-n-каналов-в-один>Слить N каналов в один</a></li>
+<li><a href=#сделать-конвейер-чисел>Сделать конвейер чисел</a></li>
+<li><a href=#сделать-кастомную-waitgroup-на-семафоре>Сделать кастомную WaitGroup на семафоре</a></li>
+<li><a href=#алгоритм-бинарного-двоичного-поиска>Алгоритм бинарного (двоичного) поиска</a></li>
+<li><a href=#обход-ссылок-из-файла>Обход ссылок из файла</a></li>
+</ol>
+</nav>
+</div>
 <h2 id=найти-пересечение-двух-неупорядоченных-слайсов-любой-длины>Найти пересечение двух неупорядоченных слайсов любой длины</h2>
 <p>Перечесение - это те элементы, что присутствуют в обоих слайсах, то есть:</p>
 <ul>
@@ -179,6 +196,64 @@ Go
 </span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}))</span>      <span class=c1>// [1, 1, 1]
 </span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>1</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>}))</span>         <span class=c1>// [2, 2]
 </span><span class=c1></span>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v\n&#34;</span><span class=p>,</span> <span class=nf>intersection</span><span class=p>([]</span><span class=kt>int</span><span class=p>{</span><span class=mi>4</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>5</span><span class=p>},</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>9</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>4</span><span class=p>}))</span>   <span class=c1>// [9, 4]
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></div>
+</div>
+</details>
+<h2 id=развернуть-односвязный-список>Развернуть односвязный список</h2>
+<p>Односвязный список (single linked list) может быть представлен структурой:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>LinkNode</span> <span class=kd>struct</span> <span class=p>{</span>
+  <span class=nx>next</span>  <span class=o>*</span><span class=nx>LinkNode</span>
+  <span class=nx>value</span> <span class=kt>int</span>
+<span class=p>}</span>
+</code></pre></div><p>Нужно создать три элемента, и связать их последовательно. А после развернуть этот список в обратную сторону.</p>
+<details class=spoiler>
+<summary>Решение</summary>
+<div>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kn>package</span> <span class=nx>main</span>
+
+<span class=kd>type</span> <span class=nx>LinkNode</span> <span class=kd>struct</span> <span class=p>{</span>
+	<span class=nx>next</span>  <span class=o>*</span><span class=nx>LinkNode</span>
+	<span class=nx>value</span> <span class=kt>int</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=p>(</span><span class=nx>l</span> <span class=o>*</span><span class=nx>LinkNode</span><span class=p>)</span> <span class=nf>Print</span><span class=p>()</span> <span class=p>{</span>
+	<span class=c1>// ставим current указателем на первый элемент, на каждой итерации заменяя его на next
+</span><span class=c1></span>	<span class=c1>// до тех пор, пока current не станет nil
+</span><span class=c1></span>	<span class=k>for</span> <span class=nx>current</span> <span class=o>:=</span> <span class=nx>l</span><span class=p>;</span> <span class=nx>current</span> <span class=o>!=</span> <span class=kc>nil</span><span class=p>;</span> <span class=nx>current</span> <span class=p>=</span> <span class=nx>current</span><span class=p>.</span><span class=nx>next</span> <span class=p>{</span>
+		<span class=nb>print</span><span class=p>(</span><span class=nx>current</span><span class=p>.</span><span class=nx>value</span><span class=p>)</span>
+
+		<span class=k>if</span> <span class=nx>current</span><span class=p>.</span><span class=nx>next</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+			<span class=nb>println</span><span class=p>(</span><span class=s>&#34; -&gt;&#34;</span><span class=p>,</span> <span class=nx>current</span><span class=p>.</span><span class=nx>next</span><span class=p>.</span><span class=nx>value</span><span class=p>)</span>
+		<span class=p>}</span>
+	<span class=p>}</span>
+
+	<span class=nb>println</span><span class=p>()</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+	<span class=c1>// инициализируем элементы списка
+</span><span class=c1></span>	<span class=kd>var</span> <span class=nx>n1</span><span class=p>,</span> <span class=nx>n2</span><span class=p>,</span> <span class=nx>n3</span> <span class=p>=</span> <span class=nx>LinkNode</span><span class=p>{</span><span class=nx>value</span><span class=p>:</span> <span class=mi>1</span><span class=p>},</span> <span class=nx>LinkNode</span><span class=p>{</span><span class=nx>value</span><span class=p>:</span> <span class=mi>2</span><span class=p>},</span> <span class=nx>LinkNode</span><span class=p>{</span><span class=nx>value</span><span class=p>:</span> <span class=mi>3</span><span class=p>}</span>
+	<span class=nx>n1</span><span class=p>.</span><span class=nx>next</span><span class=p>,</span> <span class=nx>n2</span><span class=p>.</span><span class=nx>next</span> <span class=p>=</span> <span class=o>&amp;</span><span class=nx>n2</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>n3</span> <span class=c1>// и связываем их
+</span><span class=c1></span>
+	<span class=nx>n1</span><span class=p>.</span><span class=nf>Print</span><span class=p>()</span>
+	<span class=c1>// 1 -&gt; 2
+</span><span class=c1></span>	<span class=c1>// 2 -&gt; 3
+</span><span class=c1></span>	<span class=c1>// 3
+</span><span class=c1></span>
+	<span class=c1>// и теперь обратим список в зад
+</span><span class=c1></span>	<span class=kd>var</span> <span class=nx>prev</span><span class=p>,</span> <span class=nx>next</span> <span class=o>*</span><span class=nx>LinkNode</span>
+
+	<span class=c1>// крутим цикл до тех пор, пока current не станет nil
+</span><span class=c1></span>	<span class=k>for</span> <span class=nx>current</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>n1</span><span class=p>;</span> <span class=nx>current</span> <span class=o>!=</span> <span class=kc>nil</span><span class=p>;</span> <span class=p>{</span>
+		<span class=nx>next</span><span class=p>,</span> <span class=nx>current</span><span class=p>.</span><span class=nx>next</span> <span class=p>=</span> <span class=nx>current</span><span class=p>.</span><span class=nx>next</span><span class=p>,</span> <span class=nx>prev</span>
+		<span class=nx>prev</span><span class=p>,</span> <span class=nx>current</span> <span class=p>=</span> <span class=nx>current</span><span class=p>,</span> <span class=nx>next</span>
+	<span class=p>}</span>
+
+	<span class=nx>n3</span><span class=p>.</span><span class=nf>Print</span><span class=p>()</span>
+	<span class=c1>// 3 -&gt; 2
+</span><span class=c1></span>	<span class=c1>// 2 -&gt; 1
+</span><span class=c1></span>	<span class=c1>// 1
 </span><span class=c1></span><span class=p>}</span>
 </code></pre></div>
 </div>
@@ -771,8 +846,7 @@ OK https://stackoverflow.com/
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=/tags/golang/>golang</a>
-<a href=/tags/interview/>interview</a>
+<a href=/tags/go/>go</a>
 <a href=/tags/coding/>coding</a>
 </section>
 <div style=display:flex;justify-content:space-between;margin-top:1em>
@@ -798,6 +872,16 @@ OK https://stackoverflow.com/
 </div>
 <div class=article-details>
 <h2 class=article-title>Вопросы и ответы для собеседования Go-разработчика</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/interview-section-network/>
+<div class=article-image>
+<img src=/interview-section-network/cover.c258292f544432328883fabf607bf92b_hu21de3eef183cf18e204d3e54b899aa35_31715_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy data-key=interview-section-network data-hash="md5-wlgpL1REMjKIg/q/YHv5Kw==">
+</div>
+<div class=article-details>
+<h2 class=article-title>Вопросы и ответы по сетям и протоколам</h2>
 </div>
 </a>
 </article>
@@ -863,6 +947,7 @@ Make love, not war <br>
 <nav id=TableOfContents>
 <ol>
 <li><a href=#найти-пересечение-двух-неупорядоченных-слайсов-любой-длины>Найти пересечение двух неупорядоченных слайсов любой длины</a></li>
+<li><a href=#развернуть-односвязный-список>Развернуть односвязный список</a></li>
 <li><a href=#написать-генератор-случайных-чисел>Написать генератор случайных чисел</a></li>
 <li><a href=#слить-n-каналов-в-один>Слить N каналов в один</a></li>
 <li><a href=#сделать-конвейер-чисел>Сделать конвейер чисел</a></li>
