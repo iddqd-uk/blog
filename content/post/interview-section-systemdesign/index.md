@@ -5,7 +5,7 @@ date: 2022-05-02T06:17:19Z
 expirydate: 2026-08-03T06:17:19Z
 draft: true # uncomment this!
 image: cover.png
-categories: [dev]
+categories: [interview]
 tags: [interview, design]
 ---
 

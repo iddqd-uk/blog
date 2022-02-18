@@ -62,7 +62,22 @@ details.spoiler {
 }
 
 /**
- * Table Of Contents widget
+ * Table Of Contents - block
+ */
+div.toc {
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+  }
+  li:before {
+    content: counters(item,".")". ";
+    counter-increment: item;
+    opacity: .4;
+  }
+}
+
+/**
+ * Table Of Contents - widget
  */
 .widget--toc {
   ::-webkit-scrollbar-thumb {

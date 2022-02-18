@@ -6,9 +6,9 @@ date: 2022-02-08T06:47:03Z
 expirydate: 2027-08-09T06:47:03Z
 #draft: true
 image: cover.png
-categories: [go]
+categories: [interview, go]
 toc: true
-tags: [golang, interview, coding]
+tags: [go, coding]
 ---
 
 В этой заметки содержатся (и, возможно, будут периодически добавляться) задачи на лайв-кодинг для Go разработчиков, что встречаются на интервью, либо являются хорошими кандидатами для этого.
@@ -16,6 +16,8 @@ tags: [golang, interview, coding]
 Лучше всего чтоб ты самостоятельно попытался решить эти задачи, и только для проверки результата смотрел код готовых решений.
 
 <!--more-->
+
+{{< table_of_contents >}}
 
 ## Найти пересечение двух неупорядоченных слайсов любой длины
 
@@ -129,6 +131,69 @@ func main() {
   fmt.Printf("%v\n", intersection([]int{1, 1, 1}, []int{1, 1, 1, 1}))      // [1, 1, 1]
   fmt.Printf("%v\n", intersection([]int{1, 2, 2, 1}, []int{2, 2}))         // [2, 2]
   fmt.Printf("%v\n", intersection([]int{4, 9, 5}, []int{9, 4, 9, 8, 4}))   // [9, 4]
+}
+```
+{{< /spoiler >}}
+
+## Развернуть односвязный список
+
+Односвязный список (single linked list) может быть представлен структурой:
+
+```go
+type LinkNode struct {
+  next  *LinkNode
+  value int
+}
+```
+
+Нужно создать три элемента, и связать их последовательно. А после развернуть этот список в обратную сторону.
+
+{{< spoiler text="Решение" >}}
+```go
+package main
+
+type LinkNode struct {
+	next  *LinkNode
+	value int
+}
+
+func (l *LinkNode) Print() {
+	// ставим current указателем на первый элемент, на каждой итерации заменяя его на next
+	// до тех пор, пока current не станет nil
+	for current := l; current != nil; current = current.next {
+		print(current.value)
+
+		if current.next != nil {
+			println(" ->", current.next.value)
+		}
+	}
+
+	println()
+}
+
+func main() {
+	// инициализируем элементы списка
+	var n1, n2, n3 = LinkNode{value: 1}, LinkNode{value: 2}, LinkNode{value: 3}
+	n1.next, n2.next = &n2, &n3 // и связываем их
+
+	n1.Print()
+	// 1 -> 2
+	// 2 -> 3
+	// 3
+
+	// и теперь обратим список в зад
+	var prev, next *LinkNode
+
+	// крутим цикл до тех пор, пока current не станет nil
+	for current := &n1; current != nil; {
+		next, current.next = current.next, prev
+		prev, current = current, next
+	}
+
+	n3.Print()
+	// 3 -> 2
+	// 2 -> 1
+	// 1
 }
 ```
 {{< /spoiler >}}
