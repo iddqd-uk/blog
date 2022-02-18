@@ -1,5 +1,4 @@
-mainSections:
-  - post
+mainSections: [post]
 
 featuredImageField: image
 rssFullContent: false
@@ -95,6 +94,17 @@ comments:
   #  darkTheme:
   #  reactionsEnabled: 1
   #  emitMetadata: 0
+  #
+  #gitalk:
+  #  owner:
+  #  admin:
+  #  repo:
+  #  clientID:
+  #  clientSecret:
+  #
+  #cusdis:
+  #  host:
+  #  id:
 
 widgets:
   enabled:

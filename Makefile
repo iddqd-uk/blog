@@ -33,4 +33,4 @@ post: ## Make a new post
 	docker run $(RUN_ARGS) $(HUGO_IMAGE) new --kind post "post/$$NEW_POST_NAME"
 
 clean: ## Make some clean
-	-rm -R ./public ./resources
+	-rm -R ./public ./resources ./.hugo_build.lock

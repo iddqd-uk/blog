@@ -7,7 +7,8 @@ ru:
         name: Главная
         url: /
         weight: -100
-        pre: home
+        params:
+          icon: home
 
 en:
   languageName: English
@@ -18,4 +19,5 @@ en:
         name: Home
         url: /
         weight: -100
-        pre: home
+        params:
+          icon: home
