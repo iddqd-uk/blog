@@ -1965,6 +1965,7 @@ Go runtime просит ОС посылать сигнал (`man setitimer`) с 
 > Что можно почитать:
 > - [Docker scratch & CGO_ENABLED=0](https://stackoverflow.com/a/45722910/2252921)
 > - [Кросс-компиляция в Go](https://habr.com/ru/post/249449/)
+> - [Go dns](https://zagirov.name/post/go-dns/)
 
 ### Какие директивы компилятора знаешь?
 
