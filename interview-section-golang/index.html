@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645320145">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645320145">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645320145">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1645345300">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1645345300">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1645345300">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -57,7 +57,7 @@ Go
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 63 мин.
+Время чтения: 64 мин.
 </time>
 </div>
 </footer>
@@ -203,6 +203,7 @@ Go
 <li><a href=#компилятор>Компилятор</a>
 <ol>
 <li><a href=#из-каких-этапов-состоит-компиляция>Из каких этапов состоит компиляция?</a></li>
+<li><a href=#статическая-компиляциялинковка---что-это-и-в-чем-особенности>Статическая компиляция/линковка - что это, и в чем особенности?</a></li>
 <li><a href=#какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</a>
 <ol>
 <li><a href=#golinkname><code>//go:linkname</code></a></li>
@@ -1756,6 +1757,27 @@ Go
 <li><a class=link href=https://medium.com/german-gorelkin/introduction-to-the-go-compiler-1aa6bedc4407 target=_blank rel=noopener>Введение в компилятор Go</a></li>
 </ul>
 </blockquote>
+<h3 id=статическая-компиляциялинковка---что-это-и-в-чем-особенности>Статическая компиляция/линковка - что это, и в чем особенности?</h3>
+<p>Линковка (ну или компоновка) последний этап сборки. Статически слинкованный исполняемый файл не зависит от наличия других библиотек в системе во время своей работы.</p>
+<p>Для включения статической компиляции/линковки (при этом все внешние библиотеки, от которых зависит исполнение кода будут встроены в итоговый бинарный файл) необходимо использовать переменную окружения при сборке <code>CGO_ENABLED=0</code> (т.е. <code>CGO_ENABLED=0 go build ...</code>). Полученный бинарный файл можно безбоязненно использовать, например, в docker-образе, основанном на <code>scratch</code> (т.е. не содержащем абсолютно никаких файлов, кристально чистая файловая система).</p>
+<p>Однако, это накладывает некоторые ограничения и привносит особенности, которые необходимо помнить:</p>
+<ul>
+<li><code>C</code>-код будет недоступен, совсем (часть модулей из stdlib Go от него зависят, к слову, но не критичных)</li>
+<li>Не будет использоваться <strong>системный</strong> DNS-резольвер</li>
+<li>Не будет работать проверка <code>x.509</code> сертификатов, которая должна работать на MacOS X</li>
+</ul>
+<p>И ещё, если итоговый бинарный файл планируется использовать в docker <code>scratch</code>, то так же следует иметь в виду:</p>
+<ul>
+<li>Для осуществления HTTP запросов по протоколу HTTPS вашим приложением, в образ нужно будет поместить корневые SSL/TLS сертификаты <code>/etc/ssl/certs</code></li>
+<li>Файл временной зоны (<code>/etc/timezone</code>) тоже будет необходим, чтоб корректно работать с датой/временем</li>
+</ul>
+<blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://stackoverflow.com/a/45722910/2252921 target=_blank rel=noopener>Docker scratch & CGO_ENABLED=0</a></li>
+<li><a class=link href=https://habr.com/ru/post/249449/ target=_blank rel=noopener>Кросс-компиляция в Go</a></li>
+</ul>
+</blockquote>
 <h3 id=какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</h3>
 <p>Компилятор Go понимает некоторые директивы (пишутся они в виде комментариев, как правило <code>//go:directive</code>), которые влияют на процесс компиляции (оптимизации, проверок, и т.д.) но не являются частью языка. Вот некоторые из них:</p>
 <h4 id=golinkname><code>//go:linkname</code></h4>
@@ -2078,6 +2100,7 @@ Make love, not war <br>
 <li><a href=#компилятор>Компилятор</a>
 <ol>
 <li><a href=#из-каких-этапов-состоит-компиляция>Из каких этапов состоит компиляция?</a></li>
+<li><a href=#статическая-компиляциялинковка---что-это-и-в-чем-особенности>Статическая компиляция/линковка - что это, и в чем особенности?</a></li>
 <li><a href=#какие-директивы-компилятора-знаешь>Какие директивы компилятора знаешь?</a>
 <ol>
 <li><a href=#golinkname><code>//go:linkname</code></a></li>
