@@ -9,8 +9,4 @@
 &lt;/blockquote>
 &lt;p>Группа настроек, посвященная деплою и запуску сервисов. Указанные в данной группе настройки используются &lt;strong>только&lt;/strong> при деплое на &lt;a class="link" href="https://docs.docker.com/engine/swarm/" target="_blank" rel="noopener"
 >swarm&lt;/a> используя &lt;a class="link" href="https://docs.docker.com/engine/reference/commandline/stack_deploy/" target="_blank" rel="noopener"
->&lt;code>docker stack deploy&lt;/code>&lt;/a>, и игнорируется при использовании команд &lt;code>docker-compose up&lt;/code> и &lt;code>docker-compose run&lt;/code>.&lt;/p></description></item><item><title>Docker + Laravel = ❤</title><link>https://blog.hook.sh/laravel-in-docker/</link><pubDate>Mon, 01 Oct 2018 08:29:51 +0000</pubDate><guid>https://blog.hook.sh/laravel-in-docker/</guid><description>&lt;blockquote>
-&lt;p>Данная статья является копией &lt;a class="link" href="https://habr.com/post/425101/" target="_blank" rel="noopener"
->публикации на хабре&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>В данной статье я расскажу о своём опыте &amp;ldquo;заворачивания&amp;rdquo; Laravel-приложения в Docker-контейнер да так, что бы и локально с ним могли работать frontend и backend разработчики, и запуск его на production был максимально прост. Так же CI будет автоматически запускать статические анализаторы кода, &lt;code>phpunit&lt;/code>-тесты, производить сборку образов.&lt;/p></description></item></channel></rss>
+>&lt;code>docker stack deploy&lt;/code>&lt;/a>, и игнорируется при использовании команд &lt;code>docker-compose up&lt;/code> и &lt;code>docker-compose run&lt;/code>.&lt;/p></description></item></channel></rss>
