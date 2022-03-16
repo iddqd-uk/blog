@@ -1,0 +1,380 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="База данных (БД) - это организованная структура, предназначенная для хранения, изменения и обработки информации. Это структурированное хранилище данных.
+"><title>Вопросы и ответы по базам данных</title>
+<link rel=canonical href=https://blog.hook.sh/interview-section-databases/>
+<link rel=stylesheet href=https://blog.hook.sh/scss/style.min.2a99c8d35075b709daf9ac6b930d33a2caa676a328c16bed44b32faa852938ae.css>
+<meta property="og:title" content="Вопросы и ответы по базам данных">
+<meta property="og:description" content="База данных (БД) - это организованная структура, предназначенная для хранения, изменения и обработки информации. Это структурированное хранилище данных.
+">
+<meta property="og:url" content="https://blog.hook.sh/interview-section-databases/">
+<meta property="og:site_name" content="blog [dot] hook">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="db"><meta property="article:published_time" content="2022-03-04T07:05:42+00:00"><meta property="article:modified_time" content="2022-03-04T07:05:42+00:00"><meta property="og:image" content="https://blog.hook.sh/interview-section-databases/cover.png">
+<meta name=twitter:title content="Вопросы и ответы по базам данных">
+<meta name=twitter:description content="База данных (БД) - это организованная структура, предназначенная для хранения, изменения и обработки информации. Это структурированное хранилище данных.
+"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blog.hook.sh/interview-section-databases/cover.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
+<script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1647424375">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1647424375">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1647424375">
+<link rel=manifest href=https://blog.hook.sh/webmanifest.json>
+<meta name=msapplication-TileColor content="#303030">
+<meta name=theme-color content="#303030">
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=/ class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Назад</span>
+</a>
+</div>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/interview-section-databases/>
+<img src=/interview-section-databases/cover_hu954bdcfd609a05cdb15db44fde92cc9d_27988_800x0_resize_box_3.png srcset="/interview-section-databases/cover_hu954bdcfd609a05cdb15db44fde92cc9d_27988_800x0_resize_box_3.png 800w, /interview-section-databases/cover_hu954bdcfd609a05cdb15db44fde92cc9d_27988_1600x0_resize_box_3.png 1600w" width=800 height=331 loading=lazy alt="Featured image of post Вопросы и ответы по базам данных">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/interview/ style=background-color:#0b2a4f;color:#fff>
+Interview
+</a>
+</header>
+<h2 class=article-title>
+<a href=/interview-section-databases/>Вопросы и ответы по базам данных</a></h2>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>2022.03.04</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+Время чтения: 8 мин.
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<div class=outdated-post style=display:none data-posted-at=2022-03-04>
+<strong>Внимание!</strong> Данный пост был опубликован более года назад и, возможно, уже утратил свою былую актуальность. Но это не точно.
+</div>
+<p>База данных (БД) - это организованная структура, предназначенная для хранения, изменения и обработки информации. Это структурированное хранилище данных.</p>
+<div class=toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#какие-типы-бд-знаешь>Какие типы БД знаешь?</a>
+<ol>
+<li><a href=#реляционные-sql>Реляционные (SQL)</a></li>
+<li><a href=#не-реляционные-nosql>Не реляционные (NoSQL)</a>
+<ol>
+<li><a href=#keyvalue>Key/Value</a></li>
+<li><a href=#документные-документ-ориентированные>Документные (документ-ориентированные)</a></li>
+<li><a href=#колоночные>Колоночные</a></li>
+<li><a href=#графовые>Графовые</a></li>
+<li><a href=#time-series-временных-рядов>Time series (временны́х рядов)</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href=#что-такое-cap-теорема-теорема-брюера>Что такое CAP-теорема (теорема Брюера)?</a></li>
+<li><a href=#вопросы-по-sql>Вопросы по SQL</a>
+<ol>
+<li><a href=#из-каких-подмножеств-состоит-sql>Из каких подмножеств состоит SQL?</a></li>
+<li><a href=#что-подразумевается-под-таблицей-и-полем-в-sql>Что подразумевается под таблицей и полем в SQL?</a></li>
+<li><a href=#в-чем-разница-между-операторами-delete-и-truncate>В чем разница между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</a></li>
+<li><a href=#что-такое-соединения-join-в-sql>Что такое соединения (<code>JOIN</code>) в SQL?</a></li>
+<li><a href=#в-чем-разница-между-типом-данных-char-и-varchar-в-sql>В чем разница между типом данных <code>CHAR</code> и <code>VARCHAR</code> в SQL?</a></li>
+<li><a href=#что-такое-первичный-ключ-primary-key>Что такое первичный ключ (<code>Primary key</code>)?</a></li>
+<li><a href=#что-такое-ограничения-constraints>Что такое ограничения (<code>Constraints</code>)?</a></li>
+<li><a href=#что-такое-уникальный-ключ-unique-key>Что такое уникальный ключ (<code>Unique key</code>)?</a></li>
+<li><a href=#что-такое-внешний-ключ-foreign-key>Что такое внешний ключ (<code>Foreign key</code>)?</a></li>
+<li><a href=#что-подразумевается-под-целостностью-данных>Что подразумевается под целостностью данных?</a></li>
+</ol>
+</li>
+<li><a href=#индексы>Индексы</a>
+<ol>
+<li><a href=#в-чем-разница-между-кластеризованным-и-не-кластеризованным-индексами-в-sql>В чем разница между кластеризованным и не кластеризованным индексами в SQL?</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+<h2 id=какие-типы-бд-знаешь>Какие типы БД знаешь?</h2>
+<h3 id=реляционные-sql>Реляционные (SQL)</h3>
+<p>Характерны тем, что данные могут быть связанными между собой с помощью отношений <em>(relation - связь, отношение)</em>, например - значение одной колонки может ссылаться на какую-либо колонку в другой таблице (aka &ldquo;внешние ключи&rdquo;). Данные хранятся в виде набора таблиц, состоящих из столбцов и строк. В каждом столбце (column) хранятся данные определенного типа.</p>
+<p>Схема таблиц объявляется при её создании.</p>
+<p>Примеры: <a class=link href=https://github.com/mysql/mysql-server target=_blank rel=noopener>MySQL</a> (<strong>C++</strong>) (или её форк <a class=link href=https://github.com/MariaDB/server target=_blank rel=noopener>MariaDB</a>), <a class=link href=https://github.com/postgres/postgres target=_blank rel=noopener>PostgreSQL</a> (<strong>C</strong>), <a class=link href=https://github.com/sqlite/sqlite target=_blank rel=noopener>SQLite</a> (<strong>C</strong>)</p>
+<h3 id=не-реляционные-nosql>Не реляционные (NoSQL)</h3>
+<blockquote>
+<p><strong>No</strong>SQL - <strong>N</strong>ot <strong>O</strong>nly Structured Query Language</p>
+</blockquote>
+<p>Обладают гибкими схемами, т.е. объявлять структуру помещаемых данных заранее часто не является обязательным условием.</p>
+<h4 id=keyvalue>Key/Value</h4>
+<p>Хранилища предоставляют доступ к данным, которые хранятся по уникальным ключам в &ldquo;плоском&rdquo; представлении. Чтобы запросить данные, нужно знать их ключ. Часто используется хранение данных в виде JSON-объектов, но для СУБД это просто некоторый случайный набор байт (blob-объект).</p>
+<p>Примеры: <a class=link href=https://github.com/redis/redis target=_blank rel=noopener>Redis</a> (<strong>C</strong>), <a class=link href=https://github.com/EQ-Alpha/KeyDB target=_blank rel=noopener>KeyDB</a> (<strong>C++</strong>), <a class=link href=https://github.com/memcached/memcached target=_blank rel=noopener>memcached</a> (<strong>C</strong>), <a class=link href=https://github.com/etcd-io/etcd target=_blank rel=noopener>etcd</a> (<strong>Go</strong>)</p>
+<h4 id=документные-документ-ориентированные>Документные (документ-ориентированные)</h4>
+<p>Используют базовую семантику доступа и поиска хранилищ ключей и значений, часто имеют структуру дерева (иногда леса). Такие БД также используют ключ для уникальной идентификации данных. Разница между хранилищами &ldquo;Key/Value&rdquo; и документными БД заключается в том, что вместо хранения blob-объектов, документ-ориентированные базы хранят данные в структурированных форматах – <code>JSON</code>, <code>BSON</code> или <code>XML</code>.</p>
+<p>Как следствие:</p>
+<ul>
+<li>Документы могут быть организованы (сгруппированы) в коллекции (их можно считать отдалённым аналогом таблиц реляционных СУБД)</li>
+<li>База данных не предписывает определенный формат или схему</li>
+<li>Каждый документ может иметь свою внутреннюю структуру</li>
+<li>Документные БД являются хорошим выбором для быстрой разработки</li>
+<li>В любой момент можно менять свойства данных, не изменяя структуру или сами данные</li>
+</ul>
+<p>Примеры: <a class=link href=https://github.com/mongodb/mongo target=_blank rel=noopener>MongoDB</a> (<strong>C++</strong>), <a class=link href=https://github.com/rethinkdb/rethinkdb target=_blank rel=noopener>RethinkDB</a> (<strong>C++</strong>), <a class=link href=https://github.com/elastic/elasticsearch target=_blank rel=noopener>Elasticsearch</a> (<strong>Java</strong>), <a class=link href=https://github.com/aerospike/aerospike-server target=_blank rel=noopener>Aerospike</a> (<strong>C</strong>)</p>
+<h4 id=колоночные>Колоночные</h4>
+<p>Внешне похожи на реляционные БД (хранят данные, используя строки и столбцы), но с иной связью между элементами. Данные группируются не по строкам, а по столбцам. В ней &ldquo;соседними&rdquo; являются не данные из двух столбцов одной и той же строки, а данные из одного и того же столбца, но из разных строк.</p>
+<p>Особенностью является высокая скорость и гибкость выполнения сложных запросов. Действительно, в &ldquo;строчной&rdquo; СУБД при поиске и считывании значений сканируется вся таблица по строкам и столбцам, а затем извлекаются строки целиком, даже в том случае, если нужно только одно значение каждой из них. Колоночные базы данных позволяют искать значения по отдельным столбцам и извлекать <strong>только те значения</strong>, которые требуются.</p>
+<p>Примеры: <a class=link href=https://github.com/ClickHouse/ClickHouse target=_blank rel=noopener>ClickHouse</a> (<strong>C++</strong>), <a class=link href=https://github.com/apache/cassandra target=_blank rel=noopener>Cassandra</a> (<strong>Java</strong>)</p>
+<h4 id=графовые>Графовые</h4>
+<p>Вместо сопоставления связей с таблицами и внешними ключами, графовые базы данных устанавливают связи, используя узлы, рёбра и свойства. Они представляют данные в виде отдельных узлов, которые могут иметь любое количество связанных с ними свойств.</p>
+<p>Примеры: <a class=link href=https://github.com/neo4j/neo4j target=_blank rel=noopener>Neo4j</a> (<strong>Java</strong>), <a class=link href=https://github.com/dgraph-io/dgraph target=_blank rel=noopener>Dgraph</a> (<strong>Go</strong>), <a class=link href=https://github.com/RedisGraph/RedisGraph target=_blank rel=noopener>RedisGraph</a> (<strong>C</strong>)</p>
+<h4 id=time-series-временных-рядов>Time series (временны́х рядов)</h4>
+<p>Созданы для сбора и управления элементами, меняющимися с течением времени. Большинство таких БД организованы в структуры, которые записывают значения для одного элемента (например, временная метка и значение температуры процессора). В таблице может быть несколько метрик. Оптимизированы для быстрой записи данных.</p>
+<p>Примеры: <a class=link href=https://github.com/prometheus/prometheus target=_blank rel=noopener>Prometheus</a> (<strong>Go</strong>), <a class=link href=https://github.com/influxdata/influxdb target=_blank rel=noopener>InfluxDB</a> (<strong>Go</strong>)</p>
+<h2 id=что-такое-cap-теорема-теорема-брюера>Что такое CAP-теорема (теорема Брюера)?</h2>
+<p>Утверждение о том, что в любой реализации распределённых вычислений возможно обеспечить не более двух из трёх следующих свойств:</p>
+<ul>
+<li><strong>Согласованность данных</strong> (<code>consistency</code>) - как только мы успешно записали данные в наше распределенное хранилище, любой клиент при запросе получит эти последние данные</li>
+<li><strong>Доступность</strong> (<code>availability</code>) - в любой момент клиент может получить данные из нашего хранилища, или получить ответ об их отсутствии, если их никто еще не сохранял</li>
+<li><strong>Устойчивость к разделению</strong> (<code>partition tolerance</code>) - потеря сообщений между компонентами системы (возможно даже потеря всех сообщений) не влияет на работоспособность системы</li>
+</ul>
+<p>С точки зрения теоремы CAP, распределённые системы в зависимости от пары практически поддерживаемых свойств из трёх возможных распадаются на три класса:</p>
+<ul>
+<li><strong>CA</strong> (<code>consistency + availability</code>) - во всех узлах данные согласованы и обеспечена доступность, при этом она жертвует устойчивостью к распаду на секции</li>
+<li><strong>CP</strong> (<code>consistency + partition tolerance</code>) - в каждый момент обеспечивает целостный результат и способна функционировать в условиях распада, но достигает этого в ущерб доступности - может не выдавать отклик на запрос</li>
+<li><strong>AP</strong> (<code>availability + partition tolerance</code>) - не гарантируется целостность, но при этом выполнены условия доступности и устойчивости к распаду на секции</li>
+</ul>
+<p><img src=/interview-section-databases/cap.png width=529 height=448 srcset="/interview-section-databases/cap_hu31efe6d7ec8c1588495464322c12b57f_30260_480x0_resize_box_3.png 480w, /interview-section-databases/cap_hu31efe6d7ec8c1588495464322c12b57f_30260_1024x0_resize_box_3.png 1024w" loading=lazy class=gallery-image data-flex-grow=118 data-flex-basis=283px></p>
+<blockquote>
+<p>Что можно почитать:</p>
+</blockquote>
+<ul>
+<li><a class=link href=https://habr.com/ru/post/130577/ target=_blank rel=noopener>CAP-теорема простым, доступным языком</a></li>
+<li><a class=link href=https://habr.com/ru/post/136305/ target=_blank rel=noopener>Недопонимание CAP-теоремы</a></li>
+</ul>
+<h2 id=вопросы-по-sql>Вопросы по SQL</h2>
+<h3 id=из-каких-подмножеств-состоит-sql>Из каких подмножеств состоит SQL?</h3>
+<ul>
+<li>DDL (<code>Data Definition Language</code>, язык описания данных) -позволяет выполнять различные операции с базой данных, такие как <code>CREATE</code> (создание), <code>ALTER</code> (изменение) и <code>DROP</code> (удаление объектов)</li>
+<li>DML (<code>Data Manipulation Language</code>, язык управления данными) -позволяет получать доступ к данным и манипулировать ими, например, вставлять <code>INSERT</code>, обновлять <code>UPDATE</code>, удалять <code>DELETE</code> и извлекать данные <code>SELECT</code> из базы данных</li>
+<li>DCL (<code>Data Control Language</code>, язык контролирования данных) -позволяет контролировать доступ к базе данных; примеры -<code>GRANT</code> (предоставить права), <code>REVOKE</code> (отозвать права)</li>
+</ul>
+<h3 id=что-подразумевается-под-таблицей-и-полем-в-sql>Что подразумевается под таблицей и полем в SQL?</h3>
+<p>Таблица - организованный набор данных в виде строк и столбцов. Поле - это столбцы в таблице.</p>
+<h3 id=в-чем-разница-между-операторами-delete-и-truncate>В чем разница между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</h3>
+<ul>
+<li><code>Delete</code> удаляет строку в таблице, а <code>truncate</code> удаляет <strong>все строки</strong></li>
+<li>После <code>delete</code> возможно откатить изменения, а после <code>truncate</code> как правило нет</li>
+<li><code>Truncate</code> работает быстрее</li>
+</ul>
+<h3 id=что-такое-соединения-join-в-sql>Что такое соединения (<code>JOIN</code>) в SQL?</h3>
+<p>Это объединение строк из двух (или более) таблиц на основе связанного между ними столбца. Примеры JOIN-ов:</p>
+<ul>
+<li><code>INNER JOIN</code> (внутреннее соединение) - пересечение двух таблиц, то есть строки, <strong>общие для каждой из них</strong> <em>(пример: <code>select * from a INNER JOIN b on a.a = b.b;</code>)</em></li>
+<li><code>LEFT OUTER JOIN</code> (левое внешнее соединение) - <strong>все строки</strong> из <strong>первой</strong> таблицы плюс все строки второй таблицы, <strong>имеющие совпадение</strong> со строками из первой таблицы <em>(пример: <code>select * from a LEFT OUTER JOIN b on a.a = b.b;</code>)</em></li>
+<li><code>RIGHT OUTER JOIN</code> (правое внешнее соединение) - <strong>все строки</strong> из <strong>второй</strong> таблицы плюс все строки первой таблицы, <strong>имеющие совпадение</strong> со строками из второй таблицы <em>(пример: <code>select * from a RIGHT OUTER JOIN b on a.a = b.b;</code>)</em></li>
+<li><code>FULL OUTER JOIN</code> (полное внешнее соединение) - полное соединение обеих таблиц (т.е. все строки из первой и второй таблиц); если соответствия нет, то значение <code>null</code> <em>(пример: <code>select * from a FULL OUTER JOIN b on a.a = b.b;</code>)</em></li>
+</ul>
+<p><img src=/interview-section-databases/join.png width=1440 height=811 srcset="/interview-section-databases/join_hua1a7574f8037ff60cd7ab27451f9b018_55776_480x0_resize_box_3.png 480w, /interview-section-databases/join_hua1a7574f8037ff60cd7ab27451f9b018_55776_1024x0_resize_box_3.png 1024w" loading=lazy class=gallery-image data-flex-grow=177 data-flex-basis=426px></p>
+<blockquote>
+<p>Что можно почитать:</p>
+<ul>
+<li><a class=link href=https://ru.stackoverflow.com/a/512194/178575 target=_blank rel=noopener>Примеры</a></li>
+</ul>
+</blockquote>
+<h3 id=в-чем-разница-между-типом-данных-char-и-varchar-в-sql>В чем разница между типом данных <code>CHAR</code> и <code>VARCHAR</code> в SQL?</h3>
+<p>И <code>CHAR</code>, и <code>VARCHAR</code> служат символьными типами данных, но <code>VARCHAR</code> используется для строк символов переменной длины, тогда как <code>CHAR</code> используется для строк фиксированной длины. Например, <code>CHAR(10)</code> может хранить только 10 символов и не сможет хранить строку любой другой длины, тогда как <code>VARCHAR(10)</code> может хранить строку любой длины до 10, т.е. например 6, 8 или 2.</p>
+<h3 id=что-такое-первичный-ключ-primary-key>Что такое первичный ключ (<code>Primary key</code>)?</h3>
+<p>Первичный ключ - столбец (или набор столбцов), которые <strong>однозначно</strong> идентифицируют каждую (одну) строку в таблице. Нулевые (<code>null</code>) значения <strong>не допускаются</strong>. Автоматически индексируются.</p>
+<h3 id=что-такое-ограничения-constraints>Что такое ограничения (<code>Constraints</code>)?</h3>
+<p>Ограничения (<code>constraints</code>) используются для указания ограничения на тип данных таблицы. Они могут быть указаны при создании или изменении таблицы. Пример ограничений:</p>
+<ul>
+<li><code>NOT NULL</code> - значение не может быть <code>null</code></li>
+<li><code>CHECK</code> - произвольные проверки на значение, например <code>constraint uuid_is_valid check (is_uuid(uuid))</code> проверяет на валидность UUID идентификатор, а <code>constraint login_min_length check (char_length(login) >= 3)</code> на минимальную длину строки поля логина</li>
+<li><code>DEFAULT</code> - устанавливает значение по умолчанию для поля в колонке</li>
+<li><code>UNIQUE</code> - обязывает значение бить уникальным в рамках таблицы</li>
+<li><code>PRIMARY KEY</code> - объявляет первичный ключ</li>
+<li><code>FOREIGN KEY</code> - объявляет внешний ключ (связывает таблицы отношением), например <code>constraint user_uuid_foreign_key foreign key (user_uuid) references users (uuid) on update cascade on delete cascade</code> обязывает содержать значение в <code>user_uuid</code> только для существующей записи в таблице <code>users</code> и автоматически обновится если оно будет изменено в таблице <code>users</code>, а так же заставит запись удалиться при удалении записи о пользователе</li>
+</ul>
+<h3 id=что-такое-уникальный-ключ-unique-key>Что такое уникальный ключ (<code>Unique key</code>)?</h3>
+<p>Уникальный ключ однозначно идентифицирует одну строку в таблице (таблица не может содержать дубликатов). В одной таблице может быть несколько уникальных ключей. <strong>Возможны</strong> нулевые (<code>null</code>) значения.</p>
+<h3 id=что-такое-внешний-ключ-foreign-key>Что такое внешний ключ (<code>Foreign key</code>)?</h3>
+<p>Внешний ключ поддерживает ссылочную целостность, обеспечивая связь между данными в двух таблицах. Внешний ключ в дочерней таблице ссылается на первичный ключ в родительской таблице. Ограничение внешнего ключа предотвращает действия, которые разрушают связи между дочерней и родительской таблицами.</p>
+<h3 id=что-подразумевается-под-целостностью-данных>Что подразумевается под целостностью данных?</h3>
+<p>Целостность данных определяет точность, а также согласованность данных, хранящихся в базе данных. Она также определяет ограничения целостности для обеспечения соблюдения бизнес-правил для данных, когда они вводятся в приложение или базу данных.</p>
+<blockquote>
+<p>Например, вес детали должен быть положительным; количество знаков в телефонном номере не должно превышать 15; возраст родителей не может быть меньше возраста их биологического ребёнка и так далее.</p>
+</blockquote>
+<h2 id=индексы>Индексы</h2>
+<h3 id=в-чем-разница-между-кластеризованным-и-не-кластеризованным-индексами-в-sql>В чем разница между кластеризованным и не кластеризованным индексами в SQL?</h3>
+<p>Различия между кластеризованным и не кластеризованным индексами в SQL:</p>
+<ol>
+<li><strong>Кластеризованный</strong> индекс используется для простого и <strong>быстрого</strong> извлечения данных из базы данных, тогда как чтение из <strong>не кластеризованного</strong> индекса происходит относительно <strong>медленнее</strong></li>
+<li><strong>Кластеризованный</strong> индекс изменяет способ хранения записей в базе данных — он <strong>сортирует</strong> строки по столбцу, который установлен как кластеризованный индекс, тогда как в не кластеризованном индексе он не меняет способ хранения, но создает отдельный объект внутри таблицы, который указывает на исходные строки таблицы при поиске</li>
+<li>Одна таблица может иметь только <strong>один кластеризованный индекс</strong>, тогда как не кластеризованных у нее может быть много</li>
+</ol>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/db/>db</a>
+</section>
+<div style=display:flex;justify-content:space-between;margin-top:1em>
+<div>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>WTFPL</span>
+</section>
+</div>
+<div style=margin-left:auto><section style=height:100%>
+<a href=https://github.com/hook-sh/blog/edit/master/content/post/interview-section-databases/index.md style=font-size:.7em;color:var(--card-text-color-tertiary)>Редиктировать</a>
+</section>
+</div>
+</div></footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Может быть интересно</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article class=has-image>
+<a href=/interview-section-network/>
+<div class=article-image>
+<img src=/interview-section-network/cover.c258292f544432328883fabf607bf92b_hu21de3eef183cf18e204d3e54b899aa35_31715_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post Вопросы и ответы по сетям и протоколам" data-key=interview-section-network data-hash="md5-wlgpL1REMjKIg/q/YHv5Kw==">
+</div>
+<div class=article-details>
+<h2 class=article-title>Вопросы и ответы по сетям и протоколам</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/interview-section-golang-coding/>
+<div class=article-image>
+<img src=/interview-section-golang-coding/cover.1e3a141317c9794e24ee16d558687723_hu6c745680144d0a85df5a67b80461116c_57776_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post Задачи и решения для лайв-кодинга на Go" data-key=interview-section-golang-coding data-hash="md5-HjoUExfJeU4k7hbVWGh3Iw==">
+</div>
+<div class=article-details>
+<h2 class=article-title>Задачи и решения для лайв-кодинга на Go</h2>
+</div>
+</a>
+</article>
+<article class=has-image>
+<a href=/interview-section-golang/>
+<div class=article-image>
+<img src=/interview-section-golang/cover.f4a8a0debf71679bfd758da95e284bcb_hu032bd5f7e68e559a642ecef405e28712_26494_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post Вопросы и ответы для собеседования Go-разработчика" data-key=interview-section-golang data-hash="md5-9Kig3r9xZ5v9dY2pXihLyw==">
+</div>
+<div class=article-details>
+<h2 class=article-title>Вопросы и ответы для собеседования Go-разработчика</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<script src=https://utteranc.es/client.js repo=hook-sh/blog issue-term=pathname crossorigin=anonymous async></script>
+<style>.utterances{max-width:unset}</style>
+<script>function setUtterancesTheme(b){let a=document.querySelector('.utterances iframe');a&&a.contentWindow.postMessage({type:'set-theme',theme:`github-${b}`},'https://utteranc.es')}addEventListener('message',a=>{if(a.origin!=='https://utteranc.es')return;setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener('onColorSchemeChange',a=>{setUtterancesTheme(a.detail)})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2014 -
+2022 blog [dot] hook
+</section>
+<section class=powerby>
+Make love, not war <br>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Содержание</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#какие-типы-бд-знаешь>Какие типы БД знаешь?</a>
+<ol>
+<li><a href=#реляционные-sql>Реляционные (SQL)</a></li>
+<li><a href=#не-реляционные-nosql>Не реляционные (NoSQL)</a>
+<ol>
+<li><a href=#keyvalue>Key/Value</a></li>
+<li><a href=#документные-документ-ориентированные>Документные (документ-ориентированные)</a></li>
+<li><a href=#колоночные>Колоночные</a></li>
+<li><a href=#графовые>Графовые</a></li>
+<li><a href=#time-series-временных-рядов>Time series (временны́х рядов)</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href=#что-такое-cap-теорема-теорема-брюера>Что такое CAP-теорема (теорема Брюера)?</a></li>
+<li><a href=#вопросы-по-sql>Вопросы по SQL</a>
+<ol>
+<li><a href=#из-каких-подмножеств-состоит-sql>Из каких подмножеств состоит SQL?</a></li>
+<li><a href=#что-подразумевается-под-таблицей-и-полем-в-sql>Что подразумевается под таблицей и полем в SQL?</a></li>
+<li><a href=#в-чем-разница-между-операторами-delete-и-truncate>В чем разница между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</a></li>
+<li><a href=#что-такое-соединения-join-в-sql>Что такое соединения (<code>JOIN</code>) в SQL?</a></li>
+<li><a href=#в-чем-разница-между-типом-данных-char-и-varchar-в-sql>В чем разница между типом данных <code>CHAR</code> и <code>VARCHAR</code> в SQL?</a></li>
+<li><a href=#что-такое-первичный-ключ-primary-key>Что такое первичный ключ (<code>Primary key</code>)?</a></li>
+<li><a href=#что-такое-ограничения-constraints>Что такое ограничения (<code>Constraints</code>)?</a></li>
+<li><a href=#что-такое-уникальный-ключ-unique-key>Что такое уникальный ключ (<code>Unique key</code>)?</a></li>
+<li><a href=#что-такое-внешний-ключ-foreign-key>Что такое внешний ключ (<code>Foreign key</code>)?</a></li>
+<li><a href=#что-подразумевается-под-целостностью-данных>Что подразумевается под целостностью данных?</a></li>
+</ol>
+</li>
+<li><a href=#индексы>Индексы</a>
+<ol>
+<li><a href=#в-чем-разница-между-кластеризованным-и-не-кластеризованным-индексами-в-sql>В чем разница между кластеризованным и не кластеризованным индексами в SQL?</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+<script data-no-instant>(function(){const a=document.querySelectorAll('.outdated-post'),b=new Date;for(let c=0,f=a.length;c<f;c++){const d=a[c],e=new Date(d.getAttribute('data-posted-at'));if(!isNaN(e.valueOf())&&e.getFullYear()>1){const a=Math.abs(b.getTime()-e.getTime()),c=Math.ceil(a/(1e3*3600*24));c>=547&&(d.style.display='block',d.style.visibility='visible')}}})()</script>
+</body>
+</html>
