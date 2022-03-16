@@ -121,6 +121,11 @@ div.toc {
         &::before {
           margin-right: 2px;
         }
+
+        &.active-class > a {
+          background: linear-gradient(90deg, rgba(255,255,255,.07) 0%, rgba(0,0,0,0) 100%);
+          font-weight: inherit;
+        }
       }
     }
 
