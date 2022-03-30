@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/purge-jsdelivr-cache/cover.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1648542293">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1648542293">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1648542293">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1648657303">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1648657303">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1648657303">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -133,6 +133,18 @@ Development
 </span><span class=w>    </span><span class=nt>types</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>published]</span><span class=w>
 </span><span class=w>
 </span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>purge-cdn-cache-action</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Purge jsDelivr CDN cache</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-20.04</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses: gacts/purge-jsdelivr-cache@v1 # Action page</span><span class=p>:</span><span class=w> </span><span class=l>&lt;https://github.com/gacts/purge-jsdelivr-cache&gt;</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span><span class=sd>            https://purge.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.js
+</span><span class=sd>            https://purge.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js</span><span class=w>            
+</span><span class=w>
+</span><span class=w>  </span><span class=c># --- OR ---</span><span class=w>
+</span><span class=w>
 </span><span class=w>  </span><span class=nt>purge-cdn-cache</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Purge jsDelivr CDN cache</span><span class=w>
 </span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-20.04</span><span class=w>
