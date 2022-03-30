@@ -62,6 +62,18 @@ on:
     types: [published]
 
 jobs:
+  purge-cdn-cache-action:
+    name: Purge jsDelivr CDN cache
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: gacts/purge-jsdelivr-cache@v1 # Action page: <https://github.com/gacts/purge-jsdelivr-cache>
+        with:
+          url: |
+            https://purge.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.js
+            https://purge.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js
+
+  # --- OR ---
+
   purge-cdn-cache:
     name: Purge jsDelivr CDN cache
     runs-on: ubuntu-20.04
