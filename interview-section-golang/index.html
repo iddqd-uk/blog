@@ -16,9 +16,9 @@
 <meta name=twitter:image content="https://blog.hook.sh/interview-section-golang/cover.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1648802302">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1648802302">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1648802302">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.hook.sh/apple-touch-icon.png?v=1648802863">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.hook.sh/favicon-32x32.png?v=1648802863">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.hook.sh/favicon-16x16.png?v=1648802863">
 <link rel=manifest href=https://blog.hook.sh/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -983,7 +983,7 @@ Go
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>Int</span> <span class=kd>interface</span> <span class=p>{</span>
 	<span class=kt>int</span> <span class=p>|</span> <span class=kt>int32</span> <span class=p>|</span> <span class=kt>int64</span>
 <span class=p>}</span>
-</code></pre></div><p>Если добавить знак <code>~</code> перед типами то интерфейсу будут соотвествовать и производные типы, например myInt из примера ниже:</p>
+</code></pre></div><p>Если добавить знак <code>~</code> перед типами то интерфейсу будут соответствовать и производные типы, например myInt из примера ниже:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>Int</span> <span class=kd>interface</span> <span class=p>{</span>
 	<span class=err>~</span><span class=kt>int</span> <span class=p>|</span> <span class=err>~</span><span class=kt>int32</span> <span class=p>|</span> <span class=err>~</span><span class=kt>int64</span>
 <span class=p>}</span>
