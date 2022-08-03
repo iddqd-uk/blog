@@ -10,7 +10,7 @@ footer:
 
 editPost:
   enabled: true
-  repository: hook-sh/blog
+  repository: iddqd-uk/blog
   branch: master
 
 dateFormat:
@@ -45,7 +45,7 @@ comments:
   #  adminLabel:
 
   utterances:
-    repo: hook-sh/blog
+    repo: iddqd-uk/blog
     issueTerm: pathname
     label:
 

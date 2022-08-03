@@ -616,7 +616,7 @@ func fetchLink(ctx context.Context, method, url string) (bool, error) {
 ```text
 https://www.yahoo.com/foobar
 https://stackoverflow.com/foobar
-https://blog.hook.sh/
+https://blog.iddqd.uk/
 https://google.com/404error
 https://ya.ru/
 https://github.com/foo/bar
@@ -628,7 +628,7 @@ https://stackoverflow.com/
 ```text
 Not OK https://www.yahoo.com/foobar
 Not OK https://stackoverflow.com/foobar
-OK https://blog.hook.sh/
+OK https://blog.iddqd.uk/
 Not OK https://google.com/404error
 OK https://ya.ru/
 Not OK https://github.com/foo/bar

@@ -33,9 +33,9 @@ $ make post
 
 Any changes, pushed into `master` branch will be automatically deployed _(be careful with this, think **twice** before pushing)_.
 
-[badge_publish]:https://img.shields.io/github/workflow/status/hook-sh/blog/publish/master?label=publish&maxAge=60&logo=github
-[badge_discussions]:https://img.shields.io/github/issues-raw/hook-sh/blog.svg?label=discussions&maxAge=60
-[badge_last_commit]:https://img.shields.io/github/last-commit/hook-sh/blog/master?label=last%20update&maxAge=60
-[link_issues]:https://github.com/hook-sh/blog/issues
-[link_actions]:https://github.com/hook-sh/blog/actions
+[badge_publish]:https://img.shields.io/github/workflow/status/iddqd-uk/blog/publish/master?label=publish&maxAge=60&logo=github
+[badge_discussions]:https://img.shields.io/github/issues-raw/iddqd-uk/blog.svg?label=discussions&maxAge=60
+[badge_last_commit]:https://img.shields.io/github/last-commit/iddqd-uk/blog/master?label=last%20update&maxAge=60
+[link_issues]:https://github.com/iddqd-uk/blog/issues
+[link_actions]:https://github.com/iddqd-uk/blog/actions
 [hugo]:https://gohugo.io/

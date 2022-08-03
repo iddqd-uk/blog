@@ -1,7 +1,4 @@
 #!/usr/bin/make
-# Makefile readme (ru): <https://blog.hook.sh/nix/makefile-full-doc/>
-# Makefile readme (en): <https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents>
-
 SHELL = /bin/bash
 
 # Image page: <https://hub.docker.com/r/klakegg/hugo>

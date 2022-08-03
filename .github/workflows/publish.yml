@@ -7,7 +7,7 @@ on:
   schedule: [cron: '0 0 * * 0'] # once in a week
 
 env:
-  CNAME: blog.hook.sh
+  CNAME: blog.iddqd.uk
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
   build:
