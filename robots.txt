@@ -1,6 +1,6 @@
-Host: https://blog.hook.sh/
+Host: https://blog.iddqd.uk/
 
-Sitemap: https://blog.hook.sh/sitemap.xml
+Sitemap: https://blog.iddqd.uk/sitemap.xml
 
 User-agent: ia_archiver
 Disallow: /
