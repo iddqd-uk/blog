@@ -19,9 +19,9 @@
 <meta name=twitter:image content="https://blog.iddqd.uk/mustpl/cover.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.iddqd.uk/apple-touch-icon.png?v=1661531216">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.iddqd.uk/favicon-32x32.png?v=1661531216">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.iddqd.uk/favicon-16x16.png?v=1661531216">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.iddqd.uk/apple-touch-icon.png?v=1661532166">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.iddqd.uk/favicon-32x32.png?v=1661532166">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.iddqd.uk/favicon-16x16.png?v=1661532166">
 <link rel=manifest href=https://blog.iddqd.uk/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -161,21 +161,22 @@ server <span class=o>{</span>
 <li>Запускается mustpl с PID 1, который читая файл шаблона и данные для него генерирует необходимый конфиг для некоторого приложения</li>
 <li>Выполняет <code>exec</code>, запуская нужное приложение, не меняя PID (т.е. оставляя его равным 1)</li>
 </ul>
-<p>Как это выглядит? Тоже очень просто, давай создадим файлы с шаблоном и данными для него:</p>
+<p>Как это выглядит? Тоже очень просто, давай создадим файлы с шаблоном (<code>template.ini</code>):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-ini data-lang=ini><span class=k>[config]</span>
+<span class=na>value</span> <span class=o>=</span> <span class=s>{{ my_option }}</span>
+</code></pre></div><p>Данными для него (<code>data.json</code>):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
   <span class=nt>&#34;my_option&#34;</span><span class=p>:</span> <span class=s2>&#34;${MY_OPTION:-default value}&#34;</span>
 <span class=p>}</span>
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-ini data-lang=ini><span class=k>[config]</span>
-<span class=na>value</span> <span class=o>=</span> <span class=s>{{ my_option }}</span>
 </code></pre></div><p>И следующий <code>Dockerfile</code>:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=k>FROM</span><span class=s> alpine:latest</span><span class=err>
 </span><span class=err>
 </span><span class=err></span><span class=k>COPY</span> --from<span class=o>=</span>ghcr.io/tarampampam/mustpl /bin/mustpl /bin/mustpl<span class=err>
 </span><span class=err>
 </span><span class=err></span><span class=k>COPY</span> ./data.json /data.json<span class=err>
-</span><span class=err></span><span class=k>COPY</span> ./template.txt /template.txt<span class=err>
+</span><span class=err></span><span class=k>COPY</span> ./template.ini /template.ini<span class=err>
 </span><span class=err>
-</span><span class=err></span><span class=k>ENTRYPOINT</span> <span class=p>[</span><span class=s2>&#34;mustpl&#34;</span><span class=p>,</span> <span class=s2>&#34;-f&#34;</span><span class=p>,</span> <span class=s2>&#34;/data.json&#34;</span><span class=p>,</span> <span class=s2>&#34;-o&#34;</span><span class=p>,</span> <span class=s2>&#34;/rendered.txt&#34;</span><span class=p>,</span> <span class=s2>&#34;/template.txt&#34;</span><span class=p>,</span> <span class=s2>&#34;--&#34;</span><span class=p>]</span><span class=err>
+</span><span class=err></span><span class=k>ENTRYPOINT</span> <span class=p>[</span><span class=s2>&#34;mustpl&#34;</span><span class=p>,</span> <span class=s2>&#34;-f&#34;</span><span class=p>,</span> <span class=s2>&#34;/data.json&#34;</span><span class=p>,</span> <span class=s2>&#34;-o&#34;</span><span class=p>,</span> <span class=s2>&#34;/rendered.txt&#34;</span><span class=p>,</span> <span class=s2>&#34;/template.ini&#34;</span><span class=p>,</span> <span class=s2>&#34;--&#34;</span><span class=p>]</span><span class=err>
 </span><span class=err>
 </span><span class=err></span><span class=k>CMD</span> <span class=p>[</span><span class=s2>&#34;sleep&#34;</span><span class=p>,</span> <span class=s2>&#34;infinity&#34;</span><span class=p>]</span><span class=err>
 </span></code></pre></div><p>Теперь давай соберем образ и запустим его:</p>
@@ -183,7 +184,7 @@ server <span class=o>{</span>
 $ docker run --rm --name mustpl_example -e <span class=s2>&#34;MY_OPTION=foobar&#34;</span> test:local
 </code></pre></div><p>В этот момент происходит следующее:</p>
 <ul>
-<li>Запускается <code>mustpl</code> (т.к. он указан в <code>entrypoint</code>), который читает файлы <code>/data.json</code> и <code>/template.txt</code></li>
+<li>Запускается <code>mustpl</code> (т.к. он указан в <code>entrypoint</code>), который читает файлы <code>/data.json</code> и <code>/template.ini</code></li>
 <li>В данных шаблона значение для <code>my_option</code> заменяется на <code>foobar</code>, так как переменная окружения <code>MY_OPTION</code> установлена (мы же указали <code>-e "MY_OPTION=foobar"</code>; в противном случае там бы оказалось значение <code>default value</code>)</li>
 <li>Шаблон рендерится, и сохраняется в <code>/rendered.txt</code></li>
 <li><code>mustpl</code> сохраняет все аргументы, что были указаны после пути до файла с шаблоном (это единственный обязательный параметр), трактуя их как имя и параметры запускаемого приложения (в нашем случае это <code>sleep</code> с аргументом <code>infinity</code>), двойное тире <code>--</code> необходимо чтоб любые последующие флаги не парсились <code>mustpl</code> а читались &ldquo;как есть&rdquo;</li>
