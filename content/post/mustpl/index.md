@@ -93,17 +93,19 @@ CMD ["/bin/app", "--another", "flags"]
 - Запускается mustpl с PID 1, который читая файл шаблона и данные для него генерирует необходимый конфиг для некоторого приложения
 - Выполняет `exec`, запуская нужное приложение, не меняя PID (т.е. оставляя его равным 1)
 
-Как это выглядит? Тоже очень просто, давай создадим файлы с шаблоном и данными для него:
+Как это выглядит? Тоже очень просто, давай создадим файлы с шаблоном (`template.ini`):
+
+```ini
+[config]
+value = {{ my_option }}
+```
+
+Данными для него (`data.json`):
 
 ```json
 {
   "my_option": "${MY_OPTION:-default value}"
 }
-```
-
-```ini
-[config]
-value = {{ my_option }}
 ```
 
 И следующий `Dockerfile`:
@@ -114,9 +116,9 @@ FROM alpine:latest
 COPY --from=ghcr.io/tarampampam/mustpl /bin/mustpl /bin/mustpl
 
 COPY ./data.json /data.json
-COPY ./template.txt /template.txt
+COPY ./template.ini /template.ini
 
-ENTRYPOINT ["mustpl", "-f", "/data.json", "-o", "/rendered.txt", "/template.txt", "--"]
+ENTRYPOINT ["mustpl", "-f", "/data.json", "-o", "/rendered.txt", "/template.ini", "--"]
 
 CMD ["sleep", "infinity"]
 ```
@@ -130,7 +132,7 @@ $ docker run --rm --name mustpl_example -e "MY_OPTION=foobar" test:local
 
 В этот момент происходит следующее:
 
-- Запускается `mustpl` (т.к. он указан в `entrypoint`), который читает файлы `/data.json` и `/template.txt`
+- Запускается `mustpl` (т.к. он указан в `entrypoint`), который читает файлы `/data.json` и `/template.ini`
 - В данных шаблона значение для `my_option` заменяется на `foobar`, так как переменная окружения `MY_OPTION` установлена (мы же указали `-e "MY_OPTION=foobar"`; в противном случае там бы оказалось значение `default value`)
 - Шаблон рендерится, и сохраняется в `/rendered.txt`
 - `mustpl` сохраняет все аргументы, что были указаны после пути до файла с шаблоном (это единственный обязательный параметр), трактуя их как имя и параметры запускаемого приложения (в нашем случае это `sleep` с аргументом `infinity`), двойное тире `--` необходимо чтоб любые последующие флаги не парсились `mustpl` а читались "как есть"
