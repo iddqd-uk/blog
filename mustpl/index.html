@@ -2,26 +2,26 @@
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Однажды я был маленьким, и задавался вопросом - вот если Unix way это (упрощенно) небольшие, довольно простые утилиты и библиотеки, которые делают одну вещь, но делают её хорошо (Peter H. Salus: &amp;ldquo;&amp;hellip;that do one thing and do it well&amp;rdquo;), то&amp;hellip; Где тогда утилита, которая занимается шаблонизацией и не хватает звёзд с неба? Вот есть у тебя некоторый шаблон, и есть некоторые данные, которые ты имеешь желание в этот шаблон подставить. Брать для этого Jinja2? Писать что-то своё используя sed + awk? Или тащить %tool_name% на несколько мегабайт ради столь тривиальной задачи?
 Спустя некоторое время, вновь столкнувшись с подобной задачей, и поняв что попытка найти что-то подходящее вновь претерпела фиаско, было принято волевое решение - да-да, написать свой прекрасный проект велосипед шаблонизатор для использования в CLI. Ограничения были выбраны следующие:
- Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch) Итоговый размер должен быть минимально-возможным (постараться уместиться в 100Кб без upx) "><title>Шаблонизация в CLI может быть простой</title>
+ Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch) Итоговый размер должен быть минимально возможным (постараться уместиться в 100Кб без upx) "><title>Шаблонизация в CLI может быть простой</title>
 <link rel=canonical href=https://blog.iddqd.uk/mustpl/>
 <link rel=stylesheet href=https://blog.iddqd.uk/scss/style.min.471bdc6463fbad60208a71af0eed86d783b5cf8d4d274ae3d77e962c37962c18.css>
 <meta property="og:title" content="Шаблонизация в CLI может быть простой">
 <meta property="og:description" content="Однажды я был маленьким, и задавался вопросом - вот если Unix way это (упрощенно) небольшие, довольно простые утилиты и библиотеки, которые делают одну вещь, но делают её хорошо (Peter H. Salus: &amp;ldquo;&amp;hellip;that do one thing and do it well&amp;rdquo;), то&amp;hellip; Где тогда утилита, которая занимается шаблонизацией и не хватает звёзд с неба? Вот есть у тебя некоторый шаблон, и есть некоторые данные, которые ты имеешь желание в этот шаблон подставить. Брать для этого Jinja2? Писать что-то своё используя sed + awk? Или тащить %tool_name% на несколько мегабайт ради столь тривиальной задачи?
 Спустя некоторое время, вновь столкнувшись с подобной задачей, и поняв что попытка найти что-то подходящее вновь претерпела фиаско, было принято волевое решение - да-да, написать свой прекрасный проект велосипед шаблонизатор для использования в CLI. Ограничения были выбраны следующие:
- Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch) Итоговый размер должен быть минимально-возможным (постараться уместиться в 100Кб без upx) ">
+ Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch) Итоговый размер должен быть минимально возможным (постараться уместиться в 100Кб без upx) ">
 <meta property="og:url" content="https://blog.iddqd.uk/mustpl/">
 <meta property="og:site_name" content="blog [dot] iddqd">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="c"><meta property="article:tag" content="templating"><meta property="article:published_time" content="2022-08-26T13:19:03+00:00"><meta property="article:modified_time" content="2022-08-26T13:19:03+00:00"><meta property="og:image" content="https://blog.iddqd.uk/mustpl/cover.jpg">
 <meta name=twitter:title content="Шаблонизация в CLI может быть простой">
 <meta name=twitter:description content="Однажды я был маленьким, и задавался вопросом - вот если Unix way это (упрощенно) небольшие, довольно простые утилиты и библиотеки, которые делают одну вещь, но делают её хорошо (Peter H. Salus: &amp;ldquo;&amp;hellip;that do one thing and do it well&amp;rdquo;), то&amp;hellip; Где тогда утилита, которая занимается шаблонизацией и не хватает звёзд с неба? Вот есть у тебя некоторый шаблон, и есть некоторые данные, которые ты имеешь желание в этот шаблон подставить. Брать для этого Jinja2? Писать что-то своё используя sed + awk? Или тащить %tool_name% на несколько мегабайт ради столь тривиальной задачи?
 Спустя некоторое время, вновь столкнувшись с подобной задачей, и поняв что попытка найти что-то подходящее вновь претерпела фиаско, было принято волевое решение - да-да, написать свой прекрасный проект велосипед шаблонизатор для использования в CLI. Ограничения были выбраны следующие:
- Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch) Итоговый размер должен быть минимально-возможным (постараться уместиться в 100Кб без upx) "><meta name=twitter:card content="summary_large_image">
+ Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch) Итоговый размер должен быть минимально возможным (постараться уместиться в 100Кб без upx) "><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blog.iddqd.uk/mustpl/cover.jpg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B4Z5Q844N"></script>
 <script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1B4Z5Q844N',{anonymize_ip:!0})}</script>
-<link rel=apple-touch-icon sizes=180x180 href="https://blog.iddqd.uk/apple-touch-icon.png?v=1661532166">
-<link rel=icon type=image/png sizes=32x32 href="https://blog.iddqd.uk/favicon-32x32.png?v=1661532166">
-<link rel=icon type=image/png sizes=16x16 href="https://blog.iddqd.uk/favicon-16x16.png?v=1661532166">
+<link rel=apple-touch-icon sizes=180x180 href="https://blog.iddqd.uk/apple-touch-icon.png?v=1661535972">
+<link rel=icon type=image/png sizes=32x32 href="https://blog.iddqd.uk/favicon-32x32.png?v=1661535972">
+<link rel=icon type=image/png sizes=16x16 href="https://blog.iddqd.uk/favicon-16x16.png?v=1661535972">
 <link rel=manifest href=https://blog.iddqd.uk/webmanifest.json>
 <meta name=msapplication-TileColor content="#303030">
 <meta name=theme-color content="#303030">
@@ -94,7 +94,7 @@ Software
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-Время чтения: 5 мин.
+Время чтения: 6 мин.
 </time>
 </div>
 </footer>
@@ -108,11 +108,11 @@ Software
 <p>Спустя некоторое время, вновь столкнувшись с подобной задачей, и поняв что попытка найти что-то подходящее вновь претерпела фиаско, было принято волевое решение - да-да, написать свой <del>прекрасный проект</del> <del>велосипед</del> шаблонизатор для использования в CLI. Ограничения были выбраны следующие:</p>
 <ul>
 <li>Статическая линковка - один бинарный файл без каких-либо зависимостей (он мне понадобится в docker scratch)</li>
-<li>Итоговый размер должен быть минимально-возможным (постараться уместиться в 100Кб без upx)</li>
+<li>Итоговый размер должен быть минимально возможным (постараться уместиться в 100Кб без upx)</li>
 </ul>
-<p>На чем писать, если хочется <del>боли</del> компактного и быстрого - естественно, берём C. Какой шаблонизатор использовать, если хочется минимализма? Под такую задачу хорошо подойдет <a class=link href=https://mustache.github.io/ target=_blank rel=noopener>mustache</a>. И вот, спустя некоторое время появляется <a class=link href=https://github.com/tarampampam/mustpl target=_blank rel=noopener><strong>mustpl</strong></a>.</p>
+<p>На чем писать, если хочется <del>боли</del> компактного результата и быстрого выполнения - естественно, берём C. Какой шаблонизатор использовать, если хочется минимализма? Под такую задачу хорошо подойдет <a class=link href=https://mustache.github.io/ target=_blank rel=noopener>mustache</a>. И вот, спустя некоторое время появляется <a class=link href=https://github.com/tarampampam/mustpl target=_blank rel=noopener><strong>mustpl</strong></a> (must - mustache, tpl - template).</p>
 <h2 id=как-его-использовать>Как его использовать?</h2>
-<p>Предельно просто - дай на вход путь до файла с шаблоном, файла с данными для этого шаблона (или передай их в виде JSON-строки используя флаг <code>-d</code>), и опционально передай нужные переменные окружения. Представим, что у нас есть следующий шаблон (<code>nginx.tpl</code>):</p>
+<p>Предельно просто - дай на вход путь до файла с шаблоном, файла с данными для этого шаблона (или передай их в виде JSON-строки используя флаг <code>-d</code>), и опционально передай нужные переменные окружения. Для примера давай представим, что у нас есть следующий <strong>шаблон</strong> для Nginx (<code>nginx.tpl</code>):</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-jinja data-lang=jinja><span class=x>server {
 </span><span class=x>  listen      8080;
 </span><span class=x>  server_name</span><span class=cp>{{</span><span class=err>#</span><span class=nv>names</span><span class=cp>}}</span><span class=x> </span><span class=cp>{{</span> <span class=err>.</span> <span class=cp>}}{{</span><span class=o>/</span><span class=nv>names</span><span class=cp>}}</span><span class=x>;
@@ -122,8 +122,10 @@ Software
 </span><span class=x>    index index.html index.htm;
 </span><span class=x>  }
 </span><span class=x>}
-</span></code></pre></div><p>Для генерации результирующего файла достаточно выполнить:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>$ <span class=nv>SERVER_NAME_1</span><span class=o>=</span>example.com mustpl -d <span class=s1>&#39;{&#34;names&#34;: [&#34;${SERVER_NAME_1:-fallback.com}&#34;, &#34;google.com&#34;]}&#39;</span> ./nginx.tpl
+</span></code></pre></div><p>И мы имеем желание сгенерировать из него настоящий конфиг, подставив в качестве <code>server_name</code> значения <code>example.com</code> и <code>example.com</code>. Для этого достаточно выполнить:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>$ <span class=nb>export</span> <span class=nv>SERVER_NAME_1</span><span class=o>=</span>example.com
+
+$ mustpl -d <span class=s1>&#39;{&#34;names&#34;: [&#34;${SERVER_NAME_1:-fallback.com}&#34;, &#34;google.com&#34;]}&#39;</span> ./nginx.tpl
 server <span class=o>{</span>
   listen      8080<span class=p>;</span>
   server_name example.com google.com<span class=p>;</span>
@@ -133,11 +135,77 @@ server <span class=o>{</span>
     index index.html index.htm<span class=p>;</span>
   <span class=o>}</span>
 <span class=o>}</span>
-</code></pre></div><p>Поддерживаются и <strong>циклы</strong>, и <strong>условия</strong>, и подключение других файлов-шаблонов, и escaping значений - все детали и нужные ссылки сможешь найти в <a class=link href=https://github.com/tarampampam/mustpl#readme target=_blank rel=noopener>readme файле</a> репозитория.</p>
+</code></pre></div><p>Или другой пример, с циклом, но тем же конфигом для Nginx. Берём данные (<code>data.json</code>):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+  <span class=nt>&#34;servers&#34;</span><span class=p>:</span> <span class=p>[</span>
+    <span class=p>{</span>
+      <span class=nt>&#34;listen&#34;</span><span class=p>:</span> <span class=mi>8080</span><span class=p>,</span>
+      <span class=nt>&#34;names&#34;</span><span class=p>:</span> <span class=p>[</span>
+        <span class=s2>&#34;example.com&#34;</span>
+      <span class=p>],</span>
+      <span class=nt>&#34;is_default&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nt>&#34;home&#34;</span><span class=p>:</span> <span class=s2>&#34;/www/example.com&#34;</span>
+    <span class=p>},</span>
+    <span class=p>{</span>
+      <span class=nt>&#34;listen&#34;</span><span class=p>:</span> <span class=mi>1088</span><span class=p>,</span>
+      <span class=nt>&#34;names&#34;</span><span class=p>:</span> <span class=p>[</span>
+        <span class=s2>&#34;127-0-0-1.nip.io&#34;</span><span class=p>,</span>
+        <span class=s2>&#34;127-0-0-2.nip.io&#34;</span>
+      <span class=p>],</span>
+      <span class=nt>&#34;home&#34;</span><span class=p>:</span> <span class=s2>&#34;/www/local&#34;</span>
+    <span class=p>}</span>
+  <span class=p>]</span>
+<span class=p>}</span>
+</code></pre></div><p>Берём шаблон (<code>nginx.tpl</code>):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-jinja data-lang=jinja><span class=cp>{{</span><span class=err>#</span><span class=nv>servers</span><span class=cp>}}</span><span class=x>
+</span><span class=x>server {
+</span><span class=x>  listen      </span><span class=cp>{{</span> <span class=nv>listen</span> <span class=cp>}}</span><span class=x>;
+</span><span class=x>  server_name</span><span class=cp>{{</span><span class=err>#</span><span class=nv>names</span><span class=cp>}}</span><span class=x> </span><span class=cp>{{</span> <span class=err>.</span> <span class=cp>}}{{</span><span class=o>/</span><span class=nv>names</span><span class=cp>}}{{</span><span class=err>#</span><span class=nv>is_default</span><span class=cp>}}</span><span class=x> default_server</span><span class=cp>{{</span><span class=o>/</span><span class=nv>is_default</span><span class=cp>}}</span><span class=x>;
+</span><span class=x>
+</span><span class=x>  location / {
+</span><span class=x>    root  </span><span class=cp>{{</span> <span class=nv>home</span> <span class=cp>}}</span><span class=x>;
+</span><span class=x>    index index.html index.htm;
+</span><span class=x>  }
+</span><span class=x>}
+</span><span class=x>
+</span><span class=x></span><span class=cp>{{</span><span class=o>/</span><span class=nv>servers</span><span class=cp>}}</span><span class=x>
+</span></code></pre></div><p>И рендерим:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>$ mustpl -f ./data.json ./nginx.tpl
+
+server <span class=o>{</span>
+  listen      8080<span class=p>;</span>
+  server_name example.com default_server<span class=p>;</span>
+
+  location / <span class=o>{</span>
+    root  /www/example.com<span class=p>;</span>
+    index index.html index.htm<span class=p>;</span>
+  <span class=o>}</span>
+<span class=o>}</span>
+
+server <span class=o>{</span>
+  listen      1088<span class=p>;</span>
+  server_name 127-0-0-1.nip.io 127-0-0-2.nip.io<span class=p>;</span>
+
+  location / <span class=o>{</span>
+    root  /www/local<span class=p>;</span>
+    index index.html index.htm<span class=p>;</span>
+  <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p>Красота - она в простоте. Кроме всего прочего, шаблонизатором поддерживаются и <strong>условия</strong>, и подключение других файлов-шаблонов, и escaping значений - все детали и нужные ссылки сможешь найти в <a class=link href=https://github.com/tarampampam/mustpl#readme target=_blank rel=noopener>readme файле</a> репозитория с приложением.</p>
+<h2 id=а-как-установить>А как установить?</h2>
+<p>На данный момент есть 3 пути по установке - это скачивание уже готового бинарного файла под необходимую архитектуру со <a class=link href=https://github.com/tarampampam/mustpl/releases target=_blank rel=noopener>страницы релизов</a>, собственная сборка из исходников и установка силами docker.</p>
+<p>Для сборки потребуется только <code>gcc</code> (и <code>musl-dev</code>, если собираешь, скажем, в alpine linux), а docker-образ уже собран под наиболее популярные платформы, так что всё, что потребуется тебе сделать в твоём Dockerfile, это лишь:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=k>COPY</span> --from<span class=o>=</span>ghcr.io/tarampampam/mustpl:latest /bin/mustpl /bin/mustpl<span class=err>
+</span></code></pre></div><blockquote>
+<p>Крайне рекомендую не использовать тег <code>latest</code> из-за того, что при мажорных изменениях есть риск получить обратно-несовместимые изменения. Лучше всего использовать версионирование в формате <code>X.Y.Z</code> в связке с настроенным (dependa|renovate)bot.</p>
+</blockquote>
 <h2 id=но-почему-ты-просто-не-взял-tool_name>Но почему ты просто не взял %tool_name%?</h2>
 <p>Кроме того, что целью был минимальный размер итогового бинарного файла, отсутствие зависимостей и скорость работы, есть ещё как минимум одна очень важная причина - это комфортное использование в docker, а именно - навык <strong>парсить переменные окружения</strong> (aka <code>envsubst</code>) и возможность использования в качестве <strong>точки входа</strong> (entrypoint).</p>
 <p>Скорее всего ты знаешь, что основной процесс, запускаемый в контейнере - должен иметь PID равный 1 (в неймспейсе контейнера). Нужно это для того, чтоб демон докера мог корректно общаться (отправляя сигналы) с приложением, что у тебя в этом самом контейнере крутится.</p>
-<p>Именно это является причиной почему, как правило, в entrypoint-скриптах используется конструкция вида:</p>
+<details class=spoiler>
+<summary>Как использовать в качестве docker entrypoint</summary>
+<div>
+<p>Именно необходимость сохранить PID 1 является причиной тому что, как правило, в entrypoint-скриптах используется конструкции вида:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/sh
 </span><span class=cp></span><span class=nb>set</span> -e
 
@@ -154,7 +222,7 @@ server <span class=o>{</span>
 <ul>
 <li>Запускается процесс <code>sh</code> c PID 1, который выполняет скрипт <code>/docker-entrypoint.sh</code></li>
 <li>Скрипт выполняет все необходимые модификации конфига некоторого приложения (если это необходимо), и вызывает <code>exec</code> (который <strong>заменяет</strong> текущий процесс новым, не изменяя при этом свой PID, детали в <code>man exec</code>)</li>
-<li>Запускается процесс <code>app</code> и его PID становится 1</li>
+<li>Запускается процесс <code>app</code> с аргументами <code>--another flags</code> и его PID становится 1</li>
 </ul>
 <p>И мне очень хотелось иметь возможность отказаться от этих самых entrypoint скриптов, так как они тянут массу зависимостей (а distroless же наше всё), да и писать их утомляет очень быстро. И было принято решение научить mustpl выполнять этот самый <code>exec</code> самостоятельно. Т.е. чтоб алгоритм запуска был следующий:</p>
 <ul>
@@ -201,8 +269,12 @@ $ docker <span class=nb>exec</span> mustpl_example cat /rendered.txt
 <span class=nv>value</span> <span class=o>=</span> foobar <span class=c1># &lt;-- а вот и наше значение!</span>
 
 $ docker <span class=nb>kill</span> mustpl_example
-</code></pre></div><h2 id=вместо-заключения>Вместо заключения</h2>
-<p>Область применения этой утилиты, естественно, довольно ограничена. Да, она не умеет Jinja-like модификаторов, кастомных функций (хотя, они описаны в спецификации mustache), да много ещё чего. Но она умеет просто шаблонизировать, и если сделает кому-то жизнь чуточку проще - я буду счастлив. Инструкции по установке, готовые бинакрники, документация - всё это найдете в <a class=link href=https://github.com/tarampampam/mustpl target=_blank rel=noopener>репозитории этой тулы</a>. Отдельное спасибо <a class=link href=https://github.com/jetexe target=_blank rel=noopener>@jetexe</a> и <a class=link href=https://github.com/alexndr-novikov target=_blank rel=noopener>@alexndr-novikov</a> за ревью и режим &ldquo;желтой уточки&rdquo;.</p>
+</code></pre></div>
+</div>
+</details>
+<p>Таким образом, если тебе понадобиться запустить приложение в контейнере, которое для своей конфигурации требует именно <strong>файл</strong> (а не флаги запуска или переменные окружения), и у тебя есть желание не хардкодить значения кофигурации, а сделать возможность их менять с помощью переменных окружения - то однозначно присмотреть к этой тулзовине.</p>
+<h2 id=вместо-заключения>Вместо заключения</h2>
+<p>Область применения этой утилиты, естественно, довольно ограничена. Да, она не умеет Jinja-like модификаторов, кастомных функций (хотя, они описаны в спецификации mustache), да много ещё чего. Но она умеет просто шаблонизировать, и если сделает кому-то жизнь чуточку проще - я буду счастлив. Инструкции по установке, готовые бинарники, документация - всё это найдете в <a class=link href=https://github.com/tarampampam/mustpl target=_blank rel=noopener>репозитории этой тулы</a>. Отдельное спасибо <a class=link href=https://github.com/jetexe target=_blank rel=noopener>@jetexe</a> и <a class=link href=https://github.com/alexndr-novikov target=_blank rel=noopener>@alexndr-novikov</a> за ревью и режим &ldquo;желтой уточки&rdquo;.</p>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
