@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>interview on blog [dot] iddqd</title><link>https://blog.iddqd.uk/tags/interview/</link><description>Recent content in interview on blog [dot] iddqd</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Dec 2023 07:02:21 +0000</lastBuildDate><atom:link href="https://blog.iddqd.uk/tags/interview/rss.xml" rel="self" type="application/rss+xml"/><item><title>Yandex Interview Questions</title><link>https://blog.iddqd.uk/yandex-interview-questions/</link><pubDate>Fri, 22 Dec 2023 07:02:21 +0000</pubDate><guid>https://blog.iddqd.uk/yandex-interview-questions/</guid><description>&lt;blockquote>
+&lt;p>Ниже сообщение от HR яндекса с материалами для подготовки к собеседованию, сохраняю для себя.&lt;/p>
+&lt;/blockquote>
+&lt;ol>
+&lt;li>&lt;a class="link" href="https://yandex.ru/jobs/pages/ya-interview" target="_blank" rel="noopener"
+>Общий процесс собеседований&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://yandex.ru/jobs/pages/dev_interview" target="_blank" rel="noopener"
+>Описание технических собеседований&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://habr.com/ru/company/yandex/blog/449890/" target="_blank" rel="noopener"
+>Статья на хабре&lt;/a> про интервью&lt;/li>
+&lt;li>&lt;a class="link" href="https://contest.yandex.ru/contest/8458/enter/" target="_blank" rel="noopener"
+>Яндекс.Контест&lt;/a> - здесь можно потренироваться решать задачи и потаймить себя. Могут подойти и другие ресурсы, такие как &lt;a class="link" href="https://hackerrank.com/" target="_blank" rel="noopener"
+>hackerrank.com&lt;/a>, &lt;a class="link" href="https://leetcode.com/" target="_blank" rel="noopener"
+>leetcode.com&lt;/a>&lt;/li>
+&lt;li>Видео-разбор алгоритмических задач:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.youtube.com/watch?v=0yxjWwoZtLw" target="_blank" rel="noopener"
+>Часть 1&lt;/a> - в этом видео разбирается задача &amp;ldquo;Последовательно идущие единицы&amp;rdquo;, она простая и на её примере мы показываем, что ожидаем от кандидата, как и по какому пути рекомендуем двигаться в решении задачи&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.youtube.com/watch?v=zU-LndSG5RE" target="_blank" rel="noopener"
+>Часть 2&lt;/a> - здесь разбор двух более сложных задач: &amp;ldquo;Анаграммы&amp;rdquo; и &amp;ldquo;Генерация скобочных последовательностей&amp;rdquo;&lt;/li>
+&lt;/ul></description></item></channel></rss>
